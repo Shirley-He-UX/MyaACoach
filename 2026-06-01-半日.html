@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6/1 半日 · 煤炭地产接棒，科技续跌 — 阳子PMO</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;
+  --surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.65);
+  --bg:#FFFFFF;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;
+  --success:#16A34A;--error:#DC2626;--warning:#D97706;
+  --shadow-glass:8px 8px 32px rgba(0,0,0,0.08);
+  --shadow-md:4px 4px 16px rgba(0,0,0,0.10);
+  --radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--secondary);text-decoration:none;font-weight:500}
+a:hover{text-decoration:underline}
+.hero-band{background:var(--primary);padding:64px 24px 56px;position:relative;overflow:hidden}
+.hero-band::before{content:'';position:absolute;top:-60%;right:-8%;width:600px;height:600px;background:var(--tertiary);border-radius:50%;opacity:0.12}
+.hero-band::after{content:'';position:absolute;bottom:-50%;left:-5%;width:400px;height:400px;background:var(--secondary);border-radius:50%;opacity:0.1}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+.hero-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:24px;text-decoration:none}
+.hero-back:hover{color:#fff}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;color:var(--tertiary);letter-spacing:2px;margin-bottom:8px}
+.hero-inner h1{font-family:'Poppins',sans-serif;font-size:36px;font-weight:800;color:#FFFFFF;line-height:1.15;margin-bottom:12px}
+.hero-meta{font-size:14px;color:rgba(255,255,255,0.75)}
+.container{max-width:960px;margin:0 auto;padding:48px 24px 80px}
+.section{margin-bottom:64px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--border)}
+.section-num{font-family:'Fira Code',monospace;font-size:12px;color:var(--primary);background:#FFF1F2;padding:4px 10px;border-radius:var(--radius-md)}
+.section-title{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700}
+.glass{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.3);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-glass);margin:16px 0}
+.conclusion{border-left:4px solid var(--primary);background:#FFF1F2;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7}
+.conclusion strong{color:var(--primary)}
+.table-wrap{overflow-x:auto;margin:16px 0;border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:#F9FAFB;color:var(--text2);font-weight:600;text-align:left;padding:12px 16px;white-space:nowrap;border-bottom:2px solid var(--border);font-size:13px}
+td{padding:12px 16px;border-bottom:1px solid #F3F4F6;vertical-align:top}
+tr:hover td{background:#F9FAFB}
+tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:var(--radius-pill);vertical-align:middle}
+.tag-up{background:#DCFCE7;color:#166534}
+.tag-down{background:#FEF2F2;color:#DC2626}
+.tag-warn{background:#FEF3C7;color:#92400E}
+.tag-info{background:#DBEAFE;color:#1E40AF}
+.subsection{margin:28px 0}
+.subsection h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin-bottom:12px}
+.sub-tag{font-size:12px;font-weight:500;color:var(--text2);margin-left:8px}
+.subsection h4{font-size:14px;font-weight:700;color:var(--primary);margin:14px 0 6px}
+.subsection p,.subsection li{font-size:15px;color:var(--text2);line-height:1.7}
+.subsection ul{padding-left:20px;margin:8px 0}
+.watch-group{margin:24px 0}
+.watch-group-title{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.watch-card{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:10px;box-shadow:var(--shadow-glass);transition:transform .15s,box-shadow .15s}
+.watch-card:hover{transform:scale(1.01);box-shadow:var(--shadow-md)}
+.watch-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px}
+.watch-code{color:var(--text2);font-family:'Fira Code',monospace;font-size:12px;margin-left:8px}
+.watch-logic{font-size:14px;color:var(--text2);margin-top:4px}
+.watch-signal{font-size:14px;color:var(--secondary);margin-top:4px;font-weight:500}
+.watch-ampm{font-size:13px;color:var(--primary);margin-top:4px;font-weight:600}
+.logic-box{background:#EFF6FF;border:1px solid var(--secondary);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0;font-family:'Fira Code',monospace;font-size:13px;line-height:2;white-space:pre-wrap}
+.analysis-card{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--radius-xl);padding:24px;margin:20px 0;box-shadow:var(--shadow-glass)}
+.analysis-card h4{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px}
+.ac-code{color:var(--text2);font-family:'Fira Code',monospace;font-size:13px;margin-left:8px;font-weight:400}
+.am-track{font-size:14px;color:var(--text2);margin-top:6px;line-height:1.5}
+.footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);text-align:center}
+.footer p{font-size:13px;color:var(--text2)}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px}
+@media(max-width:640px){
+  .hero-band{padding:48px 16px 40px}
+  .hero-inner h1{font-size:24px}
+  .container{padding:32px 16px 60px}
+  .section-title{font-size:20px}
+  table{font-size:13px}
+  th,td{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero-band">
+<div class="hero-inner">
+<a class="hero-back" href="index.html">&larr; 返回报告列表</a>
+<div class="hero-week">2026 &middot; 06/01 &middot; 半日分析</div>
+<h1>煤炭地产接棒，科技续跌，风格切换深化</h1>
+<div class="hero-meta">2026年6月1日（周一）午间休盘 &middot; 阳子PMO</div>
+</div>
+</div>
+
+<div class="container">
+
+<!-- 01 -->
+<div class="section">
+<div class="section-head"><span class="section-num">01</span><span class="section-title">大盘总览（上午盘 9:30-11:30）</span></div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>指数</th><th>午间收盘</th><th>涨跌幅</th><th>特征</th></tr></thead>
+<tbody>
+<tr><td><strong>上证指数</strong></td><td>4,063.72</td><td><span class="tag tag-down">-0.12%</span></td><td>10:00 翻红冲高 4083，随后逐级回落</td></tr>
+<tr><td><strong>深证成指</strong></td><td>15,481.10</td><td><span class="tag tag-down">-0.60%</span></td><td>半导体/PCB拖累明显</td></tr>
+<tr><td><strong>创业板指</strong></td><td>~4,001</td><td><span class="tag tag-down">-0.90%</span></td><td>冲高回落，10:50后跌幅扩大至1%</td></tr>
+<tr><td><strong>科创50</strong></td><td>—</td><td><span class="tag tag-down">续跌</span></td><td>长光华芯跌超10%，半导体链延续5/29颓势</td></tr>
+</tbody>
+</table>
+</div>
+<div class="conclusion"><strong>半日结论：冲高回落，风格切换深化。</strong><br><br>开盘三大指数一度集体翻红（10:00 沪指+0.37%、深成指+0.41%、创指+0.43%），随后逐级回落至午盘全线翻绿。半导体/PCB/光通信延续5/29跌势，资金加速从科技向煤炭/地产/AI PC切换。两市涨多跌少（超3800只上涨），但指数受权重科技股拖累明显。半日成交额约2万亿水平（预估，与前几日持平）。</div>
+</div>
+
+<!-- 02 -->
+<div class="section">
+<div class="section-head"><span class="section-num">02</span><span class="section-title">上午异动板块（进攻/防守框架）</span></div>
+
+<div class="subsection"><h3>1. 煤炭开采加工<span class="sub-tag">涨停潮 &middot; 新热点</span></h3>
+<p>煤炭板块上午掀涨停潮，多股封板。消息面驱动：夏季用电高峰来临+煤价企稳预期+电力需求增长传导。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>上午表现</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>大有能源</td><td>600403</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/600403/" target="_blank">同花顺</a></td></tr>
+<tr><td>郑州煤电</td><td>600121</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/600121/" target="_blank">同花顺</a></td></tr>
+<tr><td>昊华能源</td><td>601101</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/601101/" target="_blank">同花顺</a></td></tr>
+<tr><td>晋控煤业</td><td>601001</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/601001/" target="_blank">同花顺</a></td></tr>
+<tr><td>潞安环能</td><td>601699</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/601699/" target="_blank">同花顺</a></td></tr>
+</tbody></table></div>
+<h4>龙头股</h4><p>大有能源、郑州煤电率先封板，晋控煤业（与晋控电力同集团）联动。</p>
+<h4>上涨逻辑</h4><p>夏季用电高峰预期 → 煤炭需求刚性增长；电力板块年内涨超40%后资金向煤炭轮动；煤电一体化公司估值重构。</p>
+</div>
+
+<div class="subsection"><h3>2. 房地产<span class="sub-tag">延续5/29涨势 &middot; 政策催化持续</span></h3>
+<p>延续上周五涨势，地产股再度集体上涨。《城市更新"十五五"规划》催化延续，中指研究院5月二手房数据跌幅收窄。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>上午表现</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>华丽家族</td><td>600503</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/600503/" target="_blank">同花顺</a></td></tr>
+<tr><td>京基智农</td><td>000048</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/000048/" target="_blank">同花顺</a></td></tr>
+<tr><td>大悦城</td><td>000031</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/000031/" target="_blank">同花顺</a></td></tr>
+<tr><td>天地源</td><td>600665</td><td>涨超5%</td><td><a href="https://stockpage.10jqka.com.cn/600665/" target="_blank">同花顺</a></td></tr>
+<tr><td>广汇物流</td><td>600603</td><td>涨超4%</td><td><a href="https://stockpage.10jqka.com.cn/600603/" target="_blank">同花顺</a></td></tr>
+<tr><td>阳光股份</td><td>000608</td><td>涨超4%</td><td><a href="https://stockpage.10jqka.com.cn/000608/" target="_blank">同花顺</a></td></tr>
+</tbody></table></div>
+<h4>上涨逻辑</h4><p>国务院《城市更新"十五五"规划》催化 → 政策延续性确认；中指研究院5月二手房跌幅收窄+上海连涨3月 → 行业触底信号；中金预计2028年房企基本面回暖 → 中长期预期改善。</p>
+</div>
+
+<div class="subsection"><h3>3. AI PC / 消费电子<span class="sub-tag">英伟达GTC催化 &middot; 新概念</span></h3>
+<p>英伟达6/1-4 GTC Taipei 2026大会开幕，黄仁勋主题演讲驱动AI PC概念爆发。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>上午表现</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>雷神科技</td><td>920190</td><td><strong>30cm涨停</strong></td><td><a href="https://stockpage.10jqka.com.cn/920190/" target="_blank">同花顺</a></td></tr>
+<tr><td>春秋电子</td><td>603890</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/603890/" target="_blank">同花顺</a></td></tr>
+<tr><td>胜利精密</td><td>002426</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/002426/" target="_blank">同花顺</a></td></tr>
+<tr><td>英力股份</td><td>300956</td><td>涨停</td><td><a href="https://stockpage.10jqka.com.cn/300956/" target="_blank">同花顺</a></td></tr>
+</tbody></table></div>
+<h4>上涨逻辑</h4><p>英伟达GTC Taipei → "A new era of AI PC" 预期；AI PC换机周期+端侧AI落地 → 全年行情催化。</p>
+</div>
+
+<div class="subsection"><h3>4. MLCC概念<span class="sub-tag">延续上周强势</span></h3>
+<p>SemiAnalysis报告称单机柜MLCC价值量从H100的3000美元提升至Rubin VR200的2.2万美元，用量从1.5万颗增至超9万颗。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>上午表现</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>火炬电子</td><td>603678</td><td>触及涨停</td><td><a href="https://stockpage.10jqka.com.cn/603678/" target="_blank">同花顺</a></td></tr>
+<tr><td>商络电子</td><td>300975</td><td>涨超10%</td><td><a href="https://stockpage.10jqka.com.cn/300975/" target="_blank">同花顺</a></td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsection"><h3>板块分类总结</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>类别</th><th>板块</th><th>方向</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td><strong>进攻</strong></td><td>半导体/PCB/光通信</td><td><span class="tag tag-down">续跌</span></td><td>长光华芯-10%、东山精密跌停、宏和科技跌停</td></tr>
+<tr><td><strong>进攻</strong></td><td>MLCC</td><td><span class="tag tag-up">走强</span></td><td>火炬电子涨停、商络电子+10%</td></tr>
+<tr><td><strong>防守</strong></td><td>电力</td><td><span class="tag tag-warn">分化</span></td><td>恒盛能源/华电辽能跌停；华能蒙电表现待确认</td></tr>
+<tr><td><strong>防守</strong></td><td>煤炭</td><td><span class="tag tag-up">涨停潮</span></td><td>大有能源/郑州煤电等5股涨停</td></tr>
+<tr><td><strong>防守</strong></td><td>地产</td><td><span class="tag tag-up">续涨</span></td><td>华丽家族/京基智农/大悦城涨停</td></tr>
+<tr><td><strong>新热点</strong></td><td>AI PC</td><td><span class="tag tag-up">爆发</span></td><td>雷神科技30cm涨停、春秋电子/胜利精密/英力股份涨停</td></tr>
+</tbody></table></div>
+</div>
+</div>
+
+<!-- 03 -->
+<div class="section">
+<div class="section-head"><span class="section-num">03</span><span class="section-title">上午涨停股梳理 &amp; 连板晋级</span></div>
+
+<div class="subsection"><h3>涨停板块分布</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>板块</th><th>涨停个股（今日上午）</th><th>特征</th></tr></thead>
+<tbody>
+<tr><td>煤炭</td><td>大有能源、郑州煤电、昊华能源、晋控煤业、潞安环能</td><td>板块涨停潮，联动明显</td></tr>
+<tr><td>地产</td><td>华丽家族、京基智农、大悦城</td><td>延续5/29涨停惯性</td></tr>
+<tr><td>AI PC</td><td>雷神科技(30cm)、春秋电子、胜利精密、英力股份</td><td>英伟达GTC催化</td></tr>
+<tr><td>MLCC</td><td>火炬电子</td><td>SemiAnalysis报告催化</td></tr>
+<tr><td>AI应用</td><td>视觉中国、税友股份、掌阅科技</td><td>10:00早盘异动后回落</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsection"><h3>连板晋级核心关注</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>上周状态</th><th>今日关键信号</th></tr></thead>
+<tbody>
+<tr><td>宝鼎科技</td><td>002552</td><td>16天10板（PCB最高标）</td><td><span class="tag tag-down">断板风险</span> — 公司公告否认英伟达供应链认证，叠加PCB板块东山精密/宏和科技跌停</td></tr>
+<tr><td>京能电力</td><td>600578</td><td>9天6板（电力最高标）</td><td>电力板块分化，恒盛能源/华电辽能跌停，需确认京能电力上午状态</td></tr>
+<tr><td>华能蒙电</td><td>—</td><td>5天3板</td><td>电力分化背景下，关注是否断板</td></tr>
+<tr><td>华电能源</td><td>600726</td><td>5连板</td><td>电力分化压力下，关注连板延续性</td></tr>
+<tr><td>宝鼎科技概念</td><td>—</td><td>否认英伟达认证</td><td><span class="tag tag-down">确认利空</span> — 风华高科同样否认英伟达认证</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="conclusion"><strong>连板生态判断：</strong>上周科技线最高标宝鼎科技否认英伟达认证，叠加PCB板块宏和科技/东山精密跌停，进攻板块连板梯队面临断裂风险。电力线（防守）出现内部分化（恒盛能源/华电辽能跌停），但华能蒙电/京能电力等龙头能否扛住分歧，是下午盘关键。新热点煤炭/AI PC多为首板，尚需观察连板延续性。</div>
+</div>
+
+<!-- 04 -->
+<div class="section">
+<div class="section-head"><span class="section-num">04</span><span class="section-title">龙虎榜 / 大单异动（上午盘）</span></div>
+<div class="conclusion"><strong>说明：</strong>龙虎榜数据在收盘后（16:00后）由交易所统一公布，上午盘暂无龙虎榜数据。以下为大单异动追踪。</div>
+
+<div class="subsection"><h3>上午大单异动追踪</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>方向</th><th>个股/板块</th><th>异动特征</th></tr></thead>
+<tbody>
+<tr><td>资金流入</td><td>煤炭板块</td><td>大有能源、郑州煤电等多股涨停，封单密集，资金集中涌入</td></tr>
+<tr><td>资金流入</td><td>AI PC概念</td><td>雷神科技30cm涨停，北交所+英伟达概念双驱动，短线资金追捧</td></tr>
+<tr><td>资金流出</td><td>半导体/光通信</td><td>长光华芯跌超10%，CPO、光纤概念持续遭抛售</td></tr>
+<tr><td>资金流出</td><td>PCB</td><td>东山精密、宏和科技跌停，宝鼎科技否认英伟达认证引发板块踩踏</td></tr>
+<tr><td>资金流出</td><td>创新药</td><td>百利天恒、迪哲医药跌超10%，医药板块资金撤离</td></tr>
+</tbody></table></div>
+</div>
+</div>
+
+<!-- 05 -->
+<div class="section">
+<div class="section-head"><span class="section-num">05</span><span class="section-title">下午盘关注重点 &amp; 策略提示</span></div>
+<div class="subsection">
+<h3>关键变量</h3>
+<ul>
+<li><strong>半导体/PCB能否止跌：</strong>科创50 5/29暴跌5.04%后今日上午延续跌势，下午能否出现止跌信号（缩量横盘或V型反弹）决定全市场情绪走向</li>
+<li><strong>宝鼎科技断板：</strong>16天10板最高标否认英伟达认证，如断板确认将引发PCB/先进封装联动杀跌</li>
+<li><strong>煤炭涨停潮延续性：</strong>上午5股涨停，下午能否守住封板并带动更多煤炭股，决定新主线强度</li>
+<li><strong>电力分化演变：</strong>恒盛能源/华电辽能跌停是获利盘出逃还是全线溃败？京能电力/华能蒙电能否扛住？</li>
+<li><strong>AI PC持续性：</strong>英伟达GTC会议为期4天（6/1-6/4），概念能否持续发酵</li>
+</ul>
+</div>
+<div class="subsection">
+<h3>下午策略建议</h3>
+<ul>
+<li><strong>不建议追涨煤炭/AI PC：</strong>多为首板，下午开板风险高，等确认连板再评估</li>
+<li><strong>密切观察半导体止跌信号：</strong>如果科创50缩量至5/29成交量的60%以下并横盘 → 短期底部信号；如果继续放量跌 → 科技修复时间延长至本周中</li>
+<li><strong>电力可关注：</strong>如果京能电力/华能蒙电下午抗住分歧 → 防守主线未破；如果电力全线补跌 → 说明资金全面切换至煤炭/地产</li>
+<li><strong>地产关注万科A：</strong>上周5/29万科涨停，今日华丽家族等涨停但万科表现未知 → 如果万科不再跟涨说明地产是短炒而非主线</li>
+</ul>
+</div>
+</div>
+
+<!-- 06 -->
+<div class="section">
+<div class="section-head"><span class="section-num">06</span><span class="section-title">上周盯盘清单 · 上午表现追踪</span></div>
+<p style="font-size:14px;color:var(--text2);margin-bottom:20px">以下为上周（W22）盯盘清单中个股的<strong>今日上午表现实时追踪</strong>。</p>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--error)">&bull;</span> 进攻板块（半导体 / PCB）</div>
+
+<div class="watch-card">
+<div><span class="watch-name">宝鼎科技</span><span class="watch-code">002552</span><span class="tag tag-down">断板风险</span></div>
+<div class="watch-logic">16天10板全市场最高标，5/31公告否认英伟达供应链认证</div>
+<div class="watch-ampm">&rarr; 上午：PCB板块东山精密/宏和科技跌停，宝鼎断板信号明确</div>
+<div class="watch-signal">&rarr; 下午：断板确认 → PCB全线风险；反包涨停 → 情绪回暖信号</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">寒武纪</span><span class="watch-code">688256</span><span class="tag tag-down">续跌</span></div>
+<div class="watch-logic">A股新股王1699元后5/29跌5.86%，科技风向标</div>
+<div class="watch-ampm">&rarr; 上午：半导体板块全线下跌（长光华芯-10%），寒武纪大概率续跌</div>
+<div class="watch-signal">&rarr; 下午：能否守住1550-1600区间；跌破则科技修复期延长</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">中芯国际</span><span class="watch-code">688981</span><span class="tag tag-down">续跌</span></div>
+<div class="watch-logic">5/29暴跌8.97%，大基金减持压力</div>
+<div class="watch-ampm">&rarr; 上午：半导体链全线回调，中芯国际大概率继续承压</div>
+<div class="watch-signal">&rarr; 下午：230-240区间止跌放量？继续缩量阴跌则科技主线避让</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">生益科技</span><span class="watch-code">600183</span><span class="tag tag-down">PCB联动跌</span></div>
+<div class="watch-logic">10天4板，PCB材料龙头</div>
+<div class="watch-ampm">&rarr; 上午：宏和科技跌停、东山精密跌停，PCB板块集体杀跌</div>
+<div class="watch-signal">&rarr; 宝鼎断板+PCB两股跌停 = 生益科技高度承压</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">华天科技</span><span class="watch-code">002185</span><span class="tag tag-warn">跟跌</span></div>
+<div class="watch-logic">先进封装龙头，龙虎榜多路主力扫货</div>
+<div class="watch-ampm">&rarr; 上午：半导体全线承压，先进封装方向同步回调</div>
+<div class="watch-signal">&rarr; 科技回调结束后最先反弹的品种之一，等企稳信号再关注</div>
+</div>
+</div>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--success)">&bull;</span> 防守板块（电力）</div>
+
+<div class="watch-card">
+<div><span class="watch-name">京能电力</span><span class="watch-code">600578</span><span class="tag tag-warn">分化待确认</span></div>
+<div class="watch-logic">9天6板，电力最高标</div>
+<div class="watch-ampm">&rarr; 上午：电力板块走势分化，恒盛能源/华电辽能跌停，京能电力需确认是否扛住分歧</div>
+<div class="watch-signal">&rarr; 扛住分歧继续涨停 → 电力防守主线确认；跟跌 → 资金全面切煤</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">华电能源</span><span class="watch-code">600726</span><span class="tag tag-warn">分化待确认</span></div>
+<div class="watch-logic">5连板</div>
+<div class="watch-ampm">&rarr; 上午：华电辽能跌停（同"华电"系），需区分华电能源vs华电辽能是否为同一标的</div>
+<div class="watch-signal">&rarr; 跟京能电力联动观察；如果同步跟跌则防守主线松动</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">晋控电力</span><span class="watch-code">000767</span><span class="tag tag-info">观察</span></div>
+<div class="watch-logic">5/29涨停封单超150万手，北向+机构双买</div>
+<div class="watch-ampm">&rarr; 上午：同集团晋控煤业涨停（煤炭线），晋控电力能否借煤电联动抵抗板块分化</div>
+<div class="watch-signal">&rarr; 如果晋控电力抗跌 → 煤电一体化逻辑被市场认可</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">粤电力A</span><span class="watch-code">000539</span><span class="tag tag-warn">分化待确认</span></div>
+<div class="watch-logic">3连板，低位电力补涨</div>
+<div class="watch-ampm">&rarr; 上午：电力板块分化剧烈，低位补涨标的能否接力待观察</div>
+<div class="watch-signal">&rarr; 京能/华电能源断板后观察它是否接力成新龙头</div>
+</div>
+</div>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--warning)">&bull;</span> 风格切换标的（地产 / 消费）</div>
+
+<div class="watch-card">
+<div><span class="watch-name">万科A</span><span class="watch-code">000002</span><span class="tag tag-up">板块续涨</span></div>
+<div class="watch-logic">千亿市值5/29直线涨停，政策催化</div>
+<div class="watch-ampm">&rarr; 上午：地产板块延续涨势（华丽家族/京基智农/大悦城涨停），万科A表现待确认</div>
+<div class="watch-signal">&rarr; 万科跟涨 → 地产主线确认；万科不跟、小盘地产涨停 → 短炒性质、勿追</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">酒鬼酒</span><span class="watch-code">000799</span><span class="tag tag-down">板块走弱</span></div>
+<div class="watch-logic">白酒弹性最大，5/29涨停</div>
+<div class="watch-ampm">&rarr; 上午：白酒跌幅居前，资金从消费切向煤炭/AI PC</div>
+<div class="watch-signal">&rarr; 白酒今天弱势 → 消费不是当前风格切换主方向；煤炭替代白酒成为新防御线</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">京东方A</span><span class="watch-code">000725</span><span class="tag tag-info">观察</span></div>
+<div class="watch-logic">面板龙头，北向+机构逆势买入，跨攻防属性</div>
+<div class="watch-ampm">&rarr; 上午：MLCC概念走强（火炬电子涨停），面板方向存在联动可能</div>
+<div class="watch-signal">&rarr; 若京东方A走出独立行情 → 面板+MLCC可视为科技内部唯一"活口"</div>
+</div>
+</div>
+</div>
+
+<!-- 07 下周盯盘清单 -->
+<div class="section">
+<div class="section-head"><span class="section-num">07</span><span class="section-title">下周重点盯盘清单</span></div>
+<p style="font-size:14px;color:var(--text2);margin-bottom:20px">基于今日上午盘面，更新盯盘方向。<strong>不是推荐买入，是告诉你该看什么。</strong></p>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--error)">&bull;</span> 进攻板块（半导体 / 光模块 / PCB / MLCC）</div>
+<div class="watch-card"><div><span class="watch-name">宝鼎科技</span><span class="watch-code">002552</span></div><div class="watch-logic">16天10板，否认英伟达认证 = 断板确认信号。全市场风险偏好温度计</div><div class="watch-signal">&rarr; 断板确认 → 进攻板块全线避让；下午反包涨停 → 情绪反转</div></div>
+<div class="watch-card"><div><span class="watch-name">寒武纪</span><span class="watch-code">688256</span></div><div class="watch-logic">科技风向标，5/29+6/1连续两日承压</div><div class="watch-signal">&rarr; 缩量至5/29成交量60%以下+横盘2天 = 短期底部；继续放量跌 = 科技调整升级</div></div>
+<div class="watch-card"><div><span class="watch-name">中芯国际</span><span class="watch-code">688981</span></div><div class="watch-logic">半导体龙头，大基金减持压力+板块连跌两日</div><div class="watch-signal">&rarr; 止跌信号出现（小阳线+缩量）才可重新关注</div></div>
+<div class="watch-card"><div><span class="watch-name">火炬电子</span><span class="watch-code">603678</span></div><div class="watch-logic">MLCC涨停，MLCC是进攻板块中唯一走强细分</div><div class="watch-signal">&rarr; 能否连板？连板则MLCC可能成为科技"活口"独立行情</div></div>
+</div>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--success)">&bull;</span> 防守板块（电力 / 煤炭 / 地产）</div>
+<div class="watch-card"><div><span class="watch-name">京能电力</span><span class="watch-code">600578</span></div><div class="watch-logic">9天6板电力最高标，电力分化中能否扛住是关键</div><div class="watch-signal">&rarr; 抗跌 → 电力防守主线未破；补跌 → 注意防守线向煤炭转移</div></div>
+<div class="watch-card"><div><span class="watch-name">大有能源</span><span class="watch-code">600403</span></div><div class="watch-logic">煤炭涨停潮龙头，首板</div><div class="watch-signal">&rarr; 下午封板不炸 → 煤炭新主线信号；开板 → 一日游行情</div></div>
+<div class="watch-card"><div><span class="watch-name">晋控煤业 / 晋控电力</span><span class="watch-code">601001 / 000767</span></div><div class="watch-logic">同集团煤电联动，煤涨电跌 vs 煤电共涨</div><div class="watch-signal">&rarr; 煤涨电不跌 = 煤电一体化受益逻辑；煤涨电跌 = 纯粹板块轮动</div></div>
+<div class="watch-card"><div><span class="watch-name">万科A</span><span class="watch-code">000002</span></div><div class="watch-logic">地产板块连续两个交易日涨停潮，万科是千亿龙头标杆</div><div class="watch-signal">&rarr; 万科跟涨 → 地产主线级别确认；不跟 → 小票游资短炒</div></div>
+</div>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--secondary)">&bull;</span> 新热点（AI PC）</div>
+<div class="watch-card"><div><span class="watch-name">雷神科技</span><span class="watch-code">920190</span></div><div class="watch-logic">30cm涨停，北交所+英伟达GTC双概念</div><div class="watch-signal">&rarr; 30cm次日溢价多少？高开高走=强概念；高开低走=游资一日游</div></div>
+<div class="watch-card"><div><span class="watch-name">春秋电子</span><span class="watch-code">603890</span></div><div class="watch-logic">AI PC主板龙头，首板</div><div class="watch-signal">&rarr; 能否2连板？英伟达GTC 6/1-6/4期间持续观察概念延续性</div></div>
+</div>
+
+<div class="logic-box">如果下午半导体/PCB继续放量跌 → 进攻板块全面避让，盯煤炭+地产+AI PC延续性
+如果半导体出现缩量止跌 → 科技进入修复窗口，盯寒武纪/中芯国际是否横盘
+无论哪种情况 → 宝鼎科技断板是最确定的信号，它决定了进攻板块短期节奏
+    → 电力分化后，煤炭是否接力成为新防御主线，是本周最大看点</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<p>数据来源：新浪财经午评 / 格隆汇 / 证券时报 · 联网核实</p>
+<p>注：龙虎榜数据收盘后公布，上午盘暂无；成交额为基于前几日水平的预估值；部分个股上午表现标注"待确认"表示非今日午评正文直接提及，为板块联动推论</p>
+<p class="warn">风险提示：本报告基于公开信息整理，不构成投资建议。市场有风险，投资需谨慎。</p>
+<p style="margin-top:12px;font-size:13px;color:var(--text2)">阳子 &middot; PMO半日分析 &middot; 2026年6月1日</p>
+</div>
+
+</div>
+</body>
+</html>
