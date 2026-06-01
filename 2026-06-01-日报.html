@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技续跌科创50两日暴挫10%，煤炭AI应用双线涨停潮 — 阳子PMO日报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;
+  --surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);
+  --bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;
+  --success:#16A34A;--error:#DC2626;--warning:#D97706;
+  --shadow-glass:8px 8px 32px rgba(0,0,0,0.08);
+  --shadow-md:4px 4px 16px rgba(0,0,0,0.10);
+  --radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Hero Band */
+.hero-band{
+  background:var(--primary);color:#fff;padding:56px 0 48px;
+  position:relative;overflow:hidden;
+}
+.hero-band::before{
+  content:'';position:absolute;top:-120px;right:-80px;
+  width:400px;height:400px;border-radius:50%;
+  background:rgba(255,255,255,0.06);
+}
+.hero-band::after{
+  content:'';position:absolute;bottom:-100px;left:-60px;
+  width:280px;height:280px;border-radius:50%;
+  background:rgba(255,255,255,0.04);
+}
+.hero-content{
+  max-width:1120px;margin:0 auto;padding:0 32px;
+  position:relative;z-index:1;
+}
+.hero-week{
+  font-family:'Fira Code',monospace;font-size:13px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;
+}
+.hero-title{
+  font-family:'Poppins',sans-serif;font-size:30px;font-weight:700;
+  line-height:1.35;max-width:820px;
+}
+.hero-meta{
+  margin-top:16px;font-size:14px;opacity:0.70;font-weight:500;
+}
+
+/* Main Container */
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+
+/* Section */
+.section{
+  margin-bottom:28px;
+  background:var(--surface-glass);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-glass);padding:28px 32px;
+}
+.section-head{
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+  padding-bottom:14px;border-bottom:2px solid var(--border);
+}
+.section-num{
+  font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;
+  color:var(--primary);min-width:36px;
+}
+.section-title{
+  font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;
+  color:var(--text);
+}
+
+/* Data Cards Grid */
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px;}
+
+.data-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:16px 18px;
+  box-shadow:var(--shadow-md);
+}
+.data-card .label{font-size:12px;color:var(--text2);font-weight:500;text-transform:uppercase;letter-spacing:0.5px;}
+.data-card .value{font-family:'Fira Code',monospace;font-size:20px;font-weight:700;margin-top:4px;color:var(--text);}
+.data-card .change{font-size:13px;font-weight:600;margin-top:2px;}
+.change-up{color:var(--error);}
+.change-down{color:var(--success);}
+
+/* Summary text */
+.summary-text{font-size:14px;line-height:1.8;color:var(--text);margin-bottom:12px;}
+.summary-text strong{color:var(--primary);}
+
+/* Tag Pill */
+.tag{
+  display:inline-block;padding:3px 12px;font-size:12px;font-weight:600;
+  border-radius:var(--radius-pill);line-height:1.6;
+}
+.tag-red{background:rgba(225,29,72,0.12);color:var(--primary);}
+.tag-blue{background:rgba(37,99,235,0.10);color:var(--secondary);}
+.tag-green{background:rgba(22,163,74,0.12);color:var(--success);}
+.tag-yellow{background:rgba(217,119,6,0.12);color:var(--warning);}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;}
+thead th{
+  text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;
+  color:var(--text2);font-weight:600;padding:10px 12px;border-bottom:2px solid var(--border);
+  background:rgba(0,0,0,0.01);
+}
+tbody td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text);}
+tbody tr:hover{background:rgba(0,0,0,0.02);}
+td .code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td .name{font-weight:600;}
+
+/* Sub-section */
+.sub-section{margin-top:18px;}
+.sub-head{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+
+/* Strategy Section */
+.strategy-list{list-style:none;font-size:14px;line-height:1.8;}
+.strategy-list li{padding:6px 0;padding-left:20px;position:relative;}
+.strategy-list li::before{content:'→';position:absolute;left:0;color:var(--primary);font-weight:700;}
+.strategy-list li.warn::before{content:'⚠';}
+.strategy-list li.bull::before{content:'▲';color:var(--error);}
+.strategy-list li.bear::before{content:'▼';color:var(--success);}
+
+/* Deep Analysis Card */
+.deep-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:20px 24px;margin-bottom:14px;
+  box-shadow:var(--shadow-md);
+}
+.deep-card h4{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;color:var(--primary);}
+.deep-card .meta-row{font-size:12px;color:var(--text2);margin-bottom:10px;}
+.deep-card .dl{display:grid;grid-template-columns:80px 1fr;gap:6px 12px;font-size:13px;line-height:1.7;}
+.deep-card .dt{font-weight:600;color:var(--text2);}
+.deep-card .dd{color:var(--text);}
+
+/* Watchlist Grid */
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:12px;}
+.watch-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:16px 18px;
+  box-shadow:var(--shadow-md);
+}
+.watch-card h4{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:8px;}
+.watch-card .item{font-size:13px;padding:4px 0;display:flex;gap:8px;flex-wrap:wrap;}
+.watch-card .s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);min-width:82px;}
+.watch-card .s-name{font-weight:600;}
+.watch-card .s-note{color:var(--text2);font-size:12px;}
+
+/* Divider */
+.section-divider{margin:16px 0;height:1px;background:var(--border);}
+
+/* Footer */
+.footer{text-align:center;padding:20px 0 40px;font-size:12px;color:var(--text2);}
+.footer a{color:var(--secondary);text-decoration:none;}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-title{font-size:22px;}
+  .container{padding:16px;}
+  .section{padding:20px 16px;}
+  .data-cards{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- Hero Band -->
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026 · 06/01 · 日报</div>
+    <h1 class="hero-title">科技续跌科创50两日暴挫10%，煤炭AI应用双线涨停潮</h1>
+    <p class="hero-meta">2026年6月1日（周一）收盘复盘 · 阳子PMO</p>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- 1. 大盘总览 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <span class="section-title">大盘总览</span>
+  </div>
+
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">上证指数</div>
+      <div class="value">4057.74</div>
+      <div class="change change-down">-0.27%</div>
+    </div>
+    <div class="data-card">
+      <div class="label">深证成指</div>
+      <div class="value">15340.36</div>
+      <div class="change change-down">-1.51%</div>
+    </div>
+    <div class="data-card">
+      <div class="label">创业板指</div>
+      <div class="value">3950.94</div>
+      <div class="change change-down">-2.15%</div>
+    </div>
+    <div class="data-card">
+      <div class="label">科创50</div>
+      <div class="value">—</div>
+      <div class="change change-down">-5.00%</div>
+    </div>
+    <div class="data-card">
+      <div class="label">北证50</div>
+      <div class="value">—</div>
+      <div class="change change-up">+1.26%</div>
+    </div>
+  </div>
+
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">全天成交额</div>
+      <div class="value">2.897万亿</div>
+      <div class="change change-down">缩量4443亿</div>
+    </div>
+    <div class="data-card">
+      <div class="label">上涨家数</div>
+      <div class="value">3700+</div>
+      <div class="change change-up">166只涨停</div>
+    </div>
+    <div class="data-card">
+      <div class="label">上证 上午</div>
+      <div class="value">4063.72</div>
+      <div class="change change-down">-0.12%</div>
+    </div>
+  </div>
+
+  <p class="summary-text">
+    全天走势：<strong>开盘冲高回落，午后加速下跌</strong>。10:00创业板指一度涨超+1%，随后逐级回落，午后科技权重加速下杀拖累指数。科创50连续第二日暴跌（5/29 -5.04% + 6/1 -5.00%）。黄白线明显分化——<strong>中小盘强、权重弱</strong>，全市场超3700只个股上涨但指数全线收绿，资金"抛大买小"特征显著。北证50逆势独涨+1.26%。
+  </p>
+</section>
+
+<!-- 2. 异动上涨板块 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <span class="section-title">异动上涨板块</span>
+  </div>
+
+  <!-- 进攻板块 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>AI应用 / 计算机</div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      涨停潮。英伟达GTC Taipei 2026开幕+黄仁勋主题演讲催化。软件开发板块全天净流入<strong>31.16亿</strong>，为今日最强方向。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">天地在线</span></td><td><span class="code">002995</span></td><td>涨停</td><td>3连板，AI应用龙头</td></tr>
+        <tr><td><span class="name">掌阅科技</span></td><td><span class="code">603533</span></td><td>涨停</td><td>4天2板</td></tr>
+        <tr><td><span class="name">软通动力</span></td><td><span class="code">301236</span></td><td>20cm涨停</td><td>AI应用/华为生态</td></tr>
+        <tr><td><span class="name">用友网络</span></td><td><span class="code">600588</span></td><td>涨停</td><td>企业级SaaS+AI</td></tr>
+        <tr><td><span class="name">视觉中国</span></td><td><span class="code">000681</span></td><td>涨停</td><td>AI应用</td></tr>
+        <tr><td><span class="name">税友股份</span></td><td><span class="code">603171</span></td><td>涨停</td><td>AI应用</td></tr>
+        <tr><td><span class="name">久其软件</span></td><td><span class="code">002279</span></td><td>涨停</td><td>AI应用</td></tr>
+        <tr><td><span class="name">星环科技</span></td><td><span class="code">688031</span></td><td>涨超10%</td><td>AI/大数据</td></tr>
+        <tr><td><span class="name">光云科技</span></td><td><span class="code">688365</span></td><td>涨超10%</td><td>SaaS</td></tr>
+        <tr><td><span class="name">深信服</span></td><td><span class="code">300454</span></td><td>涨超10%</td><td>网络安全+AI</td></tr>
+        <tr><td><span class="name">达梦数据</span></td><td><span class="code">688256</span></td><td>涨超10%</td><td>数据库</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>AI PC</div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      英伟达宣布进军PC芯片市场催化，多股涨停。春秋电子2连板确立龙头地位。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">春秋电子</span></td><td><span class="code">603890</span></td><td>涨停</td><td>2连板，AI PC龙头</td></tr>
+        <tr><td><span class="name">胜利精密</span></td><td><span class="code">002426</span></td><td>涨停</td><td>AI PC</td></tr>
+        <tr><td><span class="name">英力股份</span></td><td><span class="code">300956</span></td><td>涨停</td><td>AI PC</td></tr>
+        <tr><td><span class="name">雷神科技</span></td><td><span class="code">872190</span></td><td>30cm涨停</td><td>AI PC（北交所）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 防守板块 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-green">防守</span>煤炭</div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      涨停潮。焦煤期货主力合约涨超<strong>7%</strong>，焦炭涨超<strong>5%</strong>。夏季用电高峰来临+煤价企稳+山西证券"戴维斯双击"观点共振催化。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">大有能源</span></td><td><span class="code">600403</span></td><td>涨停</td><td>首板龙头</td></tr>
+        <tr><td><span class="name">郑州煤电</span></td><td><span class="code">600121</span></td><td>涨停</td><td>首板</td></tr>
+        <tr><td><span class="name">昊华能源</span></td><td><span class="code">601101</span></td><td>涨停</td><td>首板</td></tr>
+        <tr><td><span class="name">晋控煤业</span></td><td><span class="code">601001</span></td><td>涨停</td><td>首板</td></tr>
+        <tr><td><span class="name">潞安环能</span></td><td><span class="code">601699</span></td><td>涨停</td><td>首板</td></tr>
+        <tr><td><span class="name">兖矿能源</span></td><td><span class="code">600188</span></td><td>涨停</td><td>300亿+中军票</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-green">防守</span>燃气 / 氟化工 / 地产</div>
+    <table>
+      <thead><tr><th>板块</th><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td>燃气</td><td><span class="name">国新能源</span></td><td><span class="code">600617</span></td><td>涨停</td><td>—</td></tr>
+        <tr><td>氟化工</td><td><span class="name">巨化股份</span></td><td><span class="code">600160</span></td><td>涨停</td><td>—</td></tr>
+        <tr><td>地产</td><td><span class="name">华丽家族</span></td><td><span class="code">600503</span></td><td>涨停（待确）</td><td>上午封板</td></tr>
+        <tr><td>地产</td><td><span class="name">京基智农</span></td><td><span class="code">000048</span></td><td>涨停（待确）</td><td>上午封板</td></tr>
+        <tr><td>地产</td><td><span class="name">大悦城</span></td><td><span class="code">000031</span></td><td>涨停（待确）</td><td>上午封板</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 3. 连板股排列 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <span class="section-title">连板股排列</span>
+  </div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>连板</th><th>方向</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">天地在线</span></td><td><span class="code">002995</span></td><td><span class="tag tag-red">3连板</span></td><td>AI应用</td><td>龙头确认，明日若4连板则AI应用成新主线</td></tr>
+      <tr><td><span class="name">春秋电子</span></td><td><span class="code">603890</span></td><td><span class="tag tag-blue">2连板</span></td><td>AI PC</td><td>英伟达GTC催化持续</td></tr>
+      <tr><td><span class="name">掌阅科技</span></td><td><span class="code">603533</span></td><td><span class="tag tag-yellow">4天2板</span></td><td>AI应用</td><td>趋势加速</td></tr>
+      <tr><td><span class="name">合锻智能</span></td><td><span class="code">待确认</span></td><td><span class="tag tag-yellow">待确认</span></td><td>电力</td><td>电力板块分化中</td></tr>
+    </tbody>
+  </table>
+  <p class="summary-text" style="margin-top:12px;">
+    AI应用方向独占2席（天地在线+掌阅科技），AI PC 1席。煤炭为首板潮，明日分歧考验连板成色。电力方向合锻智能待确认，板块整体松动（恒盛能源/华电辽能跌停）。
+  </p>
+</section>
+
+<!-- 4. 下跌板块概览 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <span class="section-title">下跌板块概览</span>
+  </div>
+
+  <table>
+    <thead><tr><th>板块</th><th>跌幅/表现</th><th>代表性个股</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>半导体</strong></td>
+        <td><span class="change change-down">净流出276.6亿</span></td>
+        <td>长光华芯跌超10%、菲利华跌超10%、长芯博创跌超10%、圣邦股份跌超10%</td>
+        <td>连续2日暴跌</td>
+      </tr>
+      <tr>
+        <td><strong>CPO</strong></td>
+        <td>重挫</td>
+        <td>东山精密跌停、剑桥科技触及跌停、长盈通重挫</td>
+        <td>科技线联动下杀</td>
+      </tr>
+      <tr>
+        <td><strong>PCB</strong></td>
+        <td>重挫</td>
+        <td>东山精密跌停、环旭电子跌停</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>玻璃玻纤</strong></td>
+        <td>跌幅居前</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>先进封装</strong></td>
+        <td>跌幅居前</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>白酒</strong></td>
+        <td>跌幅居前</td>
+        <td>—</td>
+        <td>防守板块也松动</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="summary-text" style="margin-top:12px;">
+    科技线全面溃败：半导体→CPO→PCB→先进封装形成链条式下跌。两市最大资金流出方向为半导体（276.6亿），科创50连续两日合计跌幅超<strong>10%</strong>，短期超跌信号明显但趋势尚未企稳。
+  </p>
+</section>
+
+<!-- 5. 涨停数据汇总 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <span class="section-title">涨停数据汇总</span>
+  </div>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">全天涨停</div>
+      <div class="value">166只</div>
+    </div>
+    <div class="data-card">
+      <div class="label">上涨个股</div>
+      <div class="value">3700-3800</div>
+    </div>
+    <div class="data-card">
+      <div class="label">5/29封板率</div>
+      <div class="value">56%</div>
+      <div class="change">49涨停 / 38炸板</div>
+    </div>
+    <div class="data-card">
+      <div class="label">今日炸板/封板率</div>
+      <div class="value">待公布</div>
+      <div class="change change-down">16:00-17:00发布</div>
+    </div>
+  </div>
+  <p class="summary-text">
+    上午封板率较高，煤炭/AI应用多股封板坚决。166只涨停但三大指数全线收跌——典型"指数跌、个股涨"的剪刀差行情。中小盘活跃（北证50逆势+1.26%），权重科技股拖累指数（科创50 -5%）。
+  </p>
+</section>
+
+<!-- 6. 龙虎榜重点 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <span class="section-title">龙虎榜重点</span>
+  </div>
+  <p class="summary-text">
+    龙虎榜数据收盘后由交易所公布，通常在<strong>16:00-17:00</strong>之间发布。截至发稿时，6月1日龙虎榜数据尚未完全公布，以下为建议重点关注标的：
+  </p>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">AI应用方向</div>
+      <div class="value" style="font-size:14px;">软通动力<br>用友网络</div>
+      <div class="change">关注游资/机构动向</div>
+    </div>
+    <div class="data-card">
+      <div class="label">煤炭方向</div>
+      <div class="value" style="font-size:14px;">兖矿能源<br>大有能源</div>
+      <div class="change">关注机构态度</div>
+    </div>
+    <div class="data-card">
+      <div class="label">半导体方向</div>
+      <div class="value" style="font-size:14px;">长光华芯<br>东山精密</div>
+      <div class="change">关注资金出逃规模</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 平台突破股筛选 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">07</span>
+    <span class="section-title">平台突破股筛选</span>
+  </div>
+  <p class="summary-text">
+    <strong>暂无符合条件的个股。</strong>筛选逻辑：连续5天小阳线稳量+今日放量突破平台。当前市场结构不支持此模式——科技板块（半导体/PCB/CPO）处于下跌通道中，不具备平台蓄力条件；煤炭/AI应用多为今日突然爆发型首板，缺乏"连续5天小阳线稳量"的前置蓄力阶段。
+  </p>
+</section>
+
+<!-- 8. 300亿以上高壁垒个股深度分析 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">08</span>
+    <span class="section-title">300亿以上高壁垒个股深度分析</span>
+  </div>
+
+  <div class="deep-card">
+    <h4>兖矿能源 600188 <span class="tag tag-green">煤炭 · 涨停</span></h4>
+    <div class="meta-row">市值300亿+ | 煤炭开采+煤化工 | 核心客户：电力/钢铁企业</div>
+    <div class="dl">
+      <div class="dt">护城河</div><div class="dd">优质煤矿资源+煤电一体化布局，资源稀缺性构成天然壁垒</div>
+      <div class="dt">上涨逻辑</div><div class="dd">夏季用电高峰来临 + 焦煤期货主力合约涨超7% + 煤价企稳回升</div>
+      <div class="dt">下跌风险</div><div class="dd">油价回落拖累能源板块 / 政策调控煤价 / 煤炭涨停潮一日游</div>
+      <div class="dt">买入条件</div><div class="dd">连板确认后，回调至5日线附近可轻仓试仓</div>
+    </div>
+  </div>
+
+  <div class="deep-card">
+    <h4>用友网络 600588 <span class="tag tag-red">AI应用 · 涨停</span></h4>
+    <div class="meta-row">企业级SaaS+AI应用 | 国产替代核心标的</div>
+    <div class="dl">
+      <div class="dt">护城河</div><div class="dd">企业客户粘性极强 + 国产替代政策红利，SaaS订阅模式提供持续收入</div>
+      <div class="dt">上涨逻辑</div><div class="dd">英伟达GTC Taipei 2026催化AI应用落地预期，企业级AI商业化提速</div>
+      <div class="dt">下跌风险</div><div class="dd">AI概念炒作后资金快速撤离 / 业绩兑现需时间，短期内难见利润拐点</div>
+      <div class="dt">买入条件</div><div class="dd">放量突破前高后，回调不破20日线可介入</div>
+    </div>
+  </div>
+
+  <div class="deep-card">
+    <h4>软通动力 301236 <span class="tag tag-red">AI应用 · 20cm涨停</span></h4>
+    <div class="meta-row">市值300亿+ | IT服务+数字化解决方案 | 华为生态核心合作伙伴</div>
+    <div class="dl">
+      <div class="dt">护城河</div><div class="dd">华为生态深度绑定 + 大型企业数字化解决方案能力，客户迁移成本高</div>
+      <div class="dt">上涨逻辑</div><div class="dd">华为生态+AI应用双线共振，英伟达GTC催化AI落地预期</div>
+      <div class="dt">下跌风险</div><div class="dd">20cm涨停后波动剧烈 / 高估值面临业绩验证压力</div>
+      <div class="dt">买入条件</div><div class="dd">等缩量回踩5日线，不追高</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. 异常成交量个股 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">09</span>
+    <span class="section-title">异常成交量个股</span>
+  </div>
+  <p class="summary-text">
+    <strong>暂无符合条件的个股。</strong>筛选标准：当日成交量 &gt; 近半年最高成交量 × 2。今日主要放量方向为煤炭和AI应用，属于板块性集体放量而非单只个股异常爆量，不符合筛选阈值。
+  </p>
+</section>
+
+<!-- 10. 展望+策略建议 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">10</span>
+    <span class="section-title">展望 + 策略建议</span>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">关键变量</div>
+    <ul class="strategy-list">
+      <li><strong>科创50连续两日暴跌（5/29 -5.04% + 6/1 -5.00%）</strong>：半导体是否超跌反弹？如果缩量止跌→科技修复窗口打开；如果放量续跌→调整升级为中期下行。</li>
+      <li><strong>煤炭涨停潮是否一日游？</strong>焦煤期货大涨是短期脉冲还是趋势性行情？明天连板率是试金石。</li>
+      <li><strong>英伟达GTC会议</strong>（6/1-6/4持续4天）：AI PC/AI应用概念能否持续发酵，黄仁勋后续演讲是否释放新催化剂。</li>
+      <li><strong>黄白线分化</strong>：166只涨停但指数下跌，中小盘强、权重弱，资金在"抛大买小"，公募被动调仓或加剧分化。</li>
+      <li><strong>公募基金业绩基准调整今日落地</strong>（近4000亿规模），可能引发被动调仓，短期扰动尚未完全消化。</li>
+    </ul>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="sub-section">
+    <div class="sub-head">策略建议</div>
+    <ul class="strategy-list">
+      <li class="warn"><strong>不追涨煤炭/AI PC</strong>：多为首板或2板，明天分歧概率大，等确认连板后再评估参与机会。</li>
+      <li class="warn"><strong>半导体/PCB观望</strong>：连续2日暴跌后超跌反弹概率增加，但不宜左侧抄底，等缩量止跌信号出现。</li>
+      <li class="bull"><strong>关注AI应用方向</strong>：天地在线3连板确认龙头地位，如果明天4连板，AI应用可能成为新主线。</li>
+      <li class="bear"><strong>电力板块观望</strong>：恒盛能源/华电辽能跌停，京能电力/华能蒙电分化，防守主线松动，暂不参与。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11. 下周重点盯盘清单 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">11</span>
+    <span class="section-title">重点盯盘清单</span>
+  </div>
+
+  <div class="watch-grid">
+    <!-- 进攻板块 -->
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> AI应用</h4>
+      <div class="item">
+        <span class="s-code">002995</span><span class="s-name">天地在线</span>
+      </div>
+      <div class="s-note">AI应用3连板龙头，能否4连板决定AI应用主线级别</div>
+      <div class="item" style="margin-top:6px;">
+        <span class="s-code">301236</span><span class="s-name">软通动力</span>
+      </div>
+      <div class="s-note">20cm涨停，AI应用/华为生态，观察次日溢价</div>
+    </div>
+
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> AI PC</h4>
+      <div class="item">
+        <span class="s-code">603890</span><span class="s-name">春秋电子</span>
+      </div>
+      <div class="s-note">AI PC 2连板，英伟达GTC会议期间持续观察</div>
+    </div>
+
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> 科技风向标</h4>
+      <div class="item">
+        <span class="s-code">688256</span><span class="s-name">寒武纪</span>
+      </div>
+      <div class="s-note">科技风向标，连续2日大跌后能否止跌</div>
+      <div class="item" style="margin-top:6px;">
+        <span class="s-code">688981</span><span class="s-name">中芯国际</span>
+      </div>
+      <div class="s-note">半导体龙头，等缩量止跌信号</div>
+    </div>
+
+    <!-- 防守板块 -->
+    <div class="watch-card">
+      <h4><span class="tag tag-green">防守</span> 煤炭</h4>
+      <div class="item">
+        <span class="s-code">600403</span><span class="s-name">大有能源</span>
+      </div>
+      <div class="s-note">煤炭涨停潮龙头（首板），明天能否连板决定煤炭主线强度</div>
+      <div class="item" style="margin-top:6px;">
+        <span class="s-code">600188</span><span class="s-name">兖矿能源</span>
+      </div>
+      <div class="s-note">煤炭中军，300亿+大票涨停，机构态度风向标</div>
+    </div>
+
+    <div class="watch-card">
+      <h4><span class="tag tag-green">防守</span> 电力</h4>
+      <div class="item">
+        <span class="s-code">600578</span><span class="s-name">京能电力</span>
+      </div>
+      <div class="s-note">电力最高标，板块分化中能否扛住</div>
+    </div>
+
+    <!-- 风格切换标的 -->
+    <div class="watch-card">
+      <h4><span class="tag tag-yellow">风格切换</span> 地产 / 煤电联动</h4>
+      <div class="item">
+        <span class="s-code">000002</span><span class="s-name">万科A</span>
+      </div>
+      <div class="s-note">地产千亿龙头，板块分化中万科是否跟涨验证主线</div>
+      <div class="item" style="margin-top:6px;">
+        <span class="s-code">601001 / 待定</span><span class="s-name">晋控煤业 / 晋控电力</span>
+      </div>
+      <div class="s-note">煤电联动标的，煤涨电能否不跌</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <p>阳子PMO · A股日报 · 2026年6月1日 · 数据来源：Wind / 东方财富 / 交易所公告</p>
+  <p style="margin-top:4px;">本报告仅供内部参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+</footer>
+
+</body>
+</html>

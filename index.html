@@ -124,17 +124,27 @@ body{font-family:'DM Sans',sans-serif;background:#FFFFFF;color:var(--text);line-
 <div class="section-label">Reports</div>
 
 <div class="tabs">
-  <button class="tab-btn active" data-filter="all">全部<span class="tab-count" id="count-all">3</span></button>
+  <button class="tab-btn active" data-filter="all">全部<span class="tab-count" id="count-all">4</span></button>
   <button class="tab-btn" data-filter="half">半日报<span class="tab-count" id="count-half">1</span></button>
   <button class="tab-btn" data-filter="midday">盘中报<span class="tab-count" id="count-midday">1</span></button>
-  <button class="tab-btn" data-filter="daily">日报<span class="tab-count" id="count-daily">0</span></button>
+  <button class="tab-btn" data-filter="daily">日报<span class="tab-count" id="count-daily">1</span></button>
   <button class="tab-btn" data-filter="weekly">周报<span class="tab-count" id="count-weekly">1</span></button>
   <button class="tab-btn" data-filter="monthly">月报<span class="tab-count" id="count-monthly">0</span></button>
 </div>
 
 <div class="reports" id="report-list">
 
-<!-- 盘中扫描 — 最新在前 -->
+<!-- 日报 — 最新在前 -->
+<a class="report-card" data-type="daily" href="2026-06-01-日报.html">
+<span class="rc-week">6/1</span>
+<div class="rc-body">
+<div class="rc-title">科技续跌科创50两日暴挫10%，煤炭AI应用双线涨停潮<span class="rc-type rc-type-daily">日报</span><span class="tag tag-down">创业板指 -2.15%</span></div>
+<div class="rc-date">2026年6月1日 · 收盘复盘</div>
+</div>
+<span class="rc-arrow">→</span>
+</a>
+
+<!-- 盘中扫描 -->
 <a class="report-card" data-type="midday" href="2026-06-01-盘中.html">
 <span class="rc-week">6/1</span>
 <div class="rc-body">
