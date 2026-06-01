@@ -162,22 +162,27 @@ td .name{font-weight:600;}
 .section-divider{margin:16px 0;height:1px;background:var(--border);}
 
 /* Limit Timeline — 涨停时间轴 */
-.lt-row{display:flex;align-items:center;gap:10px;margin:6px 0;}
-.lt-name{min-width:76px;font-weight:600;font-size:13px;white-space:nowrap;}
-.lt-track{position:relative;flex:1;height:18px;background:linear-gradient(90deg,#f1f5f9 0%,#f1f5f9 100%);border-radius:var(--radius-pill);overflow:visible;}
-.lt-fill{position:absolute;top:0;left:0;height:100%;border-radius:var(--radius-pill);transition:width .4s;}
+.lt-row{display:flex;align-items:flex-end;gap:10px;margin:0 0 14px 0;}
+.lt-name{min-width:76px;font-weight:600;font-size:13px;white-space:nowrap;padding-bottom:4px;}
+.lt-wrap{position:relative;flex:1;height:32px;}
+.lt-track{position:absolute;bottom:0;left:0;right:0;height:6px;background:#e5e7eb;border-radius:3px;}
+.lt-fill{position:absolute;bottom:0;left:0;height:6px;border-radius:3px;transition:width .4s;}
 .lt-fill.strong{background:linear-gradient(90deg,var(--error),#f43f5e);}
 .lt-fill.mid{background:linear-gradient(90deg,var(--warning),#fb923c);}
 .lt-fill.weak{background:linear-gradient(90deg,#94a3b8,#64748b);}
-.lt-fill.rebounce{background:repeating-linear-gradient(90deg,var(--warning) 0 6px,transparent 6px 10px);}
-.lt-dot{position:absolute;top:50%;width:8px;height:8px;border-radius:50%;transform:translateY(-50%);border:2px solid #fff;z-index:2;}
-.lt-dot.seal{background:var(--error);}
-.lt-dot.burst{background:var(--tertiary);border-color:var(--warning);}
-.lt-time{min-width:50px;font-family:'Fira Code',monospace;font-size:11px;color:var(--text2);text-align:right;}
-.lt-badge{display:inline-block;padding:1px 8px;font-size:10px;font-weight:700;border-radius:var(--radius-pill);line-height:1.6;margin-left:4px;}
+.lt-marker{position:absolute;bottom:8px;display:flex;flex-direction:column;align-items:center;transform:translateX(-50%);}
+.lt-marker .lt-pin{width:2px;height:12px;border-radius:1px;}
+.lt-marker .lt-pin.seal{background:var(--error);}
+.lt-marker .lt-pin.burst{background:var(--tertiary);}
+.lt-marker .lt-head{width:10px;height:10px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);}
+.lt-marker .lt-head.seal{background:var(--error);}
+.lt-marker .lt-head.burst{background:var(--tertiary);border-color:var(--warning);}
+.lt-marker .lt-label{font-family:'Fira Code',monospace;font-size:9px;color:var(--text2);white-space:nowrap;margin-bottom:2px;}
+.lt-time{min-width:50px;font-family:'Fira Code',monospace;font-size:11px;color:var(--text2);text-align:right;padding-bottom:4px;}
+.lt-badge{display:inline-block;padding:1px 8px;font-size:10px;font-weight:700;border-radius:var(--radius-pill);line-height:1.6;margin-left:4px;white-space:nowrap;}
 .lt-badge.seal-badge{background:rgba(225,29,72,0.12);color:var(--primary);}
 .lt-badge.burst-badge{background:rgba(250,204,21,0.25);color:#92400e;}
-.lt-ticks{display:flex;justify-content:space-between;font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);opacity:0.6;padding:0 2px;margin-bottom:2px;}
+.lt-ticks{display:flex;justify-content:space-between;font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);opacity:0.6;padding:0 2px;margin-bottom:4px;}
 .lt-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--text2);margin-top:8px;}
 .lt-legend-item{display:flex;align-items:center;gap:4px;}
 .lt-legend-swatch{width:16px;height:6px;border-radius:3px;}
@@ -370,9 +375,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">视觉中国</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:3%;"></div>
-      <div class="lt-dot seal" style="left:3%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:3%;"><div class="lt-label">9:39</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:3%;"></div></div>
     </div>
     <div class="lt-time">~9:39</div>
     <div><span class="lt-badge seal-badge">秒封</span></div>
@@ -380,9 +385,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">税友股份</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:3%;"></div>
-      <div class="lt-dot seal" style="left:3%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:3%;"><div class="lt-label">9:39</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:3%;"></div></div>
     </div>
     <div class="lt-time">~9:39</div>
     <div><span class="lt-badge seal-badge">秒封</span></div>
@@ -390,9 +395,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">天地在线</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:8%;"></div>
-      <div class="lt-dot seal" style="left:8%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:8%;"><div class="lt-label">9:55</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:8%;"></div></div>
     </div>
     <div class="lt-time">~9:55</div>
     <div><span class="lt-badge seal-badge">早封 · 3连板</span></div>
@@ -400,9 +405,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">掌阅科技</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:15%;"></div>
-      <div class="lt-dot seal" style="left:15%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:15%;"><div class="lt-label">10:10</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:15%;"></div></div>
     </div>
     <div class="lt-time">~10:10</div>
     <div><span class="lt-badge seal-badge">4天2板</span></div>
@@ -410,9 +415,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">软通动力</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:10%;"></div>
-      <div class="lt-dot seal" style="left:10%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:10%;"><div class="lt-label">10:00</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:10%;"></div></div>
     </div>
     <div class="lt-time">~10:00</div>
     <div><span class="lt-badge seal-badge">20cm强封</span></div>
@@ -420,9 +425,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">用友网络</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:20%;"></div>
-      <div class="lt-dot seal" style="left:20%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:20%;"><div class="lt-label">10:20</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:20%;"></div></div>
     </div>
     <div class="lt-time">~10:20</div>
     <div><span class="lt-badge seal-badge">上午封</span></div>
@@ -430,9 +435,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">久其软件</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:25%;"></div>
-      <div class="lt-dot seal" style="left:25%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:25%;"><div class="lt-label">10:30</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:25%;"></div></div>
     </div>
     <div class="lt-time">~10:30</div>
     <div><span class="lt-badge seal-badge">上午封</span></div>
@@ -443,9 +448,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">春秋电子</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:1%;"></div>
-      <div class="lt-dot seal" style="left:1%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:1%;"><div class="lt-label">9:31</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:1%;"></div></div>
     </div>
     <div class="lt-time">9:31</div>
     <div><span class="lt-badge seal-badge">一字封 · 2连板</span></div>
@@ -453,9 +458,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">胜利精密</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:1%;"></div>
-      <div class="lt-dot seal" style="left:1%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:1%;"><div class="lt-label">9:31</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:1%;"></div></div>
     </div>
     <div class="lt-time">9:31</div>
     <div><span class="lt-badge seal-badge">一字封</span></div>
@@ -463,9 +468,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">英力股份</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:1%;"></div>
-      <div class="lt-dot seal" style="left:1%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:1%;"><div class="lt-label">9:31</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:1%;"></div></div>
     </div>
     <div class="lt-time">9:31</div>
     <div><span class="lt-badge seal-badge">一字封</span></div>
@@ -476,9 +481,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">大有能源</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:12%;"></div>
-      <div class="lt-dot seal" style="left:12%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:12%;"><div class="lt-label">10:05</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:12%;"></div></div>
     </div>
     <div class="lt-time">~10:05</div>
     <div><span class="lt-badge seal-badge">早封龙头</span></div>
@@ -486,9 +491,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">郑州煤电</div>
-    <div class="lt-track">
-      <div class="lt-fill strong" style="width:15%;"></div>
-      <div class="lt-dot seal" style="left:15%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:15%;"><div class="lt-label">10:10</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill strong" style="width:15%;"></div></div>
     </div>
     <div class="lt-time">~10:10</div>
     <div><span class="lt-badge seal-badge">早封</span></div>
@@ -496,9 +501,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">晋控煤业</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:18%;"></div>
-      <div class="lt-dot seal" style="left:18%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:18%;"><div class="lt-label">10:15</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:18%;"></div></div>
     </div>
     <div class="lt-time">~10:15</div>
     <div><span class="lt-badge seal-badge">上午封</span></div>
@@ -506,9 +511,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">潞安环能</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:22%;"></div>
-      <div class="lt-dot seal" style="left:22%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:22%;"><div class="lt-label">10:25</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:22%;"></div></div>
     </div>
     <div class="lt-time">~10:25</div>
     <div><span class="lt-badge seal-badge">上午封</span></div>
@@ -516,10 +521,10 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">兖矿能源</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:30%;"></div>
-      <div class="lt-dot burst" style="left:22%;"></div>
-      <div class="lt-dot seal" style="left:30%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:22%;"><div class="lt-label">炸板</div><div class="lt-head burst"></div><div class="lt-pin burst"></div></div>
+      <div class="lt-marker" style="left:30%;"><div class="lt-label">10:45</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:30%;"></div></div>
     </div>
     <div class="lt-time">~10:45</div>
     <div><span class="lt-badge burst-badge">炸板回封</span></div>
@@ -527,9 +532,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">昊华能源</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:28%;"></div>
-      <div class="lt-dot seal" style="left:28%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:28%;"><div class="lt-label">10:40</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:28%;"></div></div>
     </div>
     <div class="lt-time">~10:40</div>
     <div><span class="lt-badge seal-badge">上午封</span></div>
@@ -540,10 +545,10 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">华能国际</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:55%;"></div>
-      <div class="lt-dot burst" style="left:25%;"></div>
-      <div class="lt-dot seal" style="left:55%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:25%;"><div class="lt-label">炸板</div><div class="lt-head burst"></div><div class="lt-pin burst"></div></div>
+      <div class="lt-marker" style="left:55%;"><div class="lt-label">13:40</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:55%;"></div></div>
     </div>
     <div class="lt-time">~13:40</div>
     <div><span class="lt-badge burst-badge">午前炸→午后回封</span></div>
@@ -551,9 +556,9 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">国新能源</div>
-    <div class="lt-track">
-      <div class="lt-fill mid" style="width:35%;"></div>
-      <div class="lt-dot seal" style="left:35%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:35%;"><div class="lt-label">11:00</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill mid" style="width:35%;"></div></div>
     </div>
     <div class="lt-time">~11:00</div>
     <div><span class="lt-badge seal-badge">上午封</span></div>
@@ -561,10 +566,10 @@ td .name{font-weight:600;}
 
   <div class="lt-row">
     <div class="lt-name">巨化股份</div>
-    <div class="lt-track">
-      <div class="lt-fill weak" style="width:65%;"></div>
-      <div class="lt-dot burst" style="left:40%;"></div>
-      <div class="lt-dot seal" style="left:65%;"></div>
+    <div class="lt-wrap">
+      <div class="lt-marker" style="left:40%;"><div class="lt-label">炸板</div><div class="lt-head burst"></div><div class="lt-pin burst"></div></div>
+      <div class="lt-marker" style="left:65%;"><div class="lt-label">14:05</div><div class="lt-head seal"></div><div class="lt-pin seal"></div></div>
+      <div class="lt-track"><div class="lt-fill weak" style="width:65%;"></div></div>
     </div>
     <div class="lt-time">~14:05</div>
     <div><span class="lt-badge burst-badge">午后回封</span></div>
@@ -575,8 +580,8 @@ td .name{font-weight:600;}
     <div class="lt-legend-item"><div class="lt-legend-swatch" style="background:var(--error);"></div> 强封（30分钟内）</div>
     <div class="lt-legend-item"><div class="lt-legend-swatch" style="background:var(--warning);"></div> 上午封</div>
     <div class="lt-legend-item"><div class="lt-legend-swatch" style="background:#94a3b8;"></div> 午后封/弱</div>
-    <div class="lt-legend-item"><div class="lt-dot burst" style="position:static;transform:none;display:inline-block;"></div> 炸板</div>
-    <div class="lt-legend-item"><div class="lt-dot seal" style="position:static;transform:none;display:inline-block;"></div> 封板</div>
+    <div class="lt-legend-item"><div style="width:10px;height:10px;border-radius:50%;background:var(--tertiary);border:2px solid var(--warning);display:inline-block;"></div> 炸板</div>
+    <div class="lt-legend-item"><div style="width:10px;height:10px;border-radius:50%;background:var(--error);border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);display:inline-block;"></div> 封板</div>
   </div>
 
   <p class="summary-text" style="margin-top:12px;">
