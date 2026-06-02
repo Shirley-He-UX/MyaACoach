@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPO光模块反弹+半导体回暖，创业板指半日涨2.15% — 阳子PMO半日报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;
+  --surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);
+  --bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;
+  --success:#16A34A;--error:#DC2626;--warning:#D97706;
+  --shadow-glass:8px 8px 32px rgba(0,0,0,0.08);
+  --shadow-md:4px 4px 16px rgba(0,0,0,0.10);
+  --radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}
+.change-down{color:var(--success);}
+
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}
+.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}
+.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}
+.tag-yellow{background:#FEF3C7;color:#92400E;}
+.tag-gray{background:#F3F4F6;color:var(--text2);}
+
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+
+@media(max-width:640px){
+  .hero-band{padding:40px 0 32px;}
+  .hero-content{padding:0 20px;}
+  .container{padding:24px 16px 48px;}
+  .section{padding:20px;}
+  .data-cards{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero-band">
+<div class="hero-content">
+<div class="hero-week">2026.06.02 · 半日分析 · 11:30</div>
+<h1 class="hero-title">CPO光模块反弹+半导体回暖<br>创业板指半日涨2.15%</h1>
+<p class="hero-sub">进攻板块全线反弹：CPO涨超14%、半导体拉升、光纤光缆涨停潮 · 市场跌多涨少、4100+股下跌的极端分化继续</p>
+</div>
+</div>
+
+<div class="container">
+
+<!-- 1. 大盘总览 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <span class="section-title">上午盘大盘总览</span>
+  </div>
+  <div class="data-cards">
+    <div class="data-card" style="border-left-color:var(--error)">
+      <div class="label">上证指数</div>
+      <div class="value">4056.24</div>
+      <div class="change change-down">-0.04%</div>
+    </div>
+    <div class="data-card" style="border-left-color:var(--success)">
+      <div class="label">深证成指</div>
+      <div class="value">15487.63</div>
+      <div class="change change-up">+0.96%</div>
+    </div>
+    <div class="data-card" style="border-left-color:var(--success)">
+      <div class="label">创业板指</div>
+      <div class="value">4035.93</div>
+      <div class="change change-up">+2.15%</div>
+    </div>
+    <div class="data-card" style="border-left-color:var(--secondary)">
+      <div class="label">半日成交额</div>
+      <div class="value" style="font-size:20px;">~1.62万亿</div>
+      <div class="change">较上日同期基本持平</div>
+    </div>
+  </div>
+  <p class="summary-text">
+    三大指数集体高开，沪指探底回升微跌，深成指和创业板指高开高走。创业板指半日大涨<strong>2.15%</strong>，科技成长方向强势反弹。但市场极端分化——两市<strong>超4100只个股下跌</strong>，上涨个股不到半数，典型的"权重涨、个股跌"格局。上周五连续两日被砸的CPO/光模块/半导体今天集体反弹修复，资金回流进攻板块。
+  </p>
+</section>
+
+<!-- 2. 上午异动板块 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <span class="section-title">上午异动板块</span>
+  </div>
+
+  <!-- 进攻板块：CPO/光模块 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>CPO / 光模块</div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      <strong>上午最强方向。</strong>机构指出2027年光模块需求预期加速明朗，上游核心器件缺料问题迎来改善拐点，龙头厂商产能与业绩弹性有望加速释放。中国移动三波段超低损耗多芯光缆线路开通，进一步催化光通信产业链。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">阿莱德</span></td><td><span class="code">301419</span></td><td><strong style="color:var(--error)">+14%+</strong></td><td>CPO核心，领涨</td></tr>
+        <tr><td><span class="name">光库科技</span></td><td><span class="code">300620</span></td><td><strong style="color:var(--error)">+14%+</strong></td><td>光器件龙头</td></tr>
+        <tr><td><span class="name">东山精密</span></td><td><span class="code">002384</span></td><td><strong style="color:var(--error)">+9%+</strong></td><td>光模块+PCB，昨日跌停今日修复</td></tr>
+        <tr><td><span class="name">新易盛</span></td><td><span class="code">300502</span></td><td><strong style="color:var(--error)">+9%+</strong></td><td>800G光模块龙头</td></tr>
+        <tr><td><span class="name">源杰科技</span></td><td><span class="code">688498</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>光芯片</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 进攻板块：半导体 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>半导体</div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      震荡拉升。昨日科创50暴跌5%后，今天半导体超跌反弹明显。存储芯片、先进封装方向资金回补。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">云汉芯城</span></td><td><span class="code">688281</span></td><td><strong style="color:var(--error)">20cm涨停</strong></td><td>存储芯片概念</td></tr>
+        <tr><td><span class="name">颀中科技</span></td><td><span class="code">688352</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>先进封装</td></tr>
+        <tr><td><span class="name">江丰电子</span></td><td><span class="code">300666</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>靶材龙头</td></tr>
+        <tr><td><span class="name">杰华特</span></td><td><span class="code">688141</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>模拟芯片</td></tr>
+        <tr><td><span class="name">寒武纪</span></td><td><span class="code">688256</span></td><td><strong style="color:var(--error)">+5%+</strong></td><td>AI芯片龙头，权重拉升</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 进攻板块：光纤光缆 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>光纤光缆</div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      涨停潮。中国移动全球首条S+C+L三波段超低损多芯光缆线路在青岛开通，催化光纤光缆板块集体爆发。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">长飞光纤</span></td><td><span class="code">601869</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>光纤光缆龙头</td></tr>
+        <tr><td><span class="name">亨通光电</span></td><td><span class="code">600487</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>光通信+海缆</td></tr>
+        <tr><td><span class="name">汇源通信</span></td><td><span class="code">000586</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>光纤概念</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MLCC -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-blue">新方向</span>MLCC</div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      反复活跃。高盛研报指出MLCC已成AI服务器物料清单中第三大成本项（仅次于GPU和存储芯片），缺货涨价预期持续升温。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">国瓷材料</span></td><td><span class="code">300285</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>MLCC粉体龙头，股价创历史新高</td></tr>
+        <tr><td><span class="name">风华高科</span></td><td><span class="code">000636</span></td><td><strong style="color:var(--error)">一度触及涨停</strong></td><td>MLCC国产替代</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 3. 上午下跌板块 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <span class="section-title">上午下跌板块</span>
+  </div>
+  <p class="summary-text">
+    虽然科技权重反弹，但两市超<strong>4100只个股下跌</strong>，跌多涨少。下跌集中在前期炒作的泛娱乐、体育、消费概念，资金加速撤离：
+  </p>
+  <div class="data-cards" style="margin-top:12px;">
+    <div class="data-card" style="border-left-color:var(--success)">
+      <div class="label">影视院线</div>
+      <div class="value" style="font-size:16px;color:var(--success)">集体走弱</div>
+      <div class="change">百纳千成跌超8%</div>
+    </div>
+    <div class="data-card" style="border-left-color:var(--success)">
+      <div class="label">短剧游戏</div>
+      <div class="value" style="font-size:16px;color:var(--success)">震荡下挫</div>
+      <div class="change">粤传媒跌停</div>
+    </div>
+    <div class="data-card" style="border-left-color:var(--success)">
+      <div class="label">体育概念</div>
+      <div class="value" style="font-size:16px;color:var(--success)">集体调整</div>
+      <div class="change">舒华体育跌停</div>
+    </div>
+  </div>
+  <p class="summary-text" style="margin-top:12px;">
+    <strong>解读：</strong>权重科技股反弹修复吸引资金回流，边缘题材（影视/短剧/体育）被抽血明显。市场"跷跷板效应"显著——进攻板块反弹一天，防守和题材方向就被挤压。
+  </p>
+</section>
+
+<!-- 4. 上午涨停与连板 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <span class="section-title">上午涨停 & 连板晋级</span>
+  </div>
+  <p class="summary-text" style="margin-bottom:12px;">
+    昨日收盘连板格局：<strong>达实智能12天7板</strong>（最高连板）、粤电力A 4连板、合锻智能 4连板、天地在线 3连板。今日上午晋级情况：
+  </p>
+  <table>
+    <thead><tr><th>连板高度</th><th>个股</th><th>代码</th><th>今日上午状态</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag tag-red">最高板</span></td><td><span class="name">达实智能</span></td><td><span class="code">002421</span></td><td><strong style="color:var(--error)">+10% 涨停</strong></td><td>AI应用端，反包上攻</td></tr>
+      <tr><td>5连板?</td><td><span class="name">粤电力A</span></td><td><span class="code">000539</span></td><td>观察中</td><td>电力算力概念，昨日4连板</td></tr>
+      <tr><td>5连板?</td><td><span class="name">合锻智能</span></td><td><span class="code">603011</span></td><td>观察中</td><td>昨日4连板</td></tr>
+      <tr><td>4连板?</td><td><span class="name">天地在线</span></td><td><span class="code">002995</span></td><td>观察中</td><td>AI应用3连板龙头</td></tr>
+      <tr><td>3连板?</td><td><span class="name">*ST闻泰</span></td><td><span class="code">600745</span></td><td>观察中</td><td>昨日5连板（封板金额居首2.64亿）</td></tr>
+    </tbody>
+  </table>
+  <p class="summary-text" style="margin-top:12px;">
+    <strong>上午涨停亮点：</strong>云汉芯城20cm涨停（存储芯片）、长飞光纤/亨通光电/汇源通信涨停（光纤光缆）。达实智能反包涨停继续充当最高板情绪标杆。4只电力牛股（华能蒙电、晋控电力、粤电力A、泓淋电力）集体发公告"自泼冷水"称不涉及算力业务——下午需警惕电力板块分歧回落。
+  </p>
+</section>
+
+<!-- 5. 风格切换分析 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <span class="section-title">进攻/防守风格切换</span>
+  </div>
+  <div class="data-cards">
+    <div class="data-card" style="border-left-color:var(--error)">
+      <div class="label">进攻板块（半导体/光模块/PCB）</div>
+      <div class="value" style="font-size:16px;">⬆️ 今日反弹</div>
+      <div class="change change-up">CPO+14%，半导体拉升，超跌修复</div>
+    </div>
+    <div class="data-card" style="border-left-color:var(--success)">
+      <div class="label">防守板块（电力/煤炭）</div>
+      <div class="value" style="font-size:16px;">⚠️ 分歧</div>
+      <div class="change">4家电力公司澄清不涉及算力，防守板块今日分化</div>
+    </div>
+  </div>
+  <p class="summary-text" style="margin-top:12px;">
+    <strong>风格信号：进攻板块一日反弹，非反转确认。</strong>昨日科创50暴跌5%后，今天CPO/半导体明显超跌反弹，创业板指涨超2%。但4100+个股下跌说明反弹仅限于权重，中小盘资金仍在外流。同时电力板块连续4家公司"自泼冷水"声明不涉算力业务，防守板块内部开始分歧——需警惕下午电力出现退潮。
+    <br><br>
+    <strong>关键判断：</strong>如果下午进攻板块能维持涨幅、个股跌幅收窄，则短期超跌反弹行情成立，后续进攻板块有望继续修复2-3天。反之若午后CPO/半导体冲高回落、创业板指回吐涨幅，则说明反弹力度不足，高低切换逻辑仍将延续。
+  </p>
+</section>
+
+<!-- 6. 盯盘清单个股追踪 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <span class="section-title">昨日盯盘清单 · 上午追踪</span>
+  </div>
+  <table>
+    <thead><tr><th>板块</th><th>个股</th><th>代码</th><th>昨日状态</th><th>今日上午表现</th><th>操作建议</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="tag tag-red">进攻</span></td>
+        <td><span class="name">天地在线</span></td>
+        <td><span class="code">002995</span></td>
+        <td>3连板</td>
+        <td>观察晋级中</td>
+        <td>若封板则持有，炸板则出</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-red">进攻</span></td>
+        <td><span class="name">软通动力</span></td>
+        <td><span class="code">301236</span></td>
+        <td>20cm涨停</td>
+        <td>观察溢价</td>
+        <td>高开低走则减仓，高开高走可持</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-red">进攻</span></td>
+        <td><span class="name">东山精密</span></td>
+        <td><span class="code">002384</span></td>
+        <td>跌停</td>
+        <td><strong style="color:var(--error)">+9%+ 强势反弹</strong></td>
+        <td>跌停后次日修复，短线资金回补</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-green">防守</span></td>
+        <td><span class="name">大有能源</span></td>
+        <td><span class="code">600403</span></td>
+        <td>涨停（首板）</td>
+        <td>观察连板</td>
+        <td>煤炭板块分歧日，谨慎</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-green">防守</span></td>
+        <td><span class="name">兖矿能源</span></td>
+        <td><span class="code">600188</span></td>
+        <td>涨停</td>
+        <td>观察</td>
+        <td>300亿+中军，机构态度风向标</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-green">防守</span></td>
+        <td><span class="name">粤电力A</span></td>
+        <td><span class="code">000539</span></td>
+        <td>4连板</td>
+        <td>⚠️ 公告澄清不涉及算力</td>
+        <td>利空公告后关注是否仍封板，否则回避</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 7. 下午盘关注与策略 -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">07</span>
+    <span class="section-title">下午盘关注重点 & 策略提示</span>
+  </div>
+  <div class="sub-section">
+    <div class="sub-head">🔍 下午重点观察</div>
+    <p class="summary-text">
+      <strong>1. CPO/光模块能否维持涨幅：</strong>阿莱德+14%、光库科技+14%，午后如果继续走高，则确认超跌反弹有效，可择机试仓。如果冲高回落，则仅为一日游。<br>
+      <strong>2. 创业板指涨幅能否守住：</strong>半日涨2.15%，需观察午后是否冲高回落（参考上周五创业板也曾冲高回落跌近1%）。<br>
+      <strong>3. 电力板块分歧：</strong>4家公司集体"自泼冷水"澄清不涉算力业务，下午电力板块是否出现退潮是防守方向的关键信号。<br>
+      <strong>4. 连板晋级：</strong>达实智能（最高板）已封涨停，粤电力A/合锻智能能否成功5连板？天地在线能否4连板？决定短线情绪高度。<br>
+      <strong>5. 个股跌幅能否收窄：</strong>目前4100+只股票下跌，如果午后下跌数收窄至3000以下，说明反弹扩散；否则仍是权重独涨。
+    </p>
+  </div>
+  <div class="sub-section">
+    <div class="sub-head">💡 策略建议</div>
+    <p class="summary-text">
+      <strong>短线操作：</strong>进攻板块（CPO/半导体/光纤光缆）超跌反弹第一天，不宜重仓追高。可轻仓试探性参与确定性强的个股（如光纤光缆涨停股次日溢价）。防守板块（电力）出现利空澄清公告，下午不追高，等分歧结束后再决策。<br><br>
+      <strong>中线持仓：</strong>如果持有CPO/光模块仓位，今天反弹可适当减仓锁定利润。如果空仓，可等午后确认反弹有效后，在尾盘低吸。MLCC方向（国瓷材料创新高）是新的独立主线，可持续跟踪。
+    </p>
+  </div>
+</section>
+
+</div>
+
+<div class="footer">
+<p>数据来源：证券时报 / 财联社 / 东方财富 / 新浪财经 · 联网核实</p>
+<p class="warn">风险提示：本报告基于公开信息整理，不构成投资建议。市场有风险，投资需谨慎。</p>
+</div>
+
+</body>
+</html>
