@@ -85,13 +85,29 @@ tr:last-child td{border-bottom:none}
   th,td{padding:10px 12px}
   .trial-card{padding:16px}
 }
+/* Top Nav Bar */
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
 </style>
 </head>
 <body>
 
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-01-半日.html">← 上一篇</a>
+    <a href="2026-06-01-日报.html">下一篇 →</a>
+  </div>
+</nav>
+
 <div class="hero-band">
 <div class="hero-inner">
-<a class="hero-back" href="index.html">&larr; 返回报告列表</a>
 <div class="hero-week">2026 &middot; 06/01 &middot; 盘中扫描</div>
 <h1>AI PC爆发+煤炭涨停潮，科技续跌风格切换</h1>
 <div class="hero-meta">2026年6月1日（周一）14:30 盘中 &middot; 阳子PMO</div>

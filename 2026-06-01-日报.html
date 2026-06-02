@@ -201,9 +201,26 @@ td .name{font-weight:600;}
   .section{padding:20px 16px;}
   .data-cards{grid-template-columns:repeat(2,1fr);}
 }
+/* Top Nav Bar */
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
 </style>
 </head>
 <body>
+
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-01-盘中.html">← 上一篇</a>
+    <a href="2026-06-02-半日.html">下一篇 →</a>
+  </div>
+</nav>
 
 <!-- Hero Band -->
 <header class="hero-band">
