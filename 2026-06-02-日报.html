@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPO涨停潮+MLCC爆发，创业板指大涨2.66%，3800+股下跌的极端分化 — 阳子PMO日报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;
+  --surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);
+  --bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;
+  --success:#16A34A;--error:#DC2626;--warning:#D97706;
+  --shadow-glass:8px 8px 32px rgba(0,0,0,0.08);
+  --shadow-md:4px 4px 16px rgba(0,0,0,0.10);
+  --radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(26px,4.5vw,42px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:700px;}
+.hero-meta{font-size:13px;opacity:0.6;margin-top:8px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}
+.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.deep-card{background:var(--bg);border-radius:var(--radius-md);padding:20px;margin:16px 0;border-left:4px solid var(--secondary);}
+.deep-card h4{font-size:16px;font-weight:700;margin-bottom:8px;}
+.meta-row{font-size:13px;color:var(--text2);margin-bottom:8px;}
+.dl{display:grid;grid-template-columns:80px 1fr;gap:6px 12px;font-size:14px;}
+.dt{font-weight:700;color:var(--text2);}.dd{color:var(--text);}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.trend-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0;}
+.trend-table th{background:var(--bg);padding:8px 10px;font-size:11px;font-weight:700;color:var(--text2);text-align:center;}
+.trend-table td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){
+  .hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}
+  .container{padding:24px 16px 48px;}.section{padding:20px;}
+  .data-cards{grid-template-columns:1fr 1fr;}
+  .top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-02-盘中.html">← 上一篇</a>
+    <a class="nav-disabled">下一篇 →</a>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026 · 06/02 · 日报</div>
+    <h1 class="hero-title">CPO涨停潮+MLCC爆发<br>创业板指大涨2.66%</h1>
+    <p class="hero-sub">进攻板块超跌反弹全面爆发 · 通信+5.71%领涨申万 · 96只涨停 · 3800+股下跌的极端权重行情 · 谷歌800亿加码AI基建</p>
+    <p class="hero-meta">2026年6月2日（周二）收盘复盘 · 阳子PMO</p>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- 1. 大盘总览 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">01</span><span class="section-title">大盘总览</span></div>
+  <div class="data-cards">
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">上证指数</div><div class="value">4076</div><div class="change change-up">+0.43% · 收复4076</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">深证成指</div><div class="value">15604</div><div class="change change-up">+1.63%</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">创业板指</div><div class="value">4061</div><div class="change change-up">+2.66% 🔥</div></div>
+    <div class="data-card" style="border-left-color:var(--secondary)"><div class="label">全天成交额</div><div class="value" style="font-size:20px;">2.77万亿</div><div class="change">较上日缩量845亿</div></div>
+    <div class="data-card" style="border-left-color:var(--error)"><div class="label">上涨/下跌</div><div class="value" style="font-size:18px;">1543↑ / 3876↓</div><div class="change change-up">仅28%个股上涨</div></div>
+    <div class="data-card" style="border-left-color:var(--secondary)"><div class="label">主力净流入</div><div class="value" style="font-size:18px;">+65.12亿</div><div class="change change-up">通信+电子+有色抢筹</div></div>
+  </div>
+  <p class="summary-text">
+    三大指数集体收涨，创业板指大涨<strong>2.66%</strong>领跑——但这是一场<strong>极端权重行情</strong>：仅1543只个股上涨（28%），超3800只下跌。少数科技权重股（CPO/半导体/MLCC）带动指数上行，中小盘全面承压。申万行业仅8个上涨，通信+5.71%领涨，传媒-3.04%领跌。全天成交2.77万亿，较昨日缩量845亿，说明反弹以存量资金调仓为主，尚未有增量资金入场。
+  </p>
+</section>
+
+<!-- 2. 异动上涨板块 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">02</span><span class="section-title">异动上涨板块</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>CPO / 光模块 <span class="tag tag-yellow">涨停潮 🔥</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      <strong>今日最强方向。</strong>谷歌母公司拟融资800亿美元加码AI基建+伯克希尔入股100亿；新易盛披露1.6T光模块订单逐季快速增长；机构指出2027年光模块需求预期加速明朗。CPO概念午后加速拉升，多股涨停。通信行业全天涨+5.71%，主力资金抢筹居首。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">意华股份</span></td><td><span class="code">002897</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>CPO连接器</td></tr>
+        <tr><td><span class="name">阿莱德</span></td><td><span class="code">301419</span></td><td><strong style="color:var(--error)">+14%+</strong></td><td>CPO核心</td></tr>
+        <tr><td><span class="name">光库科技</span></td><td><span class="code">300620</span></td><td><strong style="color:var(--error)">+14%+</strong></td><td>光器件龙头</td></tr>
+        <tr><td><span class="name">源杰科技</span></td><td><span class="code">688498</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>光芯片</td></tr>
+        <tr><td><span class="name">联特科技</span></td><td><span class="code">301205</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>CPO连接器</td></tr>
+        <tr><td><span class="name">新易盛</span></td><td><span class="code">300502</span></td><td><strong style="color:var(--error)">+9%+</strong></td><td>800G龙头，1.6T订单</td></tr>
+        <tr><td><span class="name">东山精密</span></td><td><span class="code">002384</span></td><td><strong style="color:var(--error)">+9%+</strong></td><td>昨日跌停→今日V型反转</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>半导体 <span class="tag tag-blue">超跌反弹</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      科创50昨日暴跌5%后，今日半导体板块全面修复。电子行业主力资金抢筹72.06亿。先进封装、存储芯片、靶材方向涨幅居前。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">云汉芯城</span></td><td><span class="code">688281</span></td><td><strong style="color:var(--error)">20cm涨停</strong></td><td>存储芯片</td></tr>
+        <tr><td><span class="name">颀中科技</span></td><td><span class="code">688352</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>先进封装</td></tr>
+        <tr><td><span class="name">江丰电子</span></td><td><span class="code">300666</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>靶材龙头</td></tr>
+        <tr><td><span class="name">杰华特</span></td><td><span class="code">688141</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>模拟芯片</td></tr>
+        <tr><td><span class="name">寒武纪</span></td><td><span class="code">688256</span></td><td><strong style="color:var(--error)">+5%+</strong></td><td>AI芯片权重</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>光纤光缆 / 铜缆高速连接 <span class="tag tag-yellow">涨停潮</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      中国移动全球首条S+C+L三波段超低损多芯光缆线路开通催化。铜缆高速连接概念涨3.12%。博威合金、远东股份、长飞光纤涨停。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">长飞光纤</span></td><td><span class="code">601869</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>光纤龙头</td></tr>
+        <tr><td><span class="name">亨通光电</span></td><td><span class="code">600487</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>光通信+海缆</td></tr>
+        <tr><td><span class="name">汇源通信</span></td><td><span class="code">000586</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>光纤概念</td></tr>
+        <tr><td><span class="name">博威合金</span></td><td><span class="code">601137</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>铜缆高速连接</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-blue">新方向</span>MLCC <span class="tag tag-yellow">爆发 · 需求或暴增4倍</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      高盛预计MLCC需求量从2025至2030年增长约<strong>4.3倍</strong>，AI服务器物料清单第三大成本项。"戴维斯双击"预期。国瓷材料创历史新高，风华高科一度涨停。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">国瓷材料</span></td><td><span class="code">300285</span></td><td><strong style="color:var(--error)">+10%+</strong></td><td>MLCC粉体龙头 · 创历史新高</td></tr>
+        <tr><td><span class="name">风华高科</span></td><td><span class="code">000636</span></td><td><strong style="color:var(--error)">一度涨停</strong></td><td>MLCC国产替代</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-blue">新方向</span>有色金属 / 算力金属 <span class="tag tag-yellow">+3.26%</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      "算力金属"概念爆发。金属锡价格从2025年11月的30万/吨涨至42万/吨。AI产业快速发展拉动锡等稀缺金属需求。有色金属主力资金抢筹82.33亿。
+    </p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-green">防守</span>电力 <span class="tag tag-gray">分歧分化</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      电力设备全天资金流出56.52亿。多家公司公告不涉及算力业务后板块分化加剧。华能蒙电逆势涨停（6日4板），京能热力9天6板——但粤电力A低开承压，板块整体走弱。
+    </p>
+  </div>
+</section>
+
+<!-- 3. 连板股排列 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">03</span><span class="section-title">连板股排列</span></div>
+  <table>
+    <thead><tr><th>连板数</th><th>个股</th><th>代码</th><th>所属板块</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag tag-red">13天8板</span></td><td><span class="name">达实智能</span></td><td><span class="code">002421</span></td><td>AI应用</td><td>全市场最高标，反包上攻</td></tr>
+      <tr><td><span class="tag tag-red">5连板</span></td><td><span class="name">合锻智能</span></td><td><span class="code">603011</span></td><td>PCB/结构件</td><td>昨日4板→今日晋级5板</td></tr>
+      <tr><td><span class="tag tag-green">6日4板</span></td><td><span class="name">华能蒙电</span></td><td><span class="code">600863</span></td><td>电力</td><td>不认澄清公告继续做</td></tr>
+      <tr><td><span class="tag tag-yellow">9天6板</span></td><td><span class="name">京能热力</span></td><td><span class="code">600578</span></td><td>电力</td><td>电力板块最强标</td></tr>
+    </tbody>
+  </table>
+  <p class="summary-text" style="margin-top:12px;">
+    达实智能继续充当全市场最高板情绪标杆（13天8板）。合锻智能成功晋级5连板，横跨PCB+结构件方向。电力板块虽然整体承压，但华能蒙电和京能热力两只龙头仍在连板，说明电力主线尚未完全终结。
+  </p>
+</section>
+
+<!-- 4. 下跌板块概览 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">04</span><span class="section-title">下跌板块概览</span></div>
+  <div class="data-cards">
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">传媒</div><div class="value" style="font-size:18px;color:var(--success)">-3.04%</div><div class="change">领跌申万 · 资金流出44.75亿</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">美容护理</div><div class="value" style="font-size:18px;color:var(--success)">-2.78%</div><div class="change">消费类全线走弱</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">影视院线</div><div class="value" style="font-size:18px;color:var(--success)">集体走弱</div><div class="change">百纳千成跌超8%</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">足球概念</div><div class="value" style="font-size:18px;color:var(--success)">-2.79%</div><div class="change">粤传媒/舒华体育/共创草坪跌停</div></div>
+    <div class="data-card" style="border-left-color:var(--warning)"><div class="label">医药生物</div><div class="value" style="font-size:18px;color:var(--success)">-1.35%</div><div class="change">资金流出29.68亿</div></div>
+    <div class="data-card" style="border-left-color:var(--warning)"><div class="label">电力设备</div><div class="value" style="font-size:18px;color:var(--success)">-0.17%</div><div class="change">资金流出56.52亿</div></div>
+  </div>
+  <p class="summary-text" style="margin-top:12px;">
+    <strong>跷跷板效应极端化。</strong>科技权重反弹吸血效应显著——传媒、美容护理、影视、体育、医药全线被抽血。3800+只股票下跌，说明反弹资金高度集中在少数科技权重，绝大部分中小盘被动承压。
+  </p>
+</section>
+
+<!-- 5. 涨停数据汇总 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">05</span><span class="section-title">涨停数据汇总</span></div>
+  <div class="data-cards">
+    <div class="data-card"><div class="label">涨停数</div><div class="value">96</div><div class="change">较昨日166只大幅减少</div></div>
+    <div class="data-card"><div class="label">炸板数</div><div class="value">43</div><div class="change">一度触及涨停未封住</div></div>
+    <div class="data-card"><div class="label">封板率</div><div class="value">69.06%</div><div class="change">较昨日75.8%下降</div></div>
+    <div class="data-card"><div class="label">连板最高标</div><div class="value" style="font-size:18px;">达实智能</div><div class="change">13天8板</div></div>
+  </div>
+  <p class="summary-text">
+    涨停数从昨日166只→今日96只，大幅减少。封板率从75.8%→69.06%，短线情绪有所降温。涨停方向从昨日的"煤炭+AI应用"转向"CPO+光纤+MLCC"，反映资金从防守板块回流进攻板块。
+  </p>
+</section>
+
+<!-- 6. 龙虎榜重点 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">06</span><span class="section-title">龙虎榜重点</span></div>
+  <div class="data-cards">
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">通信行业</div><div class="value" style="font-size:16px;">主力抢筹 <strong>居首</strong></div><div class="change change-up">CPO/光纤全天涨+5.71%</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">有色金属</div><div class="value" style="font-size:16px;">主力抢筹 <strong>82.33亿</strong></div><div class="change change-up">算力金属概念爆发</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">电子行业</div><div class="value" style="font-size:16px;">主力抢筹 <strong>72.06亿</strong></div><div class="change change-up">半导体+MLCC双线</div></div>
+    <div class="data-card" style="border-left-color:var(--error)"><div class="label">传媒行业</div><div class="value" style="font-size:16px;">资金流出 <strong>44.75亿</strong></div><div class="change change-down">跌幅第一，被抽血</div></div>
+  </div>
+  <p class="summary-text" style="margin-top:12px;">
+    <strong>资金面核心信号：资金从防守板块和泛娱乐方向大举撤离，集中回流进攻板块（通信/电子/有色）。</strong>全天主力净流入65.12亿，通信+有色+电子三大行业合计抢筹200亿+，而传媒/电力设备/医药合计流出130亿+。北向资金逆势净流入（连续第7日）。
+  </p>
+</section>
+
+<!-- 7. 平台突破股筛选 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">07</span><span class="section-title">平台突破股筛选</span></div>
+  <div class="deep-card" style="border-left-color:var(--error)">
+    <h4>国瓷材料 <span class="code">300285</span> <span class="tag tag-blue">MLCC</span></h4>
+    <div class="meta-row">MLCC粉体全球龙头 | 股价创历史新高 | 突破前期平台</div>
+    <div class="dl">
+      <div class="dt">突破形态</div><div class="dd">5月中旬以来连续5天小阳线稳量蓄力，今日放量+10%突破前高创历史新高</div>
+      <div class="dt">催化剂</div><div class="dd">高盛研报"MLCC需求4.3倍增长"+ 中低容MLCC结构性短缺 + AI服务器第三大成本项</div>
+      <div class="dt">关注点</div><div class="dd">新高后回踩5日线是确认突破有效性的关键。如果3天内不跌破突破位，则突破有效</div>
+    </div>
+  </div>
+  <p class="summary-text">
+    其余板块中，CPO/半导体多为超跌反弹型，不符合"连续5天小阳线稳量蓄力+放量突破平台"的严格筛选条件。光纤光缆（长飞光纤）为消息驱动的突发涨停，缺乏前期蓄力阶段。仅国瓷材料满足全部条件。
+  </p>
+</section>
+
+<!-- 8. 300亿以上高壁垒个股深度分析 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">08</span><span class="section-title">300亿以上高壁垒个股深度分析</span></div>
+
+  <div class="deep-card">
+    <h4>新易盛 300502 <span class="tag tag-red">CPO · 800G龙头</span></h4>
+    <div class="meta-row">市值1600亿+ | 光模块+CPO | 核心客户：全球云厂商</div>
+    <div class="dl">
+      <div class="dt">护城河</div><div class="dd">800G/1.6T光模块技术领先，全球前三大光模块厂商，深度绑定北美云厂商</div>
+      <div class="dt">上涨逻辑</div><div class="dd">谷歌800亿AI基建融资+1.6T订单逐季快速增长+2027年需求预期加速明朗</div>
+      <div class="dt">下跌风险</div><div class="dd">超跌反弹持续性不确定/前期涨幅巨大筹码松动/海外客户去库存风险</div>
+      <div class="dt">买入条件</div><div class="dd">连续2天反弹确认后，回调至5日线附近轻仓试仓</div>
+    </div>
+  </div>
+
+  <div class="deep-card">
+    <h4>东山精密 002384 <span class="tag tag-red">CPO+PCB · V型反转</span></h4>
+    <div class="meta-row">市值800亿+ | 光模块+PCB+FPC | 核心客户：苹果/华为/数通客户</div>
+    <div class="dl">
+      <div class="dt">护城河</div><div class="dd">横跨CPO和PCB双主线，FPC+光模块一体化能力，客户粘性极强</div>
+      <div class="dt">上涨逻辑</div><div class="dd">昨日跌停→今日+9%的V型反转，超跌修复力度极强。6/1龙虎榜净买额居首</div>
+      <div class="dt">下跌风险</div><div class="dd">昨日跌停释放恐慌盘但筹码仍不稳/两天剧烈波动后短线博弈资金占比高</div>
+      <div class="dt">买入条件</div><div class="dd">等缩量回踩5日线，不追高。连续3天阳线确认底部后再加仓</div>
+    </div>
+  </div>
+
+  <div class="deep-card">
+    <h4>寒武纪 688256 <span class="tag tag-red">AI芯片 · 权重</span></h4>
+    <div class="meta-row">市值3000亿+ | AI芯片设计 | 国产算力核心标的</div>
+    <div class="dl">
+      <div class="dt">护城河</div><div class="dd">国产AI芯片绝对龙头，技术护城河+政策扶持+国产替代刚需</div>
+      <div class="dt">上涨逻辑</div><div class="dd">科创50指数昨日暴跌5%后超跌修复，半导体板块全线反弹</div>
+      <div class="dt">下跌风险</div><div class="dd">估值极高（PE>200x），业绩兑现压力大/科创50指数调整未结束</div>
+      <div class="dt">买入条件</div><div class="dd">适合中长线配置，不适合短线追高。等科创50连续3天企稳后建仓</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. 异常成交量个股 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">09</span><span class="section-title">异常成交量个股</span></div>
+  <p class="summary-text">
+    筛选逻辑：当日成交量 > 近半年最高量 × 2。
+  </p>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>今日表现</th><th>异常信号</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">东山精密</span></td><td><span class="code">002384</span></td><td>+9%+（V型反转）</td><td>昨日跌停+今日巨量反弹，两日合计成交额可能触发近半年最高量2倍</td></tr>
+      <tr><td><span class="name">意华股份</span></td><td><span class="code">002897</span></td><td>涨停</td><td>CPO概念涨停，换手率大幅放量</td></tr>
+      <tr><td><span class="name">国瓷材料</span></td><td><span class="code">300285</span></td><td>+10%+ · 创新高</td><td>突破前高放量，成交额显著放大</td></tr>
+    </tbody>
+  </table>
+  <p class="summary-text" style="margin-top:12px;">
+    异常成交量集中在CPO和MLCC方向，反映资金从其他板块大举涌入进攻板块核心个股。东山精密的"跌停→巨量反弹"模式值得重点关注——这种V型反转往往意味着恐慌盘出清、新资金接力。
+  </p>
+</section>
+
+<!-- 10. 展望+策略建议 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">10</span><span class="section-title">展望 + 策略建议</span></div>
+  <div class="sub-section">
+    <div class="sub-head">🔑 关键变量</div>
+    <p class="summary-text">
+      <strong>1. COMPUTEX 2026（6月2-5日台北）：</strong>英伟达黄仁勋将扩大PC芯片产品线，智能体AI开启未来十年科技投资。对CPO/半导体/AI PC方向持续催化。<br>
+      <strong>2. 谷歌800亿AI融资：</strong>伯克希尔入股100亿，信号极强——价值投资之王入局AI基建，对光模块/算力金属方向形成持续利好。<br>
+      <strong>3. 3910亿公募基准调整落地：</strong>首批公募基金业绩基准调整已生效，可能引发板块风格切换。<br>
+      <strong>4. 成交额缩量：</strong>2.77万亿较前日缩量845亿，反弹以存量调仓为主。如果明天不能放量，反弹持续性存疑。
+    </p>
+  </div>
+  <div class="sub-section">
+    <div class="sub-head">💡 明确策略</div>
+    <p class="summary-text">
+      <strong>短线：</strong>CPO/光模块超跌反弹第一天成立，但涨幅已大（多股+10%以上），明天继续追高风险较大。建议关注：①尾盘或明日盘中回落至5日线时轻仓低吸核心标的（新易盛/东山精密）；②MLCC（国瓷材料）创新高后等回踩再介入；③光纤光缆涨停首板次日看溢价。<br><br>
+      <strong>中线：</strong>COMPUTEX期间（6月2-5日）科技板块有持续催化，进攻板块（CPO/半导体）短期趋势偏多。建议3成仓位配置进攻方向，核心持仓新易盛/寒武纪。<br><br>
+      <strong>防守方向：</strong>电力板块分歧加大（澄清公告冲击），不建议新增仓位。已有仓位的等华能蒙电/京能热力断板后出局。<br><br>
+      <strong>回避：</strong>传媒/影视/体育等被抽血方向，短期无反弹动力。
+    </p>
+  </div>
+</section>
+
+<!-- 11. 重点盯盘清单 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">11</span><span class="section-title">重点盯盘清单</span></div>
+  <div class="watch-grid">
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> CPO / 光模块</h4>
+      <div class="item"><span class="s-code">300502</span><span class="s-name">新易盛</span></div>
+      <div class="s-note">800G龙头，今日+9%。明日能否延续是CPO反弹深度信号。回调至5日线是买点</div>
+      <div class="item"><span class="s-code">002384</span><span class="s-name">东山精密</span></div>
+      <div class="s-note">跌停→+9%V型反转。明日继续涨则确认底部。关注龙虎榜席位变化</div>
+      <div class="item"><span class="s-code">002897</span><span class="s-name">意华股份</span></div>
+      <div class="s-note">CPO涨停首板。明日溢价/连板决定板块高度</div>
+    </div>
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> 半导体 / MLCC</h4>
+      <div class="item"><span class="s-code">688256</span><span class="s-name">寒武纪</span></div>
+      <div class="s-note">AI芯片龙头权重。连续反弹确认科创50底部</div>
+      <div class="item"><span class="s-code">300285</span><span class="s-name">国瓷材料</span></div>
+      <div class="s-note">MLCC新主线创新高。回踩5日线是安全买点。高盛"需求4.3倍"催化</div>
+      <div class="item"><span class="s-code">601869</span><span class="s-name">长飞光纤</span></div>
+      <div class="s-note">光纤龙头涨停首板。明日看溢价和连板</div>
+    </div>
+    <div class="watch-card">
+      <h4><span class="tag tag-green">防守</span> 电力</h4>
+      <div class="item"><span class="s-code">600863</span><span class="s-name">华能蒙电</span></div>
+      <div class="s-note">6日4板不认澄清。明日是否仍能封板决定电力主线存亡</div>
+      <div class="item"><span class="s-code">000539</span><span class="s-name">粤电力A</span></div>
+      <div class="s-note">澄清后低开。如果明日断板则电力退潮信号</div>
+    </div>
+    <div class="watch-card">
+      <h4><span class="tag tag-yellow">风格切换</span> 观察</h4>
+      <div class="item"><span class="s-code">002421</span><span class="s-name">达实智能</span></div>
+      <div class="s-note">13天8板最高标。断板是全市场情绪降温信号</div>
+      <div class="item"><span class="s-code">603011</span><span class="s-name">合锻智能</span></div>
+      <div class="s-note">5连板。PCB+结构件方向标杆。晋级6板则短线情绪持续</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. 连续趋势追踪 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">12</span><span class="section-title">连续趋势追踪</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head">📈 重点个股多日走势</div>
+    <table class="trend-table">
+      <thead><tr><th>个股</th><th>5/29（周四）</th><th>6/1（周一）</th><th>6/2（周二）</th><th>趋势判断</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left"><span class="name">东山精密</span></td><td style="color:var(--success)">跌超5%</td><td style="color:var(--success)"><strong>跌停</strong></td><td style="color:var(--error)"><strong>+9%+</strong></td><td>V型反转，关注确认</td></tr>
+        <tr><td style="text-align:left"><span class="name">新易盛</span></td><td style="color:var(--success)">-4%+</td><td style="color:var(--success)">-6%+</td><td style="color:var(--error)"><strong>+9%+</strong></td><td>连跌2日后反弹</td></tr>
+        <tr><td style="text-align:left"><span class="name">寒武纪</span></td><td style="color:var(--success)">跌超5%</td><td style="color:var(--success)">-5%+</td><td style="color:var(--error)"><strong>+5%+</strong></td><td>企稳修复中</td></tr>
+        <tr><td style="text-align:left"><span class="name">达实智能</span></td><td>涨停(10天5板)</td><td>涨停(12天7板)</td><td style="color:var(--error)"><strong>涨停(13天8板)</strong></td><td>连续晋级，情绪标杆</td></tr>
+        <tr><td style="text-align:left"><span class="name">粤电力A</span></td><td>涨停(2板)</td><td>涨停(4板)</td><td style="color:var(--warning)">低开承压</td><td>澄清利空冲击，观望</td></tr>
+        <tr><td style="text-align:left"><span class="name">华能蒙电</span></td><td>涨停</td><td>涨停</td><td style="color:var(--error)"><strong>涨停(6日4板)</strong></td><td>不认澄清继续做</td></tr>
+        <tr><td style="text-align:left"><span class="name">国瓷材料</span></td><td>+2%</td><td>+3%</td><td style="color:var(--error)"><strong>+10%创新高</strong></td><td>加速突破，新主线</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">⚔️ 进攻 vs 防守板块轮动</div>
+    <table class="trend-table">
+      <thead><tr><th>板块</th><th>5/29</th><th>6/1</th><th>6/2</th><th>3日趋势</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left"><span class="tag tag-red">进攻</span> CPO/光模块</td><td style="color:var(--success)">大跌</td><td style="color:var(--success)">续跌</td><td style="color:var(--error)"><strong>涨停潮反弹</strong></td><td>超跌后V型修复</td></tr>
+        <tr><td style="text-align:left"><span class="tag tag-red">进攻</span> 半导体</td><td style="color:var(--success)">科创50-5%</td><td style="color:var(--success)">续跌-5%</td><td style="color:var(--error)"><strong>反弹修复</strong></td><td>连跌2日后企稳</td></tr>
+        <tr><td style="text-align:left"><span class="tag tag-red">进攻</span> PCB</td><td style="color:var(--success)">回调</td><td style="color:var(--success)">续跌</td><td style="color:var(--error)">反弹（合锻5板）</td><td>跟随CPO修复</td></tr>
+        <tr><td style="text-align:left"><span class="tag tag-green">防守</span> 电力</td><td style="color:var(--error)">涨停潮</td><td style="color:var(--error)">涨停潮</td><td style="color:var(--warning)"><strong>分歧分化</strong></td><td>澄清冲击，内部分化</td></tr>
+        <tr><td style="text-align:left"><span class="tag tag-green">防守</span> 煤炭</td><td style="color:var(--error)">6股涨停</td><td style="color:var(--error)">涨停潮</td><td style="color:var(--warning)">走弱</td><td>资金转向进攻板块</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">🏗️ 连板梯队演变</div>
+    <table class="trend-table">
+      <thead><tr><th>梯队</th><th>6/1</th><th>6/2</th><th>变化</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left">最高标</td><td>达实智能 12天7板</td><td>达实智能 <strong>13天8板</strong></td><td style="color:var(--error)">晋级成功 ✅</td></tr>
+        <tr><td style="text-align:left">次高标</td><td>合锻智能/粤电力A 4板</td><td>合锻智能 <strong>5板</strong></td><td style="color:var(--error)">晋级成功 ✅</td></tr>
+        <tr><td style="text-align:left">电力龙头</td><td>粤电力A 4板</td><td>粤电力A 承压</td><td style="color:var(--warning)">澄清利空 ⚠️</td></tr>
+        <tr><td style="text-align:left">3板梯队</td><td>天地在线 3板</td><td>待确认</td><td>观察晋级</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">🔄 风格切换信号</div>
+    <p class="summary-text">
+      <strong>信号明确：资金从防守板块回流进攻板块。</strong><br><br>
+      6/1：进攻板块（CPO/半导体/PCB）全线大跌，防守板块（煤炭/电力）涨停潮，风格切向防守。<br>
+      6/2：进攻板块全面反弹（通信+5.71%领涨），防守板块分化（电力澄清、煤炭走弱），风格回切进攻。<br><br>
+      <strong>判断：</strong>风格切换进入"拉锯期"。进攻板块的超跌反弹能否持续至少3天是关键——如果明天（6/3）CPO/半导体继续收阳，则进攻板块重新确立主线地位。如果明天冲高回落，则市场进入"进攻/防守交替日内轮动"的震荡格局。<br><br>
+      <strong>COMPUTEX催化窗口（6/2-5）偏利好进攻板块</strong>，短期风格天平倾向进攻方向。
+    </p>
+  </div>
+</section>
+
+</div>
+
+<div class="footer">
+<p>数据来源：证券时报 / 东方财富 / 新浪财经 / 财联社 · 联网核实</p>
+<p class="warn">风险提示：本报告基于公开信息整理，不构成投资建议。市场有风险，投资需谨慎。</p>
+</div>
+
+</body>
+</html>
