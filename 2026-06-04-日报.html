@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>缩量回调！沪指跌0.64%，京东方A涨停+MLCC爆发 — 阳子PMO日报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.hero-meta{font-size:13px;opacity:0.6;margin-top:12px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-04-盘中.html">← 上一篇</a>
+    <a class="nav-disabled">下一篇 →</a>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026 · 06/04 · 日报</div>
+    <h1 class="hero-title">缩量回调！沪指跌0.64%<br>京东方A涨停+MLCC爆发</h1>
+    <p class="hero-sub">缩量2.78万亿调整健康 · 91涨停封板率73% · 科创50逆势+0.69% · 玻璃基板再爆发 · 进攻板块回踩不破</p>
+    <p class="hero-meta">2026年6月4日（周四）收盘复盘 · 阳子PMO</p>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- 1. 大盘总览 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">01</span><span class="section-title">大盘总览</span></div>
+  <div class="data-cards">
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">上证指数</div><div class="value">4,068</div><div class="change change-down">-0.64%</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">深证成指</div><div class="value">15,663</div><div class="change change-down">-0.27%</div></div>
+    <div class="data-card" style="border-left-color:var(--success)"><div class="label">创业板指</div><div class="value">4,088</div><div class="change change-down">-0.83%</div></div>
+    <div class="data-card" style="border-left-color:var(--secondary)"><div class="label">科创50</div><div class="value">—</div><div class="change change-up">+0.69%</div></div>
+    <div class="data-card" style="border-left-color:var(--secondary)"><div class="label">全天成交额</div><div class="value" style="font-size:20px;">2.78万亿</div><div class="change">较昨日缩量3740亿</div></div>
+    <div class="data-card" style="border-left-color:var(--error)"><div class="label">涨停 / 炸板</div><div class="value" style="font-size:18px;">91 / 33</div><div class="change">封板率73.39%</div></div>
+  </div>
+  <p class="summary-text">
+    三大指数<strong>缩量回调</strong>，沪指跌0.64%，创业板指跌0.83%，但<strong>科创50逆势收涨0.69%</strong>，半导体方向企稳迹象明显。全天成交2.78万亿，较昨日3.13万亿缩量3740亿——缩量调整属于<strong>健康的技术性回踩</strong>，说明抛压有限而非恐慌出逃。91只涨停、封板率73.39%，情绪面并未恶化。外盘利空（美股道指跌逾600点、达里奥AI泡沫预警、比特币暴跌28万人爆仓）未对A股形成实质冲击，市场韧性十足。板块方面，<strong>MLCC/元件逆市大涨、京东方A 2000亿+市值涨停（玻璃基板）、工业气体走强</strong>，进攻板块内部轮动加速从CPO/光模块向新方向扩散。
+  </p>
+</section>
+
+<!-- 2. 异动上涨板块 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">02</span><span class="section-title">异动上涨板块</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>MLCC / 元件 <span class="tag tag-yellow">逆市大涨·新方向</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      <strong>今日最强方向。</strong>MLCC概念逆市大涨，在大盘缩量调整中成为资金主攻方向。6G试点专项行动发布（工信部）为电子元件提供政策催化，叠加COMPUTEX余温下AI硬件需求持续扩散，MLCC/被动元件获得增量资金涌入。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>收盘涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">风华高科</span></td><td><span class="code">000636</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>MLCC龙头</td></tr>
+        <tr><td><span class="name">三环集团</span></td><td><span class="code">300408</span></td><td><strong style="color:var(--error)">+6%+</strong></td><td>MLCC/陶瓷元件</td></tr>
+        <tr><td><span class="name">洁美科技</span></td><td><span class="code">002859</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>电子元件耗材</td></tr>
+        <tr><td><span class="name">顺络电子</span></td><td><span class="code">002138</span></td><td><strong style="color:var(--error)">+5%+</strong></td><td>被动元件</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>玻璃基板 <span class="tag tag-yellow">京东方A 2000亿+涨停</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      <strong>京东方A 2000亿+市值涨停</strong>，成为今日最大亮点之一。玻璃基板概念持续发酵，红星发展8天6板刷新最高标纪录。英特尔玻璃基板工厂催化+面板巨头切入先进封装逻辑，驱动资金持续涌入。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>收盘涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">京东方A</span></td><td><span class="code">000725</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>2000亿+市值涨停，创历史最高成交</td></tr>
+        <tr><td><span class="name">红星发展</span></td><td><span class="code">600367</span></td><td><strong style="color:var(--error)">涨停（8天6板）</strong></td><td>最高标，玻璃基板龙头</td></tr>
+        <tr><td><span class="name">TCL科技</span></td><td><span class="code">000100</span></td><td><strong style="color:var(--error)">+3%~5%</strong></td><td>面板+玻璃基板</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>半导体 / 科创50 <span class="tag tag-blue">逆势企稳+0.69%</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      科创50在大盘调整中<strong>逆势收涨0.69%</strong>，半导体方向企稳信号明确。稀土永磁+电子化学品涨幅居前，芯片设计/制造小幅分化但整体抗跌。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>收盘涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">北方稀土</span></td><td><span class="code">600111</span></td><td><strong style="color:var(--error)">+3%+</strong></td><td>稀土龙头</td></tr>
+        <tr><td><span class="name">晶瑞电材</span></td><td><span class="code">300655</span></td><td><strong style="color:var(--error)">+5%+</strong></td><td>电子化学品</td></tr>
+        <tr><td><span class="name">华特气体</span></td><td><span class="code">688268</span></td><td><strong style="color:var(--error)">+13%+</strong></td><td>工业气体/电子特气</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>铜缆高速连接 <span class="tag tag-yellow">新催化·黄仁勋预测</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      黄仁勋在COMPUTEX预测<strong>未来5-10年大量用铜</strong>进行高速连接，铜缆连接方向获得新催化。SpaceX IPO（6月12日上市，估值1.77万亿美元）也为高速通信产业链提供想象空间。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>收盘涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">沃尔核材</span></td><td><span class="code">002130</span></td><td><strong style="color:var(--error)">+5%+</strong></td><td>铜缆连接材料</td></tr>
+        <tr><td><span class="name">精达股份</span></td><td><span class="code">600577</span></td><td><strong style="color:var(--error)">+3%+</strong></td><td>特种铜导体</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-green">防守</span>煤炭 <span class="tag tag-blue">连续第2日走强</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      煤炭板块连续第2日走强，大有能源连板。防守资金在大盘调整日继续流入高股息方向。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>收盘涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">大有能源</span></td><td><span class="code">600403</span></td><td><strong style="color:var(--error)">涨停（连板）</strong></td><td>煤炭连板</td></tr>
+        <tr><td><span class="name">晋控煤业</span></td><td><span class="code">601001</span></td><td class="change-up">+2%+</td><td>煤炭龙头</td></tr>
+        <tr><td><span class="name">潞安环能</span></td><td><span class="code">601699</span></td><td class="change-up">+2%+</td><td>煤炭</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-green">防守</span>中船造船 <span class="tag tag-blue">逆势领涨</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      中船系全天领涨，逆势走强。造船周期景气度持续+军工订单支撑，资金在调整日选择确定性方向避险。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>收盘涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">中国船舶</span></td><td><span class="code">600150</span></td><td><strong style="color:var(--error)">+3%+</strong></td><td>造船龙头</td></tr>
+        <tr><td><span class="name">中船防务</span></td><td><span class="code">600685</span></td><td><strong style="color:var(--error)">+3%+</strong></td><td>军船</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 3. 连板股排列 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">03</span><span class="section-title">连板股排列</span></div>
+  <p class="summary-text" style="margin-bottom:12px;">今日涨停91只，连板股中<strong>红星发展8天6板</strong>刷新本轮最高标纪录。大有能源煤炭方向连板，板块连续性强。</p>
+  <table>
+    <thead><tr><th>连板数</th><th>个股</th><th>代码</th><th>所属板块</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag tag-red">8天6板</span></td><td><span class="name">红星发展</span></td><td><span class="code">600367</span></td><td>玻璃基板（最高标）</td></tr>
+      <tr><td><span class="tag tag-yellow">连板</span></td><td><span class="name">大有能源</span></td><td><span class="code">600403</span></td><td>煤炭</td></tr>
+      <tr><td><span class="tag tag-blue">首板</span></td><td><span class="name">京东方A</span></td><td><span class="code">000725</span></td><td>玻璃基板 / 2000亿+市值</td></tr>
+      <tr><td><span class="tag tag-blue">首板</span></td><td><span class="name">和远气体</span></td><td><span class="code">002971</span></td><td>工业气体</td></tr>
+      <tr><td><span class="tag tag-blue">首板</span></td><td><span class="name">风华高科</span></td><td><span class="code">000636</span></td><td>MLCC</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 4. 下跌板块概览 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">04</span><span class="section-title">下跌板块概览</span></div>
+  <table>
+    <thead><tr><th>板块</th><th>跌幅</th><th>关键事件</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">CPO / 光模块</span></td><td class="change-down">-1%~-2%</td><td>回调但跌幅明显收窄，属于趋势中正常休整</td></tr>
+      <tr><td><span class="name">工业金属</span></td><td class="change-down">-2%~-3%</td><td>有色金属整体承压，铜价回落</td></tr>
+      <tr><td><span class="name">能源金属</span></td><td class="change-down">-2%+</td><td>锂矿股调整</td></tr>
+      <tr><td><span class="name">白酒</span></td><td class="change-down">-1%~-2%</td><td>消费股持续被资金抛弃</td></tr>
+      <tr><td><span class="name">石油石化</span></td><td class="change-down">-1%~-2%</td><td>油价承压+中东紧张未兑现涨价</td></tr>
+    </tbody>
+  </table>
+  <p class="summary-text" style="margin-top:12px;"><strong>重要观察：</strong>CPO/光模块今日回调但跌幅仅-1%~-2%，相比昨日的巨量换手后仅小幅回落，说明<strong>趋势未破</strong>。工业金属、白酒等传统板块继续被资金抽血。</p>
+</section>
+
+<!-- 5. 涨停数据汇总 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">05</span><span class="section-title">涨停数据汇总</span></div>
+  <div class="data-cards">
+    <div class="data-card"><div class="label">涨停数</div><div class="value">91</div><div class="change">较昨日81只增加10只</div></div>
+    <div class="data-card"><div class="label">炸板数</div><div class="value">33</div><div class="change">炸板较多，分歧加剧</div></div>
+    <div class="data-card"><div class="label">封板率</div><div class="value">73.39%</div><div class="change">91/(91+33)</div></div>
+    <div class="data-card"><div class="label">最高标</div><div class="value">8天6板</div><div class="change">红星发展（玻璃基板）</div></div>
+  </div>
+  <p class="summary-text">涨停数从昨日81只回升至91只，但炸板33只较多，封板率73.39%略有下降。在大盘缩量调整的背景下，涨停数不减反增说明<strong>局部题材热度很高</strong>（MLCC/玻璃基板/工业气体），市场并非全面退潮而是板块内部轮动加速。</p>
+</section>
+
+<!-- 6. 龙虎榜重点 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">06</span><span class="section-title">龙虎榜重点</span></div>
+  <p class="summary-text" style="margin-bottom:12px;">6月4日龙虎榜数据（基于盘后公布）：</p>
+  <table>
+    <thead><tr><th>个股</th><th>关键数据</th><th>席位特征</th><th>信号</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">京东方A</span></td><td class="change-up">封单195万手</td><td>机构+深股通</td><td>2000亿+市值涨停，巨量封单极为罕见</td></tr>
+      <tr><td><span class="name">红星发展</span></td><td class="change-up">8天6板</td><td>游资主导</td><td>最高标持续升级，辨识度极高</td></tr>
+      <tr><td><span class="name">风华高科</span></td><td class="change-up">涨停放量</td><td>机构+游资</td><td>MLCC龙头涨停，板块风向标</td></tr>
+      <tr><td><span class="name">和远气体</span></td><td class="change-up">涨停</td><td>游资为主</td><td>工业气体新方向</td></tr>
+    </tbody>
+  </table>
+  <p class="summary-text" style="margin-top:12px;">
+    <strong>核心看点：</strong>京东方A封单195万手是今日最大亮点——2000亿+市值个股涨停且封单如此巨大，说明主力资金（机构+北向）在玻璃基板方向上形成了强烈共识。这种级别的封单意味着明日大概率高开。
+  </p>
+</section>
+
+<!-- 7. 平台突破股筛选 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">07</span><span class="section-title">平台突破股筛选</span></div>
+  <p class="summary-text"><strong>筛选条件：</strong>近10日连续5天小阳线稳量上涨 + 当日放量突破半年/一年平台 + 优先当日异动板块。</p>
+  <p class="summary-text" style="margin-top:12px;">今日市场缩量调整，多数个股回踩而非突破。严格满足平台突破条件的个股较少。<strong>京东方A</strong>虽涨停但属于消息驱动而非连续小阳稳量突破。暂无严格符合条件的标的，等待下一个放量突破日确认。</p>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>板块</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">（暂无严格符合）</span></td><td><span class="code">—</span></td><td>—</td><td>缩量调整日，突破信号不足</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 8. 300亿以上高壁垒个股 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">08</span><span class="section-title">300亿以上高壁垒个股深度分析</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head">京东方A 000725 · 市值 ~2000亿+</div>
+    <table>
+      <tbody>
+        <tr><td style="width:100px;font-weight:600;color:var(--text2)">主营业务</td><td>全球最大显示面板厂商，LCD/OLED/Mini LED全覆盖</td></tr>
+        <tr><td style="font-weight:600;color:var(--text2)">核心客户</td><td>苹果/三星/华为/小米，覆盖全球消费电子巨头</td></tr>
+        <tr><td style="font-weight:600;color:var(--text2)">护城河</td><td>产能规模全球第一+技术迭代+面板周期底部拐点+玻璃基板新逻辑</td></tr>
+        <tr><td style="font-weight:600;color:var(--text2)">财报趋势</td><td>2025年扭亏为盈，2026年面板周期向上，盈利弹性巨大</td></tr>
+        <tr><td style="font-weight:600;color:var(--text2)">上涨逻辑</td><td>玻璃基板概念（英特尔/三星布局）+ 面板涨价周期 + 2000亿市值涨停打开空间</td></tr>
+        <tr><td style="font-weight:600;color:var(--text2)">下跌风险</td><td>面板价格波动、涨停后获利盘兑现、玻璃基板概念证伪风险</td></tr>
+        <tr><td style="font-weight:600;color:var(--text2)">买入条件</td><td>涨停次日若高开缩量不破涨停价可追；若低开则等回踩5日均线企稳</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 9. 异常成交量个股 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">09</span><span class="section-title">异常成交量个股</span></div>
+  <p class="summary-text" style="margin-bottom:12px;"><strong>筛选条件：</strong>当日成交量 > 近半年最高量 x 2</p>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>今日成交额</th><th>异常信号</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">京东方A</span></td><td><span class="code">000725</span></td><td>创历史新高</td><td>2000亿+市值涨停，封单195万手，成交额创历史最高纪录</td></tr>
+      <tr><td><span class="name">风华高科</span></td><td><span class="code">000636</span></td><td>涨停放量</td><td>MLCC龙头涨停，成交量远超近半年均值</td></tr>
+      <tr><td><span class="name">华特气体</span></td><td><span class="code">688268</span></td><td>放量+13%</td><td>工业气体龙头暴涨，成交创新高</td></tr>
+    </tbody>
+  </table>
+  <p class="summary-text" style="margin-top:12px;"><strong>解读：</strong>京东方A创历史最高成交额+封单195万手，这是大象起舞的典型信号。当2000亿+市值个股以涨停方式启动时，往往意味着板块级别的行情正在发酵——玻璃基板可能成为MLCC之后的第二条主攻线。</p>
+</section>
+
+
+<!-- 10. 展望+策略建议 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">10</span><span class="section-title">展望 + 策略建议</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head">关键变量</div>
+    <table>
+      <thead><tr><th>变量</th><th>方向</th><th>影响</th></tr></thead>
+      <tbody>
+        <tr><td>缩量2.78万亿</td><td class="change-up">偏多</td><td>缩量调整=抛压有限，健康回踩而非恐慌</td></tr>
+        <tr><td>科创50逆势+0.69%</td><td class="change-up">利好</td><td>半导体企稳，进攻方向底部确认</td></tr>
+        <tr><td>MLCC/玻璃基板爆发</td><td class="change-up">利好</td><td>进攻板块内部轮动扩散，非退潮信号</td></tr>
+        <tr><td>外盘利空未兑现</td><td class="change-up">利好</td><td>美股暴跌+比特币爆仓未拖累A股，韧性强</td></tr>
+        <tr><td>CPO/光模块回调</td><td><span class="tag tag-yellow">中性</span></td><td>跌幅收窄(-1%~-2%)，趋势回踩非反转</td></tr>
+        <tr><td>6G试点专项行动</td><td class="change-up">利好</td><td>工信部政策催化通信/元件，中期利好</td></tr>
+        <tr><td>SpaceX IPO 6/12</td><td class="change-up">利好</td><td>估值1.77万亿美元，催化卫星/通信/铜缆方向</td></tr>
+        <tr><td>A股三上新闻联播</td><td class="change-up">利好</td><td>政策态度明确正面，提振信心</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">策略建议（明确）</div>
+    <p class="summary-text"><strong>核心判断：缩量调整是健康的，科创50企稳是积极信号，COMPUTEX催化未退，等周五确认方向。</strong></p>
+    <p class="summary-text" style="margin-top:10px;">1. <strong>已持仓CPO/光模块：</strong>继续持有。今日回调跌幅仅-1%~-2%（相比昨日巨量分歧后回落已很温和），趋势完好。若明日中际旭创守住1200、天孚通信不破前日低点，则趋势延续无疑。</p>
+    <p class="summary-text" style="margin-top:8px;">2. <strong>新方向布局：</strong>MLCC/玻璃基板/铜缆高速连接是今日最强轮动方向。京东方A涨停打开空间，但2000亿+市值追涨需谨慎——等明日确认不炸板再决定。风华高科(MLCC)可在回踩时关注。</p>
+    <p class="summary-text" style="margin-top:8px;">3. <strong>防守板块：</strong>煤炭连续2日走强+中船系逆势领涨，说明防守资金在调整日有所动作。但目前仍是补涨性质，不是风格反转。保持观察，不重仓切换。</p>
+    <p class="summary-text" style="margin-top:8px;">4. <strong>仓位管理：</strong>周五是关键确认日——如果成交额回升至3万亿+且CPO企稳反弹，则缩量调整结束可加仓；如果继续缩量至2.5万亿以下+创业板指破4050，则需减仓防守。</p>
+  </div>
+</section>
+
+<!-- 11. 重点盯盘清单 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">11</span><span class="section-title">重点盯盘清单</span></div>
+
+  <div class="watch-grid">
+    <div class="watch-card" style="border-left:4px solid var(--error);">
+      <h4><span class="tag tag-red">进攻板块</span> CPO / 光通信</h4>
+      <div class="item"><span class="s-name">中际旭创</span> <span class="s-code">300308</span></div>
+      <p class="s-note">1200支撑位关键，守住则趋势延续</p>
+      <div class="item"><span class="s-name">天孚通信</span> <span class="s-code">300394</span></div>
+      <p class="s-note">回调企稳后缩量止跌是最佳买点</p>
+      <div class="item"><span class="s-name">工业富联</span> <span class="s-code">601138</span></div>
+      <p class="s-note">创新高后回踩幅度决定趋势强度</p>
+    </div>
+
+    <div class="watch-card" style="border-left:4px solid var(--error);">
+      <h4><span class="tag tag-red">进攻板块</span> 铜缆 / 新方向</h4>
+      <div class="item"><span class="s-name">沃尔核材</span> <span class="s-code">002130</span></div>
+      <p class="s-note">铜缆高速连接，黄仁勋预测催化</p>
+      <div class="item"><span class="s-name">精达股份</span> <span class="s-code">600577</span></div>
+      <p class="s-note">特种铜导体，关注连续性</p>
+      <div class="item"><span class="s-name">京东方A</span> <span class="s-code">000725</span></div>
+      <p class="s-note">涨停次日表现决定玻璃基板后续空间</p>
+    </div>
+
+    <div class="watch-card" style="border-left:4px solid var(--success);">
+      <h4><span class="tag tag-green">防守板块</span> 煤炭 / 银行</h4>
+      <div class="item"><span class="s-name">大有能源</span> <span class="s-code">600403</span></div>
+      <p class="s-note">煤炭连板能否持续，观察连续性</p>
+      <div class="item"><span class="s-name">晋控煤业</span> <span class="s-code">601001</span></div>
+      <p class="s-note">煤炭龙头走势决定防守板块方向</p>
+    </div>
+
+    <div class="watch-card" style="border-left:4px solid var(--warning);">
+      <h4><span class="tag tag-yellow">风格信号</span> 关键观察</h4>
+      <div class="item"><span class="s-name">创业板指 4088</span></div>
+      <p class="s-note">4050是短期支撑，不破则缩量调整为健康回踩</p>
+      <div class="item"><span class="s-name">成交额 2.78万亿</span></div>
+      <p class="s-note">周五若回升3万亿+则调整结束，继续缩量则延长震荡</p>
+      <div class="item"><span class="s-name">进攻vs防守比值</span></div>
+      <p class="s-note">科创50连续企稳=进攻未退；煤炭连涨但未压制科技=非反转</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12. 连续趋势追踪 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">12</span><span class="section-title">连续趋势追踪</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head">个股多日走势表（近4个交易日）</div>
+    <table>
+      <thead><tr><th>个股</th><th>6/1(周一)</th><th>6/2(周二)</th><th>6/3(周三)</th><th>6/4(周四)</th><th>趋势判断</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="name">中际旭创</span></td>
+          <td class="change-down">-3%</td>
+          <td class="change-up">+9%+</td>
+          <td class="change-up">+5%~6%</td>
+          <td class="change-down">回调-1%~-2%</td>
+          <td><span class="tag tag-yellow">趋势回踩，观察1200</span></td>
+        </tr>
+        <tr>
+          <td><span class="name">天孚通信</span></td>
+          <td class="change-down">-4%</td>
+          <td class="change-up">+10%+</td>
+          <td class="change-up">+8%~10%</td>
+          <td class="change-down">回调企稳</td>
+          <td><span class="tag tag-yellow">高位缩量整理</span></td>
+        </tr>
+        <tr>
+          <td><span class="name">新易盛</span></td>
+          <td class="change-down">-3%</td>
+          <td class="change-up">+9%+</td>
+          <td class="change-up">+5%~6%</td>
+          <td class="change-down">回调-1%~-2%</td>
+          <td><span class="tag tag-yellow">跟随龙头节奏</span></td>
+        </tr>
+        <tr>
+          <td><span class="name">工业富联</span></td>
+          <td class="change-down">-1%</td>
+          <td class="change-up">+5%</td>
+          <td class="change-up">+5%~6% 创新高</td>
+          <td class="change-down">回调</td>
+          <td><span class="tag tag-yellow">新高后回踩确认</span></td>
+        </tr>
+        <tr>
+          <td><span class="name">京东方A</span></td>
+          <td class="change-down">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="change-up">涨停（新进入）</td>
+          <td><span class="tag tag-red">新方向爆发</span></td>
+        </tr>
+        <tr>
+          <td><span class="name">红星发展</span></td>
+          <td class="change-up">涨停</td>
+          <td class="change-up">涨停</td>
+          <td class="change-up">涨停(7天5板)</td>
+          <td class="change-up">涨停(8天6板)</td>
+          <td><span class="tag tag-red">最高标持续升级</span></td>
+        </tr>
+        <tr>
+          <td><span class="name">大有能源</span></td>
+          <td>—</td>
+          <td class="change-down">-3%</td>
+          <td class="change-up">涨停</td>
+          <td class="change-up">涨停(连板)</td>
+          <td><span class="tag tag-green">煤炭连板确认</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">板块轮动追踪（近4个交易日）</div>
+    <table>
+      <thead><tr><th>板块</th><th>6/2(周二)</th><th>6/3(周三)</th><th>6/4(周四)</th><th>趋势</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="tag tag-red">进攻</span> CPO/光模块</td>
+          <td class="change-up">+5%~+7%</td>
+          <td class="change-up">+2%~+3%</td>
+          <td class="change-down">-1%~-2%（回调）</td>
+          <td>趋势回踩，跌幅收窄</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-red">进攻</span> 半导体</td>
+          <td class="change-up">+3%~+5%</td>
+          <td class="change-up">+1%~+2%</td>
+          <td class="change-up">企稳(科创50+0.69%)</td>
+          <td>底部确认，企稳向上</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-red">进攻</span> MLCC/玻璃基板</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="change-up">爆发（新方向）</td>
+          <td><strong>新主攻方向</strong></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-red">进攻</span> 铜缆连接</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="change-up">+3%~5%（新催化）</td>
+          <td>黄仁勋催化，观察持续性</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-green">防守</span> 煤炭</td>
+          <td class="change-down">-2%~-3%</td>
+          <td class="change-up">+2%~+3%</td>
+          <td class="change-up">继续走强</td>
+          <td>连续2日反弹，关注能否持续</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-green">防守</span> 电力</td>
+          <td class="change-down">-1%~-2%</td>
+          <td class="change-down">-0.5%~-1%</td>
+          <td class="change-down">持续走弱</td>
+          <td>资金持续流出</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="summary-text" style="margin-top:10px;"><strong>板块轮动结论：</strong>进攻板块内部轮动加速——从CPO/光模块（6/2-6/3主攻）向MLCC/玻璃基板/铜缆（6/4新方向）扩散。这是<strong>行情扩散而非退潮</strong>的信号。防守板块中煤炭连续反弹但电力继续弱，不是全面风格切换。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">连板梯队演变</div>
+    <table>
+      <thead><tr><th>梯队</th><th>6/2</th><th>6/3</th><th>6/4</th><th>变化</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>最高标</strong></td>
+          <td>达实智能 13天8板</td>
+          <td>达实智能 9板?（分歧）</td>
+          <td>红星发展 8天6板</td>
+          <td>最高标切换至玻璃基板方向</td>
+        </tr>
+        <tr>
+          <td><strong>次高标</strong></td>
+          <td>红星发展 6天4板</td>
+          <td>红星发展 7天5板</td>
+          <td>大有能源 连板</td>
+          <td>科技+防守双线连板</td>
+        </tr>
+        <tr>
+          <td><strong>大市值方向</strong></td>
+          <td>中际旭创/天孚趋势</td>
+          <td>工业富联创新高</td>
+          <td>京东方A 2000亿+涨停</td>
+          <td>大象起舞从AI→面板扩散</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="summary-text" style="margin-top:10px;">连板梯队从"达实智能AIoT"切换到"红星发展玻璃基板"成为新最高标。更重要的是大市值方向从CPO龙头（中际旭创/天孚通信）向京东方A（玻璃基板）扩散——大象起舞范围扩大是牛市中期特征。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">风格切换信号</div>
+    <p class="summary-text"><strong>当前市场风格：进攻主导，板块内部轮动加速</strong></p>
+    <p class="summary-text" style="margin-top:8px;">
+      <strong>证据链：</strong><br>
+      1. 科创50逆势+0.69%，半导体企稳是进攻不退的最强信号<br>
+      2. MLCC/玻璃基板/铜缆新方向爆发——进攻板块从单一CPO向多线扩散<br>
+      3. CPO/光模块回调仅-1%~-2%，跌幅明显收窄（非溃败式调整）<br>
+      4. 91涨停在缩量日不减反增，市场做多情绪活跃<br>
+      5. 外盘利空（美股暴跌+比特币爆仓）未对A股造成实质冲击<br>
+      6. A股三年三上《新闻联播》1分49秒——政策态度极为正面
+    </p>
+    <p class="summary-text" style="margin-top:8px;">
+      <strong>风格判断：进攻主导，板块内部轮动加速——从CPO/光模块向MLCC/玻璃基板/铜缆扩散。</strong>这是行情走向纵深的信号而非见顶信号。唯一需警惕的场景：周五继续缩量至2.5万亿以下 + 创业板指跌破4050 + 科创50转跌——目前概率不超过10%。
+    </p>
+  </div>
+</section>
+</div>
+<div class="footer">
+<p>数据来源：新浪财经 / 证券时报 / 东方财富 / 钛媒体 / 中财网 · 联网核实</p>
+<p class="warn">风险提示：本报告基于公开信息整理，不构成投资建议。市场有风险，投资需谨慎。</p>
+</div>
+</body>
+</html>
