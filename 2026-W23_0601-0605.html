@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>W23 · 科技权重巨震，6G新主线崛起 — 阳子PMO</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;
+  --surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.65);
+  --bg:#FFFFFF;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;
+  --success:#16A34A;--error:#DC2626;--warning:#D97706;
+  --shadow-glass:8px 8px 32px rgba(0,0,0,0.08);
+  --shadow-md:4px 4px 16px rgba(0,0,0,0.10);
+  --radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--secondary);text-decoration:none;font-weight:500}
+a:hover{text-decoration:underline}
+.hero-band{background:var(--primary);padding:64px 24px 56px;position:relative;overflow:hidden}
+.hero-band::before{content:'';position:absolute;top:-60%;right:-8%;width:600px;height:600px;background:var(--tertiary);border-radius:50%;opacity:0.12}
+.hero-band::after{content:'';position:absolute;bottom:-50%;left:-5%;width:400px;height:400px;background:var(--secondary);border-radius:50%;opacity:0.1}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+.hero-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:24px;text-decoration:none}
+.hero-back:hover{color:#fff}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;color:var(--tertiary);letter-spacing:2px;margin-bottom:8px}
+.hero-inner h1{font-family:'Poppins',sans-serif;font-size:36px;font-weight:800;color:#FFFFFF;line-height:1.15;margin-bottom:12px}
+.hero-meta{font-size:14px;color:rgba(255,255,255,0.75)}
+.container{max-width:960px;margin:0 auto;padding:48px 24px 80px}
+.section{margin-bottom:64px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--border)}
+.section-num{font-family:'Fira Code',monospace;font-size:12px;color:var(--primary);background:#FFF1F2;padding:4px 10px;border-radius:var(--radius-md)}
+.section-title{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700}
+.glass{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.3);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-glass);margin:16px 0}
+.conclusion{border-left:4px solid var(--primary);background:#FFF1F2;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7}
+.conclusion strong{color:var(--primary)}
+.table-wrap{overflow-x:auto;margin:16px 0;border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:#F9FAFB;color:var(--text2);font-weight:600;text-align:left;padding:12px 16px;white-space:nowrap;border-bottom:2px solid var(--border);font-size:13px}
+td{padding:12px 16px;border-bottom:1px solid #F3F4F6;vertical-align:top}
+tr:hover td{background:#F9FAFB}
+tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:var(--radius-pill);vertical-align:middle}
+.tag-up{background:#DCFCE7;color:#166534}
+.tag-down{background:#FEF2F2;color:#DC2626}
+.tag-warn{background:#FEF3C7;color:#92400E}
+.tag-info{background:#DBEAFE;color:#1E40AF}
+.subsection{margin:28px 0}
+.subsection h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin-bottom:12px}
+.sub-tag{font-size:12px;font-weight:500;color:var(--text2);margin-left:8px}
+.subsection h4{font-size:14px;font-weight:700;color:var(--primary);margin:14px 0 6px}
+.subsection p,.subsection li{font-size:15px;color:var(--text2);line-height:1.7}
+.subsection ul{padding-left:20px;margin:8px 0}
+.watch-group{margin:24px 0}
+.watch-group-title{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.watch-card{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:10px;box-shadow:var(--shadow-glass);transition:transform .15s,box-shadow .15s}
+.watch-card:hover{transform:scale(1.01);box-shadow:var(--shadow-md)}
+.watch-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px}
+.watch-code{color:var(--text2);font-family:'Fira Code',monospace;font-size:12px;margin-left:8px}
+.watch-logic{font-size:14px;color:var(--text2);margin-top:4px}
+.watch-signal{font-size:14px;color:var(--secondary);margin-top:4px;font-weight:500}
+.logic-box{background:#EFF6FF;border:1px solid var(--secondary);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0;font-family:'Fira Code',monospace;font-size:13px;line-height:2;white-space:pre-wrap}
+.analysis-card{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--radius-xl);padding:24px;margin:20px 0;box-shadow:var(--shadow-glass)}
+.analysis-card h4{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px}
+.ac-code{color:var(--text2);font-family:'Fira Code',monospace;font-size:13px;margin-left:8px;font-weight:400}
+.footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);text-align:center}
+.footer p{font-size:13px;color:var(--text2)}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px}
+@media(max-width:640px){
+  .hero-band{padding:48px 16px 40px}
+  .hero-inner h1{font-size:24px}
+  .container{padding:32px 16px 60px}
+  .section-title{font-size:20px}
+  table{font-size:13px}
+  th,td{padding:10px 12px}
+}
+/* Top Nav Bar */
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-05-日报.html">&larr; 上一篇</a>
+    <a class="nav-disabled">下一篇 &rarr;</a>
+  </div>
+</nav>
+
+<div class="hero-band">
+<div class="hero-inner">
+<div class="hero-week">WEEK 23 &middot; 2026</div>
+<h1>科技权重巨震，6G新主线崛起</h1>
+<p style="font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:12px">创业板指先破4200后跌破4050，CPO&rarr;MLCC&rarr;玻璃基板&rarr;6G轮动加速</p>
+<div class="hero-meta">2026年6月1日 &mdash; 6月5日（5个交易日） &middot; 阳子PMO</div>
+</div>
+</div>
+
+<div class="container">
+
+<!-- 01 -->
+<div class="section">
+<div class="section-head"><span class="section-num">01</span><span class="section-title">大盘总览</span></div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>日期</th><th>上证指数</th><th>涨跌幅</th><th>深证成指</th><th>涨跌幅</th><th>创业板指</th><th>涨跌幅</th><th>成交额</th></tr></thead>
+<tbody>
+<tr><td>6/1(一)</td><td>4,057.74</td><td><span class="tag tag-down">-0.27%</span></td><td>15,340.36</td><td><span class="tag tag-down">-1.51%</span></td><td>3,950.94</td><td><span class="tag tag-down">-2.15%</span></td><td>2.90万亿</td></tr>
+<tr><td>6/2(二)</td><td>4,075.10</td><td><span class="tag tag-up">+0.43%</span></td><td>15,591.13</td><td><span class="tag tag-up">+1.63%</span></td><td>4,055.87</td><td><span class="tag tag-up">+2.66%</span></td><td>2.77万亿</td></tr>
+<tr><td>6/3(三)</td><td>4,083.97</td><td><span class="tag tag-up">+0.22%</span></td><td>15,704.71</td><td><span class="tag tag-up">+0.73%</span></td><td>4,122.00</td><td><span class="tag tag-up">+1.65%</span></td><td>3.15万亿</td></tr>
+<tr><td>6/4(四)</td><td>4,057.78</td><td><span class="tag tag-down">-0.64%</span></td><td>~15,662</td><td><span class="tag tag-down">-0.27%</span></td><td>4,088.88</td><td><span class="tag tag-down">-0.83%</span></td><td>2.78万亿</td></tr>
+<tr><td>6/5(五)</td><td>4,027.74</td><td><span class="tag tag-down">-0.74%</span></td><td>~15,316</td><td><span class="tag tag-down">-2.21%</span></td><td>~3,958</td><td><span class="tag tag-down">-3.20%</span></td><td>~3.1万亿</td></tr>
+<tr style="font-weight:700;background:#F9FAFB"><td>周涨跌</td><td>4068.57&rarr;4027.74</td><td><span class="tag tag-down">-1.00%</span></td><td>&mdash;</td><td>&mdash;</td><td>3969&rarr;~3958</td><td><span class="tag tag-down">-0.28%</span></td><td>~14.7万亿</td></tr>
+</tbody>
+</table>
+</div>
+<div class="conclusion"><strong>周度结论：先扬后抑，科技权重巨震，板块轮动加速。</strong><br><br>沪指全周跌1.00%（4068.57&rarr;4027.74），创业板指约跌0.28%（3969&rarr;~3958）。6/2-6/3创业板指冲高突破4200后大幅回落，6/5单日暴跌3.20%回吐全周涨幅。全周成交额约14.7万亿，日均近3万亿维持高位。市场经历了「CPO涨停潮&rarr;MLCC/玻璃基板爆发&rarr;6G新主线崛起&rarr;CPO龙头杀跌」的剧烈轮动。</div>
+</div>
+
+<!-- 02 -->
+<div class="section">
+<div class="section-head"><span class="section-num">02</span><span class="section-title">本周异动上涨板块</span></div>
+
+<div class="subsection"><h3>1. CPO / 光模块<span class="sub-tag">进攻 &middot; 6/2-6/3领涨 &middot; 6/4-6/5回调杀跌</span></h3>
+<p>本周最具争议板块：前半周涨停潮，后半周龙头巨震。催化来自谷歌800亿AI基建+英伟达Spectrum-X硅光量产+黄仁勋COMPUTEX演讲。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>日期</th><th>表现</th><th>关键个股</th></tr></thead>
+<tbody>
+<tr><td>6/2(二)</td><td>CPO涨停潮，通信+5.71%领涨</td><td>意华股份/光库科技涨停，中际旭创+5%+</td></tr>
+<tr><td>6/3(三)</td><td>连续第2日领涨</td><td>中际旭创盘中涨停超茅台1288元，天孚通信+8%+，长飞光纤3连板</td></tr>
+<tr><td>6/4(四)</td><td>回调-1%~-2%（跌幅收窄）</td><td>正常趋势回踩</td></tr>
+<tr><td>6/5(五)</td><td><strong>集体杀跌！</strong></td><td>中际旭创-7.81%（583亿天量，A股历史第四），天孚/新易盛大跌</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsection"><h3>2. MLCC / 被动元件<span class="sub-tag">进攻 &middot; 6/4爆发 &middot; 6/5随大盘回调</span></h3>
+<p>6G试点专项行动（工信部）+AI服务器MLCC需求4.3倍增长（高盛）+涨价预期三重催化。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>6/4表现</th><th>6/5表现</th></tr></thead>
+<tbody>
+<tr><td>风华高科</td><td>000636</td><td><span class="tag tag-up">涨停</span></td><td>回调</td></tr>
+<tr><td>三环集团</td><td>300408</td><td><span class="tag tag-up">+6%</span></td><td>回调</td></tr>
+<tr><td>国瓷材料</td><td>002618</td><td><span class="tag tag-up">+5.84%</span></td><td>回调</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsection"><h3>3. 玻璃基板<span class="sub-tag">进攻 &middot; 全周持续活跃</span></h3>
+<p>英特尔玻璃基板工厂+面板巨头切入先进封装，板块持续发酵。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>周内表现</th><th>亮点</th></tr></thead>
+<tbody>
+<tr><td>京东方A</td><td>000725</td><td>6/4涨停，6/5一度触涨停</td><td>2400亿+市值涨停，大象起舞</td></tr>
+<tr><td>红星发展</td><td>600367</td><td>8天6板</td><td>玻璃基板材料龙头</td></tr>
+<tr><td>雷曼光电</td><td>300162</td><td>6/5涨停</td><td>全天强势</td></tr>
+<tr><td>沃格光电</td><td>603773</td><td>6/5涨停</td><td>全天强势</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsection"><h3>4. 6G概念<span class="sub-tag">进攻 &middot; 6/5新崛起 &middot; 本周最强新方向</span></h3>
+<p>6G试点专项行动政策催化，6/5批量涨停，板块指数涨幅接近3%。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>6/5表现</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>创远信科</td><td>831961</td><td><span class="tag tag-up">30%涨停</span></td><td><a href="https://stockpage.10jqka.com.cn/831961/" target="_blank">同花顺</a></td></tr>
+<tr><td>武汉凡谷</td><td>002194</td><td><span class="tag tag-up">涨停</span></td><td><a href="https://stockpage.10jqka.com.cn/002194/" target="_blank">同花顺</a></td></tr>
+<tr><td>特发信息</td><td>000070</td><td><span class="tag tag-up">涨停</span></td><td><a href="https://stockpage.10jqka.com.cn/000070/" target="_blank">同花顺</a></td></tr>
+<tr><td>顺络电子</td><td>002138</td><td><span class="tag tag-up">涨停</span></td><td><a href="https://stockpage.10jqka.com.cn/002138/" target="_blank">同花顺</a></td></tr>
+<tr><td>中兴通讯</td><td>000063</td><td><span class="tag tag-up">+7%</span></td><td><a href="https://stockpage.10jqka.com.cn/000063/" target="_blank">同花顺</a></td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsection"><h3>5. 人形机器人<span class="sub-tag">进攻 &middot; 6/5午后爆发</span></h3>
+<p>宇树科技科创板IPO提交注册催化，午后机器人概念快速拉升。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>6/5表现</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>绿的谐波</td><td>688017</td><td><span class="tag tag-up">涨停</span></td><td><a href="https://stockpage.10jqka.com.cn/688017/" target="_blank">同花顺</a></td></tr>
+<tr><td>科力尔</td><td>002892</td><td><span class="tag tag-up">涨停</span></td><td><a href="https://stockpage.10jqka.com.cn/002892/" target="_blank">同花顺</a></td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsection"><h3>6. 半导体<span class="sub-tag">进攻 &middot; 6/1暴跌&rarr;6/2-6/3反弹&rarr;6/4企稳&rarr;6/5杀跌</span></h3>
+<p>本周走势一波三折：6/1科创50两日暴挫10%，6/2-6/3超跌反弹（科创50+2.11%），6/4逆势+0.69%企稳，6/5半导体大幅下挫（科创综指-2.4%）。</p>
+</div>
+
+<div class="subsection"><h3>7. 煤炭<span class="sub-tag">防守 &middot; 6/1爆发&rarr;6/2回调&rarr;6/3-6/4走强&rarr;6/5走低</span></h3>
+<p>6/1煤炭+5.53%领涨申万，大有能源/郑州煤电涨停。大有能源此前5连板成为煤炭龙头。6/5煤炭走低。</p>
+</div>
+
+<div class="subsection"><h3>8. 电力<span class="sub-tag">防守 &middot; 全周弱势 &middot; 6/5暴跌</span></h3>
+<p>电力板块持续资金流出。6/5电力板块大跌，豫能控股/华电能源跌停。上周（W22）的电力龙头本周全面退潮。</p>
+</div>
+</div>
+
+<!-- 03 -->
+<div class="section">
+<div class="section-head"><span class="section-num">03</span><span class="section-title">连板股排列（6/5收盘）</span></div>
+<p style="font-size:14px;color:var(--text2);margin-bottom:16px">涨停77-79只，炸板44只，连板9-10只。封板率约56%。三连板及以上4只。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>#</th><th>个股</th><th>代码</th><th>连板数</th><th>板块</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>大有能源</td><td>600403</td><td><strong>此前5连板</strong></td><td><span class="tag tag-up">煤炭</span></td></tr>
+<tr><td>2</td><td>红星发展</td><td>600367</td><td>8天6板</td><td><span class="tag tag-info">玻璃基板</span></td></tr>
+<tr><td>3</td><td>创远信科</td><td>831961</td><td>30%涨停</td><td><span class="tag tag-info">6G</span></td></tr>
+<tr><td>4</td><td>武汉凡谷</td><td>002194</td><td>涨停</td><td><span class="tag tag-info">6G</span></td></tr>
+</tbody></table></div>
+<div class="conclusion"><strong>连板特征：</strong>三连板及以上仅4只，连板高度受限。大有能源（煤炭）与红星发展（玻璃基板）并列最高标，6/5新起的6G方向尚处首板阶段。</div>
+</div>
+
+<!-- 04 -->
+<div class="section">
+<div class="section-head"><span class="section-num">04</span><span class="section-title">下跌板块概览</span></div>
+<div class="table-wrap"><table>
+<thead><tr><th>板块</th><th>跌幅情况</th><th>关键事件</th></tr></thead>
+<tbody>
+<tr><td>电力</td><td>大跌，豫能控股/华电能源跌停</td><td>W22龙头全面退潮，资金出逃</td></tr>
+<tr><td>半导体</td><td>大幅下挫，科创综指-2.4%</td><td>前期涨幅过大+获利盘出逃</td></tr>
+<tr><td>CPO / PCB概念</td><td>龙头杀跌，中际旭创-7.81%</td><td>583亿天量成交，巨幅分歧</td></tr>
+<tr><td>燃气</td><td>走低</td><td>&mdash;</td></tr>
+<tr><td>煤炭</td><td>走低</td><td>前期连板股回调</td></tr>
+<tr><td>券商</td><td>走低</td><td>&mdash;</td></tr>
+<tr><td>有色</td><td>走低</td><td>&mdash;</td></tr>
+<tr><td>存储芯片</td><td>跌幅居前</td><td>&mdash;</td></tr>
+<tr><td>培育钻石</td><td>跌幅居前</td><td>&mdash;</td></tr>
+</tbody></table></div>
+<div class="conclusion"><strong>结论：</strong>6/5是本周分水岭。CPO龙头杀跌+电力暴跌+半导体下挫，资金从主线科技权重中撤离，转向6G/玻璃基板/机器人等新方向寻找避风港。</div>
+</div>
+
+<!-- 05 -->
+<div class="section">
+<div class="section-head"><span class="section-num">05</span><span class="section-title">涨停数据汇总</span></div>
+<div class="table-wrap"><table>
+<thead><tr><th>日期</th><th>涨停数</th><th>炸板数</th><th>跌停数</th><th>封板率</th><th>特征</th></tr></thead>
+<tbody>
+<tr><td>6/1(一)</td><td><strong>166</strong></td><td>&mdash;</td><td>23</td><td>&mdash;</td><td>煤炭+AI应用涨停潮</td></tr>
+<tr><td>6/2(二)</td><td>96</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>CPO涨停潮</td></tr>
+<tr><td>6/3(三)</td><td>81</td><td>&mdash;</td><td>27</td><td>&mdash;</td><td>创业板指破4200</td></tr>
+<tr><td>6/4(四)</td><td>91</td><td>33</td><td>&mdash;</td><td>73.39%</td><td>MLCC+玻璃基板爆发</td></tr>
+<tr><td>6/5(五)</td><td>~79</td><td>44</td><td>5</td><td>~56%</td><td>6G涨停潮+CPO杀跌</td></tr>
+</tbody></table></div>
+<div class="conclusion"><strong>涨停趋势：</strong>从6/1的166只涨停逐日递减至6/5的~79只，炸板率从6/4的27%跳升至6/5的~44%，封板率从73%跌至56%&mdash;&mdash;市场赚钱效应明显走弱，个股分化加剧。</div>
+</div>
+
+<!-- 06 -->
+<div class="section">
+<div class="section-head"><span class="section-num">06</span><span class="section-title">龙虎榜重点</span></div>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>日期</th><th>成交额</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>中际旭创</td><td>300308</td><td>6/5</td><td><strong>583亿</strong></td><td>A股历史第四天量，巨幅分歧</td></tr>
+</tbody></table></div>
+<div class="conclusion"><strong>中际旭创6/5成交583亿天量（A股历史第四），龙虎榜详细席位数据周末更新。</strong></div>
+</div>
+
+<!-- 07 -->
+<div class="section">
+<div class="section-head"><span class="section-num">07</span><span class="section-title">平台突破股筛选</span></div>
+<div class="conclusion"><strong>本周因周五大幅调整（创业板指-3.20%），不适合筛选平台突破股。</strong><br><br>平台突破股筛选依赖"温和蓄力后放量突破"的市场环境。6/5大盘暴跌日，绝大多数个股处于下跌状态，技术形态被破坏，筛选结果不具参考价值。待市场企稳后恢复筛选。</div>
+</div>
+
+<!-- 08 -->
+<div class="section">
+<div class="section-head"><span class="section-num">08</span><span class="section-title">300亿以上高壁垒个股分析</span></div>
+
+<div class="analysis-card">
+<h4>中兴通讯<span class="ac-code">000063 &middot; 6/5逆势+7%</span></h4>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:110px">维度</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td><strong>市值</strong></td><td>~3000亿+</td></tr>
+<tr><td><strong>主营业务</strong></td><td>通信设备、光通信、服务器、芯片</td></tr>
+<tr><td><strong>核心客户</strong></td><td>全球运营商、企业级客户</td></tr>
+<tr><td><strong>护城河</strong></td><td>5G/6G核心标准专利 + 端到端通信解决方案 + 芯片自研能力</td></tr>
+<tr><td><strong>上涨逻辑</strong></td><td>6G试点专项行动政策催化，核心6G标的，周五逆势大涨+7%</td></tr>
+<tr><td><strong>下跌风险</strong></td><td>6G商用时间表不确定（预计2030年后）；板块短期过热；政策持续性存疑</td></tr>
+<tr><td><strong>买入条件</strong></td><td>回调至5日均线附近缩量企稳可关注；不宜追涨，等回踩确认</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="analysis-card">
+<h4>京东方A<span class="ac-code">000725 &middot; 6/4涨停 6/5一度触涨停</span></h4>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:110px">维度</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td><strong>市值</strong></td><td>2400亿+</td></tr>
+<tr><td><strong>主营业务</strong></td><td>面板制造（LCD/OLED）、先进封装载板</td></tr>
+<tr><td><strong>核心客户</strong></td><td>苹果、三星、华为等终端品牌</td></tr>
+<tr><td><strong>护城河</strong></td><td>产能规模全球第一 + 技术迭代 + 面板周期底部拐点 + 玻璃基板新逻辑</td></tr>
+<tr><td><strong>上涨逻辑</strong></td><td>玻璃基板概念（英特尔/三星布局）+ 面板涨价周期 + 2400亿市值连续涨停打开空间</td></tr>
+<tr><td><strong>下跌风险</strong></td><td>面板价格波动、玻璃基板概念证伪风险、大象起舞后获利盘兑现</td></tr>
+<tr><td><strong>买入条件</strong></td><td>回踩5日均线企稳且量能不异常缩量可关注；短期连续涨停后不宜追入</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="analysis-card">
+<h4>中际旭创<span class="ac-code">300308 &middot; 6/5暴跌-7.81% 成交583亿</span></h4>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:110px">维度</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td><strong>市值</strong></td><td>~4000亿+</td></tr>
+<tr><td><strong>主营业务</strong></td><td>光模块（800G/1.6T）、CPO硅光芯片</td></tr>
+<tr><td><strong>核心客户</strong></td><td>英伟达、微软、谷歌、Meta等全球AI巨头</td></tr>
+<tr><td><strong>护城河</strong></td><td>全球光模块市占率第一 + 1.6T光模块量产领先 + 英伟达核心供应商</td></tr>
+<tr><td><strong>上涨逻辑</strong></td><td>AI算力基建持续扩张 + CPO渗透率提升 + 盘中曾超茅台成"A股新贵"</td></tr>
+<tr><td><strong>下跌风险</strong></td><td>6/5成交583亿天量（A股历史第四），巨幅分歧意味着短期顶部概率大；估值高位回调压力</td></tr>
+<tr><td><strong>买入条件</strong></td><td>需等2-3日缩量企稳确认支撑位后再考虑；天量成交后短期不宜介入</td></tr>
+</tbody></table></div>
+</div>
+</div>
+
+<!-- 09 -->
+<div class="section">
+<div class="section-head"><span class="section-num">09</span><span class="section-title">异常成交量个股</span></div>
+<p style="font-size:14px;color:var(--text2);margin-bottom:12px">筛选标准：当日成交量 &gt; 近半年最高量 &times; 2</p>
+<div class="table-wrap"><table>
+<thead><tr><th>个股</th><th>代码</th><th>日期</th><th>成交额</th><th>异常原因</th></tr></thead>
+<tbody>
+<tr><td><strong>中际旭创</strong></td><td>300308</td><td>6/5</td><td><strong>583亿</strong></td><td>A股历史第四天量，暴跌-7.81%，多空巨幅分歧</td></tr>
+</tbody></table></div>
+<div class="conclusion"><strong>583亿天量解读：</strong>中际旭创单日成交583亿为A股历史第四大成交额。天量成交通常意味着重大分歧&mdash;&mdash;主力资金在该价位发生激烈换手。历史统计显示，天量成交后股价短期（5-10日）大概率进入震荡整理期，需等待缩量企稳信号。</div>
+</div>
+
+<!-- 10 -->
+<div class="section">
+<div class="section-head"><span class="section-num">10</span><span class="section-title">下周展望</span></div>
+<div class="subsection">
+<h3>关键变量</h3>
+<ul>
+<li><strong>创业板指跌破4050关键支撑</strong> &mdash;&mdash; 6/5收盘~3958，已有效跌破4050支撑位，下方关注3900-3950区间</li>
+<li><strong>6G / 玻璃基板 / 机器人新方向崛起</strong> &mdash;&mdash; 6/5逆势涨停潮，需验证下周一是否延续</li>
+<li><strong>CPO / 光模块龙头回调是否企稳</strong> &mdash;&mdash; 中际旭创天量暴跌后能否2-3日内缩量止跌是关键</li>
+<li><strong>北证50异军突起</strong> &mdash;&mdash; 6/5北证50+5.59%，资金关注度显著提升</li>
+</ul>
+</div>
+<div class="subsection">
+<h3>策略建议</h3>
+<ul>
+<li><strong>仓位管理：</strong>轻仓观望，建议仓位3成以下。下周一确认方向后再决定加减仓</li>
+<li><strong>新方向跟踪：</strong>6G（中兴通讯、武汉凡谷）、玻璃基板（京东方A）、机器人（绿的谐波）</li>
+<li><strong>回避：</strong>CPO龙头天量后短期不宜抄底；电力板块趋势破坏需回避</li>
+<li><strong>观察：</strong>北证50资金动向、创业板指3900支撑有效性</li>
+</ul>
+</div>
+<div class="subsection">
+<h3>机构观点</h3>
+<ul>
+<li><strong>国信证券：</strong>中期向上趋势未改，短期调整不改牛市格局</li>
+<li><strong>开源证券：</strong>科技成长核心主线，审美升级&mdash;&mdash;从硬件向应用/材料扩散</li>
+</ul>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="section">
+<div class="section-head"><span class="section-num">11</span><span class="section-title">下周重点盯盘清单</span></div>
+<p style="font-size:14px;color:var(--text2);margin-bottom:20px">按进攻/防守分类。<strong>不是推荐买入，是告诉你该看什么。</strong></p>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--error)">&bull;</span> 进攻板块（6G / 玻璃基板 / 机器人 &mdash; 新方向）</div>
+<div class="watch-card"><div><span class="watch-name">中兴通讯</span><span class="watch-code">000063</span></div><div class="watch-logic">3000亿+6G核心标的，6/5逆势+7%</div><div class="watch-signal">&rarr; 下周一能否延续强势；回调至5日线附近可关注</div></div>
+<div class="watch-card"><div><span class="watch-name">武汉凡谷</span><span class="watch-code">002194</span></div><div class="watch-logic">6G滤波器龙头，6/5涨停</div><div class="watch-signal">&rarr; 首板后能否连板晋级，决定6G板块高度</div></div>
+<div class="watch-card"><div><span class="watch-name">京东方A</span><span class="watch-code">000725</span></div><div class="watch-logic">2400亿+玻璃基板+面板龙头，连续2日涨停/触涨停</div><div class="watch-signal">&rarr; 大象能否持续起舞；回踩5日线不破是低吸信号</div></div>
+<div class="watch-card"><div><span class="watch-name">绿的谐波</span><span class="watch-code">688017</span></div><div class="watch-logic">谐波减速器龙头，宇树科技IPO催化</div><div class="watch-signal">&rarr; 机器人方向持续性验证；关注宇树科技IPO进展</div></div>
+<div class="watch-card"><div><span class="watch-name">顺络电子</span><span class="watch-code">002138</span></div><div class="watch-logic">MLCC+6G双主线，6/5涨停</div><div class="watch-signal">&rarr; 回调后能否企稳，MLCC涨价逻辑中期支撑</div></div>
+</div>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--warning)">&bull;</span> 观察板块（CPO / 光模块 &mdash; 等待企稳）</div>
+<div class="watch-card"><div><span class="watch-name">中际旭创</span><span class="watch-code">300308</span></div><div class="watch-logic">CPO龙头，6/5暴跌-7.81%成交583亿天量</div><div class="watch-signal">&rarr; 天量后需2-3日缩量止跌确认；短期不宜介入</div></div>
+<div class="watch-card"><div><span class="watch-name">天孚通信</span><span class="watch-code">300394</span></div><div class="watch-logic">光器件龙头，6/5跟随大跌</div><div class="watch-signal">&rarr; 跟随中际旭创方向；龙头企稳后最先反弹的品种</div></div>
+</div>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--success)">&bull;</span> 防守板块（煤炭 &mdash; 观察连板龙头）</div>
+<div class="watch-card"><div><span class="watch-name">大有能源</span><span class="watch-code">600403</span></div><div class="watch-logic">煤炭龙头，此前5连板</div><div class="watch-signal">&rarr; 连板能否继续晋级；断板后观察煤炭板块整体走势</div></div>
+</div>
+
+<div class="watch-group">
+<div class="watch-group-title"><span style="color:var(--secondary)">&bull;</span> 风格信号（关键观察）</div>
+<div class="watch-card"><div><span class="watch-name">创业板指 ~3958</span></div><div class="watch-logic">已跌破4050关键支撑</div><div class="watch-signal">&rarr; 3900-3950是下一个支撑区间；跌破3900则中期转弱</div></div>
+<div class="watch-card"><div><span class="watch-name">北证50 +5.59%</span></div><div class="watch-logic">6/5异军突起</div><div class="watch-signal">&rarr; 资金是否系统性流入北交所？持续2日以上则成为新增量方向</div></div>
+<div class="watch-card"><div><span class="watch-name">成交额 ~3.1万亿</span></div><div class="watch-logic">大跌日成交维持3万亿+</div><div class="watch-signal">&rarr; 放量杀跌=恐慌性抛售；下周一若缩量至2.5万亿以下则抛压减弱</div></div>
+</div>
+
+<div class="logic-box">如果CPO龙头2-3日内缩量企稳 + 创业板指守住3900 → 进攻板块回归，盯中际旭创/天孚反弹
+如果6G/玻璃基板连续2日涨停潮 → 新主线确认，盯中兴通讯/武汉凡谷/京东方A
+如果创业板指继续破位 + 成交缩至2.5万亿以下 → 防守为主，轻仓观望
+核心策略：3成以下仓位，下周一确认方向后再定</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<p>数据来源：证券时报 / 财联社 / 东方财富 / 新浪财经 &middot; 联网核实</p>
+<p class="warn">风险提示：本报告基于公开信息整理，不构成投资建议。市场有风险，投资需谨慎。</p>
+<p style="margin-top:12px;font-size:13px;color:var(--text2)">阳子 &middot; PMO周报 &middot; 2026年6月5日</p>
+</div>
+
+</div>
+</body>
+</html>

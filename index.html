@@ -124,17 +124,37 @@ body{font-family:'DM Sans',sans-serif;background:#FFFFFF;color:var(--text);line-
 <div class="section-label">Reports</div>
 
 <div class="tabs">
-  <button class="tab-btn active" data-filter="all">全部<span class="tab-count" id="count-all">15</span></button>
+  <button class="tab-btn active" data-filter="all">全部<span class="tab-count" id="count-all">17</span></button>
   <button class="tab-btn" data-filter="half">半日报<span class="tab-count" id="count-half">5</span></button>
   <button class="tab-btn" data-filter="midday">盘中报<span class="tab-count" id="count-midday">5</span></button>
-  <button class="tab-btn" data-filter="daily">日报<span class="tab-count" id="count-daily">4</span></button>
-  <button class="tab-btn" data-filter="weekly">周报<span class="tab-count" id="count-weekly">1</span></button>
+  <button class="tab-btn" data-filter="daily">日报<span class="tab-count" id="count-daily">5</span></button>
+  <button class="tab-btn" data-filter="weekly">周报<span class="tab-count" id="count-weekly">2</span></button>
   <button class="tab-btn" data-filter="monthly">月报<span class="tab-count" id="count-monthly">0</span></button>
 </div>
 
 <div class="reports" id="report-list">
 
-<!-- 盘中扫描 6/5 — 最新在前 -->
+<!-- 周报 W23 — 最新在前 -->
+<a class="report-card" data-type="weekly" href="2026-W23_0601-0605.html">
+<span class="rc-week">W23</span>
+<div class="rc-body">
+<div class="rc-title">科技权重巨震，6G新主线崛起，创业板指先破4200后跌破4050<span class="rc-type rc-type-weekly">周报</span><span class="tag tag-down">沪指 -1.00%</span></div>
+<div class="rc-date">2026年6月1日 — 6月5日</div>
+</div>
+<span class="rc-arrow">→</span>
+</a>
+
+<!-- 日报 6/5 -->
+<a class="report-card" data-type="daily" href="2026-06-05-日报.html">
+<span class="rc-week">6/5</span>
+<div class="rc-body">
+<div class="rc-title">午后崩盘！创业板指-3.20%，6G/玻璃基板/机器人逆势涨停潮<span class="rc-type rc-type-daily">日报</span><span class="tag tag-down">创业板指 -3.20%</span></div>
+<div class="rc-date">2026年6月5日 · 收盘复盘</div>
+</div>
+<span class="rc-arrow">→</span>
+</a>
+
+<!-- 盘中扫描 6/5 -->
 <a class="report-card" data-type="midday" href="2026-06-05-盘中.html">
 <span class="rc-week">6/5</span>
 <div class="rc-body">
