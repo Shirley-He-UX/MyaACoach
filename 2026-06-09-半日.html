@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技全面反攻！PCB涨停潮+CPO大反弹 — 阳子PMO半日报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--error);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-08-日报.html">← 上一篇</a>
+    <a class="nav-disabled">下一篇 →</a>
+  </div>
+</nav>
+<div class="hero-band">
+<div class="hero-content">
+<div class="hero-week">2026.06.09 · 半日分析 · 11:30</div>
+<h1 class="hero-title">科技全面反攻！<br>PCB涨停潮+CPO大反弹</h1>
+<p class="hero-sub">日韩半导体暴涨SK海力士+7% · 三大指数集体高开 · 沪指+0.51%回升3980 · 创业板指+1.91% · PCB掀涨停潮 · CPO太辰光涨超13% · 天娱数科3连板 · 煤炭白酒走弱</p>
+</div>
+</div>
+
+<div class="container">
+
+<!-- 1. 大盘总览 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">01</span><span class="section-title">大盘总览（半日收盘）</span></div>
+
+  <div class="alert-box">
+    <div class="alert-title">外盘重要催化：日韩半导体暴涨 + 苹果WWDC</div>
+    <p>日韩半导体暴涨：<strong>SK海力士一度+7%</strong>，三星+5%。韩国KOSPI一度+5%触发<strong>上涨熔断</strong>（与昨日-8%下跌熔断形成极端反转）。<br>
+    催化：<strong>英伟达与SK海力士宣布多年期技术合作</strong>（下一代AI内存联合研发）。<br>
+    苹果WWDC：发布新一代AI平台+升级版Siri。<strong>亚马逊与康宁签署光纤长协</strong>。<br>
+    A股影响：三大指数集体高开后震荡走高，<strong>创业板指涨近2%领涨</strong>，科技方向全面反攻。</p>
+  </div>
+
+  <div class="data-cards">
+    <div class="data-card" style="border-left-color:var(--error)"><div class="label">上证指数</div><div class="value">3979.68</div><div class="change change-up">+0.51%（+20.34点）</div></div>
+    <div class="data-card" style="border-left-color:var(--error)"><div class="label">深证成指</div><div class="value" style="font-size:20px;">15007.11</div><div class="change change-up">+1.25%（+185.92点）</div></div>
+    <div class="data-card" style="border-left-color:var(--error)"><div class="label">创业板指</div><div class="value">3884.54</div><div class="change change-up">+1.91%（+72.76点）</div></div>
+    <div class="data-card" style="border-left-color:var(--error)"><div class="label">科创50</div><div class="value">—</div><div class="change change-up">高开逾2%</div></div>
+    <div class="data-card" style="border-left-color:var(--secondary)"><div class="label">半日成交预估</div><div class="value" style="font-size:20px;">约1.4万亿</div><div class="change">量能活跃</div></div>
+  </div>
+  <p class="summary-text">
+    受日韩半导体暴涨催化，A股三大指数集体高开后震荡走高。<strong>创业板指+1.91%领涨</strong>，沪指+0.51%回升3980距4000仅20点。今日最强方向<strong>PCB板块掀涨停潮</strong>（圣泉集团/金安国纪/东材科技/山东玻纤/康达新材批量涨停），CPO概念昨日超跌后大幅反弹（太辰光+13%），存储芯片受英伟达+SK海力士合作催化集体拉升。<strong>资金从昨日防守方向（煤炭/银行）明显回流至科技进攻</strong>，煤炭/白酒/银行今日走弱。
+  </p>
+</section>
+
+<!-- 2. 异动上涨板块 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">02</span><span class="section-title">异动上涨板块</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>PCB <span class="tag tag-yellow">今日最强·涨停潮</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      <strong>今日最强方向。</strong>PCB板块掀涨停潮，批量个股封板。催化：渤海证券研报"2025年全球PCB市场规模848亿美元+15.4%，服务器/数据存储领域+46.3%"。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>半日涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">雅葆轩</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">30%涨停</strong></td><td>北交所</td></tr>
+        <tr><td><span class="name">圣泉集团</span></td><td><span class="code">605589</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>近30万手封单</td></tr>
+        <tr><td><span class="name">金安国纪</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>PCB</td></tr>
+        <tr><td><span class="name">东材科技</span></td><td><span class="code">601208</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>开盘2分钟封板</td></tr>
+        <tr><td><span class="name">山东玻纤</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>PCB+玻璃纤维</td></tr>
+        <tr><td><span class="name">康达新材</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>PCB</td></tr>
+        <tr><td><span class="name">同宇新材</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">+14%+</strong></td><td>PCB</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>CPO/光模块 <span class="tag tag-blue">大反弹</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      昨日超跌后大幅反弹，CPO概念涨幅居前。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>半日涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">太辰光</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">+13%+</strong></td><td>CPO龙头反弹</td></tr>
+        <tr><td><span class="name">富信科技</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">+13%+</strong></td><td>CPO</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>存储芯片 <span class="tag tag-blue">集体拉升</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      催化：<strong>英伟达+SK海力士宣布AI内存合作</strong>，存储芯片方向集体高开拉升。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>半日涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">圣泉集团</span></td><td><span class="code">605589</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>存储芯片+PCB双催化</td></tr>
+        <tr><td><span class="name">盈方微/东芯股份/商络电子</span></td><td><span class="code">—</span></td><td class="change-up">高开</td><td>存储芯片</td></tr>
+        <tr><td><span class="name">华特气体/博敏电子</span></td><td><span class="code">—</span></td><td class="change-up">高开</td><td>存储芯片</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>半导体设备 <span class="tag tag-blue">活跃</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      催化：日韩半导体暴涨传导，洁净室方向领涨。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>半日涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">亚翔集成</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">2连板</strong></td><td>洁净室方向领涨</td></tr>
+        <tr><td><span class="name">圣晖集成</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>半导体设备</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>玻璃纤维 <span class="tag tag-blue">大涨</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      玻璃纤维板块集体走强。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>半日涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">中国巨石</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>玻璃纤维龙头</td></tr>
+        <tr><td><span class="name">山东玻纤</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">涨停</strong></td><td>玻璃纤维+PCB</td></tr>
+        <tr><td><span class="name">长海股份/中材科技</span></td><td><span class="code">—</span></td><td><strong style="color:var(--error)">+5%+</strong></td><td>玻璃纤维</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>光纤概念 <span class="tag tag-blue">走强</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      催化：<strong>亚马逊与康宁签署光纤长协</strong>，光纤概念涨幅较大。
+    </p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>先进封装 <span class="tag tag-blue">涨幅居前</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      先进封装概念涨幅居前，受益于全球半导体暴涨情绪传导。
+    </p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span>物理AI <span class="tag tag-gray">延续</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      天娱数科涨停实现<strong>3连板</strong>，但公司澄清"没有物理AI业务"。
+    </p>
+    <table>
+      <thead><tr><th>个股</th><th>代码</th><th>半日涨幅</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">天娱数科</span></td><td><span class="code">002354</span></td><td><strong style="color:var(--error)">涨停 3连板</strong></td><td>公司澄清无物理AI业务</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-green">防守</span>煤炭/油气/白酒/银行 <span class="tag tag-gray">走弱</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      油气开采、煤炭、白酒板块跌幅居前，银行板块走弱（昨日逆势今日回落）。<strong>资金从防守方向明显回流至科技进攻</strong>，昨日涨停的防守方向今日全面退潮。
+    </p>
+  </div>
+</section>
+
+<!-- 3. 下跌板块 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">03</span><span class="section-title">下跌板块</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-gray">承压</span>油气/煤炭/白酒/银行 <span class="tag tag-gray">防守→进攻切换</span></div>
+    <p class="summary-text" style="margin-bottom:10px;">
+      资金从防守方向切换至进攻，<strong>昨日涨停的防守方向今日全面退潮</strong>。油气开采、煤炭、白酒板块跌幅居前，银行板块走弱。典型跷跷板效应——科技越强，防守越弱。
+    </p>
+  </div>
+</section>
+
+<!-- 4. 上午涨停股 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">04</span><span class="section-title">上午涨停股</span></div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>涨停类型</th><th>所属板块</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">天娱数科</span></td><td><span class="code">002354</span></td><td><span class="tag tag-red">涨停 3连板</span></td><td>物理AI</td></tr>
+      <tr><td><span class="name">圣泉集团</span></td><td><span class="code">605589</span></td><td><span class="tag tag-red">涨停</span></td><td>存储芯片/PCB</td></tr>
+      <tr><td><span class="name">金安国纪</span></td><td><span class="code">—</span></td><td><span class="tag tag-red">涨停</span></td><td>PCB</td></tr>
+      <tr><td><span class="name">东材科技</span></td><td><span class="code">601208</span></td><td><span class="tag tag-red">涨停</span></td><td>PCB</td></tr>
+      <tr><td><span class="name">山东玻纤</span></td><td><span class="code">—</span></td><td><span class="tag tag-red">涨停</span></td><td>玻璃纤维/PCB</td></tr>
+      <tr><td><span class="name">康达新材</span></td><td><span class="code">—</span></td><td><span class="tag tag-red">涨停</span></td><td>PCB</td></tr>
+      <tr><td><span class="name">中国巨石</span></td><td><span class="code">—</span></td><td><span class="tag tag-red">涨停</span></td><td>玻璃纤维</td></tr>
+      <tr><td><span class="name">亚翔集成</span></td><td><span class="code">—</span></td><td><span class="tag tag-red">2连板</span></td><td>半导体设备</td></tr>
+      <tr><td><span class="name">圣晖集成</span></td><td><span class="code">—</span></td><td><span class="tag tag-red">涨停</span></td><td>半导体设备</td></tr>
+      <tr><td><span class="name">雅葆轩</span></td><td><span class="code">—</span></td><td><span class="tag tag-red">30%涨停</span></td><td>PCB（北交所）</td></tr>
+      <tr><td><span class="name">N高特</span></td><td><span class="code">—</span></td><td><span class="tag tag-yellow">新股涨近800%</span></td><td>新股上市</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 5. 下午盘关注重点与策略 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">05</span><span class="section-title">下午盘关注重点与策略</span></div>
+
+  <div class="sub-section">
+    <div class="sub-head">关键观察点</div>
+    <p class="summary-text">
+      1. <strong>创业板指能否维持+2%以上：</strong>如果下午继续走高突破3900则技术面修复。<br>
+      2. <strong>沪指能否回站4000：</strong>4000是心理关口，回站=情绪修复。<br>
+      3. <strong>PCB涨停潮持续性：</strong>批量涨停是否下午开板。<br>
+      4. <strong>CPO反弹力度：</strong>太辰光+13%但中际旭创反弹力度待确认。<br>
+      5. <strong>防守板块（煤炭/银行）回调深度：</strong>如果跌幅扩大则进攻防守跷跷板效应明显。
+    </p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">策略建议</div>
+    <p class="summary-text">
+      <strong>核心判断：外盘修复催化的技术反弹，反弹力度取决于下午量能。</strong><br><br>
+      1. <strong>科技进攻优先级：</strong>PCB（涨停潮最强）> 存储芯片 > CPO/光模块。<br>
+      2. <strong>不宜追涨停：</strong>等下午回调确认支撑后再考虑。<br>
+      3. <strong>仓位建议：</strong>可从昨日3成提升至4-5成，但需下午确认反弹成立。<br>
+      4. <strong>防守方向：</strong>煤炭/白酒/银行今日走弱，不宜逆势加仓。
+    </p>
+  </div>
+</section>
+
+<!-- 6. 昨日盯盘清单追踪 -->
+<section class="section">
+  <div class="section-head"><span class="section-num">06</span><span class="section-title">昨日盯盘清单追踪</span></div>
+  <p class="summary-text" style="margin-bottom:16px;">追踪6/8日报盯盘清单中个股的今日上午表现：</p>
+
+  <table>
+    <thead><tr><th>个股</th><th>昨日盯盘预期</th><th>今日上午表现</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">凡拓数创</span> <span class="code">301313</span></td><td>物理AI连续性</td><td>昨日20%涨停后观察，今日方向让位PCB</td></tr>
+      <tr><td><span class="name">中望软件</span></td><td>物理AI连续性</td><td>物理AI方向观察</td></tr>
+      <tr><td><span class="name">索辰科技</span> <span class="code">688507</span></td><td>物理AI核心</td><td>观察是否继续走强</td></tr>
+      <tr><td><span class="name">中天科技</span> <span class="code">600522</span></td><td>涨停后能否继续</td><td>今日科技整体反弹中表现待确认</td></tr>
+      <tr><td><span class="name">大有能源</span> <span class="code">600403</span></td><td>6→7连板？</td><td>煤炭今日走弱，连板可能断板</td></tr>
+      <tr><td><span class="name">沪指 4000</span></td><td>能否回站</td><td>目前+0.51%报3980，距4000仅20点</td></tr>
+      <tr><td><span class="name">创业板指 3811</span></td><td>3800关口</td><td>+1.91%报3884，大幅反弹</td></tr>
+    </tbody>
+  </table>
+
+  <p class="summary-text" style="margin-top:12px;">
+    <strong>追踪小结：</strong>创业板指大幅反弹+1.91%报3884，3800支撑有效。沪指+0.51%报3980距4000仅差20点。科技方向今日主线从物理AI切换至PCB/存储芯片，外盘半导体暴涨成为核心催化。煤炭方向今日走弱，大有能源连板面临考验。资金从防守方向（煤炭/银行/白酒）明显回流至科技进攻。
+  </p>
+</section>
+
+</div>
+<div class="footer">
+<p>数据来源：新浪财经 / 证券时报 / 财联社 / 东方财富 · 联网交叉核实</p>
+<p class="warn">风险提示：本报告基于公开信息整理，不构成投资建议。市场有风险，投资需谨慎。</p>
+</div>
+</body>
+</html>
