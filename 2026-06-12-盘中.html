@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpaceX上市催化！沪指站稳4000冲高回落 — A股盘中扫描 14:30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--error);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<div class="top-nav">
+  <div class="nav-group">
+    <a href="2026-06-12-半日.html">上一篇</a>
+  </div>
+  <div class="nav-group">
+    <a href="2026-06-12-半日.html">← 半日报</a>
+    <a href="2026-06-12-盘中.html" class="nav-home">盘中</a>
+    <a href="2026-06-12-半日.html" class="nav-disabled">下一篇 →</a>
+  </div>
+</div>
+
+<!-- ===== Hero ===== -->
+<div class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.06.12 &middot; 盘中扫描 &middot; 14:30</div>
+    <div class="hero-title">SpaceX上市催化！沪指站稳4000冲高回落</div>
+    <div class="hero-sub">商业航天涨停潮+稀有金属+5%<br>沪指4037+1.25%冲高回落 · 创业板3841+0.78% · 午间4049+1.56%→14:30回落 · 商业航天通易航天30cm涨停晨曦航空20cm涨停中航西飞涨停 · 稀有金属ETF+5% · SpaceX今日挂牌史上最大IPO</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ===== Section 1 大盘即时状态(14:30) ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">1</div>
+    <div class="section-title">大盘即时状态 <span style="font-size:14px;font-weight:400;color:var(--text2);">14:30</span></div>
+  </div>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">沪指</div>
+      <div class="value">4036.66</div>
+      <div class="change change-up">+1.25% (+49.65) 较午间4049回落</div>
+    </div>
+    <div class="data-card">
+      <div class="label">深成指</div>
+      <div class="value">15011.85</div>
+      <div class="change change-up">+1.08% (+159.87) 较午间15103回落</div>
+    </div>
+    <div class="data-card">
+      <div class="label">创业板指</div>
+      <div class="value">3840.82</div>
+      <div class="change change-up">+0.78% (+29.58) 较午间3859回落</div>
+    </div>
+  </div>
+  <div class="summary-text">
+    <strong>走势：</strong>午间大幅拉升（沪指+1.56%）→ 午后冲高回落（+1.25%）。<br>
+    <strong>关键：</strong>沪指站稳4000上方！连续3日调整后今日反弹确认。<br>
+    <strong>催化：</strong>SpaceX今日纳斯达克挂牌（SPX代码），史上最大IPO。
+  </div>
+</div>
+
+<!-- ===== Section 2 异动板块扫描(14:30) ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">2</div>
+    <div class="section-title">异动板块扫描 <span style="font-size:14px;font-weight:400;color:var(--text2);">14:30</span></div>
+  </div>
+
+  <!-- 进攻-商业航天 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span> 商业航天 — 今日最强·涨停潮·SpaceX催化</div>
+    <div class="summary-text">
+      通易航天 <span class="tag tag-red">30cm涨停</span>（北交所）&nbsp;
+      晨曦航空 <span class="tag tag-red">20cm涨停</span>&nbsp;
+      中航西飞 <span class="tag tag-red">涨停</span>&nbsp;
+      航天ETF活跃
+    </div>
+    <div style="font-size:13px;color:var(--text2);margin-top:8px;">催化：SpaceX今日挂牌上市（SPX代码，1.77万亿估值，史上最大IPO）</div>
+  </div>
+
+  <!-- 进攻-稀有金属 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span> 稀有金属/有色金属 <span class="tag tag-red">+5%</span></div>
+    <div class="summary-text">
+      稀有金属ETF华富 <span class="s-code">561800</span> 涨超5%&nbsp;
+      洛阳钼业等走强
+    </div>
+    <div style="font-size:13px;color:var(--text2);margin-top:8px;">催化：战略金属价值重估 + CPI通胀逻辑</div>
+  </div>
+
+  <!-- 进攻-半导体材料 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span> 半导体材料 — 延续</div>
+    <div class="summary-text">
+      炬光科技等延续昨日强势&nbsp;
+      半导体设备ETF走强
+    </div>
+  </div>
+
+  <!-- 进攻-电力 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span> 电力 — 延续</div>
+    <div class="summary-text">浙能电力等延续昨日翻红走势</div>
+  </div>
+
+  <!-- 进攻-世界杯 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-red">进攻</span> 世界杯 — 延续</div>
+    <div class="summary-text">金陵体育等延续</div>
+  </div>
+
+  <!-- 防守-金融 -->
+  <div class="sub-section">
+    <div class="sub-head"><span class="tag tag-blue">防守</span> 金融</div>
+    <div class="summary-text">稳健</div>
+  </div>
+
+  <!-- 午后新变化 -->
+  <div class="alert-box">
+    <div class="alert-title">午后新变化</div>
+    <p>午间冲高后午后回落，但仍站稳4000上方。<br>商业航天是午后最强方向，涨停潮未明显炸板。</p>
+  </div>
+</div>
+
+<!-- ===== Section 3 试仓候选 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">3</div>
+    <div class="section-title">试仓候选</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>个股</th><th>代码</th><th>涨幅</th><th>试仓理由</th><th>仓位</th><th>风控</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">航天ETF华安</td>
+        <td class="code">159267</td>
+        <td>待确认</td>
+        <td>商业航天最强方向，ETF分散风险</td>
+        <td>1-2%观察</td>
+        <td>SpaceX上市后热度可能降温</td>
+      </tr>
+      <tr>
+        <td class="name">中航西飞</td>
+        <td class="code">—</td>
+        <td class="change-up">涨停</td>
+        <td>商业航天+军工龙头</td>
+        <td>暂不追涨停</td>
+        <td>涨停买不到，明日观察</td>
+      </tr>
+      <tr>
+        <td class="name">稀有金属ETF华富</td>
+        <td class="code">561800</td>
+        <td class="change-up">+5%</td>
+        <td>有色金属+战略金属重估</td>
+        <td>1%观察</td>
+        <td>CPI通胀逻辑持续性待确认</td>
+      </tr>
+      <tr>
+        <td class="name">浙能电力</td>
+        <td class="code">—</td>
+        <td>延续走强</td>
+        <td>电力连续2日强势</td>
+        <td>1%观察</td>
+        <td>防守转进攻方向确认</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="summary-text" style="margin-top:12px;">
+    <strong>策略：</strong>反弹日仓位可提升至4-5成。商业航天+稀有金属是今日新方向。半导体+电力延续。但午后冲高回落说明不宜追涨。
+  </div>
+</div>
+
+<!-- ===== Section 4 盯盘追踪 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">4</div>
+    <div class="section-title">盯盘追踪</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>个股</th><th>午间表现</th><th>14:30表现</th><th>变化</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">沪指4000</td>
+        <td class="change-up">+1.56% (4049)</td>
+        <td class="change-up">+1.25% (4037)</td>
+        <td>稳站4000但冲高回落</td>
+      </tr>
+      <tr>
+        <td class="name">创业板</td>
+        <td class="change-up">+1.27% (3859)</td>
+        <td class="change-up">+0.78% (3841)</td>
+        <td>回落幅度较大</td>
+      </tr>
+      <tr>
+        <td class="name">炬光科技</td>
+        <td>延续强势</td>
+        <td>待确认</td>
+        <td>半导体材料方向</td>
+      </tr>
+      <tr>
+        <td class="name">浙能电力</td>
+        <td>延续+6%</td>
+        <td>延续走强</td>
+        <td>电力方向确认</td>
+      </tr>
+      <tr>
+        <td class="name">金陵体育</td>
+        <td>20cm涨停</td>
+        <td>待确认</td>
+        <td>世界杯延续</td>
+      </tr>
+      <tr>
+        <td class="name">兴发集团 <span class="code">600141</span></td>
+        <td>一字涨停</td>
+        <td>开板走势？</td>
+        <td>磷化工观察</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 5 尾盘策略 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">5</div>
+    <div class="section-title">尾盘策略</div>
+  </div>
+  <div class="summary-text">
+    <ol style="padding-left:20px;display:flex;flex-direction:column;gap:8px;">
+      <li>沪指能否收盘站稳4000+（目前4037，大概率守住）</li>
+      <li>商业航天涨停潮尾盘是否炸板（如果不炸 = 新主线确认）</li>
+      <li>创业板能否守住3800+（目前3841）</li>
+      <li>SpaceX今晚美股走势 → 明日A股航天方向影响</li>
+      <li>成交额能否放量确认反弹（午间已放量）</li>
+    </ol>
+  </div>
+  <div class="alert-box" style="background:#FEF3C7;border-color:#FDE68A;margin-top:16px;">
+    <div class="alert-title" style="color:var(--warning);">核心判断</div>
+    <p>连续3日调整后今日反弹确认。沪指站稳4000 = 调整结束信号。但午后冲高回落说明反弹力度有限，不宜过度追涨。</p>
+  </div>
+</div>
+
+<!-- ===== Section 6 明日盯盘（下周一6/15） ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">6</div>
+    <div class="section-title">明日盯盘 <span style="font-size:14px;font-weight:400;color:var(--text2);">下周一 6/15</span></div>
+  </div>
+
+  <div class="watch-grid">
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> 商业航天</h4>
+      <div class="item"><span class="s-name">通易航天</span></div>
+      <div class="s-note">30cm涨停·北交所</div>
+      <div class="item"><span class="s-name">晨曦航空</span></div>
+      <div class="s-note">20cm涨停</div>
+      <div class="item"><span class="s-name">中航西飞</span></div>
+      <div class="s-note">涨停·军工龙头</div>
+      <div class="item"><span class="s-name">航天ETF</span><span class="s-code">159267</span></div>
+      <div class="s-note">SpaceX上市后A股航天持续性</div>
+    </div>
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> 稀有金属</h4>
+      <div class="item"><span class="s-name">稀有金属ETF</span><span class="s-code">561800</span></div>
+      <div class="s-note">战略金属重估持续性</div>
+      <div class="item"><span class="s-name">洛阳钼业</span></div>
+      <div class="s-note">有色龙头</div>
+    </div>
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> 半导体材料</h4>
+      <div class="item"><span class="s-name">炬光科技</span></div>
+      <div class="s-note">连续3日强势</div>
+      <div class="item"><span class="s-name">康强电子</span></div>
+      <div class="s-note">延续观察</div>
+    </div>
+    <div class="watch-card">
+      <h4><span class="tag tag-red">进攻</span> 电力</h4>
+      <div class="item"><span class="s-name">浙能电力</span></div>
+      <div class="s-note">连续2日强势</div>
+    </div>
+    <div class="watch-card">
+      <h4><span class="tag tag-blue">防守</span> 金融</h4>
+      <div class="item"><span class="s-name">金融板块</span></div>
+      <div class="s-note">抗跌稳健</div>
+    </div>
+  </div>
+
+  <div class="sub-section" style="margin-top:20px;">
+    <div class="sub-head">风格信号</div>
+    <div class="summary-text" style="display:flex;flex-direction:column;gap:4px;">
+      <div>沪指4000+站稳 — 调整结束确认</div>
+      <div>创业板3800+ — 反弹力度观察</div>
+      <div>成交放量 — 2.5万亿+确认反弹</div>
+      <div>SpaceX美股首日表现 — 直接影响下周一A股航天方向</div>
+      <div>世界杯周末赛事 — 周一体育概念表现</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+  <p>A股盘中扫描 · 2026.06.12 14:30 · 数据来源：新浪财经实时 + 证券时报午间确认</p>
+  <p class="warn">⚠ 盘中数据实时变动，不确定数据已标注"待确认"，请以收盘为准。以上不构成投资建议。</p>
+</div>
+
+</div>
+</body>
+</html>
