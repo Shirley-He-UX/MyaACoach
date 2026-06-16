@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026.06.16 A股盘中扫描 · 14:30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--error);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.conclusion{border-left:4px solid var(--primary);background:#FFF1F2;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+.conclusion strong{color:var(--primary);}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-16-半日.html">← 上一篇</a>
+    <a class="nav-disabled">下一篇 →</a>
+  </div>
+</nav>
+
+<div class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.06.16 · 盘中扫描 · 14:30</div>
+    <div class="hero-title">沪指翻绿！大盘蓝筹走弱 vs 创业板+1.98%站稳4000+ · PET铜箔/稀土飙升</div>
+    <div class="hero-sub">沪指4095-0.04%翻绿 · 创业板4113+1.98% · FOMC沃什首秀日 · 分化加剧</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Section 01: 大盘即时状态 -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">01</div>
+    <div class="section-title">大盘即时状态 · 14:30实时数据</div>
+  </div>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">沪指</div>
+      <div class="value">4094.94</div>
+      <div class="change change-down">-1.53 (-0.04%) <span class="tag tag-green">翻绿!</span></div>
+    </div>
+    <div class="data-card">
+      <div class="label">深成指</div>
+      <div class="value">15697.56</div>
+      <div class="change change-up">+166.45 (+1.07%)</div>
+    </div>
+    <div class="data-card">
+      <div class="label">创业板指</div>
+      <div class="value">4113.37</div>
+      <div class="change change-up">+79.84 (+1.98%) <span class="tag tag-red">站稳4000+</span></div>
+    </div>
+    <div class="data-card">
+      <div class="label">FOMC</div>
+      <div class="value">沃什首秀</div>
+      <div class="change">今日第一天，明日凌晨公布</div>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">午后走势反转对比（11:30 → 14:30） <span class="tag tag-yellow">关键!</span></div>
+    <table>
+      <thead>
+        <tr><th>指数</th><th>午间11:30</th><th>14:30实时</th><th>午后变化</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">沪指</td>
+          <td>4098.85 (+0.06%)</td>
+          <td>4094.94 (-0.04%)</td>
+          <td class="change-down"><span class="tag tag-green">翻绿!</span> 从+0.06%到-0.04%，大盘蓝筹午后走弱</td>
+        </tr>
+        <tr>
+          <td class="name">深成指</td>
+          <td>15712.64 (+1.17%)</td>
+          <td>15697.56 (+1.07%)</td>
+          <td class="change-down">小幅回落-0.10%</td>
+        </tr>
+        <tr>
+          <td class="name">创业板指</td>
+          <td>4116.36 (+2.05%)</td>
+          <td>4113.37 (+1.98%)</td>
+          <td class="change-down">小幅回落-0.07%，但仍<span class="tag tag-red">站稳4000+</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <strong>走势特征：午后分化加剧！</strong>沪指从午间+0.06%翻绿至-0.04%，大盘蓝筹（保险/白酒/航运）午后继续走弱；创业板仍+1.98%站稳4000+，科技成长偏强。对比6/15午后继续拉升，6/16午后反而回落——<strong>分化格局明确：进攻>防守</strong>。
+  </div>
+</div>
+
+<!-- Section 02: 异动板块扫描 -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">02</div>
+    <div class="section-title">异动板块扫描</div>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">进攻板块 <span class="tag tag-red">强势</span></div>
+    <div class="watch-grid">
+
+      <div class="watch-card">
+        <h4>MLCC <span class="tag tag-red">史上最长缺货潮</span></h4>
+        <div class="item"><span class="s-code">000636</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/000636/">风华高科</a></span><span class="tag tag-red">涨停</span></div>
+        <div class="s-note">MLCC龙头涨停，中信证券研报史上最长缺货潮延续至2027后</div>
+        <div class="item"><span class="s-code">002585</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002585/">双星新材</a></span><span class="tag tag-red">9天5板</span></div>
+        <div class="s-note">MLCC+PET铜箔双概念，9天5板延续</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>PCB/铜箔 <span class="tag tag-red">延续</span> <span class="tag tag-yellow">午后强化</span></h4>
+        <div class="item"><span class="s-code">—</span><span class="s-name">诺德股份</span><span class="tag tag-red">6天3板</span></div>
+        <div class="s-note">HVLP4铜箔订单排至2027下半年</div>
+        <div class="item"><span class="s-code">—</span><span class="s-name">光华科技</span><span class="tag tag-red">6天3板</span></div>
+        <div class="s-note">PCB+铜箔方向延续</div>
+        <div class="s-note" style="margin-top:8px;color:var(--error);font-weight:600;">午后新增：PET铜箔板块走强，快讯"指数震荡整理，PET铜箔板块走强"</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>稀土 <span class="tag tag-red">飙升</span> <span class="tag tag-yellow">午后新增</span></h4>
+        <div class="item"><span class="s-code">600392</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600392/">盛和资源</a></span><span class="tag tag-red">直线拉涨停</span></div>
+        <div class="s-note">稀土飙升+矿产资源法催化</div>
+        <div class="item"><span class="s-code">—</span><span class="s-name">厦门钨业</span><span class="tag tag-red">涨停</span></div>
+        <div class="s-note">小金属+稀土双概念</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>小金属 <span class="tag tag-red">连板</span></h4>
+        <div class="item"><span class="s-code">—</span><span class="s-name">盛龙股份</span><span class="tag tag-red">4连板确认</span></div>
+        <div class="s-note">小金属概念，4连板确认晋级</div>
+        <div class="item"><span class="s-code">—</span><span class="s-name">长裕集团</span><span class="tag tag-red">涨停</span></div>
+        <div class="s-note">小金属方向延续</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>光通信/CPO <span class="tag tag-red">延续</span></h4>
+        <div class="item"><span class="s-code">—</span><span class="s-name">永鼎股份</span><span class="tag tag-red">涨停</span></div>
+        <div class="s-note">光通信方向延续强势</div>
+        <div class="item"><span class="s-code">—</span><span class="s-name">杭电股份</span><span class="tag tag-red">2连板</span></div>
+        <div class="s-note">光纤+光通信+CPO产业链</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>液冷服务器 <span class="tag tag-red">20CM涨停</span></h4>
+        <div class="item"><span class="s-code">—</span><span class="s-name">南方泵业</span><span class="tag tag-red">20CM涨停</span></div>
+        <div class="s-note">液冷服务器方向爆发</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>锂电池 <span class="tag tag-blue">活跃</span></h4>
+        <div class="item"><span class="s-code">—</span><span class="s-name">丰元股份</span><span class="tag tag-red">涨停</span></div>
+        <div class="s-note">锂电池方向涨停</div>
+        <div class="item"><span class="s-code">300014</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300014/">亿纬锂能</a></span><span class="tag tag-red">涨超13%</span></div>
+        <div class="s-note">锂电池龙头+新能源车复苏预期</div>
+        <div class="item"><span class="s-code">—</span><span class="s-name">先导智能</span><span class="tag tag-red">涨超13%</span></div>
+        <div class="s-note">锂电设备龙头</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>科创板IPO <span class="tag tag-yellow">午后新增</span></h4>
+        <div class="s-note">营原科技科创板IPO过会，拟募资60亿元迭代五代、六代AI芯片</div>
+        <div class="s-note">AI芯片赛道持续扩容，利好寒武纪等国产AI芯片概念</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">防守板块 <span class="tag tag-green">避险</span></div>
+    <div class="watch-grid">
+
+      <div class="watch-card">
+        <h4>贵金属/黄金 <span class="tag tag-green">关注</span></h4>
+        <div class="item"><span class="s-code">—</span><span class="s-name">招金黄金</span></div>
+        <div class="s-note">6/15逼近涨停→6/16午后待确认，FOMC偏鹰则受益</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>券商 <span class="tag tag-blue">观察</span></h4>
+        <div class="item"><span class="s-code">601696</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/601696/">中银证券</a></span></div>
+        <div class="s-note">6/15 2连板→6/16上午待确认3连板→午后待确认</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">下跌板块 <span class="tag tag-gray">弱势</span> <span class="tag tag-yellow">午后加剧</span></div>
+    <div class="watch-grid">
+      <div class="watch-card">
+        <h4>港口航运 <span class="tag tag-gray">领跌</span></h4>
+        <div class="item"><span class="s-code">600026</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600026/">中远海能</a></span><span class="tag tag-gray">领跌</span></div>
+        <div class="s-note">6/15一字涨停后连续回调，午后继续走弱</div>
+      </div>
+      <div class="watch-card">
+        <h4>保险 <span class="tag tag-gray">跌</span></h4>
+        <div class="item"><span class="s-code">—</span><span class="s-name">中国人保</span><span class="tag tag-gray">领跌</span></div>
+        <div class="s-note">保险板块午后走弱</div>
+      </div>
+      <div class="watch-card">
+        <h4>白酒 <span class="tag tag-gray">跌</span></h4>
+        <div class="item"><span class="s-code">—</span><span class="s-name">今世缘</span><span class="tag tag-gray">跌超4%</span></div>
+        <div class="s-note">白酒板块偏弱</div>
+      </div>
+      <div class="watch-card">
+        <h4>沪指大盘蓝筹 <span class="tag tag-gray">整体偏弱</span></h4>
+        <div class="s-note">沪指翻绿-0.04%，大盘蓝筹午后整体走弱</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 03: 试仓候选股 -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">03</div>
+    <div class="section-title">试仓候选股 · FOMC不确定性高，仓位偏轻</div>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">核心原则：FOMC明日凌晨公布结果，不确定性高！</div>
+    <p>今日为FOMC第一天（沃什首秀），明日凌晨公布结果。偏鹰=科技承压，偏鸽=全面利好。在FOMC结果公布前，<strong>试仓仓位必须偏轻，不宜重仓追涨</strong>。尾盘尤其不宜加仓追涨停。</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>名称/代码</th><th>当前涨幅</th><th>试仓理由</th><th>建议仓位</th><th>风控提示</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="name"><a href="https://stockpage.10jqka.com.cn/000636/">风华高科</a></span><br><span class="code">000636</span></td>
+        <td><span class="change-up">涨停</span></td>
+        <td>MLCC龙头涨停，中信证券研报史上最长缺货潮延续至2027后+指数调整催化</td>
+        <td>轻仓1-2%</td>
+        <td>止损5日线，最大亏损5%</td>
+      </tr>
+      <tr>
+        <td><span class="name"><a href="https://stockpage.10jqka.com.cn/300014/">亿纬锂能</a></span><br><span class="code">300014</span></td>
+        <td><span class="change-up">涨超13%</span></td>
+        <td>锂电池龙头涨超13%，锂电池活跃+新能源车复苏预期</td>
+        <td>轻仓1%</td>
+        <td>止损10日线，最大亏损8%</td>
+      </tr>
+      <tr>
+        <td><span class="name"><a href="https://stockpage.10jqka.com.cn/600392/">盛和资源</a></span><br><span class="code">600392</span></td>
+        <td><span class="change-up">直线拉涨停</span></td>
+        <td>稀土飙升+矿产资源法催化，午后新增方向</td>
+        <td>观察仓1%以下</td>
+        <td>止损5日线，最大亏损5%</td>
+      </tr>
+      <tr>
+        <td><span class="name">杭电股份</span></td>
+        <td><span class="change-up">2连板</span></td>
+        <td>光纤2连板，光通信延续+CPO产业链</td>
+        <td>轻仓1%</td>
+        <td>止损5日线，最大亏损5%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-section">
+    <div class="sub-head">不宜追涨停的标的（仅观察）</div>
+    <table>
+      <thead>
+        <tr><th>名称/代码</th><th>涨幅</th><th>逻辑</th><th>操作建议</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="name"><a href="https://stockpage.10jqka.com.cn/002585/">双星新材</a></span><span class="code">002585</span></td>
+          <td><span class="change-up">9天5板</span></td>
+          <td>MLCC+PET铜箔双概念</td>
+          <td>不宜追连板</td>
+        </tr>
+        <tr>
+          <td><span class="name">盛龙股份</span></td>
+          <td><span class="change-up">4连板</span></td>
+          <td>小金属概念</td>
+          <td>不宜追连板</td>
+        </tr>
+        <tr>
+          <td><span class="name">诺德股份</span></td>
+          <td><span class="change-up">6天3板</span></td>
+          <td>HVLP4铜箔</td>
+          <td>不宜追连板</td>
+        </tr>
+        <tr>
+          <td><span class="name">南方泵业</span></td>
+          <td><span class="change-up">20CM涨停</span></td>
+          <td>液冷服务器</td>
+          <td>不宜追涨停</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Section 04: 盯盘清单追踪 -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">04</div>
+    <div class="section-title">盯盘清单追踪 · 延续6/15日报+6/16半日</div>
+  </div>
+
+  <p class="summary-text">以下为6/15日报+6/16半日盯盘清单个股的下午盘表现追踪（基于14:30实时数据）：</p>
+
+  <table>
+    <thead>
+      <tr><th>名称/代码</th><th>6/15日报状态</th><th>6/16上午状态</th><th>6/16午后14:30状态</th><th>变化</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="name">创业板指4000点</span></td>
+        <td>6/15突破4000 (+4.49%)</td>
+        <td>午间4116.36 (+2.05%)</td>
+        <td>4113.37 (+1.98%) <span class="tag tag-red">站稳4000+</span></td>
+        <td class="change-up">小幅回落但真突破延续</td>
+      </tr>
+      <tr>
+        <td><span class="name"><a href="https://stockpage.10jqka.com.cn/688167/">炬光科技</a></span><span class="code">688167</span></td>
+        <td>6/15 20CM涨停</td>
+        <td>上午未特别提及</td>
+        <td>午后待确认</td>
+        <td>延续关注</td>
+      </tr>
+      <tr>
+        <td><span class="name"><a href="https://stockpage.10jqka.com.cn/600183/">生益科技</a></span><span class="code">600183</span></td>
+        <td>6/15涨停4000亿</td>
+        <td>上午待确认</td>
+        <td>午后待确认</td>
+        <td>延续关注</td>
+      </tr>
+      <tr>
+        <td><span class="name"><a href="https://stockpage.10jqka.com.cn/601958/">金钼股份</a></span><span class="code">601958</span></td>
+        <td>6/15 3连板</td>
+        <td>上午待确认4连板</td>
+        <td>午后待确认</td>
+        <td>关键晋级信号</td>
+      </tr>
+      <tr>
+        <td><span class="name">盛龙股份</span></td>
+        <td>6/15 3连板</td>
+        <td>涨停确认4连板</td>
+        <td><span class="tag tag-red">4连板确认</span>，午后待确认封板</td>
+        <td class="change-up">确认晋级</td>
+      </tr>
+      <tr>
+        <td><span class="name">寒武纪</span></td>
+        <td>6/15 +7%</td>
+        <td>上午待确认</td>
+        <td>午后待确认</td>
+        <td>延续关注</td>
+      </tr>
+      <tr>
+        <td><span class="name">华虹宏力</span></td>
+        <td>6/15 +11%</td>
+        <td>上午待确认</td>
+        <td>午后待确认</td>
+        <td>延续关注</td>
+      </tr>
+      <tr>
+        <td><span class="name">招金黄金</span></td>
+        <td>6/15逼近涨停</td>
+        <td>上午待确认</td>
+        <td>午后待确认</td>
+        <td>延续关注</td>
+      </tr>
+      <tr>
+        <td><span class="name"><a href="https://stockpage.10jqka.com.cn/601696/">中银证券</a></span><span class="code">601696</span></td>
+        <td>6/15 2连板</td>
+        <td>上午待确认3连板</td>
+        <td>午后待确认</td>
+        <td>关键晋级信号</td>
+      </tr>
+      <tr>
+        <td><span class="name"><a href="https://stockpage.10jqka.com.cn/600026/">中远海能</a></span><span class="code">600026</span></td>
+        <td>6/15一字涨停</td>
+        <td>连续回调</td>
+        <td><span class="tag tag-gray">领跌</span>，午后继续走弱</td>
+        <td class="change-down">航运三剑客回调</td>
+      </tr>
+      <tr>
+        <td><span class="name">沪指</span></td>
+        <td>6/15 +1.16%</td>
+        <td>午间+0.06%</td>
+        <td><span class="tag tag-green">-0.04%翻绿</span></td>
+        <td class="change-down">大盘蓝筹午后走弱</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Section 05: 尾盘策略提示 -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">05</div>
+    <div class="section-title">尾盘策略提示 · 最后30分钟 14:30-15:00</div>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">FOMC不确定性 — 明日凌晨公布结果！</div>
+    <p>今日为FOMC第一天（沃什首秀），明日凌晨公布结果。偏鹰=科技承压，偏鸽=全面利好。尾盘最后30分钟<strong>不宜加仓追涨</strong>，仓位偏轻为上。</p>
+  </div>
+
+  <div class="watch-grid">
+    <div class="watch-card">
+      <h4>关键观察点</h4>
+      <div class="s-note">1. FOMC不确定性 — 明日凌晨公布结果，尾盘不宜加仓追涨</div>
+      <div class="s-note">2. 沪指是否继续走弱至收盘 — 若收盘跌破4090则大盘偏弱信号</div>
+      <div class="s-note">3. 创业板4000+是否守住 — 4113.37若回落至4100以下则需警惕</div>
+      <div class="s-note">4. 稀土/MLCC/铜箔午后延续 — 新热点方向是否持续到收盘</div>
+      <div class="s-note">5. 连板股尾盘封板确认 — 盛龙4连板/双星新材5板是否封住</div>
+    </div>
+    <div class="watch-card">
+      <h4>操作建议</h4>
+      <div class="s-note">进攻端：MLCC/稀土/铜箔方向可轻仓试仓（1-2%），但FOMC前不宜重仓</div>
+      <div class="s-note">防守端：黄金（招金黄金）可作为对冲配置，FOMC偏鹰则受益</div>
+      <div class="s-note">风险端：若沪指收盘跌破4090，大盘偏弱信号，需降低仓位</div>
+      <div class="s-note">分化端：创业板4000+站稳=科技成长偏强，进攻>防守格局延续</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 06: 明日盯盘清单 -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">06</div>
+    <div class="section-title">明日盯盘清单 · 6/17周三</div>
+  </div>
+
+  <div class="watch-grid">
+
+    <div class="watch-card">
+      <h4>进攻板块 <span class="tag tag-red">关注</span></h4>
+      <div class="s-note">创业板4000+（FOMC结果影响——偏鸽利好，偏鹰承压）</div>
+      <div class="s-note">MLCC方向（风华高科/双星新材——史上最长缺货潮逻辑）</div>
+      <div class="s-note">稀土方向（盛和资源/厦门钨业——矿产资源法催化）</div>
+      <div class="s-note">铜箔方向（诺德股份/铜冠铜箔——HVLP4订单排至2027下半年）</div>
+      <div class="s-note">小金属4连板方向（盛龙股份——连板高度信号）</div>
+    </div>
+
+    <div class="watch-card">
+      <h4>防守板块 <span class="tag tag-green">配置</span></h4>
+      <div class="s-note">黄金（招金黄金——FOMC偏鹰则受益）</div>
+      <div class="s-note">券商（中银证券——牛市旗手验证，3连板晋级？）</div>
+    </div>
+
+    <div class="watch-card">
+      <h4>风格切换信号 <span class="tag tag-yellow">关键</span></h4>
+      <div class="s-note">FOMC结果（偏鹰=科技承压，偏鸽=全面利好）</div>
+      <div class="s-note">沪指vs创业板分化是否继续（沪指翻绿vs创业板+1.98%）</div>
+      <div class="s-note">港口航运回调是否企稳（中远海能连续回调）</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>数据口径：2026年6月16日14:30盘中实时数据（新浪财经） | 报告生成时间：2026.06.16 14:30</p>
+  <p class="warn">以上内容仅为个人复盘记录，不构成任何投资建议。股市有风险，入市需谨慎。</p>
+</div>
+
+</body>
+</html>
