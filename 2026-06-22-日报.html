@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026年6月22日 A股收盘日报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--error);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.conclusion{border-left:4px solid var(--primary);background:#FFF1F2;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+.conclusion strong{color:var(--primary);}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-18-盘中.html">← 上一篇</a>
+    <a class="nav-disabled">下一篇 →</a>
+  </div>
+</nav>
+
+<div class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.06.22 · 日报 · 收盘复盘</div>
+    <div class="hero-title">大金融爆发接棒！券商涨停潮 · 创业板4359再创新高 · 3.74万亿创历史第二</div>
+    <div class="hero-sub">端午节后首个交易日 · 沪指4163+1.78% · 深成指16372+2.13% · 创业板4359+2.52% · 超2900只上涨 · 超200股涨逾10%</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Section 01: 大盘总览 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <span class="section-title">大盘总览</span>
+  </div>
+
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">上证指数</div>
+      <div class="value">4163.10</div>
+      <div class="change change-up">+72.62 (+1.78%)</div>
+    </div>
+    <div class="data-card">
+      <div class="label">深证成指</div>
+      <div class="value">16372.50</div>
+      <div class="change change-up">+341.80 (+2.13%)</div>
+    </div>
+    <div class="data-card">
+      <div class="label">创业板指</div>
+      <div class="value">4359.39</div>
+      <div class="change change-up">+107.00 (+2.52%)</div>
+    </div>
+    <div class="data-card">
+      <div class="label">成交额</div>
+      <div class="value">3.74万亿</div>
+      <div class="change change-up">较上日放量4271亿 · 历史第二天量</div>
+    </div>
+    <div class="data-card">
+      <div class="label">科创综指</div>
+      <div class="value">—</div>
+      <div class="change change-up">+0.48%</div>
+    </div>
+    <div class="data-card">
+      <div class="label">上涨个股</div>
+      <div class="value">&gt;2900只</div>
+      <div class="change">超200股涨逾10%</div>
+    </div>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">历史第二天量！3.74万亿仅次于1月14日的3.94万亿</div>
+    <p>端午节后首个交易日，成交额3.74万亿创历史第二天量，较上一个交易日放量4271亿。大金融板块午后集体爆发，券商板块整体涨超7.5%，广发证券、中信建投等头部券商涨停。三大指数集体涨超1%，创业板指4359再创新高。</p>
+  </div>
+
+  <p class="summary-text">全天走势特征：<strong>高开→科技冲高→10点急杀→午后大金融爆发→三大指数集体收涨</strong>。早盘科创50/创业板指大幅冲高，10点附近寒武纪、铜冠铜箔、摩尔线程、天孚通信等热门科技股突然大幅跳水，上涨个股一度不足1000只。午后大金融板块集体爆发托举指数，三大指数集体涨超1%。全天走势的核心特征是<strong>高低切换——大金融接棒科技股</strong>。黄白线分化明显，权重股走势较强。</p>
+</div>
+
+<!-- Section 02: 异动上涨板块 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <span class="section-title">异动上涨板块</span>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">进攻方向</div>
+    <div class="watch-grid">
+
+      <div class="watch-card">
+        <h4>1. 培育钻石 <span class="tag tag-red">领涨板块</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600172/">黄河旋风</a></span><span class="s-code">600172</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/301071/">力量钻石</a></span><span class="s-code">301071</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300179/">四方达</a></span><span class="s-code">300179</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/920725/">惠丰钻石</a></span><span class="s-code">920725</span><span class="tag tag-blue">北交所30cm涨停</span></div>
+        <div class="s-note">催化：英特尔CEO陈立武访谈披露技术路线图——先进封装EMIB、玻璃基板、人工合成钻石等新材料。培育钻石从珠宝消费品升级为功率半导体上游材料。</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>2. 第三代半导体/功率半导体 <span class="tag tag-red">培育钻石带动</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/688478/">晶升股份</a></span><span class="s-code">688478</span><span class="tag tag-red">涨超15%</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600460/">士兰微</a></span><span class="s-code">600460</span><span class="tag tag-red">涨超5%</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002617/">露笑科技</a></span><span class="s-code">002617</span><span class="tag tag-red">涨超5%</span></div>
+        <div class="s-note">催化：培育钻石带动碳化硅、氮化镓走强</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>3. 光纤/光通信 <span class="tag tag-red">涨停续创新高</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/601869/">长飞光纤</a></span><span class="s-code">601869</span><span class="tag tag-red">涨停续创历史新高</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/000070/">特发信息</a></span><span class="s-code">000070</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600345/">长江通信</a></span><span class="s-code">600345</span><span class="tag tag-red">涨停续创新高</span></div>
+        <div class="s-note">催化：日本藤仓大幅上修业绩46.8%刺激</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>4. CPO/光模块 <span class="tag tag-yellow">"易中天"跳水但CPO不减</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/688662/">富信科技</a></span><span class="s-code">688662</span><span class="tag tag-blue">20cm涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/688808/">联讯仪器</a></span><span class="s-code">688808</span><span class="tag tag-red">续创历史新高</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/688498/">源杰科技</a></span><span class="s-code">688498</span><span class="tag tag-red">续创历史新高</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/920045/">蘅东光</a></span><span class="s-code">920045</span><span class="tag tag-red">续创历史新高</span></div>
+        <div class="s-note">"易中天"三巨头日内跳水但CPO情绪不减，MPO/FAU新技术+磷化铟紧缺</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>5. AI上游材料/PCB材料端 <span class="tag tag-red">权重回调材料不跌反涨</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300243/">瑞丰高材</a></span><span class="s-code">300243</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/603002/">宏昌电子</a></span><span class="s-code">603002</span><span class="tag tag-yellow">9天6板涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/001359/">平安电工</a></span><span class="s-code">001359</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/301377/">鼎泰高科</a></span><span class="s-code">301377</span><span class="tag tag-red">续创历史新高</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002636/">金安国纪</a></span><span class="s-code">002636</span><span class="tag tag-red">续创历史新高</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600176/">中国巨石</a></span><span class="s-code">600176</span><span class="tag tag-red">续创历史新高</span></div>
+        <div class="s-note">权重PCB大票（鹏鼎控股等）日内大幅回调，但上游材料不跌反涨，PCB材料涨价+中报业绩逻辑</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>6. 小金属/稀有金属 <span class="tag tag-red">涨停潮</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/603407/">长裕集团</a></span><span class="s-code">603407</span><span class="tag tag-yellow">5天4板</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002167/">东方锆业</a></span><span class="s-code">002167</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/603663/">三祥新材</a></span><span class="s-code">603663</span><span class="tag tag-yellow">4天3板</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/301580/">爱迪特</a></span><span class="s-code">301580</span><span class="tag tag-blue">20cm 2连板</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002428/">云南锗业</a></span><span class="s-code">002428</span><span class="tag tag-red">涨停续创新高</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002674/">兴业科技</a></span><span class="s-code">002674</span><span class="tag tag-yellow">一字涨停（拟并购磷化铟资产）</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/000060/">中金岭南</a></span><span class="s-code">000060</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600497/">驰宏锌锗</a></span><span class="s-code">600497</span><span class="tag tag-red">涨停</span></div>
+        <div class="s-note">催化：矿产资源法实施条例6/15施行+氧化锆供给受限+36种关键矿产列入国家战略目录</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>7. 磷化工/氟化工 <span class="tag tag-red">上游扩散</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600141/">兴发集团</a></span><span class="s-code">600141</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002407/">多氟多</a></span><span class="s-code">002407</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600096/">云天化</a></span><span class="s-code">600096</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600160/">巨化股份</a></span><span class="s-code">600160</span><span class="tag tag-red">涨停</span></div>
+        <div class="s-note">催化：六氟化钨、磷化铟概念向上游扩散</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">防守→反攻方向（高低切换核心）</div>
+    <div class="watch-grid">
+
+      <div class="watch-card">
+        <h4>8. 券商 <span class="tag tag-red">涨停潮！板块涨超7.5%</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/000776/">广发证券</a></span><span class="s-code">000776</span><span class="tag tag-red">涨停（市值1776亿）</span></div>
+        <div class="item"><span class="s-name">长江证券</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/601066/">中信建投</a></span><span class="s-code">601066</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name">东方财富</span><span class="tag tag-red">午后涨超12%</span></div>
+        <div class="item"><span class="s-name">中信证券</span><span class="tag tag-red">一度涨近8%</span></div>
+        <div class="s-note">广发证券上次涨停2025年9月29日！券商板块整体涨超7.5%</div>
+      </div>
+
+      <div class="watch-card">
+        <h4>9. 保险 <span class="tag tag-red">龙头涨停</span></h4>
+        <div class="item"><span class="s-name">新华保险</span><span class="tag tag-red">涨停</span></div>
+        <div class="item"><span class="s-name">中国人寿</span><span class="tag tag-red">涨超8%</span></div>
+        <div class="item"><span class="s-name">中国太保</span><span class="tag tag-red">涨超4%</span></div>
+        <div class="item"><span class="s-name">中国人保</span><span class="tag tag-red">涨超4%</span></div>
+      </div>
+
+      <div class="watch-card">
+        <h4>10. 互联网金融 <span class="tag tag-blue">超跌反弹爆发</span></h4>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300085/">银之杰</a></span><span class="s-code">300085</span><span class="tag tag-blue">20cm涨停</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300561/">汇金科技</a></span><span class="s-code">300561</span><span class="tag tag-blue">20cm涨停</span></div>
+        <div class="item"><span class="s-name">中科金财</span><span class="tag tag-red">早盘封板</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300033/">同花顺</a></span><span class="s-code">300033</span><span class="tag tag-red">涨超14%</span></div>
+        <div class="item"><span class="s-name">赢时胜</span><span class="tag tag-red">涨超14%</span></div>
+        <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/920790/">联迪信息</a></span><span class="s-code">920790</span><span class="tag tag-blue">北交所30cm涨停</span></div>
+        <div class="s-note">催化：陆家嘴论坛政策信号——丰富投资产品/引导养老金加大股权投资/支持并购再融资/深化两创板改革</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Section 03: 连板股排列 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <span class="section-title">连板股排列（6/22收盘）</span>
+  </div>
+  <table>
+    <thead><tr><th>连板层级</th><th>股票</th><th>代码</th><th>方向</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td class="name">5连板</td><td class="name"><a href="https://stockpage.10jqka.com.cn/600353/">旭光电子</a></td><td class="code">600353</td><td>光芯片+氮化铝</td><td>12天7板，全天一字封死</td></tr>
+      <tr><td class="name">4连板</td><td class="name"><a href="https://stockpage.10jqka.com.cn/603989/">艾华集团</a></td><td class="code">603989</td><td>—</td><td>—</td></tr>
+      <tr><td class="name">4连板</td><td class="name"><a href="https://stockpage.10jqka.com.cn/600397/">江钨装备</a></td><td class="code">600397</td><td>—</td><td>—</td></tr>
+      <tr><td class="name">3连板</td><td class="name"><a href="https://stockpage.10jqka.com.cn/000811/">冰轮环境</a></td><td class="code">000811</td><td>—</td><td>9天5板</td></tr>
+      <tr><td class="name">准3连板(20cm)</td><td class="name"><a href="https://stockpage.10jqka.com.cn/300522/">世名科技</a></td><td class="code">300522</td><td>—</td><td>20cm准3板</td></tr>
+      <tr><td class="name">2连板(20cm)</td><td class="name"><a href="https://stockpage.10jqka.com.cn/301580/">爱迪特</a></td><td class="code">301580</td><td>小金属</td><td>20cm 2连板</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-section">
+    <div class="sub-head">高辨识度人气股</div>
+    <table>
+      <thead><tr><th>股票</th><th>代码</th><th>方向</th><th>连板/走势</th></tr></thead>
+      <tbody>
+        <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/603002/">宏昌电子</a></td><td class="code">603002</td><td>PCB材料</td><td>9天6板</td></tr>
+        <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/000048/">京基智农</a></td><td class="code">000048</td><td>—</td><td>9天5板</td></tr>
+        <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/603407/">长裕集团</a></td><td class="code">603407</td><td>小金属</td><td>5天4板</td></tr>
+        <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/601958/">金钼股份</a></td><td class="code">601958</td><td>小金属</td><td>7天4板</td></tr>
+        <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/000510/">新金路</a></td><td class="code">000510</td><td>小金属</td><td>7天4板</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="summary-text">连板晋级率：<strong>33.33%</strong></p>
+</div>
+
+<!-- Section 04: 下跌板块概览 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <span class="section-title">下跌板块概览</span>
+  </div>
+  <table>
+    <thead><tr><th>板块</th><th>代表个股</th><th>跌幅特征</th><th>原因</th></tr></thead>
+    <tbody>
+      <tr><td class="name">机器人</td><td>—</td><td class="change-down">领跌</td><td>科技分化，资金向大金融切换</td></tr>
+      <tr><td class="name">商业航天</td><td>—</td><td class="change-down">领跌</td><td>板块轮动回调</td></tr>
+      <tr><td class="name">体育</td><td>—</td><td class="change-down">跌幅居前</td><td>板块轮动</td></tr>
+      <tr><td class="name">汽车</td><td>—</td><td class="change-down">跌幅居前</td><td>板块轮动</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <div class="alert-title">科技板块内部剧烈分化！热门科技股大幅跳水</div>
+    <p>早盘10点附近，寒武纪、铜冠铜箔、摩尔线程、天孚通信等热门科技股大幅跳水，上涨个股一度不足1000只。"易中天"三巨头（中际旭创等）日内跳水。PCB权重大票（鹏鼎控股等）日内大幅回调。科技主线不是结束，而是高低切换+分化——CPO/光纤/AI上游材料端仍强。</p>
+  </div>
+</div>
+
+<!-- Section 05: 涨停数据汇总 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <span class="section-title">涨停数据汇总</span>
+  </div>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">涨停数</div>
+      <div class="value">151只</div>
+      <div class="change">134只涨停 + 17只ST涨停</div>
+    </div>
+    <div class="data-card">
+      <div class="label">炸板数</div>
+      <div class="value">26只</div>
+      <div class="change">另有33只盘中触及涨停</div>
+    </div>
+    <div class="data-card">
+      <div class="label">封板率</div>
+      <div class="value">82-84%</div>
+      <div class="change">封板意愿较强</div>
+    </div>
+    <div class="data-card">
+      <div class="label">连板晋级率</div>
+      <div class="value">33.33%</div>
+      <div class="change">—</div>
+    </div>
+  </div>
+  <p class="summary-text">全市场超200股涨逾10%，涨停数151只+封板率82-84%，市场赚钱效应极强。大金融板块贡献了大量涨停（券商+互联网金融），科技方向涨停集中在培育钻石、小金属、磷化工/氟化工等新方向。</p>
+</div>
+
+<!-- Section 06: 龙虎榜重点 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <span class="section-title">龙虎榜重点</span>
+  </div>
+
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">北向资金成交额</div>
+      <div class="value">4821.77亿</div>
+      <div class="change">占两市总成交额12.90%</div>
+    </div>
+  </div>
+
+  <table>
+    <thead><tr><th>股票</th><th>代码</th><th>机构动向</th><th>北向资金</th></tr></thead>
+    <tbody>
+      <tr><td class="name">兆易创新</td><td class="code">—</td><td>—</td><td class="change-up">北向资金重点关注</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/002980/">华盛昌</a></td><td class="code">002980</td><td class="change-down">机构净卖出2.34亿元</td><td class="change-up">北向净买入9429万</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/603285/">键邦股份</a></td><td class="code">603285</td><td class="change-down">机构净卖出1.04亿元</td><td class="change-up">北向净买入3408万</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/603012/">创力集团</a></td><td class="code">603012</td><td>—</td><td class="change-up">北向净买入665.72万</td></tr>
+    </tbody>
+  </table>
+
+  <p class="summary-text">大金融等非AI个股成交占比明显提升——近50只百亿成交个股中大金融比例显著提升，资金从极端抱团科技向大金融扩散趋势明确。</p>
+</div>
+
+<!-- Section 07: 平台突破股筛选 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">07</span>
+    <span class="section-title">平台突破股筛选</span>
+  </div>
+  <table>
+    <thead><tr><th>股票</th><th>代码</th><th>方向</th><th>突破形态</th><th>催化</th></tr></thead>
+    <tbody>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/601869/">长飞光纤</a></td><td class="code">601869</td><td>光纤</td><td class="change-up">涨停续创历史新高</td><td>日本藤仓上修业绩46.8%</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/002428/">云南锗业</a></td><td class="code">002428</td><td>稀有金属</td><td class="change-up">涨停续创历史新高</td><td>矿产资源法+锗供给受限</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/688808/">联讯仪器</a></td><td class="code">688808</td><td>CPO</td><td class="change-up">续创历史新高</td><td>MPO/FAU新技术+磷化铟紧缺</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/002636/">金安国纪</a></td><td class="code">002636</td><td>PCB材料</td><td class="change-up">续创历史新高</td><td>覆铜板涨价</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/600176/">中国巨石</a></td><td class="code">600176</td><td>玻纤/PCB上游</td><td class="change-up">续创历史新高</td><td>电子布/覆铜板上游，PCB涨价链</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/301377/">鼎泰高科</a></td><td class="code">301377</td><td>PCB材料</td><td class="change-up">续创历史新高</td><td>PCB钻针龙头</td></tr>
+    </tbody>
+  </table>
+  <p class="summary-text" style="color:var(--text2);font-size:13px;margin-top:8px;">注：以上个股均续创历史新高，是否严格符合"5天小阳线稳量→放量突破"的定义待验证突破形态。</p>
+</div>
+
+<!-- Section 08: 300亿以上高壁垒个股 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">08</span>
+    <span class="section-title">300亿以上高壁垒个股深度分析</span>
+  </div>
+  <table>
+    <thead><tr><th>股票</th><th>代码</th><th>市值</th><th>方向</th><th>护城河</th><th>催化</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="name"><a href="https://stockpage.10jqka.com.cn/000776/">广发证券</a></td>
+        <td class="code">000776</td>
+        <td>1776亿</td>
+        <td>券商</td>
+        <td>综合券商龙头，经纪/投行/资管/自营全牌照</td>
+        <td>成交天量+陆家嘴论坛政策利好，涨停</td>
+      </tr>
+      <tr>
+        <td class="name"><a href="https://stockpage.10jqka.com.cn/601066/">中信建投</a></td>
+        <td class="code">601066</td>
+        <td>头部市值</td>
+        <td>券商</td>
+        <td>投行业务市占率领先</td>
+        <td>资本市场改革受益，涨停</td>
+      </tr>
+      <tr>
+        <td class="name">新华保险</td>
+        <td class="code">—</td>
+        <td>大型保险</td>
+        <td>保险</td>
+        <td>寿险龙头</td>
+        <td>寿险转型+投资收益改善，涨停</td>
+      </tr>
+      <tr>
+        <td class="name"><a href="https://stockpage.10jqka.com.cn/600460/">士兰微</a></td>
+        <td class="code">600460</td>
+        <td>300亿+</td>
+        <td>功率半导体</td>
+        <td>功率半导体IDM龙头，碳化硅/氮化镓布局</td>
+        <td>AI数据中心电力需求受益，涨超5%</td>
+      </tr>
+      <tr>
+        <td class="name"><a href="https://stockpage.10jqka.com.cn/600141/">兴发集团</a></td>
+        <td class="code">600141</td>
+        <td>300亿+</td>
+        <td>磷化工</td>
+        <td>磷化工龙头，磷酸→磷化铟上游+新能源材料</td>
+        <td>磷化铟概念+上游扩散，涨停</td>
+      </tr>
+      <tr>
+        <td class="name"><a href="https://stockpage.10jqka.com.cn/600176/">中国巨石</a></td>
+        <td class="code">600176</td>
+        <td>300亿+</td>
+        <td>玻纤</td>
+        <td>全球玻纤龙头，电子布/覆铜板上游</td>
+        <td>PCB涨价链受益，续创历史新高</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Section 09: 异常成交量 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">09</span>
+    <span class="section-title">异常成交量</span>
+  </div>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">全市场成交额</div>
+      <div class="value">3.74万亿</div>
+      <div class="change change-up">较上日放量4271亿</div>
+    </div>
+    <div class="data-card">
+      <div class="label">历史排名</div>
+      <div class="value">第2</div>
+      <div class="change">仅次于1月14日的3.94万亿</div>
+    </div>
+    <div class="data-card">
+      <div class="label">大金融成交暴增</div>
+      <div class="value">广发证券涨停</div>
+      <div class="change">东方财富成交巨大</div>
+    </div>
+  </div>
+  <p class="summary-text">成交3.74万亿创历史第二天量，大金融板块成交量暴增是核心增量来源。近50只百亿成交个股中大金融比例显著提升，标志着资金从极端抱团科技开始向大金融扩散。<span style="color:var(--text2);font-size:13px;">（具体异常个股数据待确认）</span></p>
+</div>
+
+<!-- Section 10: 展望+策略建议 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">10</span>
+    <span class="section-title">展望 + 策略建议</span>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">关键信号</div>
+    <table>
+      <thead><tr><th>信号</th><th>解读</th><th>应对</th></tr></thead>
+      <tbody>
+        <tr><td class="name">高低切换已展开</td><td>大金融接棒科技股，资金从极端抱团科技向大金融扩散</td><td>关注大金融方向持续性</td></tr>
+        <tr><td class="name">沪指放量长阳突破30日均线</td><td>回踩60日均线后收出放量长阳，短期有望挑战4258点前高</td><td>关注4258点压力位</td></tr>
+        <tr><td class="name">微盘股指数带长下影线小阳线</td><td>若收复年线则中期反弹有望开启</td><td>关注年线位置</td></tr>
+        <tr><td class="name">中报业绩预告披露期临近</td><td>市场聚焦业绩高确定性的涨价环节</td><td>聚焦AI上游材料中报业绩</td></tr>
+        <tr><td class="name">成交创历史第二天量</td><td>增量资金大规模入场信号</td><td>量能维持则行情延续</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <strong>策略建议（明确，不模棱两可）：</strong><br>
+    ① <strong>大金融短线可参与但空间有限</strong> — 多只核心大票距历史高点空间有限，注意追高风险<br>
+    ② <strong>互联网金融板块此前严重超跌+与微盘股共振</strong>，后市可期待<br>
+    ③ <strong>AI上游材料是中期主线</strong> — 培育钻石、小金属、磷化工、氟化工中报业绩兑现逻辑强，趋势抱团人气股续创新高<br>
+    ④ <strong>科技主线不是结束，是高低切换+分化</strong> — CPO/光纤/AI上游材料端仍强，权重PCB大票回调是分化不是崩盘<br>
+    ⑤ <strong>沪指短期目标4258点前高</strong>，创业板4359已再创新高，大盘趋势向上
+  </div>
+</div>
+
+<!-- Section 11: 重点盯盘清单 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">11</span>
+    <span class="section-title">重点盯盘清单</span>
+  </div>
+
+  <div class="watch-grid">
+    <div class="watch-card">
+      <h4>进攻方向</h4>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600353/">旭光电子</a></span><span class="s-code">600353</span><span class="s-note">最高标5连板，光芯片+氮化铝，观察能否继续打高度</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600172/">黄河旋风</a></span><span class="s-code">600172</span><span class="s-note">培育钻石，英特尔催化+功率半导体扩散</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/301071/">力量钻石</a></span><span class="s-code">301071</span><span class="s-note">培育钻石，观察板块延续性</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/603002/">宏昌电子</a></span><span class="s-code">603002</span><span class="s-note">9天6板，PCB材料涨价+中报业绩</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/001359/">平安电工</a></span><span class="s-code">001359</span><span class="s-note">PCB材料涨价+中报业绩</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/603407/">长裕集团</a></span><span class="s-code">603407</span><span class="s-note">5天4板，小金属，氧化锆供给受限</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002167/">东方锆业</a></span><span class="s-code">002167</span><span class="s-note">小金属，氧化锆供给受限</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/688662/">富信科技</a></span><span class="s-code">688662</span><span class="s-note">CPO，MPO/FAU新技术+磷化铟紧缺</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/688808/">联讯仪器</a></span><span class="s-code">688808</span><span class="s-note">CPO，续创历史新高</span></div>
+    </div>
+
+    <div class="watch-card">
+      <h4>防守/切换方向</h4>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/000776/">广发证券</a></span><span class="s-code">000776</span><span class="s-note">券商涨停，政策催化+成交天量，观察次日持续性</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/601066/">中信建投</a></span><span class="s-code">601066</span><span class="s-note">头部券商涨停，资本市场改革受益</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300085/">银之杰</a></span><span class="s-code">300085</span><span class="s-note">互联网金融20cm涨停，超跌反弹+微盘股共振</span></div>
+      <div class="item"><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300033/">同花顺</a></span><span class="s-code">300033</span><span class="s-note">互联网金融涨超14%，超跌反弹+微盘股共振</span></div>
+      <div class="item"><span class="s-name">新华保险</span><span class="s-note">保险龙头涨停后观察持续性</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 12: 连续趋势追踪 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">12</span>
+    <span class="section-title">连续趋势追踪</span>
+  </div>
+
+  <div class="alert-box" style="background:#DBEAFE;border-color:#93C5FD;">
+    <div class="alert-title" style="color:#1E40AF;">首日追踪，暂无历史数据</div>
+    <p style="color:#1E40AF;">上一份报告是2026-06-18-盘中.html，之前没有日报Section 12的历史数据。从今日起建立追踪基线。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">板块轮动追踪</div>
+    <table>
+      <thead><tr><th>板块</th><th>上周状态</th><th>本周6/22</th><th>趋势</th></tr></thead>
+      <tbody>
+        <tr><td class="name">半导体/光模块</td><td class="change-up">进攻主线</td><td class="tag tag-yellow">分化（"易中天"跳水）</td><td>科技内部分化</td></tr>
+        <tr><td class="name">PCB</td><td class="change-up">涨停潮</td><td class="tag tag-yellow">权重回调+材料端强</td><td>高低分化</td></tr>
+        <tr><td class="name">培育钻石</td><td>—</td><td class="change-up">↑↑领涨新方向</td><td>新增主线！</td></tr>
+        <tr><td class="name">小金属</td><td class="change-up">延续</td><td class="change-up">↑↑涨停潮延续</td><td>延续走强</td></tr>
+        <tr><td class="name">磷化工/氟化工</td><td>—</td><td class="change-up">↑↑涨停潮</td><td>新增方向！</td></tr>
+        <tr><td class="name">CPO/光纤</td><td class="change-up">进攻</td><td class="change-up">↑续创新高</td><td>延续走强</td></tr>
+        <tr><td class="name">大金融</td><td>防守</td><td class="change-up">↑↑↑爆发！券商涨停潮</td><td>防守→反攻！</td></tr>
+        <tr><td class="name">互联网金融</td><td class="change-down">超跌</td><td class="change-up">↑↑20cm涨停潮</td><td>超跌反弹爆发！</td></tr>
+        <tr><td class="name">机器人</td><td class="change-up">进攻</td><td class="change-down">↓领跌</td><td>板块轮动回调</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">连板梯队</div>
+    <table>
+      <thead><tr><th>层级</th><th>个股</th><th>方向</th></tr></thead>
+      <tbody>
+        <tr><td class="name">最高标 5连板</td><td class="name">旭光电子（600353）</td><td>光芯片+氮化铝（12天7板）</td></tr>
+        <tr><td class="name">次高标 4连板</td><td class="name">艾华集团（603989）/ 江钨装备（600397）</td><td>—</td></tr>
+        <tr><td class="name">3连板</td><td class="name">冰轮环境（000811，9天5板）</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">风格切换信号</div>
+    <p class="summary-text">当前风格 = <strong>大金融爆发+科技内部分化 = 资金从极端抱团科技向大金融扩散</strong>。但这是<strong>高低切换而非系统性切换</strong>——CPO/光纤/AI上游材料端仍强，只是PCB权重大票和"易中天"等极致抱团标的出现分歧。大金融承接了科技端流出的资金，成交创天量证明增量资金在场。</p>
+  </div>
+</div>
+
+<!-- Section 13: 产业逻辑深度 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">13</span>
+    <span class="section-title">产业逻辑深度</span>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">培育钻石：从珠宝到半导体的升维</div>
+    <p class="summary-text">英特尔CEO陈立武提出用<strong>合成钻石作为半导体散热/基板材料</strong>，这是培育钻石产业的重大升级——从珠宝消费品升级为功率半导体上游核心材料。钻石的导热系数是铜的5倍以上，是理想的芯片散热基板。英特尔明确将人工合成钻石纳入先进封装技术路线图（EMIB+玻璃基板+合成钻石），直接拉升培育钻石板块从消费降级逻辑切换为AI半导体材料逻辑。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">小金属/稀有金属：政策+供给双收紧</div>
+    <p class="summary-text">《矿产资源法实施条例》正式施行，<strong>36种关键矿产列入国家战略目录</strong>，供给端收紧叠加AI需求。氧化锆等小金属供给受限+下游需求旺盛，价格中枢上移。锗、铟、钼等稀有金属均受益于供给端政策收紧+AI产业链需求拉动的双重逻辑。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">磷化铟：光芯片上游核心材料</div>
+    <p class="summary-text"><strong>磷化铟是光芯片上游核心材料</strong>，全球产能集中且短缺。英特尔重点提及磷化铟在光互连/光芯片中的关键作用。兴业科技拟并购磷化铟资产一字涨停，六氟化钨、磷化铟概念向上游磷化工/氟化工方向扩散，兴发集团、多氟多、云天化、巨化股份等磷化工/氟化工龙头集体涨停。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">大金融高低切换的底层逻辑</div>
+    <p class="summary-text">科技抱团极致化后，<strong>非AI板块形成估值洼地</strong>。陆家嘴论坛释放明确政策信号（丰富投资产品/引导养老金加大股权投资/支持并购再融资/深化两创板改革），叠加成交创天量=券商直接受益。大金融成为承接科技端资金扩散的方向。广发证券1776亿市值涨停（上次涨停是2025年9月29日），中信建投涨停，东方财富涨超12%——这是<strong>资金层面的高低切换</strong>，不是风格系统性切换。</p>
+  </div>
+
+  <div class="conclusion">
+    <strong>产业逻辑总结：</strong><br>
+    当前市场三大产业主线并行：① <strong>AI上游材料</strong>（培育钻石、小金属、磷化工/氟化工）— 中报业绩兑现+新材料升维，趋势抱团人气股续创新高；② <strong>CPO/光纤</strong> — 产业需求确定性强，日本藤仓上修业绩验证；③ <strong>大金融</strong> — 政策催化+估值洼地+成交天量受益，高低切换的承接方向。科技主线不是结束，是分化和扩散。
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>数据口径：收盘数据（新浪财经实时，已收盘） · 报告生成时间：2026年6月22日收盘后</p>
+  <p class="warn">以上内容仅为个人学习记录，不构成任何投资建议。股市有风险，入市需谨慎。</p>
+  <p style="margin-top:12px;font-size:11px;color:var(--text2);">Powered by phai</p>
+</div>
+
+</body>
+</html>
