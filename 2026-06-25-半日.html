@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026.06.25 A股半日分析 · 午间</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--error);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.conclusion{border-left:4px solid var(--primary);background:#FFF1F2;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+.conclusion strong{color:var(--primary);}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">&#8592; 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-24-日报.html">&#8592; 上一篇</a>
+    <a class="nav-disabled">下一篇 &#8594;</a>
+  </div>
+</nav>
+
+<div class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.06.25 · 半日分析 · 11:30</div>
+    <h1 class="hero-title">美光引爆存储潮！科创50首破2000点 · 韩股向上熔断 · 券商4天3板</h1>
+    <p class="hero-sub">沪指约4100+ · 深成指约+0.5-1% · 创业板约+0.5-1%（冲高回落） · 科创50首破2000点</p>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Section 01: 大盘总览 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title">大盘总览（午间11:30）</h2>
+  </div>
+
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">沪指</div>
+      <div class="value">约4100+</div>
+      <div class="change change-up">约+0.36% ↑</div>
+    </div>
+    <div class="data-card">
+      <div class="label">深成指</div>
+      <div class="value" style="font-size:20px;">约+0.5-1%</div>
+      <div class="change change-up">存储/先进封装带动 ↑</div>
+    </div>
+    <div class="data-card">
+      <div class="label">创业板指</div>
+      <div class="value" style="font-size:20px;">约+0.5-1%</div>
+      <div class="change change-up">冲高后回落 ↑</div>
+    </div>
+    <div class="data-card">
+      <div class="label">科创50</div>
+      <div class="value" style="font-size:20px;">首破2000点！</div>
+      <div class="change change-up">半导体/算力集体爆发 ↑</div>
+    </div>
+  </div>
+
+  <div class="data-cards" style="margin-bottom:16px;">
+    <div class="data-card" style="border-left-color:var(--warning);">
+      <div class="label">上午成交额</div>
+      <div class="value" style="font-size:20px;">约2万亿</div>
+      <div class="change" style="color:var(--text2);">参考6/24半日2.09万亿</div>
+    </div>
+    <div class="data-card" style="border-left-color:var(--warning);">
+      <div class="label">走势特征</div>
+      <div class="value" style="font-size:16px;">存储爆发 个股极端分化</div>
+      <div class="change" style="color:var(--text2);">创业板冲高回落翻绿 · 下跌个股近4200只</div>
+    </div>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">&#128293; 美光Q3财报超预期！全球存储芯片行情引爆</div>
+    <p>美光科技Q3营收增长346%，毛利率高达84.9%，CEO确认DRAM/NAND需求持续大幅超供给。韩国KOSPI大涨超5%触发<strong>向上熔断！</strong>SK海力士暴涨超10%，三星电子大涨超6%（此前暴跌10%后强势反弹）。两融余额首次站上3万亿，杠杆热潮延续。央行6/25开展5000亿元MLF操作。五部门联合启动工业5G独立专网试点。</p>
+  </div>
+
+  <p class="s-note" style="margin-top:12px;color:var(--warning);font-weight:600;">&#9888; 午间精确数据待确认，以上均为保守估值口径。下午Sina实时数据：沪指约4126 +0.36%，深成指约16286 +1.46%，创业板约4337 +2.01%（午后数据可能与午间有偏差，上午创业板曾冲高回落）。</p>
+
+  <table>
+    <thead>
+      <tr><th>指数</th><th>午间估算（约）</th><th>下午实时参考</th><th>走势特征</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">沪指</td>
+        <td>约4100-4110 <span class="tag tag-red">约+0.36%</span></td>
+        <td>约4126</td>
+        <td>存储/券商带动上行</td>
+      </tr>
+      <tr>
+        <td class="name">深成指</td>
+        <td>约+0.5-1% <span class="tag tag-red">约+0.5-1%</span></td>
+        <td>约16286</td>
+        <td>半导体/封装驱动</td>
+      </tr>
+      <tr>
+        <td class="name">创业板指</td>
+        <td>约+0.5-1% <span class="tag tag-yellow">冲高回落</span></td>
+        <td>约4337</td>
+        <td>上午冲高后震荡回落翻绿</td>
+      </tr>
+      <tr>
+        <td class="name">科创50</td>
+        <td><span class="tag tag-red">首破2000点！</span></td>
+        <td>—</td>
+        <td>算力硬件、芯片半导体集体爆发</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Section 02: 上午异动板块 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2 class="section-title">上午异动板块扫描</h2>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#128640; 进攻方向（半导体/存储/先进封装全线爆发 · 7大板块）</div>
+
+    <table>
+      <thead>
+        <tr><th>板块</th><th>核心标的</th><th>催化/逻辑</th><th>强度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">存储芯片<span class="tag tag-red">核心爆发</span></td>
+          <td>
+            中微半导 <span class="tag tag-red">20cm涨停</span><br>
+            <a href="https://stockpage.10jqka.com.cn/300223/" style="color:var(--primary);text-decoration:none;">北京君正</a> 涨近14%<br>
+            <a href="https://stockpage.10jqka.com.cn/300553/" style="color:var(--primary);text-decoration:none;">佰维存储</a> 涨超10%（再创新高）<br>
+            <a href="https://stockpage.10jqka.com.cn/603986/" style="color:var(--primary);text-decoration:none;">兆易创新 603986</a> 涨超7%（再创新高）<br>
+            <a href="https://stockpage.10jqka.com.cn/603005/" style="color:var(--primary);text-decoration:none;">江波龙</a>、德明利涨超7%（再创新高）<br>
+            聚辰股份涨超10%
+          </td>
+          <td>美光Q3营收增长346%，毛利率84.9%<br>CEO确认DRAM/NAND需求持续大幅超供给<br>韩国SK海力士暴涨超10%</td>
+          <td><span class="tag tag-red">爆发</span></td>
+        </tr>
+        <tr>
+          <td class="name">先进封装<span class="tag tag-red">龙头涨停</span></td>
+          <td>
+            <a href="https://stockpage.10jqka.com.cn/600584/" style="color:var(--primary);text-decoration:none;">长电科技 600584</a> 涨停！4天3板<br>
+            盛剑科技涨停
+          </td>
+          <td>长电科技78亿投资临港<br>AI芯片先进封装需求持续爆发</td>
+          <td><span class="tag tag-red">爆发</span></td>
+        </tr>
+        <tr>
+          <td class="name">MLCC概念<span class="tag tag-red">涨停潮</span></td>
+          <td>
+            博迁新材涨停 · 火炬电子涨停 · 鸿远电子涨停<br>
+            斯迪克涨超9% · 昀冢科技涨超9%<br>
+            <a href="https://stockpage.10jqka.com.cn/000636/" style="color:var(--primary);text-decoration:none;">风华高科 000636</a> 涨超6%<br>
+            <a href="https://stockpage.10jqka.com.cn/300408/" style="color:var(--primary);text-decoration:none;">三环集团 300408</a> 涨超6%
+          </td>
+          <td>英伟达Rubin架构MLCC用量从6500颗增至12000颗<br>太阳诱电涨价6-13%</td>
+          <td><span class="tag tag-red">爆发</span></td>
+        </tr>
+        <tr>
+          <td class="name">券商<span class="tag tag-red">第4天延续</span></td>
+          <td>
+            <a href="https://stockpage.10jqka.com.cn/000783/" style="color:var(--primary);text-decoration:none;">长江证券 000783</a> 涨停！4天3板！<br>
+            <a href="https://stockpage.10jqka.com.cn/601066/" style="color:var(--primary);text-decoration:none;">中信建投 601066</a> 涨超8%<br>
+            方正证券涨超6% · 东方财富涨超6%<br>
+            中金公司、中信证券涨超3%
+          </td>
+          <td>券商PB/PE低位 + 成交天量持续<br>政策持续催化</td>
+          <td><span class="tag tag-red">延续强势</span></td>
+        </tr>
+        <tr>
+          <td class="name">科创50首破2000点</td>
+          <td>
+            算力硬件、芯片半导体集体爆发<br>
+            <a href="https://stockpage.10jqka.com.cn/688041/" style="color:var(--primary);text-decoration:none;">海光信息</a> 涨超5%
+          </td>
+          <td>美光财报 + 韩国存储股暴涨共振</td>
+          <td><span class="tag tag-red">突破</span></td>
+        </tr>
+        <tr>
+          <td class="name">玻璃基板/玻璃纤维</td>
+          <td>
+            <a href="https://stockpage.10jqka.com.cn/000725/" style="color:var(--primary);text-decoration:none;">京东方A 000725</a> 涨超8%<br>
+            帝尔激光、美迪凯跟涨<br>
+            中材科技涨停 · <a href="https://stockpage.10jqka.com.cn/600176/" style="color:var(--primary);text-decoration:none;">中国巨石 600176</a> 涨超8%
+          </td>
+          <td>玻璃基板替代趋势 + 玻纤行业景气</td>
+          <td><span class="tag tag-yellow">活跃</span></td>
+        </tr>
+        <tr>
+          <td class="name">锂矿概念</td>
+          <td>
+            永杉锂业涨停
+          </td>
+          <td>锂电中报高增行情</td>
+          <td><span class="tag tag-yellow">活跃</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#128737;&#65039; 下跌/回调方向（极端分化！个股近4200只下跌）</div>
+
+    <table>
+      <thead>
+        <tr><th>板块</th><th>核心标的</th><th>下跌逻辑</th><th>跌幅</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">黄金/贵金属<span class="tag tag-green">下跌</span></td>
+          <td>贵金属概念股整体下行</td>
+          <td>美元反弹 + 风险偏好回升</td>
+          <td><span class="tag tag-green">跌幅居前</span></td>
+        </tr>
+        <tr>
+          <td class="name">创新药<span class="tag tag-green">持续回调</span></td>
+          <td>6/23涨停潮后连续2日回调</td>
+          <td>短期获利回吐，前期涨幅过大</td>
+          <td><span class="tag tag-green">回落</span></td>
+        </tr>
+        <tr>
+          <td class="name">石油/煤炭</td>
+          <td>板块整体走弱</td>
+          <td>资源股轮跌</td>
+          <td><span class="tag tag-green">跌幅居前</span></td>
+        </tr>
+        <tr>
+          <td class="name">有色金属<span class="tag tag-green">大跌</span></td>
+          <td>有色金属板块整体大跌</td>
+          <td>资金撤离传统周期 → 涌入半导体/存储</td>
+          <td><span class="tag tag-green">大跌</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <strong>上午核心逻辑：</strong>美光Q3超级财报引爆全球存储芯片行情，韩国KOSPI大涨5%+向上熔断。A股存储/先进封装/MLCC三条线全面爆发，科创50首破2000点。但市场极端分化——下跌个股近4200只！资金高度集中于半导体/存储/券商等少数方向，黄金、创新药、石油煤炭、有色金属全面回调。创业板冲高后震荡回落翻绿，结构性牛市特征明显。
+  </div>
+</div>
+
+<!-- Section 03: 涨停/连板梳理 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2 class="section-title">上午涨停/连板梳理</h2>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#128293; 连板晋级 / 龙头股</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>板块</th><th>状态</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">长江证券</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/000783/" style="color:var(--primary);text-decoration:none;">000783</a></td>
+          <td>券商</td>
+          <td><span class="tag tag-red">4天3板！龙头</span></td>
+        </tr>
+        <tr>
+          <td class="name">长电科技</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/600584/" style="color:var(--primary);text-decoration:none;">600584</a></td>
+          <td>先进封装</td>
+          <td><span class="tag tag-red">涨停！龙头</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#128200; 今日涨停（10cm）</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>板块</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">博迁新材</td>
+          <td class="code">—</td>
+          <td>MLCC</td>
+          <td>涨停</td>
+        </tr>
+        <tr>
+          <td class="name">火炬电子</td>
+          <td class="code">—</td>
+          <td>MLCC</td>
+          <td>涨停</td>
+        </tr>
+        <tr>
+          <td class="name">鸿远电子</td>
+          <td class="code">—</td>
+          <td>MLCC</td>
+          <td>涨停</td>
+        </tr>
+        <tr>
+          <td class="name">盛剑科技</td>
+          <td class="code">—</td>
+          <td>先进封装</td>
+          <td>涨停</td>
+        </tr>
+        <tr>
+          <td class="name">中材科技</td>
+          <td class="code">—</td>
+          <td>玻璃纤维</td>
+          <td>涨停</td>
+        </tr>
+        <tr>
+          <td class="name">永杉锂业</td>
+          <td class="code">—</td>
+          <td>锂矿</td>
+          <td>涨停</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#127775; 20cm涨停</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>板块</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">中微半导</td>
+          <td class="code">—</td>
+          <td>存储芯片</td>
+          <td><span class="tag tag-red">20cm涨停</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#9888;&#65039; 负面典型 / 风险提示</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>板块</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">华恒生物</td>
+          <td class="code">—</td>
+          <td>—</td>
+          <td><span class="tag tag-green">20%跌停！实控人被刑事拘留</span></td>
+        </tr>
+        <tr>
+          <td class="name">世名科技</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/300522/" style="color:var(--primary);text-decoration:none;">300522</a></td>
+          <td>—</td>
+          <td><span class="tag tag-yellow">6天股价翻倍后紧急提示风险</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Section 04: 龙虎榜/大单异动 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2 class="section-title">龙虎榜/大单异动</h2>
+  </div>
+
+  <div class="alert-box" style="background:#FFFBEB;border-color:#FDE68A;">
+    <div class="alert-title" style="color:var(--warning);">&#9201; 午间数据有限，盘后更新</div>
+    <p>午间休市期间龙虎榜精确数据尚未公布，以下为盘面观察与资金流向趋势：</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#128202; 盘面观察</div>
+    <p class="summary-text">
+      <strong>1. 连续融资净买入最长：</strong>亨通股份（连续15日融资净买入），杠杆资金持续加仓。两融余额首破3万亿，市场杠杆热度持续升温。<br><br>
+      <strong>2. 连续主力净买入最长：</strong>华资实业（连续14日主力净买入），资金持续流入。<br><br>
+      <strong>3. 科技方向资金集中：</strong>中际旭创连续融资净买入，光模块/存储方向资金关注度高。冰轮环境、泰格医药、中国船舶等连续获主力资金净买入。<br><br>
+      <strong>4. 存储/先进封装大单流入：</strong>美光财报引爆行情，存储芯片和先进封装方向上午大单净流入概率极大，长电科技涨停封板资金充沛。
+    </p>
+  </div>
+
+  <div class="conclusion">
+    <strong>资金风格推演：</strong>美光超级财报引发全球存储链资金共振，A股存储/封装/MLCC方向大单集中涌入。两融余额首破3万亿显示杠杆资金积极加仓。但个股近4200只下跌说明资金高度集中于少数方向，多数中小票被抽血。精确龙虎榜数据盘后更新。
+  </div>
+</div>
+
+<!-- Section 05: 下午盘关注重点 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <h2 class="section-title">下午盘关注重点</h2>
+  </div>
+
+  <div class="watch-grid">
+    <div class="watch-card" style="background:#FFF1F2;">
+      <h4>&#127919; 科创50能否站稳2000点</h4>
+      <p class="summary-text">上午首次突破2000点大关，下午如果站稳则确认有效突破，将打开科创板新一轮上升空间。</p>
+    </div>
+    <div class="watch-card" style="background:#FEF2F2;">
+      <h4>&#128293; 存储芯片封板强度</h4>
+      <p class="summary-text">中微半导20cm涨停能否坚守到收盘？长电科技涨停封板力度如何？决定存储/封装方向午后延续性。</p>
+    </div>
+    <div class="watch-card" style="background:#DBEAFE;">
+      <h4>&#128200; MLCC概念延续性</h4>
+      <p class="summary-text">上午博迁新材/火炬电子/鸿远电子涨停潮，下午是否继续扩散？英伟达Rubin架构MLCC用量翻倍是中期逻辑。</p>
+    </div>
+    <div class="watch-card" style="background:#DCFCE7;">
+      <h4>&#128176; 长江证券4天3板封板力度</h4>
+      <p class="summary-text">券商龙头持续性关键——下午涨停能否封稳？中信建投涨超8%能否进一步冲击涨停？</p>
+    </div>
+    <div class="watch-card" style="background:#FEF3C7;">
+      <h4>&#9888;&#65039; 个股分化是否收敛</h4>
+      <p class="summary-text">上午近4200只下跌，极端分化！下午如果资金从存储/券商扩散至更多方向，分化可能收敛。</p>
+    </div>
+    <div class="watch-card" style="background:#F3F4F6;">
+      <h4>&#128138; 创新药是否企稳</h4>
+      <p class="summary-text">连续2日回落（6/23涨停潮后持续回调），观察是否有抄底资金介入。有色金属/贵金属跌幅是否止跌。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 06: 盯盘清单追踪 -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <h2 class="section-title">盯盘清单追踪（6/23日报清单）</h2>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#128640; 进攻方向个股</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>历史走势</th><th>今日上午表现</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">睿智医药</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/300149/" style="color:var(--primary);text-decoration:none;">300149</a></td>
+          <td>6/23涨停20cm → 6/24回落</td>
+          <td><span class="tag tag-green">继续回调（创新药板块整体回落）</span></td>
+        </tr>
+        <tr>
+          <td class="name">亨迪药业</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/301211/" style="color:var(--primary);text-decoration:none;">301211</a></td>
+          <td>6/23涨停20cm → 6/24回落</td>
+          <td><span class="tag tag-green">继续回调</span></td>
+        </tr>
+        <tr>
+          <td class="name">东方锆业</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/002167/" style="color:var(--primary);text-decoration:none;">002167</a></td>
+          <td>6/23 3连板 → 6/24 4连板</td>
+          <td><span class="tag tag-gray">今日待确认</span></td>
+        </tr>
+        <tr>
+          <td class="name">长裕集团</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/603407/" style="color:var(--primary);text-decoration:none;">603407</a></td>
+          <td>6/23 6天5板 → 6/24 7天6板</td>
+          <td><span class="tag tag-gray">今日待确认</span></td>
+        </tr>
+        <tr>
+          <td class="name">英维克</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/002837/" style="color:var(--primary);text-decoration:none;">002837</a></td>
+          <td>液冷龙头</td>
+          <td><span class="tag tag-yellow">跟随科技反弹</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#128737;&#65039; 防守/切换方向个股</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>历史走势</th><th>今日上午表现</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">长江证券</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/000783/" style="color:var(--primary);text-decoration:none;">000783</a></td>
+          <td>6/23 2连板 → 6/24暂歇</td>
+          <td><span class="tag tag-red">今日涨停！4天3板！券商龙头</span></td>
+        </tr>
+        <tr>
+          <td class="name">银之杰</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/300085/" style="color:var(--primary);text-decoration:none;">300085</a></td>
+          <td>6/23 2连板 → 6/24回落</td>
+          <td><span class="tag tag-gray">待确认</span></td>
+        </tr>
+        <tr>
+          <td class="name">中信建投</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/601066/" style="color:var(--primary);text-decoration:none;">601066</a></td>
+          <td>持续走强</td>
+          <td><span class="tag tag-red">涨超8%！延续强势</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">&#128260; 风格切换观察</div>
+    <table>
+      <thead>
+        <tr><th>个股/方向</th><th>代码</th><th>历史走势</th><th>今日上午表现</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">江钨装备</td>
+          <td class="code"><a href="https://stockpage.10jqka.com.cn/600397/" style="color:var(--primary);text-decoration:none;">600397</a></td>
+          <td>6/23 5连板最高标</td>
+          <td><span class="tag tag-gray">后续待确认</span></td>
+        </tr>
+        <tr>
+          <td class="name">科技股整体</td>
+          <td class="code">—</td>
+          <td>6/23暴跌 → 6/24 V型修复</td>
+          <td><span class="tag tag-red">今日存储/先进封装全面爆发！科技主线彻底回归</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <strong>盯盘清单小结：</strong>券商方向长江证券今日涨停（4天3板），中信建投涨超8%，防守方向全面兑现！科技股从6/23暴跌 → 6/24 V型修复 → 今日存储/先进封装全面爆发，科技主线彻底回归。创新药方向睿智医药、亨迪药业连续回调，6/23涨停潮后资金持续流出。<br><br>
+    <strong>午后重点关注：</strong>① 科创50能否站稳2000点确认突破；② 中微半导20cm涨停能否坚守到收盘；③ MLCC涨停潮下午是否扩散；④ 长江证券4天3板封板稳定性；⑤ 近4200只下跌的分化是否收敛。
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<div class="footer">
+  <p>A股半日分析 · 2026.06.25 午间 · 数据来源：同花顺/东方财富/Wind</p>
+  <p class="warn">&#9888; 免责声明：本报告仅供个人学习记录，不构成任何投资建议。午间数据为保守估值口径，精确数据以收盘后官方数据为准。市场有风险，投资需谨慎。</p>
+</div>
+
+</body>
+</html>
