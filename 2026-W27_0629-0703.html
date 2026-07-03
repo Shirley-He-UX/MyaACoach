@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026年W27（6/29-7/3）A股周报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;
+  --surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.65);
+  --bg:#FFFFFF;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;
+  --success:#16A34A;--error:#DC2626;--warning:#D97706;
+  --shadow-glass:8px 8px 32px rgba(0,0,0,0.08);
+  --shadow-md:4px 4px 16px rgba(0,0,0,0.10);
+  --radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--secondary);text-decoration:none;font-weight:500}
+a:hover{text-decoration:underline}
+.hero-band{background:var(--primary);padding:64px 24px 56px;position:relative;overflow:hidden}
+.hero-band::before{content:'';position:absolute;top:-60%;right:-8%;width:600px;height:600px;background:var(--tertiary);border-radius:50%;opacity:0.12}
+.hero-band::after{content:'';position:absolute;bottom:-50%;left:-5%;width:400px;height:400px;background:var(--secondary);border-radius:50%;opacity:0.1}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+.hero-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:24px;text-decoration:none}
+.hero-back:hover{color:#fff}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;color:var(--tertiary);letter-spacing:2px;margin-bottom:8px}
+.hero-inner h1{font-family:'Poppins',sans-serif;font-size:36px;font-weight:800;color:#FFFFFF;line-height:1.15;margin-bottom:12px}
+.hero-meta{font-size:14px;color:rgba(255,255,255,0.75)}
+.container{max-width:960px;margin:0 auto;padding:48px 24px 80px}
+.section{margin-bottom:64px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--border)}
+.section-num{font-family:'Fira Code',monospace;font-size:12px;color:var(--primary);background:#FFF1F2;padding:4px 10px;border-radius:var(--radius-md)}
+.section-title{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700}
+.glass{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.3);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-glass);margin:16px 0}
+.conclusion{border-left:4px solid var(--primary);background:#FFF1F2;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7}
+.conclusion strong{color:var(--primary)}
+.table-wrap{overflow-x:auto;margin:16px 0;border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:#F9FAFB;color:var(--text2);font-weight:600;text-align:left;padding:12px 16px;white-space:nowrap;border-bottom:2px solid var(--border);font-size:13px}
+td{padding:12px 16px;border-bottom:1px solid #F3F4F6;vertical-align:top}
+tr:hover td{background:#F9FAFB}
+tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:var(--radius-pill);vertical-align:middle}
+.tag-up{background:#DCFCE7;color:#166534}
+.tag-down{background:#FEF2F2;color:#DC2626}
+.tag-warn{background:#FEF3C7;color:#92400E}
+.tag-info{background:#DBEAFE;color:#1E40AF}
+.subsection{margin:28px 0}
+.subsection h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;margin-bottom:12px}
+.sub-tag{font-size:12px;font-weight:500;color:var(--text2);margin-left:8px}
+.subsection h4{font-size:14px;font-weight:700;color:var(--primary);margin:14px 0 6px}
+.subsection p,.subsection li{font-size:15px;color:var(--text2);line-height:1.7}
+.subsection ul{padding-left:20px;margin:8px 0}
+.watch-group{margin:24px 0}
+.watch-group-title{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.watch-card{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:10px;box-shadow:var(--shadow-glass);transition:transform .15s,box-shadow .15s}
+.watch-card:hover{transform:scale(1.01);box-shadow:var(--shadow-md)}
+.watch-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px}
+.watch-code{color:var(--text2);font-family:'Fira Code',monospace;font-size:12px;margin-left:8px}
+.watch-logic{font-size:14px;color:var(--text2);margin-top:4px}
+.watch-signal{font-size:14px;color:var(--secondary);margin-top:4px;font-weight:500}
+.logic-box{background:#EFF6FF;border:1px solid var(--secondary);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0;font-family:'Fira Code',monospace;font-size:13px;line-height:2;white-space:pre-wrap}
+.analysis-card{background:var(--surface-glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--radius-xl);padding:24px;margin:20px 0;box-shadow:var(--shadow-glass)}
+.analysis-card h4{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px}
+.ac-code{color:var(--text2);font-family:'Fira Code',monospace;font-size:13px;margin-left:8px;font-weight:400}
+.footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);text-align:center}
+.footer p{font-size:13px;color:var(--text2)}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px}
+@media(max-width:640px){
+  .hero-band{padding:48px 16px 40px}
+  .hero-inner h1{font-size:24px}
+  .container{padding:32px 16px 60px}
+  .section-title{font-size:20px}
+  table{font-size:13px}
+  th,td{padding:10px 12px}
+}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-07-03-日报.html">← 上一篇</a>
+    <a class="nav-disabled">下一篇 →</a>
+  </div>
+</nav>
+
+<div class="hero-band">
+<div class="hero-inner">
+<div class="hero-week">WEEK 27 &middot; 2026</div>
+<h1>科技主线到大金融的剧烈风格切换，科创50年内最大单日跌幅</h1>
+<div class="hero-meta">2026年6月29日 &mdash; 7月3日（5个交易日） &middot; 阳子PMO</div>
+</div>
+</div>
+
+<div class="container">
+
+<!-- Section 1: 大盘总览 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">01</span>
+<span class="section-title">大盘总览</span>
+</div>
+
+<div class="subsection">
+<p>本周A股经历剧烈风格切换：周一至周三科技主线延续强势，科创板创新高；周四（7/2）突发暴跌，科创50单日跌7.70%创年内最大单日跌幅；周五技术性反弹但力度有限。资金从科技成长向大金融/贵金属防守方向切换。</p>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>上证指数</th>
+<th>涨跌幅</th>
+<th>深证成指</th>
+<th>涨跌幅</th>
+<th>创业板指</th>
+<th>涨跌幅</th>
+<th>成交额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6/29(一)</td>
+<td>4073.90</td>
+<td><span class="tag tag-up">+1.16%</span></td>
+<td>15812.87</td>
+<td><span class="tag tag-up">+0.19%</span></td>
+<td>4216.70</td>
+<td><span class="tag tag-up">+0.54%</span></td>
+<td>约3.54万亿</td>
+</tr>
+<tr>
+<td>6/30(二)</td>
+<td>4094.40</td>
+<td><span class="tag tag-up">+0.50%</span></td>
+<td>16205.56</td>
+<td><span class="tag tag-up">+2.48%</span></td>
+<td>4342.71</td>
+<td><span class="tag tag-up">+2.99%</span></td>
+<td>约3.29万亿</td>
+</tr>
+<tr>
+<td>7/1(三)</td>
+<td>4112.45</td>
+<td><span class="tag tag-up">+0.44%</span></td>
+<td>16119.17</td>
+<td><span class="tag tag-down">-0.53%</span></td>
+<td>4260.72</td>
+<td><span class="tag tag-down">-1.89%</span></td>
+<td>约3.68万亿</td>
+</tr>
+<tr>
+<td>7/2(四)</td>
+<td>4028.90</td>
+<td><span class="tag tag-down">-2.03%</span></td>
+<td>15498.81</td>
+<td><span class="tag tag-down">-3.85%</span></td>
+<td>4017.27</td>
+<td><span class="tag tag-down">-5.71%</span></td>
+<td>约3.45万亿</td>
+</tr>
+<tr>
+<td>7/3(五)</td>
+<td>4043.64</td>
+<td><span class="tag tag-up">+0.37%</span></td>
+<td>15597.51</td>
+<td><span class="tag tag-up">+0.64%</span></td>
+<td>4019.93</td>
+<td><span class="tag tag-up">+0.07%</span></td>
+<td>约3.18万亿</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="glass">
+<h4 style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px">周涨跌汇总</h4>
+<ul style="padding-left:20px;font-size:15px;color:var(--text2);line-height:1.8">
+<li><strong>上证指数</strong>：周初4073.90 → 周末4043.64，周跌约 <span class="tag tag-down">-0.74%</span>（周二最高4112.45 → 周四最低4028.90）</li>
+<li><strong>深成指</strong>：周初15812.87 → 周末15597.51，周跌约 <span class="tag tag-down">-1.36%</span></li>
+<li><strong>创业板指</strong>：周初4216.70 → 周末4019.93，周跌约 <span class="tag tag-down">-4.65%</span>（6/30最高4342.71 → 7/2最低4017.27）</li>
+<li><strong>成交额</strong>：本周合计约17.14万亿，日均约3.43万亿</li>
+</ul>
+</div>
+
+<div class="subsection">
+<h4>每日补充说明</h4>
+<ul>
+<li><strong>6/29（一）</strong>：科创50大涨4.61%，半导体芯片股领涨。成交额3.54万亿，缩量360亿</li>
+<li><strong>6/30（二）</strong>：上半年收官战，科创50涨近4%创新高，创业板指涨2.99%。成交额3.29万亿</li>
+<li><strong>7/1（三）</strong>：7月开门红，沪指放量收红，但创业板指、科创50震荡调整。成交额3.68万亿（放量3890亿）。大金融全线爆发</li>
+<li><strong>7/2（四）</strong>：科创50暴跌7.70%，创年内最大单日跌幅。成交额3.45万亿（缩量2095亿）。超3100只个股下跌</li>
+<li><strong>7/3（五）</strong>：技术性反弹，创业板指领涨。成交额3.18万亿（缩量）。超3800只个股上涨。美股独立日休市</li>
+</ul>
+</div>
+</div>
+
+<!-- Section 2: 本周异动上涨板块 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">02</span>
+<span class="section-title">本周异动上涨板块</span>
+</div>
+
+<!-- 进攻类 -->
+<div class="subsection">
+<h3>进攻类</h3>
+</div>
+
+<!-- (1) 半导体/芯片 -->
+<div class="subsection">
+<h3>(1) 半导体/芯片 <span class="sub-tag">6/29-6/30领涨 → 7/2暴跌 → 7/3技术反弹</span></h3>
+<ul>
+<li><strong>6/29</strong>：科创50大涨4.61%，半导体芯片股领涨。威派格7天4板（液冷概念）、深科技涨停</li>
+<li><strong>6/30</strong>：科创50涨近4%创新高，长光华芯、力合微等20CM涨停</li>
+<li><strong>7/1</strong>：集体调整</li>
+<li><strong>7/2</strong>：暴跌！兆易创新、东山精密、长电科技、北方华创等硬科技权重跌停</li>
+<li><strong>7/3</strong>：技术反弹但力度有限</li>
+</ul>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>周内表现</th><th>连板</th><th>同花顺链接</th></tr>
+</thead>
+<tbody>
+<tr><td>兆易创新</td><td>603986</td><td>周初强势→7/2跌停→7/3反弹</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/603986/" target="_blank">查看</a></td></tr>
+<tr><td>东山精密</td><td>002384</td><td>7/2跌停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/002384/" target="_blank">查看</a></td></tr>
+<tr><td>长电科技</td><td>600584</td><td>7/2跌停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/600584/" target="_blank">查看</a></td></tr>
+<tr><td>北方华创</td><td>002371</td><td>7/2跌停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/002371/" target="_blank">查看</a></td></tr>
+<tr><td>长光华芯</td><td>688048</td><td>6/30 20CM涨停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/688048/" target="_blank">查看</a></td></tr>
+<tr><td>力合微</td><td>688589</td><td>6/30 20CM涨停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/688589/" target="_blank">查看</a></td></tr>
+<tr><td>银河微电</td><td>688253</td><td>6/29 20CM涨停（分立器件）</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/688253/" target="_blank">查看</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="conclusion">
+<strong>龙头</strong>：兆易创新（存储龙头）、北方华创（设备龙头）<br>
+<strong>上涨逻辑</strong>：6/29-30半导体主线延续（科创50创新高）；三星千亿投资计划提振产业链信心。7/2暴跌原因：Meta进军云基础设施消息冲击算力股逻辑+美股半导体大跌传导
+</div>
+</div>
+
+<!-- (2) 贵金属 -->
+<div class="subsection">
+<h3>(2) 贵金属 <span class="sub-tag">7/2-7/3最强进攻方向，逆势涨停</span></h3>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>周内表现</th><th>连板</th><th>同花顺链接</th></tr>
+</thead>
+<tbody>
+<tr><td>招金黄金</td><td>000506</td><td>7/2涨停→7/3涨停</td><td><span class="tag tag-up">2连板</span></td><td><a href="https://stockpage.10jqka.com.cn/000506/" target="_blank">查看</a></td></tr>
+<tr><td>赤峰黄金</td><td>600988</td><td>7/2涨停→7/3涨停</td><td><span class="tag tag-up">2连板</span></td><td><a href="https://stockpage.10jqka.com.cn/600988/" target="_blank">查看</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="conclusion">
+<strong>龙头</strong>：招金黄金、赤峰黄金（并列2连板）<br>
+<strong>上涨逻辑</strong>：避险情绪叠加风格切换，黄金价格高位震荡，宏观避险需求和商品价格周期双重共振
+</div>
+</div>
+
+<!-- (3) 人形机器人 -->
+<div class="subsection">
+<h3>(3) 人形机器人 <span class="sub-tag">7/3事件催化全线爆发</span></h3>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>周内表现</th><th>连板</th><th>同花顺链接</th></tr>
+</thead>
+<tbody>
+<tr><td>双环传动</td><td>002472</td><td>7/3涨超11%</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/002472/" target="_blank">查看</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="conclusion">
+<strong>上涨逻辑</strong>：宇树科技科创板IPO注册获批事件催化，减速器核心标的
+</div>
+</div>
+
+<!-- (4) 光模块/CPO -->
+<div class="subsection">
+<h3>(4) 光模块/CPO <span class="sub-tag">6/30创新高后7/2大幅回撤</span></h3>
+<ul>
+<li><strong>6/29</strong>：震荡反弹，华工科技反包涨停，工信部《高速光模块产业发展行动计划》催化</li>
+<li><strong>6/30</strong>：走强，多股创新高</li>
+<li><strong>7/1</strong>：回调</li>
+<li><strong>7/2</strong>：暴跌</li>
+</ul>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>周内表现</th><th>连板</th><th>同花顺链接</th></tr>
+</thead>
+<tbody>
+<tr><td>华工科技</td><td>000988</td><td>6/29反包涨停→7/2暴跌</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/000988/" target="_blank">查看</a></td></tr>
+<tr><td>光库科技</td><td>300620</td><td>跟涨后回调</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/300620/" target="_blank">查看</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- 防守类 -->
+<div class="subsection">
+<h3>防守类</h3>
+</div>
+
+<!-- (1) 大金融/券商 -->
+<div class="subsection">
+<h3>(1) 大金融/券商 <span class="sub-tag">7/1爆发，本周高光时刻</span></h3>
+<ul>
+<li><strong>7/1</strong>：券商/保险涨停潮，沪指放量收红</li>
+<li><strong>7/2</strong>：分化</li>
+<li><strong>7/3</strong>：企稳</li>
+</ul>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>周内表现</th><th>连板</th><th>同花顺链接</th></tr>
+</thead>
+<tbody>
+<tr><td>长江证券</td><td>000783</td><td>7/1涨停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/000783/" target="_blank">查看</a></td></tr>
+<tr><td>中信建投</td><td>601066</td><td>7/1大涨</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/601066/" target="_blank">查看</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="conclusion">
+<strong>上涨逻辑</strong>：7月开门红+大金融估值修复+券商薪酬管理新规落地
+</div>
+</div>
+
+<!-- (2) 创新药/CRO -->
+<div class="subsection">
+<h3>(2) 创新药/CRO <span class="sub-tag">6/29涨停潮后逐步退潮</span></h3>
+<ul>
+<li><strong>6/29</strong>：创新药指数+7.53%，20余股涨停。广生堂、三生国健、舒泰神20CM涨停，凯莱英4天2板</li>
+<li><strong>7/2</strong>：逆势活跃</li>
+<li><strong>7/3</strong>：分歧调整</li>
+</ul>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>周内表现</th><th>连板</th><th>同花顺链接</th></tr>
+</thead>
+<tbody>
+<tr><td>广生堂</td><td>300436</td><td>6/29 20CM涨停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/300436/" target="_blank">查看</a></td></tr>
+<tr><td>三生国健</td><td>688336</td><td>6/29 20CM涨停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/688336/" target="_blank">查看</a></td></tr>
+<tr><td>凯莱英</td><td>002821</td><td>6/29涨停（4天2板）</td><td><span class="tag tag-up">2板</span></td><td><a href="https://stockpage.10jqka.com.cn/002821/" target="_blank">查看</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="conclusion">
+<strong>上涨逻辑</strong>：国家医保局6/29发布新规+创新药BD交易超预期+板块超跌反弹
+</div>
+</div>
+
+<!-- (3) 大消费 -->
+<div class="subsection">
+<h3>(3) 大消费 <span class="sub-tag">6/29午后反弹</span></h3>
+<ul>
+<li><strong>6/29</strong>：东鹏饮料午后涨停，625亿"国补"催化</li>
+</ul>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>周内表现</th><th>连板</th><th>同花顺链接</th></tr>
+</thead>
+<tbody>
+<tr><td>东鹏饮料</td><td>605499</td><td>6/29涨停</td><td>—</td><td><a href="https://stockpage.10jqka.com.cn/605499/" target="_blank">查看</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<!-- Section 3: 连板股排列 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">03</span>
+<span class="section-title">连板股排列（周五7/3收盘）</span>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>排名</th><th>代码</th><th>简称</th><th>连板数</th><th>所属概念/板块</th></tr>
+</thead>
+<tbody>
+<tr><td>最高标</td><td>002822</td><td>ST中装</td><td><span class="tag tag-warn">8连板</span></td><td>破产重整+摘帽预期</td></tr>
+<tr><td>次高标</td><td>—</td><td>*ST瑞茂</td><td><span class="tag tag-warn">5连板</span></td><td>ST板块反弹</td></tr>
+<tr><td>第三</td><td>—</td><td>*ST美芝</td><td><span class="tag tag-warn">4连板</span></td><td>ST板块反弹</td></tr>
+<tr><td>—</td><td>000506</td><td>招金黄金</td><td><span class="tag tag-up">2连板</span></td><td>贵金属</td></tr>
+<tr><td>—</td><td>600988</td><td>赤峰黄金</td><td><span class="tag tag-up">2连板</span></td><td>贵金属</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="subsection">
+<h4>连板梯队演变</h4>
+<ul>
+<li><strong>7/1最高标</strong>：海南海药7连板（后续达成8天6板），东方锆业9天6板</li>
+<li><strong>7/2最高标</strong>：海南海药8天6板，兴业科技10天7板（但已跌停负反馈）</li>
+<li><strong>7/3最高标</strong>：ST中装8连板</li>
+<li><strong>梯队特征</strong>：正常连板接力遭遇冰点（兴业科技跌停负反馈），资金抱团ST板块和重整预期概念以规避异动风险，反映市场风险偏好下降</li>
+</ul>
+</div>
+</div>
+
+<!-- Section 4: 下跌板块概览 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">04</span>
+<span class="section-title">下跌板块概览</span>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>板块</th><th>跌幅</th><th>关键事件</th></tr>
+</thead>
+<tbody>
+<tr><td>半导体/算力硬件</td><td><span class="tag tag-down">7/2暴跌（多股跌停）</span></td><td>Meta进军云基础设施消息冲击算力股逻辑+美股半导体大跌传导</td></tr>
+<tr><td>CPO/光模块</td><td><span class="tag tag-down">7/2大幅回撤</span></td><td>6/30创新高后获利回吐+科技股集体暴跌拖累</td></tr>
+<tr><td>PCB</td><td><span class="tag tag-down">跟随半导体暴跌</span></td><td>—</td></tr>
+<tr><td>创新药</td><td><span class="tag tag-down">7/3分歧调整</span></td><td>6/29涨停潮后资金获利了结</td></tr>
+<tr><td>电子化学品</td><td><span class="tag tag-down">7/3续跌</span></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Section 5: 涨停数据汇总 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">05</span>
+<span class="section-title">涨停数据汇总</span>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>日期</th><th>涨停家数</th><th>炸板数</th><th>封板率</th><th>连板股数</th><th>最高标</th></tr>
+</thead>
+<tbody>
+<tr><td>6/29</td><td>106股</td><td>38股</td><td>74%</td><td>9只</td><td>威派格7天4板</td></tr>
+<tr><td>6/30</td><td>138股</td><td>25股</td><td>85%</td><td>19只</td><td>兴业科技</td></tr>
+<tr><td>7/1</td><td>150股</td><td>74股</td><td>67%</td><td>22只</td><td>东方锆业9天6板</td></tr>
+<tr><td>7/2</td><td>93股</td><td>40股</td><td>70%</td><td>19只</td><td>海南海药8天6板</td></tr>
+<tr><td>7/3</td><td>约61-80股</td><td>约14股</td><td>约81%</td><td>约14只</td><td>ST中装8连板</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="conclusion">
+<strong>趋势观察</strong>：涨停家数从7/1的150股高点骤降至7/2的93股，封板率从85%跌至67%，反映情绪急剧退潮。7/3涨停数进一步缩至约61-80股，连板股数降至约14只，最高标被ST中装（8连板）占据，正常连板接力生态遭遇冰点。
+</div>
+</div>
+
+<!-- Section 6: 龙虎榜重点 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">06</span>
+<span class="section-title">龙虎榜重点</span>
+</div>
+
+<div class="glass">
+<p style="font-size:15px;color:var(--text2);line-height:1.7">暂无精确的龙虎榜数据。预计机构主要在超跌科技股的博弈与高位贵金属的兑现中产生分歧。北向资金动态受外围市场及美股独立日休市影响相对平稳。</p>
+</div>
+</div>
+
+<!-- Section 7: 平台突破股筛选 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">07</span>
+<span class="section-title">平台突破股筛选</span>
+</div>
+
+<div class="glass">
+<p style="font-size:15px;color:var(--text2);line-height:1.7">暂无精确数据。下周可重点观察经过本周震荡后，底部温和放量、连续小阳线突破横盘区间的标的。人形机器人方向因宇树IPO获批催化，相关减速器/丝杠标的可能有突破机会。</p>
+</div>
+</div>
+
+<!-- Section 8: 300亿以上高壁垒个股深度分析 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">08</span>
+<span class="section-title">300亿以上高壁垒个股深度分析</span>
+</div>
+
+<div class="analysis-card">
+<h4>招金黄金 (000506) / 赤峰黄金 (600988) <span class="ac-code">贵金属</span></h4>
+<div class="subsection">
+<ul>
+<li><strong>主营业务</strong>：黄金采选与冶炼</li>
+<li><strong>核心客户</strong>：黄金终端消费/投资需求</li>
+<li><strong>护城河</strong>：矿产资源储备（不可复制的资源壁垒）</li>
+<li><strong>财报趋势</strong>：受益于黄金价格上行周期</li>
+<li><strong>上涨逻辑</strong>：避险情绪叠加风格切换，黄金价格高位震荡，宏观避险需求和商品价格周期双重共振</li>
+<li><strong>下跌风险</strong>：黄金价格回调风险、避险情绪消退</li>
+<li><strong>适合买入条件</strong>：回调至5日线附近，黄金现货价格企稳确认</li>
+</ul>
+</div>
+</div>
+
+<div class="analysis-card">
+<h4>兆易创新 (603986) <span class="ac-code">存储/半导体</span></h4>
+<div class="subsection">
+<ul>
+<li><strong>主营业务</strong>：存储芯片（NOR Flash）、MCU设计</li>
+<li><strong>核心客户</strong>：消费电子、汽车电子、工业控制</li>
+<li><strong>护城河</strong>：NOR Flash全球前三份额，MCU国产替代龙头</li>
+<li><strong>财报趋势</strong>：存储供需紧张格局延续，业绩兑现期</li>
+<li><strong>上涨逻辑</strong>：6/29-30半导体主线+存储供需紧张。7/2跌停为系统性冲击</li>
+<li><strong>下跌风险</strong>：Meta冲击算力逻辑若验证，估值承压；存储周期反转</li>
+<li><strong>适合买入条件</strong>：7/3技术反弹后需观察7/6新规落地+美股半导体7/7恢复交易后方向</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Section 9: 异常成交量个股 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">09</span>
+<span class="section-title">异常成交量个股</span>
+</div>
+
+<div class="glass">
+<p style="font-size:15px;color:var(--text2);line-height:1.7">7/2暴跌日多只科技股出现天量成交（兆易创新、东山精密、长电科技、北方华创跌停日放量）。暂无精确的"量比>2"全面数据。</p>
+</div>
+</div>
+
+<!-- Section 10: 下周展望 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">10</span>
+<span class="section-title">下周展望</span>
+</div>
+
+<div class="subsection">
+<h3>关键变量</h3>
+<ul>
+<li><strong>7/6（下周一）A股交易新规正式施行</strong> — 新规施行首日量化资金、打板资金手法变化；短期波动可能</li>
+<li><strong>美股7/4独立日休市后7/7恢复</strong> — 半导体回调是否企稳，影响A股科技股情绪</li>
+<li><strong>中报预告密集披露期（7月中上旬）</strong> — 市场主线进入中报业绩验证期</li>
+<li><strong>贵金属/黄金走势</strong> — 黄金现货价格及美联储政策预期</li>
+<li><strong>人形机器人产业催化</strong> — 宇树科技IPO获批后的产业外溢效应</li>
+</ul>
+</div>
+
+<div class="subsection">
+<h3>策略建议</h3>
+<div class="logic-box">1. 控制仓位，不宜追高处于情绪高点的题材连板股
+2. 跟踪主线，科技股的下跌是否企稳直接关系人气
+   → 若未能快速收复失地，防御属性（贵金属、高股息）将继续受追捧
+3. 关注新规影响，留意7/6新规施行首日量化/打板资金的手法变化
+4. 贵金属若能2进3则确认强势，可轻仓跟随
+5. 人形机器人方向可观察减速器/丝杠标的的持续性
+6. 中报预告期关注业绩兑现的科技股</div>
+</div>
+</div>
+
+<!-- Section 11: 下周重点盯盘清单 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">11</span>
+<span class="section-title">下周重点盯盘清单</span>
+</div>
+
+<!-- 进攻类 -->
+<div class="watch-group">
+<div class="watch-group-title">进攻类</div>
+
+<div class="watch-card">
+<div><span class="watch-name">招金黄金</span><span class="watch-code">000506</span></div>
+<div class="watch-logic">贵金属2进3强度</div>
+<div class="watch-signal">观察：能否连板确立龙头</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">双环传动</span><span class="watch-code">002472</span></div>
+<div class="watch-logic">人形机器人/减速器</div>
+<div class="watch-signal">观察：宇树IPO获批后的产业外溢持续性</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">兆易创新</span><span class="watch-code">603986</span></div>
+<div class="watch-logic">存储龙头超跌反弹</div>
+<div class="watch-signal">观察：7/6新规+7/7美股半导体恢复后方向</div>
+</div>
+</div>
+
+<!-- 防守类 -->
+<div class="watch-group">
+<div class="watch-group-title">防守类</div>
+
+<div class="watch-card">
+<div><span class="watch-name">大金融龙头</span><span class="watch-code">券商/银行</span></div>
+<div class="watch-logic">检验7/1大涨后回踩的支撑力度</div>
+<div class="watch-signal">观察：回踩不破关键支撑则结构健康</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">高股息/电力</span><span class="watch-code">防御属性</span></div>
+<div class="watch-logic">若科技未企稳，防御属性延续</div>
+<div class="watch-signal">观察：科技股反弹力度决定资金分流方向</div>
+</div>
+</div>
+
+<!-- 风格切换类 -->
+<div class="watch-group">
+<div class="watch-group-title">风格切换类</div>
+
+<div class="watch-card">
+<div><span class="watch-name">科技权重</span><span class="watch-code">半导体/CPO</span></div>
+<div class="watch-logic">观察技术性反弹能否演变为趋势反转</div>
+<div class="watch-signal">观察：反弹需成交量配合，缩量反弹不可信</div>
+</div>
+
+<div class="watch-card">
+<div><span class="watch-name">创新药</span><span class="watch-code">CRO/生物医药</span></div>
+<div class="watch-logic">6/29涨停潮后是否二波启动</div>
+<div class="watch-signal">观察：需站稳关键均线+量能回升确认</div>
+</div>
+</div>
+
+<div class="conclusion">
+<strong>核心观察逻辑</strong><br>
+① 7/6新规施行首日市场反应是本周最重要的观察窗口<br>
+② 科技股7/3反弹定性为技术性，趋势反转需成交量配合<br>
+③ 贵金属是当前最强的逆势方向，2进3确认则风格切换成立
+</div>
+</div>
+
+<div class="footer">
+<p>2026 W27（6/29-7/3）A股周报 · 阳子PMO · CreateSpace设计系统</p>
+<p class="warn">免责声明：本报告基于公开市场数据整理，仅供参考，不构成任何投资建议。股市有风险，投资需谨慎。所有数据以交易所最终披露为准。</p>
+</div>
+
+</div>
+</body>
+</html>
