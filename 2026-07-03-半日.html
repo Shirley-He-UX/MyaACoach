@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-07-03 A股半日报</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#2563EB;--secondary:#E11D48;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--primary);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.conclusion{border-left:4px solid var(--primary);background:#EFF6FF;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+.conclusion strong{color:var(--primary);}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#1d4ed8;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-home" href="index.html">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-06-29-盘中.html">← 上一篇</a>
+    <a href="2026-07-03-盘中.html">下一篇 →</a>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">MIDDAY REPORT</div>
+    <h1 class="hero-title">科技股暴跌后技术反弹！创业板领涨 · 贵金属2连板 · 人形机器人活跃</h1>
+    <p class="hero-sub">2026年7月3日 · 周五 · A股半日报 · 午间休盘</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- 1. 大盘半日总览 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">1</div>
+      <h2 class="section-title">大盘半日总览</h2>
+    </div>
+    <p class="summary-text">继昨日（7/2）市场暴跌，科创50创下年内最大单日跌幅（-7.70%）之后，今日上午A股迎来喘息。三大指数开盘微震，创业板指随后震荡走强，午间领涨两市；沪深主板企稳修复。半日两市成交量较昨日有所萎缩，涨跌家数基本相当，市场情绪正处于大跌后的技术性修复阶段。</p>
+    
+    <div class="data-cards">
+      <div class="data-card">
+        <div class="label">两市半日成交额</div>
+        <div class="value">约 7900亿</div>
+        <div class="change change-down">缩量约 578亿</div>
+      </div>
+      <div class="data-card">
+        <div class="label">创业板指 (午评)</div>
+        <div class="value">涨超 1%</div>
+        <div class="change change-up">技术性反弹领涨</div>
+      </div>
+      <div class="data-card">
+        <div class="label">市场涨跌家数</div>
+        <div class="value">平盘持平</div>
+        <div class="change" style="color: var(--text2);">涨跌家数基本相当</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 上午异动板块 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">2</div>
+      <h2 class="section-title">上午异动板块</h2>
+    </div>
+    
+    <div class="watch-grid">
+      <div class="watch-card">
+        <h4><span class="tag tag-red">进攻端</span> 科技与机器人</h4>
+        <div class="item">
+          <span class="s-name">人形机器人</span>
+          <span class="tag tag-red">活跃</span>
+        </div>
+        <div class="s-note">宇树科技科创板IPO注册获批带来强概念催化，RV减速器核心标的双环传动涨超11%。</div>
+        
+        <div class="item" style="margin-top: 12px;">
+          <span class="s-name">科技股 (泛)</span>
+          <span class="tag tag-red">反弹</span>
+        </div>
+        <div class="s-note">昨受Meta进军云基础设拖累大跌后，今早随创业板展开技术性反弹。</div>
+      </div>
+
+      <div class="watch-card">
+        <h4><span class="tag tag-blue">防守端</span> 贵金属与大金融</h4>
+        <div class="item">
+          <span class="s-name">贵金属</span>
+          <span class="tag tag-red">强势</span>
+        </div>
+        <div class="s-note">避险情绪叠加板块独立逻辑，招金黄金(000506)、赤峰黄金(600988)双双逆势走强，实现2连板。</div>
+        
+        <div class="item" style="margin-top: 12px;">
+          <span class="s-name">大金融</span>
+          <span class="tag tag-gray">企稳</span>
+        </div>
+        <div class="s-note">券商及银行等大金融权重板块表现稳定，为大盘企稳托底。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 上午涨停股梳理 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">3</div>
+      <h2 class="section-title">上午涨停及连板晋级</h2>
+    </div>
+    <p class="summary-text" style="margin-bottom: 12px;">今日开盘涨停股共计 <strong>26</strong> 只。ST板块连板梯队表现抢眼。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>个股简称</th>
+          <th>代码</th>
+          <th>连板高度</th>
+          <th>核心逻辑/备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="name">ST中装</span></td>
+          <td><span class="code">sz002822</span></td>
+          <td><span class="tag tag-red">8连板</span></td>
+          <td>破产重整 + 业务转型 + 摘帽预期，市场高度标杆</td>
+        </tr>
+        <tr>
+          <td><span class="name">*ST瑞茂</span></td>
+          <td><span class="code">暂无</span></td>
+          <td><span class="tag tag-red">5连板</span></td>
+          <td>ST板块持续活跃标的</td>
+        </tr>
+        <tr>
+          <td><span class="name">*ST美芝</span></td>
+          <td><span class="code">暂无</span></td>
+          <td><span class="tag tag-red">4连板</span></td>
+          <td>连板晋级</td>
+        </tr>
+        <tr>
+          <td><span class="name">招金黄金</span></td>
+          <td><span class="code">sz000506</span></td>
+          <td><span class="tag tag-red">2连板</span></td>
+          <td>贵金属避险属性发酵</td>
+        </tr>
+        <tr>
+          <td><span class="name">赤峰黄金</span></td>
+          <td><span class="code">sh600988</span></td>
+          <td><span class="tag tag-red">2连板</span></td>
+          <td>贵金属避险属性发酵</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 4. 上午龙虎榜或大单异动 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">4</div>
+      <h2 class="section-title">上午龙虎榜与大单异动</h2>
+    </div>
+    <div class="alert-box">
+      <div class="alert-title">午间数据说明</div>
+      <p>暂无精确的半日龙虎榜与大单异动数据。（通常于全天收盘后汇总更新）</p>
+    </div>
+  </section>
+
+  <!-- 5. 下午盘关注重点和策略提示 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">5</div>
+      <h2 class="section-title">下午盘关注重点 & 策略提示</h2>
+    </div>
+    <ul class="summary-text" style="padding-left: 20px; margin-bottom: 16px;">
+      <li><strong>外盘干扰减弱：</strong> 7月3日为美国独立日假期前夕（或部分休市），且美股半导体昨夜大跌（美光-9%，闪迪-10%）的情绪已在早盘消化。下午外围干扰因素相对减少。</li>
+      <li><strong>大会消息刺激：</strong> 全球数字经济大会（7/2-7/5，国家会议中心）正在举办中，关注下午是否有数字经济、数据要素相关的突发性行业利好释放。</li>
+      <li><strong>规避周末效应：</strong> A股交易新规将于 <strong>7月6日（下周一）正式施行</strong>，叠加周五效应，下午资金可能偏向观望或进行防御性调仓，需警惕尾盘部分获利盘兑现。</li>
+    </ul>
+    <div class="conclusion">
+      <strong>策略提示：</strong> 暴跌次日的修复往往呈现缩量轮动，科技股的“技术性反弹”持续性有待观察。操作上宜多看少动，等待下周一新规落地后的资金新方向，防守方向可继续关注底部企稳的大金融及具有较强独立逻辑的贵金属。
+    </div>
+  </section>
+
+  <!-- 6. 上周盯盘清单中个股的上午表现追踪 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">6</div>
+      <h2 class="section-title">盯盘清单追踪</h2>
+    </div>
+    <p class="summary-text" style="color: var(--text2); font-style: italic;">注：上周盯盘清单中个股的上午表现暂无精确数据。</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 QoderDesign A股趋势跟踪</p>
+  <p class="warn">风险提示：本报告数据仅供复盘参考，不构成任何投资建议，股市有风险，入市需谨慎。</p>
+</footer>
+
+</body>
+</html>

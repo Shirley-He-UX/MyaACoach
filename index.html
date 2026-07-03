@@ -124,15 +124,45 @@ body{font-family:'DM Sans',sans-serif;background:#FFFFFF;color:var(--text);line-
 <div class="section-label">Reports</div>
 
 <div class="tabs">
-  <button class="tab-btn active" data-filter="all">全部<span class="tab-count" id="count-all">57</span></button>
-  <button class="tab-btn" data-filter="half">半日报<span class="tab-count" id="count-half">18</span></button>
-  <button class="tab-btn" data-filter="midday">盘中报<span class="tab-count" id="count-midday">17</span></button>
-  <button class="tab-btn" data-filter="daily">日报<span class="tab-count" id="count-daily">16</span></button>
+  <button class="tab-btn active" data-filter="all">全部<span class="tab-count" id="count-all">60</span></button>
+  <button class="tab-btn" data-filter="half">半日报<span class="tab-count" id="count-half">19</span></button>
+  <button class="tab-btn" data-filter="midday">盘中报<span class="tab-count" id="count-midday">18</span></button>
+  <button class="tab-btn" data-filter="daily">日报<span class="tab-count" id="count-daily">17</span></button>
   <button class="tab-btn" data-filter="weekly">周报<span class="tab-count" id="count-weekly">4</span></button>
   <button class="tab-btn" data-filter="monthly">月报<span class="tab-count" id="count-monthly">0</span></button>
 </div>
 
 <div class="reports" id="report-list">
+
+<!-- 日报 7/3 — 最新在前 -->
+<a class="report-card" data-type="daily" href="2026-07-03-日报.html">
+<span class="rc-week">7/3</span>
+<div class="rc-body">
+<div class="rc-title">科技股暴跌后技术反弹！贵金属延续强势 · 人形机器人活跃 · 下周新规实施在即<span class="rc-type rc-type-daily">日报</span></div>
+<div class="rc-date">2026年7月3日 · 收盘日报</div>
+</div>
+<span class="rc-arrow">→</span>
+</a>
+
+<!-- 盘中 7/3 -->
+<a class="report-card" data-type="midday" href="2026-07-03-盘中.html">
+<span class="rc-week">7/3</span>
+<div class="rc-body">
+<div class="rc-title">科技股暴跌后技术反弹 · 贵金属2连板延续强势 · 人形机器人活跃 · 下周新规实施在即<span class="rc-type rc-type-midday">盘中</span></div>
+<div class="rc-date">2026年7月3日 · 盘中扫描</div>
+</div>
+<span class="rc-arrow">→</span>
+</a>
+
+<!-- 半日 7/3 -->
+<a class="report-card" data-type="half" href="2026-07-03-半日.html">
+<span class="rc-week">7/3</span>
+<div class="rc-body">
+<div class="rc-title">科技股暴跌后技术反弹！创业板领涨 · 贵金属2连板 · 人形机器人活跃<span class="rc-type rc-type-half">半日</span></div>
+<div class="rc-date">2026年7月3日 · 午间分析</div>
+</div>
+<span class="rc-arrow">→</span>
+</a>
 
 <!-- 盘中 6/29 — 最新在前 -->
 <a class="report-card" data-type="midday" href="2026-06-29-盘中.html">
