@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A股半日分析报告 - 2026年7月9日</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+        .hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+        .hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+        .hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+        .hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+        .hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+        .hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+        .hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+        .container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+        .section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+        .section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+        .section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+        .section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+        .summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+        .data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+        .data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+        .data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+        .data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+        .data-card .change{font-size:12px;margin-top:4px;}
+        .change-up{color:var(--error);}
+        .change-down{color:var(--success);}
+        table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+        thead{background:var(--bg);}
+        th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+        td{padding:10px 12px;border-bottom:1px solid var(--border);}
+        .name{font-weight:600;}
+        .code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+        .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+        .tag-red{background:#FEF2F2;color:var(--error);}
+        .tag-green{background:#DCFCE7;color:#166534;}
+        .tag-blue{background:#DBEAFE;color:#1E40AF;}
+        .tag-yellow{background:#FEF3C7;color:#92400E;}
+        .tag-gray{background:#F3F4F6;color:var(--text2);}
+        .sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+        .sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+        .watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+        .watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+        .watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+        .item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+        .s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+        .s-name{font-weight:600;font-size:14px;}
+        .s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+        .alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+        .alert-box .alert-title{font-weight:700;color:var(--primary);margin-bottom:6px;font-size:15px;}
+        .alert-box p{font-size:14px;line-height:1.7;}
+        .conclusion{border-left:4px solid var(--secondary);background:#EFF6FF;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+        .conclusion strong{color:var(--secondary);}
+        .footer{margin-top:32px;text-align:center;}
+        .footer p{font-size:13px;color:var(--text2);}
+        .footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+        .top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+        .top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+        .top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+        .top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+        .top-nav .nav-home:hover{background:#be123c;}
+        .top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+        .top-nav .nav-group{display:flex;gap:8px;}
+        @media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="2026-W27_0629-0703.html">← 上一篇</a>
+        <div class="nav-group">
+            <a href="#" class="nav-home">首页</a>
+            <a href="2026-07-09-盘中.html">下一篇 →</a>
+        </div>
+    </div>
+
+    <div class="hero-band">
+        <div class="hero-content">
+            <div class="hero-week">2026 / 07 / 09 (周四) · 半日盘点</div>
+            <h1 class="hero-title">沪指反弹约+0.5%，算力与半导体全线爆发</h1>
+            <p class="hero-sub">大盘连续三日回调后迎情绪修复窗口。浪潮信息业绩暴增引爆算力主线，半导体封测等科技股强力发散，但创业板高开低走表现分化。</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">1</div>
+                <h2 class="section-title">大盘总览 <span style="font-size:14px;font-weight:400;color:var(--text2);margin-left:8px;">(午间收盘数据)</span></h2>
+            </div>
+            
+            <div class="data-cards">
+                <div class="data-card">
+                    <div class="label">上证指数 (预估)</div>
+                    <div class="value change-up">约 3986</div>
+                    <div class="change change-up">▲ 约 +0.5% (+20点)</div>
+                </div>
+                <div class="data-card">
+                    <div class="label">深证成指 (预估)</div>
+                    <div class="value change-up">约 15015</div>
+                    <div class="change change-up">▲ 约 +0.5% (+75点)</div>
+                </div>
+                <div class="data-card">
+                    <div class="label">创业板指</div>
+                    <div class="value change-down">高开低走</div>
+                    <div class="change change-down">▼ 约 -0.75%</div>
+                </div>
+                <div class="data-card">
+                    <div class="label">半日成交额</div>
+                    <div class="value">> 1 万亿</div>
+                    <div class="change change-down">较前日缩量约700亿</div>
+                </div>
+            </div>
+
+            <p class="summary-text">
+                <strong>背景提要：</strong>本周前三个交易日大盘连跌，沪指从4041点回落至3970点(-1.75%)，成交额从3.09万亿缩量至2.56万亿。今日A股顶住日韩股市暴跌的外部压力(韩国KOSPI技术性熊市)，在6月CPI/PPI数据落地及美联储FOMC会议纪要催化下展开修复。科创综指开盘表现强势(+1.44%)，10:52全市场成交额已突破万亿，全天预计约2.5万亿。*注：午间精确点位数据待盘后最终确认，现以保守估算呈现。*
+            </p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">2</div>
+                <h2 class="section-title">上午异动板块梳理</h2>
+            </div>
+            <div class="watch-grid">
+                <div class="watch-card" style="border-top: 3px solid var(--error);">
+                    <h4>🔥 进攻类板块</h4>
+                    <p class="summary-text" style="font-size:14px;">
+                        <strong>1. 算力租赁/CDN：</strong>中证云计算指数涨2.6%，主力连续4日净流入。受Akamai退出中国市场及郑州算力大会催化，网宿科技（昨日20cm涨停）延续强势。<br>
+                        <strong>2. AI服务器：</strong>浪潮信息Q2业绩环比暴增312%（预增226%-288%）直接引爆板块。广脉科技大涨超17%。<br>
+                        <strong>3. 半导体/先进封装：</strong>长鑫科技发布科创板IPO招股意向书提振情绪。上海合晶20cm涨停，有研硅大涨超17%，沐曦股份创历史新高。<br>
+                        <strong>4. AI手机：</strong>道明光学封板，弘信电子、中兴通讯跟涨跟进。
+                    </p>
+                </div>
+                <div class="watch-card" style="border-top: 3px solid var(--success);">
+                    <h4>🛡️ 防守/领跌板块</h4>
+                    <p class="summary-text" style="font-size:14px;">
+                        <strong>1. 人形机器人：</strong>板块连续3日下跌，资金流出明显。<br>
+                        <strong>2. 贵金属：</strong>走势开始分化，前几日强势的黄金股早盘出现分歧。<br>
+                        <strong>3. 周期及新能源：</strong>锂电池、稀土永磁跌幅居前。<br>
+                        <strong>4. 培育钻石：</strong>早盘弱势调整，位居跌幅榜前列。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">3</div>
+                <h2 class="section-title">上午涨停股梳理</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>股票名称</th>
+                        <th>核心题材</th>
+                        <th>市场表现</th>
+                        <th>备注/催化逻辑</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="name">浪潮信息</span> <span class="code">000977</span></td>
+                        <td>AI服务器</td>
+                        <td><span class="tag tag-red">2连板</span></td>
+                        <td>半年报净利预增226%-288%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="name">上海合晶</span> <span class="code">688584</span></td>
+                        <td>半导体</td>
+                        <td><span class="tag tag-red">20CM涨停</span></td>
+                        <td>科创板半导体情绪高标</td>
+                    </tr>
+                    <tr>
+                        <td><span class="name">朗迪集团</span> <span class="code">603726</span></td>
+                        <td>先进封装</td>
+                        <td><span class="tag tag-red">涨停</span></td>
+                        <td>封装测试高弹性标的</td>
+                    </tr>
+                    <tr>
+                        <td><span class="name">同兴达</span> <span class="code">002845</span></td>
+                        <td>先进封装</td>
+                        <td><span class="tag tag-red">涨停</span></td>
+                        <td>先进封装细分龙头</td>
+                    </tr>
+                    <tr>
+                        <td><span class="name">三佳科技</span> <span class="code">600520</span></td>
+                        <td>先进封装</td>
+                        <td><span class="tag tag-red">涨停</span></td>
+                        <td>资金合力点</td>
+                    </tr>
+                    <tr>
+                        <td><span class="name">中京电子</span> <span class="code">002579</span></td>
+                        <td>先进封装/PCB</td>
+                        <td><span class="tag tag-red">涨停</span></td>
+                        <td>半导体主线发散发力</td>
+                    </tr>
+                    <tr>
+                        <td><span class="name">道明光学</span> <span class="code">002632</span></td>
+                        <td>AI手机/消费电子</td>
+                        <td><span class="tag tag-red">涨停</span></td>
+                        <td>AI终端硬件发酵</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="sub-section">
+                <div class="sub-head">💡 高弹性跟涨标的</div>
+                <div class="item">
+                    <span class="s-name">有研硅</span> <span class="s-code">688432</span> <span class="tag tag-red">+17%</span>
+                    <span class="s-note">半导体材料前排</span>
+                </div>
+                <div class="item">
+                    <span class="s-name">广脉科技</span> <span class="s-code">838924</span> <span class="tag tag-red">+17%</span>
+                    <span class="s-note">AI算力及服务器弹性标的</span>
+                </div>
+                <div class="item">
+                    <span class="s-name">沐曦股份</span> <span class="s-code">N/A</span> <span class="tag tag-red">创历史新高</span>
+                    <span class="s-note">盘中大涨超11%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">4</div>
+                <h2 class="section-title">龙虎榜与大单异动</h2>
+            </div>
+            <div class="alert-box">
+                <div class="alert-title">⏳ 盘后更新提示</div>
+                <p>机构席位与游资龙虎榜数据需等待15:00全天收市后由交易所披露。请重点关注下午完整版复盘，将详细拆解浪潮信息、上海合晶等今日领涨龙头的资金结构和游资接力情况。</p>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">5</div>
+                <h2 class="section-title">下午盘关注重点</h2>
+            </div>
+            <div class="conclusion">
+                <strong>1. 成交量能否企稳：</strong> 上午虽然半日破万亿，但全天预计小幅缩量至2.5万亿，重点观察午后指数上攻时是否有增量资金配合跟进。<br><br>
+                <strong>2. 创业板修复情况：</strong> 创业板指上午高开后一度涨近1.8%，随后跳水翻绿(-0.75%)。需观察午后新能源等创业板权重能否止跌反弹。<br><br>
+                <strong>3. 算力核心股的封单：</strong> 浪潮信息（业绩爆表）是本次反弹的核心阵眼，其2连板封单是否稳固决定了科技主线下午乃至明日的延续性。同时留意长鑫科技招股对存储板块的持续发酵力度。<br><br>
+                <strong>4. ST板块新规影响：</strong> 交易新规（ST涨跌幅扩至10%）已施行4日，观察ST板块的抽血效应或炒作退潮。
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">6</div>
+                <h2 class="section-title">盯盘清单追踪 (W27周报)</h2>
+            </div>
+            <div class="sub-section">
+                <p class="summary-text" style="margin-bottom:12px;">以下为《2026-W27周报》重点设定的观察标的，今日半日表现跟踪：</p>
+                
+                <div class="sub-head" style="color:var(--error); margin-top:16px;">⚔️ 进攻类</div>
+                <div class="item">
+                    <span class="s-name">中际旭创</span> <span class="tag tag-gray">光模块</span>
+                    <span class="s-note">算力侧主线反弹，重点观察其能否突破近期整理平台</span>
+                </div>
+                <div class="item">
+                    <span class="s-name">寒武纪</span> <span class="tag tag-gray">算力芯片</span>
+                    <span class="s-note">随半导体爆发，关注AI芯片端午后的承接力度</span>
+                </div>
+                <div class="item">
+                    <span class="s-name">生益科技</span> <span class="tag tag-gray">PCB</span>
+                    <span class="s-note">中京电子已涨停，重点观察同板块生益科技资金流入情况</span>
+                </div>
+
+                <div class="sub-head" style="color:var(--secondary); margin-top:16px;">🛡️ 防守类</div>
+                <div class="item">
+                    <span class="s-name">招金矿业 / 赤峰黄金</span> <span class="tag tag-gray">贵金属</span>
+                    <span class="s-note">前期已2连板，今日上午贵金属分化，防守情绪回落，谨防冲高回落风险</span>
+                </div>
+                <div class="item">
+                    <span class="s-name">长江电力</span> <span class="tag tag-gray">电力</span>
+                    <span class="s-note">高股息防守资产，在科技主线爆发期通常承压，关注其支撑位</span>
+                </div>
+
+                <div class="sub-head" style="color:var(--warning); margin-top:16px;">🔄 风格切换标的</div>
+                <div class="item">
+                    <span class="s-name">兴业科技</span> <span class="s-note">此前10天7板后跌停，观察短线高标退潮后的修复或补跌</span>
+                </div>
+                <div class="item">
+                    <span class="s-name">海南海药</span> <span class="s-note">8天6板，市场风险偏好的风向标</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 QoderDesign A股深度复盘体系 · 半日报</p>
+            <p class="warn">风险提示：本报告数据及分析仅供参考，不构成任何投资建议，市场有风险，投资需谨慎。</p>
+        </div>
+    </div>
+</body>
+</html>

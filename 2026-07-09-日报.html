@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026年7月9日 A股日报 | CreateSpace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--primary);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.conclusion{border-left:4px solid var(--primary);background:#EFF6FF;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+.conclusion strong{color:var(--primary);}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<nav class="top-nav">
+  <div class="nav-group">
+    <a href="./2026-07-09-盘中.html" class="">← 上一篇：盘中</a>
+  </div>
+  <div class="nav-group">
+    <a href="./index.html" class="nav-home">🏠 首页</a>
+    <a href="#" class="nav-disabled">下一篇 →</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.07.09 / THURSDAY / A-SHARE DAILY</div>
+    <h1 class="hero-title">A股日报 · 7月9日</h1>
+    <p class="hero-sub">沪指冲高回落小幅收涨，深成指创业板再度承压。算力租赁/CDN接棒成为最大主线，半导体+AI服务器共振走强。连跌三日后续量能收缩至约2.5万亿，结构性分化加剧。</p>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="container">
+
+<!-- 1. 大盘总览 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">1</div>
+    <div class="section-title">大盘总览</div>
+  </div>
+  <p class="summary-text">本周A股经历连续三日下跌后，7月9日（周四）出现冲高回落走势。沪指开盘3977.55点（+0.17%），盘中一度冲至约3986点（+0.5%），但午后抛压加重，涨幅收窄。创业板指早盘一度涨近1.8%，午后翻绿。预计收盘三大指数涨跌不一：沪指小幅收涨或收平，深成指及创业板可能收跌。两市成交额约2.5万亿，较前日继续缩量，反映市场情绪谨慎、存量博弈特征明显。</p>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">沪指（约）</div>
+      <div class="value">~3975</div>
+      <div class="change change-up">小幅波动 · 冲高回落</div>
+    </div>
+    <div class="data-card">
+      <div class="label">深成指（约）</div>
+      <div class="value">~14930</div>
+      <div class="change change-down">承压收跌</div>
+    </div>
+    <div class="data-card">
+      <div class="label">创业板指（约）</div>
+      <div class="value">~3850</div>
+      <div class="change change-down">冲高1.8%后翻绿</div>
+    </div>
+    <div class="data-card">
+      <div class="label">成交额（约）</div>
+      <div class="value">~2.5万亿</div>
+      <div class="change change-down">连续缩量</div>
+    </div>
+  </div>
+  <h4 style="margin:20px 0 8px;font-size:15px;font-weight:700;">本周走势一览</h4>
+  <table>
+    <thead>
+      <tr><th>日期</th><th>沪指</th><th>涨跌幅</th><th>深成指</th><th>涨跌幅</th><th>创业板指</th><th>涨跌幅</th><th>成交额</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>7/6（周一）</td><td>4041.24</td><td class="change-down">-0.06%</td><td>15416.80</td><td class="change-down">-1.16%</td><td>3948.86</td><td class="change-down">-1.77%</td><td>3.09万亿</td></tr>
+      <tr><td>7/7（周二）</td><td>3990.24</td><td class="change-down">-1.26%</td><td>15225.11</td><td class="change-down">-1.24%</td><td>3911.91</td><td class="change-down">-0.94%</td><td>2.58万亿</td></tr>
+      <tr><td>7/8（周三）</td><td>3970.88</td><td class="change-down">-0.49%</td><td>14939.73</td><td class="change-down">-1.87%</td><td>3845.35</td><td class="change-down">-1.70%</td><td>2.56万亿</td></tr>
+      <tr><td>7/9（周四）</td><td>~3975</td><td class="change-up">约+0.1%</td><td>~14930</td><td class="change-down">承压</td><td>~3850</td><td class="change-down">翻绿</td><td>~2.5万亿</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-box">
+    <div class="alert-title">📌 走势特征</div>
+    <p>7/9为本周第四个交易日，沪指日线在连跌3天后出现企稳尝试但未能有效站稳。深成指、创业板指日线仍承压下行，结构上呈现"沪强深弱"格局。成交额从7/6的3.09万亿逐日萎缩至约2.5万亿，缩量态势明显，反映增量资金入场意愿不足。</p>
+  </div>
+</section>
+
+<!-- 2. 异动上涨板块 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">2</div>
+    <div class="section-title">异动上涨板块</div>
+  </div>
+  <p class="summary-text">7/9市场呈现明显的"进攻-防守"分化格局。<strong>进攻端</strong>以算力租赁/CDN为最大主线，半导体、先进封装、AI服务器、存储芯片、AI手机、算力芯片多路共振，构成全产业链强势联动。消息面上，Akamai退出中国CDN市场、浪潮信息业绩超预期、长鑫科技IPO招股书发布等利好密集催化。美股英伟达涨3.65%正面传导。<strong>防守端</strong>锂电池、稀土永磁、培育钻石跌幅居前，人形机器人连续多日调整，贵金属从连续强势转为分歧。</p>
+
+  <div class="sub-section">
+    <div class="sub-head">🚀 进攻类板块 · 个股异动</div>
+    <table>
+      <thead>
+        <tr><th>板块</th><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>算力租赁/CDN</td><td class="name"><a href="https://stockpage.10jqka.com.cn/300017/" target="_blank" style="text-decoration:none;color:var(--text);">网宿科技</a></td><td class="code">300017</td><td class="change-up">前日20cm涨停</td><td>Akamai退出利好本土龙头 <span class="tag tag-red">主线</span></td></tr>
+        <tr><td>半导体</td><td class="name"><a href="https://stockpage.10jqka.com.cn/688412/" target="_blank" style="text-decoration:none;color:var(--text);">上海合晶</a></td><td class="code">688412</td><td class="change-up">20cm涨停</td><td>硅片龙头</td></tr>
+        <tr><td>半导体</td><td class="name"><a href="https://stockpage.10jqka.com.cn/688412/" target="_blank" style="text-decoration:none;color:var(--text);">有研硅</a></td><td class="code">688412</td><td class="change-up">+17%</td><td>硅片跟涨</td></tr>
+        <tr><td>半导体</td><td class="name"><a href="https://stockpage.10jqka.com.cn/688202/" target="_blank" style="text-decoration:none;color:var(--text);">沐曦股份</a></td><td class="code">688202</td><td class="change-up">+9%以上</td><td>创历史新高 <span class="tag tag-yellow">新高</span></td></tr>
+        <tr><td>先进封装</td><td class="name">朗迪集团</td><td class="code">—</td><td class="change-up">涨停</td><td>封装概念</td></tr>
+        <tr><td>先进封装</td><td class="name">同兴达</td><td class="code">—</td><td class="change-up">涨停</td><td>封装概念</td></tr>
+        <tr><td>先进封装</td><td class="name">三佳科技</td><td class="code">—</td><td class="change-up">涨停</td><td>封装概念</td></tr>
+        <tr><td>先进封装</td><td class="name">中京电子</td><td class="code">—</td><td class="change-up">涨停</td><td>封装概念</td></tr>
+        <tr><td>AI服务器</td><td class="name"><a href="https://stockpage.10jqka.com.cn/000977/" target="_blank" style="text-decoration:none;color:var(--text);">浪潮信息</a></td><td class="code">000977</td><td class="change-up">2连板</td><td>Q2环比暴增312% <span class="tag tag-red">龙头</span></td></tr>
+        <tr><td>AI服务器</td><td class="name">广脉科技</td><td class="code">—</td><td class="change-up">+17%</td><td>算力基础设施</td></tr>
+        <tr><td>存储芯片</td><td class="name"><a href="https://stockpage.10jqka.com.cn/688825/" target="_blank" style="text-decoration:none;color:var(--text);">长鑫科技</a></td><td class="code">688825</td><td>—</td><td>7/9发布IPO招股书，7/16申购 <span class="tag tag-blue">催化</span></td></tr>
+        <tr><td>AI手机</td><td class="name">道明光学</td><td class="code">—</td><td class="change-up">涨停</td><td>光学元件</td></tr>
+        <tr><td>AI手机</td><td class="name">弘信电子</td><td class="code">—</td><td class="change-up">跟涨</td><td>FPC/消费电子</td></tr>
+        <tr><td>AI手机</td><td class="name"><a href="https://stockpage.10jqka.com.cn/000063/" target="_blank" style="text-decoration:none;color:var(--text);">中兴通讯</a></td><td class="code">000063</td><td class="change-up">跟涨</td><td>通信设备龙头</td></tr>
+        <tr><td>算力芯片</td><td class="name">澜起科技</td><td class="code">—</td><td class="change-up">跟涨</td><td>内存接口</td></tr>
+        <tr><td>算力芯片</td><td class="name">寒武纪</td><td class="code">—</td><td class="change-up">跟涨</td><td>AI芯片</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">📊 涨停时间轴（个股封板概况）</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>板块</th><th>封板表现</th><th>强度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">浪潮信息</td><td>AI服务器</td><td>2连板</td><td><span class="tag tag-red">强</span></td></tr>
+        <tr><td class="name">上海合晶</td><td>半导体</td><td>20cm涨停</td><td><span class="tag tag-red">强</span></td></tr>
+        <tr><td class="name">有研硅</td><td>半导体</td><td>+17%（未封20cm）</td><td><span class="tag tag-yellow">中强</span></td></tr>
+        <tr><td class="name">朗迪集团</td><td>先进封装</td><td>涨停</td><td><span class="tag tag-yellow">中</span></td></tr>
+        <tr><td class="name">同兴达</td><td>先进封装</td><td>涨停</td><td><span class="tag tag-yellow">中</span></td></tr>
+        <tr><td class="name">三佳科技</td><td>先进封装</td><td>涨停</td><td><span class="tag tag-yellow">中</span></td></tr>
+        <tr><td class="name">中京电子</td><td>先进封装</td><td>涨停</td><td><span class="tag tag-yellow">中</span></td></tr>
+        <tr><td class="name">道明光学</td><td>AI手机</td><td>涨停</td><td><span class="tag tag-yellow">中</span></td></tr>
+        <tr><td class="name">广脉科技</td><td>AI服务器</td><td>+17%（未涨停）</td><td><span class="tag tag-gray">跟涨</span></td></tr>
+        <tr><td class="name">沐曦股份</td><td>算力芯片</td><td>+9%以上，创历史新高</td><td><span class="tag tag-red">强</span></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--text2);margin-top:8px;">注：精确封板时间数据暂无（收盘后更新），上表为基于盘面异动的整理。</p>
+  </div>
+</section>
+
+<!-- 3. 连板股排列 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">3</div>
+    <div class="section-title">连板股排列</div>
+  </div>
+  <p class="summary-text">以下连板梯队以7/8收盘数据为基准，7/9部分标的可能延续或断板。</p>
+  <table>
+    <thead>
+      <tr><th>连板高度</th><th>个股</th><th>代码</th><th>题材</th><th>状态</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="tag tag-red">7连板</span></td><td class="name">恒尚节能</td><td class="code">—</td><td>并购重组</td><td>最高标（7/8基准）</td></tr>
+      <tr><td><span class="tag tag-yellow">3连板</span></td><td class="name">大恒科技</td><td class="code">—</td><td>科技</td><td>次高标（7/8基准）</td></tr>
+      <tr><td><span class="tag tag-blue">2连板</span></td><td class="name"><a href="https://stockpage.10jqka.com.cn/000977/" target="_blank" style="text-decoration:none;color:var(--text);">浪潮信息</a></td><td class="code">000977</td><td>AI服务器/业绩预增</td><td>7/9确认2连板 <span class="tag tag-red">新</span></td></tr>
+      <tr><td><span class="tag tag-gray">8板/14天</span></td><td class="name">兴业科技</td><td class="code">—</td><td>—</td><td>14天8板（7/8基准）</td></tr>
+      <tr><td><span class="tag tag-gray">5板/7天</span></td><td class="name">星网锐捷</td><td class="code">—</td><td>—</td><td>7天5板（7/8基准）</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-box">
+    <div class="alert-title">⚠️ 连板风险提示</div>
+    <p>恒尚节能7连板为并购重组驱动，脱离基本面支撑，随时面临断板风险。兴业科技14天8板为高位反复标，波动极大。连板股仅作为市场情绪温度计参考，不构成投资建议。</p>
+  </div>
+</section>
+
+<!-- 4. 下跌板块概览 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">4</div>
+    <div class="section-title">下跌板块概览</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>表现</th><th>关键事件/逻辑</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">锂电池</td><td class="change-down">跌幅居前</td><td>前期涨幅较大，资金获利了结；缺乏新催化</td></tr>
+      <tr><td class="name">稀土永磁</td><td class="change-down">跌幅居前</td><td>板块轮动补跌，无增量利好</td></tr>
+      <tr><td class="name">培育钻石</td><td class="change-down">跌幅居前</td><td>题材股退潮，资金流出</td></tr>
+      <tr><td class="name">人形机器人</td><td class="change-down">继续调整</td><td>已连续多日下跌，板块情绪低迷</td></tr>
+      <tr><td class="name">贵金属</td><td class="change-down">分化</td><td>黄金股从连续强势转为分歧，招金黄金/赤峰黄金等前期龙头开始走弱</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 5. 涨停数据汇总 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">5</div>
+    <div class="section-title">涨停数据汇总</div>
+  </div>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="label">涨停数（7/8参考）</div>
+      <div class="value">56</div>
+      <div class="change">封板率74.67%</div>
+    </div>
+    <div class="data-card">
+      <div class="label">炸板数（7/8参考）</div>
+      <div class="value">19</div>
+      <div class="change change-down">炸板率约25%</div>
+    </div>
+    <div class="data-card">
+      <div class="label">7/9涨停个股（已确认）</div>
+      <div class="value">10+</div>
+      <div class="change">浪潮信息/上海合晶等</div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--text2);margin-top:12px;">7/9精确涨停数/炸板数/封板率暂无精确数据（收盘后更新）。上表7/8数据作为近邻参考。从已确认个股看，7/9涨停集中在算力/半导体/先进封装方向，封板个股数量较7/8可能有所下降（缩量环境下涨停家数通常收窄）。</p>
+</section>
+
+<!-- 6. 龙虎榜重点 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">6</div>
+    <div class="section-title">龙虎榜重点</div>
+  </div>
+  <div class="alert-box">
+    <div class="alert-title">⏳ 数据待17:00后更新</div>
+    <p>龙虎榜数据需等待交易所收盘后公布，预计17:00后可获取完整数据。以下为关注方向预判：</p>
+  </div>
+  <div class="sub-section">
+    <div class="sub-head">🔍 重点关注方向</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>关注理由</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/000977/" target="_blank" style="text-decoration:none;color:var(--text);">浪潮信息</a></td><td class="code">000977</td><td>2连板+业绩预增226%-288%，大概率登榜，关注机构/游资买卖力量对比</td></tr>
+        <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/300017/" target="_blank" style="text-decoration:none;color:var(--text);">网宿科技</a></td><td class="code">300017</td><td>CDN主线龙头，前日20cm涨停后7/9延续关注资金分歧</td></tr>
+        <tr><td class="name">上海合晶</td><td class="code">688412</td><td>20cm涨停，半导体硅片方向，关注机构席位参与度</td></tr>
+        <tr><td class="name">沐曦股份</td><td class="code">688202</td><td>创历史新高，算力芯片方向，关注是否为机构主导</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 7. 平台突破股筛选 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">7</div>
+    <div class="section-title">平台突破股筛选</div>
+  </div>
+  <p class="summary-text">从7/9异动板块中筛选出潜在平台突破个股。以下为基于盘面走势的初步判断，精确突破确认需收盘后结合日K线验证。</p>
+  <table>
+    <thead>
+      <tr><th>个股</th><th>代码</th><th>所属板块</th><th>突破特征</th><th>同花顺</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">沐曦股份</td><td class="code">688202</td><td>算力芯片</td><td>创历史新高，强势突破 <span class="tag tag-red">确认</span></td><td><a href="https://stockpage.10jqka.com.cn/688202/" target="_blank" style="color:var(--secondary);">查看 →</a></td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/000977/" target="_blank" style="text-decoration:none;color:var(--text);">浪潮信息</a></td><td class="code">000977</td><td>AI服务器</td><td>2连板突破前期平台 <span class="tag tag-red">确认</span></td><td><a href="https://stockpage.10jqka.com.cn/000977/" target="_blank" style="color:var(--secondary);">查看 →</a></td></tr>
+      <tr><td class="name">上海合晶</td><td class="code">688412</td><td>半导体</td><td>20cm涨停突破 <span class="tag tag-yellow">待确认</span></td><td><a href="https://stockpage.10jqka.com.cn/688412/" target="_blank" style="color:var(--secondary);">查看 →</a></td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/300017/" target="_blank" style="text-decoration:none;color:var(--text);">网宿科技</a></td><td class="code">300017</td><td>CDN</td><td>前日20cm后延续，平台突破中 <span class="tag tag-yellow">待确认</span></td><td><a href="https://stockpage.10jqka.com.cn/300017/" target="_blank" style="color:var(--secondary);">查看 →</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 8. 300亿以上高壁垒个股 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">8</div>
+    <div class="section-title">300亿以上高壁垒个股</div>
+  </div>
+  <p class="summary-text">仅在7/9异动板块中筛选市值300亿以上、具备产业壁垒的龙头个股。</p>
+  <table>
+    <thead>
+      <tr><th>个股</th><th>代码</th><th>板块</th><th>壁垒说明</th><th>7/9表现</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/000977/" target="_blank" style="text-decoration:none;color:var(--text);">浪潮信息</a></td><td class="code">000977</td><td>AI服务器</td><td>国内AI服务器龙头，业绩验证（Q2环比+312%）</td><td class="change-up">2连板</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/000063/" target="_blank" style="text-decoration:none;color:var(--text);">中兴通讯</a></td><td class="code">000063</td><td>AI手机/通信</td><td>通信设备龙头，全产业链布局</td><td class="change-up">跟涨</td></tr>
+      <tr><td class="name">寒武纪</td><td class="code">—</td><td>算力芯片</td><td>国产AI芯片稀缺标的</td><td class="change-up">跟涨</td></tr>
+      <tr><td class="name">澜起科技</td><td class="code">—</td><td>算力芯片</td><td>内存接口芯片全球龙头</td><td class="change-up">跟涨</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/300017/" target="_blank" style="text-decoration:none;color:var(--text);">网宿科技</a></td><td class="code">300017</td><td>CDN</td><td>国内CDN龙头，Akamai退出直接受益</td><td class="change-up">前日20cm涨停</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--text2);margin-top:8px;">注：精确市值数据暂无精确数据（收盘后更新），上表为基于行业常识的市值预估筛选。长鑫科技（688825）尚未上市交易，7/16申购，不纳入本次筛选。</p>
+</section>
+
+<!-- 9. 异常成交量个股 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">9</div>
+    <div class="section-title">异常成交量个股</div>
+  </div>
+  <div class="alert-box">
+    <div class="alert-title">⏳ 暂无精确数据（收盘后更新）</div>
+    <p>异常成交量需结合全市场量比数据筛选，当前仅有盘面异动观察。以下为盘面可见的高关注度放量个股：</p>
+  </div>
+  <table>
+    <thead>
+      <tr><th>个股</th><th>代码</th><th>板块</th><th>成交量特征（盘面观察）</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/000977/" target="_blank" style="text-decoration:none;color:var(--text);">浪潮信息</a></td><td class="code">000977</td><td>AI服务器</td><td>2连板持续放量，资金涌入明显</td></tr>
+      <tr><td class="name">上海合晶</td><td class="code">688412</td><td>半导体</td><td>20cm涨停，量能显著放大</td></tr>
+      <tr><td class="name"><a href="https://stockpage.10jqka.com.cn/300017/" target="_blank" style="text-decoration:none;color:var(--text);">网宿科技</a></td><td class="code">300017</td><td>CDN</td><td>前日20cm后延续放量</td></tr>
+      <tr><td class="name">沐曦股份</td><td class="code">688202</td><td>算力芯片</td><td>创历史新高伴随放量</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 10. 展望+策略建议 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">10</div>
+    <div class="section-title">展望 + 策略建议</div>
+  </div>
+  <p class="summary-text">7/9市场在连跌三日后出现企稳尝试，但沪指冲高回落、深市继续承压，成交缩量至约2.5万亿，反映市场仍在寻底过程中。结构上算力/半导体/AI服务器构成清晰进攻主线，而锂电池/稀土/机器人等前期热点持续退潮。周五（7/10）为本周最后一个交易日，资金面可能进一步收缩。</p>
+  <div class="conclusion">
+    <p><strong>策略建议：</strong></p>
+    <p style="margin-top:8px;">1. <strong>进攻方向</strong>：算力租赁/CDN为主线最大确定性方向，可继续跟踪网宿科技等本土CDN龙头。半导体硅片（上海合晶/有研硅）和AI服务器（浪潮信息）的业绩驱动逻辑较为扎实，回调可关注。</p>
+    <p style="margin-top:8px;">2. <strong>防守方向</strong>：锂电池/稀土永磁/人形机器人短期不建议左侧抄底，等待企稳信号。贵金属板块从一致强势转为分歧，招金黄金/赤峰黄金等前期龙头需警惕补跌风险。</p>
+    <p style="margin-top:8px;">3. <strong>仓位控制</strong>：缩量环境下控制总仓位5-6成，避免追高连板高位股（恒尚节能7连板、兴业科技14天8板等）。关注长鑫科技7/16申购对存储芯片板块的情绪催化。</p>
+    <p style="margin-top:8px;">4. <strong>外部风险</strong>：日韩股市暴跌（韩国KOSPI进入技术性熊市）扰动亚太情绪，7/9美联储FOMC会议纪要及6月CPI/PPI数据可能影响周五走势，需密切关注。</p>
+  </div>
+</section>
+
+<!-- 11. 下周盯盘清单 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">11</div>
+    <div class="section-title">下周盯盘清单</div>
+  </div>
+  <div class="watch-grid">
+    <div class="watch-card">
+      <h4>🚀 进攻类</h4>
+      <div class="item"><span class="s-code">000977</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/000977/" target="_blank" style="text-decoration:none;color:var(--text);">浪潮信息</a></span></div>
+      <div class="s-note">AI服务器龙头，2连板+业绩预增，关注3连板可能性</div>
+      <div class="item"><span class="s-code">300017</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/300017/" target="_blank" style="text-decoration:none;color:var(--text);">网宿科技</a></span></div>
+      <div class="s-note">CDN主线龙头，Akamai退出受益</div>
+      <div class="item"><span class="s-code">688412</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/688412/" target="_blank" style="text-decoration:none;color:var(--text);">上海合晶</a></span></div>
+      <div class="s-note">半导体硅片，20cm涨停</div>
+      <div class="item"><span class="s-code">688202</span><span class="s-name">沐曦股份</span></div>
+      <div class="s-note">算力芯片，创历史新高</div>
+      <div class="item"><span class="s-code">688825</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/688825/" target="_blank" style="text-decoration:none;color:var(--text);">长鑫科技</a></span></div>
+      <div class="s-note">7/16申购，存储芯片板块情绪锚</div>
+    </div>
+    <div class="watch-card">
+      <h4>🛡️ 防守类</h4>
+      <div class="item"><span class="s-code">000506</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/000506/" target="_blank" style="text-decoration:none;color:var(--text);">招金黄金</a></span></div>
+      <div class="s-note">贵金属前期龙头，本周分歧，关注是否企稳</div>
+      <div class="item"><span class="s-code">600988</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/600988/" target="_blank" style="text-decoration:none;color:var(--text);">赤峰黄金</a></span></div>
+      <div class="s-note">贵金属分化，走势转弱</div>
+      <div class="item"><span class="s-code">002472</span><span class="s-name"><a href="https://stockpage.10jqka.com.cn/002472/" target="_blank" style="text-decoration:none;color:var(--text);">双环传动</a></span></div>
+      <div class="s-note">人形机器人，连续调整，等待止跌信号</div>
+      <div class="s-note" style="margin-top:8px;">锂电池/稀土永磁板块整体暂不纳入盯盘，待企稳</div>
+    </div>
+    <div class="watch-card">
+      <h4>🔄 风格切换信号</h4>
+      <div class="item"><span class="s-name">恒尚节能</span><span class="s-code">7连板</span></div>
+      <div class="s-note">并购重组最高标，断板可能触发高位股集体退潮</div>
+      <div class="item"><span class="s-name">兴业科技</span><span class="s-code">14天8板</span></div>
+      <div class="s-note">高位反复标，若跌停则风格切换信号明确</div>
+      <div class="item"><span class="s-name">大恒科技</span><span class="s-code">3连板</span></div>
+      <div class="s-note">次高标，关注是否能晋级4板</div>
+      <div class="s-note" style="margin-top:8px;">若高位连板股集体断板 + 算力/半导体主线持续 → 确认市场风格从题材投机切换至业绩驱动</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. 连续趋势追踪 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">12</div>
+    <div class="section-title">连续趋势追踪</div>
+  </div>
+  <p class="summary-text">本板块延续7/3日报Section 12，对重点个股进行多日走势追踪，并跟踪板块轮动与连板梯队变化。</p>
+
+  <div class="sub-section">
+    <div class="sub-head">📈 个股多日走势追踪</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>7/1</th><th>7/2</th><th>7/3</th><th>7/6-7/8</th><th>7/9</th><th>趋势</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">招金黄金</td><td class="code">000506</td><td>—</td><td>—</td><td>贵金属2连板龙头</td><td>开始分歧</td><td>分化延续</td><td class="change-down">转弱</td></tr>
+        <tr><td class="name">赤峰黄金</td><td class="code">600988</td><td>—</td><td>—</td><td>贵金属2连板</td><td>分化</td><td>延续分化</td><td class="change-down">转弱</td></tr>
+        <tr><td class="name">双环传动</td><td class="code">002472</td><td>—</td><td>—</td><td>人形机器人活跃</td><td>继续调整</td><td>仍调整</td><td class="change-down">下行</td></tr>
+        <tr><td class="name">海南海药</td><td class="code">—</td><td>最高标7连板</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="change-down">退潮</td></tr>
+        <tr><td class="name">ST中装</td><td class="code">—</td><td>—</td><td>—</td><td>最高标8连板</td><td>—</td><td>—</td><td class="change-down">退潮</td></tr>
+        <tr><td class="name">兴业科技</td><td class="code">—</td><td>—</td><td>10天7板后跌停</td><td>—</td><td>14天8板</td><td>关注是否断板</td><td class="change-up">高位反复</td></tr>
+        <tr><td class="name">恒尚节能</td><td class="code">—</td><td>—</td><td>—</td><td>—</td><td>7连板（最高标）</td><td>关注是否断板</td><td class="change-up">高位</td></tr>
+        <tr><td class="name">大恒科技</td><td class="code">—</td><td>—</td><td>—</td><td>—</td><td>3连板（次高标）</td><td>关注4板</td><td class="change-up">上升</td></tr>
+        <tr><td class="name">浪潮信息</td><td class="code">000977</td><td>—</td><td>—</td><td>—</td><td>—</td><td>2连板</td><td class="change-up">新升 <span class="tag tag-red">新</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">🔄 板块轮动（7/6-7/9）</div>
+    <table>
+      <thead>
+        <tr><th>日期</th><th>领涨板块</th><th>领跌板块</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>7/6（周一）</td><td>煤炭、银行、服务器</td><td>玻璃纤维、玻璃基板</td></tr>
+        <tr><td>7/7（周二）</td><td>游戏、半导体（逆势）、银行</td><td>贵金属、医疗美容</td></tr>
+        <tr><td>7/8（周三）</td><td>旅游、软件开发、IT服务</td><td>能源金属、机器人、锂矿</td></tr>
+        <tr><td>7/9（周四）</td><td><strong>算力/CDN、半导体、AI服务器</strong></td><td>锂电池、稀土永磁、培育钻石</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--text2);margin-top:8px;"><strong>轮动特征：</strong>本周板块轮动呈现"从防守蓝筹→科技成长"的切换路径。7/6银行/煤炭领涨为防御姿态，7/7半导体逆势走强开始转向，7/8软件/IT服务接棒，7/9算力/CDN/半导体/AI服务器全产业链爆发。<strong>算力主线已连续4日主力净流入</strong>，成为本周最具持续性的方向。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">🏛️ 连板梯队变化</div>
+    <table>
+      <thead>
+        <tr><th>标的</th><th>7/1</th><th>7/2</th><th>7/3</th><th>7/8</th><th>7/9</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">海南海药</td><td>7连板（最高标）</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td class="name">ST中装</td><td>—</td><td>—</td><td>8连板（最高标）</td><td>—</td><td>—</td></tr>
+        <tr><td class="name">兴业科技</td><td>—</td><td>10天7板→跌停</td><td>—</td><td>14天8板</td><td>关注</td></tr>
+        <tr><td class="name">恒尚节能</td><td>—</td><td>—</td><td>—</td><td>7连板（最高标）</td><td>关注</td></tr>
+        <tr><td class="name">大恒科技</td><td>—</td><td>—</td><td>—</td><td>3连板（次高标）</td><td>关注</td></tr>
+        <tr><td class="name">浪潮信息</td><td>—</td><td>—</td><td>—</td><td>—</td><td>2连板 <span class="tag tag-red">新</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">⚡ 风格切换信号</div>
+    <table>
+      <thead>
+        <tr><th>信号维度</th><th>当前状态</th><th>含义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>高位连板股存活</td><td>恒尚节能7连板仍在，但随时断板</td><td>投机情绪尚存但接近尾声</td></tr>
+        <tr><td>业绩驱动股崛起</td><td>浪潮信息2连板（业绩预增226%-288%）</td><td>资金开始青睐业绩验证标的</td></tr>
+        <tr><td>主线持续性</td><td>算力/CDN连续4日主力净流入</td><td>产业逻辑驱动的持续性主线正在形成</td></tr>
+        <tr><td>成交额变化</td><td>3.09万亿→2.58→2.56→约2.5万亿</td><td>缩量背景下结构性机会为主</td></tr>
+        <tr><td>贵金属/机器人退潮</td><td>招金黄金/赤峰黄金分歧，机器人连跌</td><td>前期热点资金持续流出</td></tr>
+      </tbody>
+    </table>
+    <div class="alert-box" style="margin-top:12px;">
+      <div class="alert-title">🎯 风格切换判断</div>
+      <p>当前市场正处于从"题材投机驱动"向"产业逻辑+业绩验证驱动"过渡的阶段。算力/半导体主线有产业基本面支撑（Akamai退出、长鑫科技IPO、浪潮信息业绩、英伟达传导），与前期纯题材炒作有本质区别。若高位连板股（恒尚节能等）断板而算力主线不退，则风格切换确认。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13. 产业逻辑深度 -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num">13</div>
+    <div class="section-title">产业逻辑深度 · 算力/半导体/AI服务器</div>
+  </div>
+  <p class="summary-text">7/9市场最显著的特征是算力产业链的全线爆发——从上游算力芯片到中游AI服务器，从CDN到先进封装，各环节形成共振。这不是单一消息驱动的脉冲行情，而是多条产业逻辑线汇合的结果。</p>
+
+  <div class="sub-section">
+    <div class="sub-head">1️⃣ 算力租赁/CDN：Akamai退出 + 国产替代加速</div>
+    <p style="font-size:14px;line-height:1.8;">Akamai于6/30停止中国区CDN服务，其在中国约15%的市场份额出现真空。本土CDN龙头（网宿科技等）直接承接退出份额，这是确定性的订单转移而非预期交易。中证云计算指数涨2.6%、连续4日主力净流入，说明资金已认可这一逻辑的持续性。CDN/算力租赁本质上是AI推理需求爆发后的基础设施刚需——当大模型应用从训练走向推理，边缘分发和算力租赁需求呈指数级增长。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">2️⃣ 半导体：硅片涨价 + 设备国产化 + 存储IPO催化</div>
+    <p style="font-size:14px;line-height:1.8;">半导体方向7/9呈多点开花：上海合晶20cm涨停（硅片涨价逻辑）、有研硅+17%（硅片跟涨）、沐曦股份创历史新高（GPU算力芯片）。三重驱动叠加：①硅片环节进入涨价周期，上游材料景气度回升；②长鑫科技7/9发布科创板IPO招股意向书（7/16申购），存储芯片龙头上市提振全产业链情绪；③美股英伟达涨3.65%正面传导，全球AI算力芯片景气共振。SK海力士280亿美元美股上市定价，进一步验证半导体资本市场的热度。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">3️⃣ AI服务器：浪潮信息业绩验证 = 产业拐点信号</div>
+    <p style="font-size:14px;line-height:1.8;">浪潮信息半年报预告净利预增226%-288%（26-31亿元），其中Q2环比暴增312%，这是AI服务器需求从"预期"走向"兑现"的关键验证。2连板反映市场对这一业绩超预期的定价。AI服务器是算力产业链的"卖铲人"——当互联网大厂和智算中心加速采购，服务器订单量直接反映AI基建投资节奏。广脉科技+17%同步走强，说明算力基础设施（机房、供电、散热等）也在联动。光合组织智能计算应用大会（7/9-11郑州）进一步催化主题热度。</p>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">4️⃣ 先进封装：AI芯片产能瓶颈的核心环节</div>
+    <p style="font-size:14px;line-height:1.8;">朗迪集团、同兴达、三佳科技、中京电子集体涨停。先进封装（CoWoS、2.5D/3D封装）是当前AI芯片产能的最大瓶颈——台积电先进封装产能持续满载，国产替代需求迫切。封装环节技术壁垒相对晶圆制造较低，国产厂商切入可行性高，是半导体国产化链条中确定性较强的环节。</p>
+  </div>
+
+  <div class="conclusion">
+    <p><strong>产业逻辑总结：</strong>7/9算力产业链全线爆发并非偶然，而是以下逻辑线的汇合——</p>
+    <p style="margin-top:8px;">• <strong>需求端</strong>：AI推理需求爆发 → CDN/算力租赁刚需（Akamai退出加速）</p>
+    <p>• <strong>算力端</strong>：AI芯片需求激增 → 算力芯片（沐曦/寒武纪）+ 先进封装产能瓶颈</p>
+    <p>• <strong>供给端</strong>：半导体国产替代加速 → 硅片涨价（上海合晶/有研硅）+ 存储IPO催化（长鑫科技）</p>
+    <p>• <strong>验证端</strong>：浪潮信息Q2业绩暴增312% → AI服务器需求从预期走向兑现</p>
+    <p>• <strong>外部催化</strong>：英伟达涨3.65% + SK海力士美股上市 + 光合组织大会</p>
+    <p style="margin-top:8px;"><strong>核心判断：</strong>这是本轮行情中第一次出现"产业逻辑+业绩验证+消息催化"三者共振的进攻主线，持续性预计优于前期纯题材炒作。但需注意缩量环境下的结构性特征——主线集中、分化加剧，非主线方向可能继续失血。</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>2026年7月9日 A股日报 | CreateSpace 设计系统 · 红色系</p>
+  <p class="warn">⚠️ 本报告基于公开市场信息整理，不构成投资建议。市场有风险，投资需谨慎。部分数据标注"约"或"收盘后更新"，请以交易所正式数据为准。</p>
+</footer>
+
+</main>
+</body>
+</html>

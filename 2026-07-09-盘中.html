@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-07-09 盘中扫描报告</title>
+    <style>
+        :root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+        .hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+        .hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+        .hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+        .hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+        .hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+        .hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+        .hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+        .container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+        .section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+        .section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+        .section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+        .section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+        .summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+        .data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+        .data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+        .data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+        .data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+        .data-card .change{font-size:12px;margin-top:4px;}
+        .change-up{color:var(--error);}
+        .change-down{color:var(--success);}
+        table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+        thead{background:var(--bg);}
+        th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+        td{padding:10px 12px;border-bottom:1px solid var(--border);}
+        .name{font-weight:600;}
+        .code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+        .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+        .tag-red{background:#FEF2F2;color:var(--error);}
+        .tag-green{background:#DCFCE7;color:#166534;}
+        .tag-blue{background:#DBEAFE;color:#1E40AF;}
+        .tag-yellow{background:#FEF3C7;color:#92400E;}
+        .tag-gray{background:#F3F4F6;color:var(--text2);}
+        .sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+        .sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+        .watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+        .watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+        .watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+        .item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+        .s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+        .s-name{font-weight:600;font-size:14px;}
+        .s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+        .alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+        .alert-box .alert-title{font-weight:700;color:var(--primary);margin-bottom:6px;font-size:15px;}
+        .alert-box p{font-size:14px;line-height:1.7;}
+        .conclusion{border-left:4px solid var(--secondary);background:#EFF6FF;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+        .conclusion strong{color:var(--secondary);}
+        .footer{margin-top:32px;text-align:center;}
+        .footer p{font-size:13px;color:var(--text2);}
+        .footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+        .top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+        .top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+        .top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+        .top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+        .top-nav .nav-home:hover{background:#be123c;}
+        .top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+        .top-nav .nav-group{display:flex;gap:8px;}
+        @media(max-width:640px){
+            .hero-band{padding:40px 0 32px;}
+            .hero-content{padding:0 20px;}
+            .container{padding:24px 16px 48px;}
+            .section{padding:20px;}
+            .data-cards{grid-template-columns:1fr 1fr;}
+            .top-nav{padding:10px 16px;}
+            .top-nav a{font-size:12px;padding:5px 10px;}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <a href="#" class="nav-home">QoderDesign / 盘中报告</a>
+        <div class="nav-group">
+            <a href="2026-07-09-半日.html">&larr; 上一篇 (半日)</a>
+            <a href="2026-07-09-日报.html">下一篇 (日报) &rarr;</a>
+        </div>
+    </div>
+
+    <div class="hero-band">
+        <div class="hero-content">
+            <div class="hero-week">2026-07-09 星期四</div>
+            <h1 class="hero-title">A股盘中扫描追踪</h1>
+            <p class="hero-sub">14:30即时状态：科技主线韧性显现，极致结构性分化，全天继续缩量。</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 01 大盘即时状态 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">01</div>
+                <h2 class="section-title">大盘即时状态 (14:30 估算)</h2>
+            </div>
+            <div class="data-cards">
+                <div class="data-card">
+                    <div class="label">两市估算成交额</div>
+                    <div class="value">约 2.50<span style="font-size:14px;font-weight:400"> 万亿</span></div>
+                    <div class="change change-down">继续缩量 (前日2.56万亿)</div>
+                </div>
+                <div class="data-card">
+                    <div class="label">沪指 (估)</div>
+                    <div class="value">+0.2%~0.3%</div>
+                    <div class="change change-up">冲高回落</div>
+                </div>
+                <div class="data-card">
+                    <div class="label">创业板指 (估)</div>
+                    <div class="value">弱势翻绿</div>
+                    <div class="change change-down">一度涨近1.8%后回落</div>
+                </div>
+                <div class="data-card">
+                    <div class="label">上涨个股占比</div>
+                    <div class="value">< 30%</div>
+                    <div class="change change-down">极致结构性分化</div>
+                </div>
+            </div>
+            <div class="summary-text">
+                <p>沪深两市早盘高开后呈现冲高回落走势。创业板指早间一度冲高涨近1.8%，午后逐步回落甚至翻绿；深成指亦有收跌风险，仅沪指勉强维持0.2%~0.3%的红盘震荡。从调整周期来看，7月6日至7月8日大盘已连跌3天（沪指从4041点跌至3970点，跌幅-1.75%），今日属于短期调整的第4个交易日。外围方面，日韩股市暴跌产生一定情绪扰动（韩国KOSPI进入技术性熊市）。</p>
+            </div>
+        </div>
+
+        <!-- 02 异动板块扫描 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">02</div>
+                <h2 class="section-title">异动板块扫描</h2>
+            </div>
+            
+            <div class="sub-section">
+                <div class="sub-head"><span class="tag tag-red">进攻类</span> 科技主线强势领涨</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>细分板块</th>
+                            <th>核心逻辑 / 催化</th>
+                            <th>领涨先锋</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="name">算力租赁/CDN</span></td>
+                            <td>Akamai退出中国市场(15%份额)，中证云计算涨2.6%，连续4日主力净流入</td>
+                            <td>网宿科技 <span class="tag tag-red">前日20cm</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="name">半导体/先进封装</span></td>
+                            <td>美股英伟达涨3.65%传导，半导体设备国产化加速</td>
+                            <td>上海合晶 <span class="tag tag-red">20cm涨停</span><br>有研硅 <span class="tag tag-red">+17%</span><br>朗迪集团/同兴达 <span class="tag tag-red">涨停</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="name">AI服务器</span></td>
+                            <td>龙头业绩大超预期(Q2环比暴增312%)</td>
+                            <td>浪潮信息 <span class="tag tag-red">2连板</span><br>广脉科技 <span class="tag tag-red">+17%</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="name">算力/存储芯片</span></td>
+                            <td>长鑫科技7/9发布IPO招股书（7/16申购）；科创50逆势收红</td>
+                            <td>沐曦股份 <span class="tag tag-red">创历史新高</span><br>澜起科技/寒武纪 <span class="tag tag-red">跟涨</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="sub-section">
+                <div class="sub-head"><span class="tag tag-green">防守/领跌类</span> 弱势整理方向</div>
+                <div class="watch-grid">
+                    <div class="watch-card">
+                        <h4>锂电池 / 稀土永磁</h4>
+                        <div class="s-note">前期活跃的新能源链条今日跌幅居前，资金流出明显，短线规避。</div>
+                    </div>
+                    <div class="watch-card">
+                        <h4>培育钻石 / 人形机器人</h4>
+                        <div class="s-note">题材炒作退潮，人形机器人板块继续处于调整周期。</div>
+                    </div>
+                    <div class="watch-card">
+                        <h4>贵金属</h4>
+                        <div class="s-note">板块内部分化加剧，避险属性未在今日A股得到一致性认同。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 03 试仓候选股 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">03</div>
+                <h2 class="section-title">尾盘试仓候选股</h2>
+            </div>
+            <p class="summary-text" style="margin-bottom:16px;">基于今日异动板块（特别是下午新拉升方向），筛选以下个股进入尾盘试仓观察池：</p>
+            <div class="watch-grid">
+                <div class="watch-card" style="border-left:3px solid var(--primary);">
+                    <h4>上海合晶</h4>
+                    <div class="item">
+                        <span class="s-name">半导体硅片</span>
+                        <span class="tag tag-red">20cm涨停</span>
+                    </div>
+                    <div class="s-note"><strong>试仓理由：</strong>半导体设备国产化核心受益标的，日内资金进攻态度坚决。<br><strong>风控提示：</strong>单日涨停，追高风险中等，建议控制仓位。</div>
+                </div>
+                <div class="watch-card" style="border-left:3px solid var(--primary);">
+                    <h4>网宿科技 <span class="s-code">300017</span></h4>
+                    <div class="item">
+                        <span class="s-name">CDN龙头</span>
+                        <span class="tag tag-red">延续强势</span>
+                    </div>
+                    <div class="s-note"><strong>试仓理由：</strong>直接受益于Akamai退出中国市场释放的份额，昨日20cm后今日承接良好。<br><strong>风控提示：</strong>注意量能是否能维持，低吸为主。</div>
+                </div>
+                <div class="watch-card" style="border-left:3px solid var(--primary);">
+                    <h4>有研硅 <span class="s-code">688585</span></h4>
+                    <div class="item">
+                        <span class="s-name">半导体硅片</span>
+                        <span class="tag tag-red">涨超17%</span>
+                    </div>
+                    <div class="s-note"><strong>试仓理由：</strong>半导体国产化逻辑，科创板弹性标的。<br><strong>风控提示：</strong>盘中波动较大，切勿在日内高点追入。</div>
+                </div>
+                <div class="watch-card" style="border-left:3px solid var(--warning);">
+                    <h4>浪潮信息 <span class="s-code">000977</span></h4>
+                    <div class="item">
+                        <span class="s-name">AI服务器龙头</span>
+                        <span class="tag tag-red">2连板</span>
+                    </div>
+                    <div class="s-note"><strong>试仓理由：</strong>中报预告炸裂，Q2环比暴增312%，奠定算力硬件基本面底色。<br><strong>风控提示：</strong>已2连板，大市值品种追高风险大，仅建议<strong>作为板块风向标观察</strong>。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 04 上午盯盘清单追踪 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">04</div>
+                <h2 class="section-title">上午盯盘清单追踪</h2>
+            </div>
+            <div class="alert-box">
+                <div class="alert-title">高标及事件催化表现评估</div>
+                <p>1. <strong>事件兑现：</strong> 7/9光合组织智能计算应用大会在郑州开幕，算力产业链如期爆发，资金对该主线认可度极高。<br>
+                   2. <strong>情绪高标锚：</strong> 恒尚节能（昨日7连板，并购重组）与大恒科技（昨日3连板）表现对连板短线情绪有指导意义；昨日炸板率较高（19只），今日接力氛围依然偏向核心容量票。<br>
+                   3. <strong>IPO影子股发酵：</strong> 长鑫科技招股刺激了存储芯片暗线走强。
+                </p>
+            </div>
+        </div>
+
+        <!-- 05 尾盘策略提示 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">05</div>
+                <h2 class="section-title">尾盘策略提示 (最后30分钟)</h2>
+            </div>
+            <div class="conclusion">
+                <strong>核心策略：</strong> 市场目前处于缩量调整的第4天（2.5万亿级别），属于<strong>“缩量+结构性分化”</strong>的典型行情。
+                <br><br>
+                1. <strong>避免盲目追高：</strong> 全市场上涨个股不足30%，说明赚钱效应集中在极少数头部科技股，非核心资产容易被边缘化。<br>
+                2. <strong>聚焦科创弹性：</strong> 科创50在半导体带动下连续收红，尾盘若有指数回落但核心半导体标的抗跌，可考虑拿部分先手。<br>
+                3. <strong>风控先行：</strong> 在日韩股市重挫的宏观背景下，若尾盘没有增量资金入场抢筹，整体仓位应继续保持防守反击姿态，不要轻易满仓。
+            </div>
+        </div>
+
+        <!-- 06 明日盯盘清单 -->
+        <div class="section">
+            <div class="section-head">
+                <div class="section-num">06</div>
+                <h2 class="section-title">明日盯盘清单展望</h2>
+            </div>
+            <div class="watch-grid">
+                <div class="watch-card">
+                    <h4>⚔️ 进攻方向：科技三剑客</h4>
+                    <div class="s-note">
+                        1. <strong>算力/AI服务器：</strong> 看浪潮信息能否打开高度，及沐曦股份、寒武纪等算力芯片的持续性。<br>
+                        2. <strong>半导体/先进封装：</strong> 观察上海合晶、有研硅明日的溢价情况。<br>
+                        3. <strong>CDN基础设施：</strong> 网宿科技能否走成趋势中军。
+                    </div>
+                </div>
+                <div class="watch-card">
+                    <h4>🛡️ 防守方向：量能衰减备案</h4>
+                    <div class="s-note">
+                        若明日大盘成交额进一步跌破2.5万亿，科技股大概率迎来分化调整。此时需关注资金是否回流<strong>高股息（红利）</strong>或前期超跌的老主线进行避险。密切关注韩国KOSPI等外围指数企稳情况。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2026 QoderDesign A股周报团队. 盘中追踪数据仅供参考.</p>
+        <div class="warn">股市有风险，投资需谨慎。</div>
+    </div>
+
+</body>
+</html>
