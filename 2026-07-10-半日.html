@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-07-10 A股半日分析报告</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--primary);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.conclusion{border-left:4px solid var(--secondary);background:#EFF6FF;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+.conclusion strong{color:var(--secondary);}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--primary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--primary);color:var(--primary);}
+.top-nav .nav-home{background:var(--primary);color:#fff;border-color:var(--primary);}
+.top-nav .nav-home:hover{background:#be123c;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+    <a href="#" class="nav-home">Home</a>
+    <div class="nav-group">
+        <a href="2026-07-09-日报.html">上一篇: 7/9 日报</a>
+        <a href="2026-07-10-盘中.html">下一篇: 7/10 盘中</a>
+    </div>
+</div>
+
+<div class="hero-band">
+    <div class="hero-content">
+        <div class="hero-week">WEEK 28 · 2026-07-10 周五</div>
+        <div class="hero-title">A股半日分析：沪指约涨0.1%，科创50延续暴涨势头</div>
+        <div class="hero-sub">受昨日深V反转及隔夜美股芯片走强提振，今日早盘科技主线（半导体设备/封装/存储）继续领攻。资金从高位股向低位扩散，先进封装局部出现分歧信号。</div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <!-- Section 1: 大盘总览 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">1</div>
+            <div class="section-title">大盘总览 (午间估算)</div>
+        </div>
+        <p class="summary-text">在7/9（昨日）指数上演“ICU到KTV”的V型反弹大涨后，今日三大股指延续暖意，受6月CPI回落及降息预期升温提振，早盘全线高开。午间总体呈现强势震荡盘整格局，半日成交额预计延续昨日2.91万亿的放量水平。</p>
+        
+        <div class="data-cards">
+            <div class="data-card">
+                <div class="label">上证指数</div>
+                <div class="value">震荡偏强</div>
+                <div class="change change-up">涨幅 约 +0.1% ~ 0.3%</div>
+            </div>
+            <div class="data-card">
+                <div class="label">深证成指</div>
+                <div class="value">科技领涨</div>
+                <div class="change change-up">涨幅 约 +0.3% ~ 0.6%</div>
+            </div>
+            <div class="data-card">
+                <div class="label">创业板指</div>
+                <div class="value">高开高走</div>
+                <div class="change change-up">涨幅 约 +0.5% ~ 0.8%</div>
+            </div>
+            <div class="data-card">
+                <div class="label">科创50</div>
+                <div class="value">延续暴涨</div>
+                <div class="change change-up">盘中一度 约 +2.0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: 上午异动板块 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">2</div>
+            <div class="section-title">上午异动板块盘点</div>
+        </div>
+        
+        <div class="sub-section">
+            <div class="sub-head">进攻方向（科技主线持续爆发）</div>
+            <p class="summary-text">受到美股芯片股普涨及隔夜事件催化，资金继续猛攻泛科技链条：</p>
+            <ul class="summary-text" style="padding-left: 20px; margin-top: 8px;">
+                <li><strong>半导体设备：</strong>爆发高潮，深科达20cm涨停，亚翔集成、旭光电子封板，国林科技、茂莱光学等跟涨。</li>
+                <li><strong>半导体：</strong>华微电子、华天科技涨停，长电科技、利扬芯片大涨。</li>
+                <li><strong>存储芯片 / CPO：</strong>今日高开活跃。</li>
+            </ul>
+        </div>
+
+        <div class="alert-box">
+            <div class="alert-title">风险提示：先进封装出现分歧信号</div>
+            <p>昨日强势领涨的先进封装板块内部出现显著分化：昨日涨停的<strong>朗迪集团（603726）</strong>今日早盘回落，半日下跌3.84%（换手率高达21.38%，振幅15.22%），需警惕高位获利盘兑现风险。</p>
+        </div>
+
+        <div class="sub-section">
+            <div class="sub-head">防守/调整方向</div>
+            <p class="summary-text">资金跷跷板效应明显，避险与周期板块早盘承压：</p>
+            <ul class="summary-text" style="padding-left: 20px; margin-top: 8px;">
+                <li><strong>油气：</strong>昨日强势（通源石油20cm）后今日迎来明显回调。</li>
+                <li><strong>煤炭：</strong>整体低开调整。</li>
+                <li><strong>大金融：</strong>暂无明确异动，表现平淡。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 3: 上午涨停股梳理 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">3</div>
+            <div class="section-title">上午涨停股及连板追踪</div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>证券代码</th>
+                    <th>证券简称</th>
+                    <th>板块属性</th>
+                    <th>连板状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code">688328</span></td>
+                    <td><span class="name">深科达</span></td>
+                    <td>半导体设备</td>
+                    <td><span class="tag tag-red">20cm 2连板</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">600360</span></td>
+                    <td><span class="name">华微电子</span></td>
+                    <td>半导体</td>
+                    <td><span class="tag tag-red">首板</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">002185</span></td>
+                    <td><span class="name">华天科技</span></td>
+                    <td>半导体 / 先进封装</td>
+                    <td><span class="tag tag-red">首板</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">603929</span></td>
+                    <td><span class="name">亚翔集成</span></td>
+                    <td>半导体设备</td>
+                    <td><span class="tag tag-red">首板</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">600353</span></td>
+                    <td><span class="name">旭光电子</span></td>
+                    <td>半导体设备</td>
+                    <td><span class="tag tag-red">首板</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="conclusion">
+            <strong>核心高标追踪：</strong><br>
+            恒尚节能（603137）昨日8连板，今日能否顶住压力冲击9连板有待午后确认；<br>
+            浪潮信息（000977）昨日2连板，今日是否晋级3连板有待午后确认。
+        </div>
+    </div>
+
+    <!-- Section 4: 龙虎榜/大单异动 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">4</div>
+            <div class="section-title">龙虎榜与大单异动</div>
+        </div>
+        <p class="summary-text" style="color: var(--text2); font-style: italic;">【注：龙虎榜及大单明细数据将于盘后报告中更新】</p>
+    </div>
+
+    <!-- Section 5: 下午盘关注重点 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">5</div>
+            <div class="section-title">下午盘关注重点</div>
+        </div>
+        <ul class="summary-text" style="padding-left: 20px;">
+            <li><strong>量能变化：</strong>昨日全天成交2.91万亿，午后需观察放量趋势能否维持，这决定了科技线行情的高度。</li>
+            <li><strong>资金轮动轮廓：</strong>观察资金是继续聚焦硬科技（半导体设备/CPO），还是开始向低位的新能源、防守型的红利板块发生轮动。</li>
+            <li><strong>巨头风向标：</strong>中芯国际昨日总市值一举超越贵州茅台，午后其走势对整个科创50及科技主线的资金情绪具有关键锚定作用。</li>
+            <li><strong>连板股接力：</strong>恒尚节能能否突破9板空间压制，浪潮信息能否超预期晋级。</li>
+        </ul>
+    </div>
+
+    <!-- Section 6: 盯盘清单追踪 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">6</div>
+            <div class="section-title">盯盘清单追踪 (W27/W28)</div>
+        </div>
+        
+        <div class="watch-grid">
+            <div class="watch-card">
+                <h4><span class="s-name">中际旭创</span> <span class="tag tag-red">跟踪中</span></h4>
+                <div class="s-note">光模块龙头</div>
+                <div class="summary-text">今日CPO板块高开，个股预计跟涨，重点观察午后能否突破前高。</div>
+            </div>
+            <div class="watch-card">
+                <h4><span class="s-name">寒武纪</span> <span class="tag tag-red">科创权重</span></h4>
+                <div class="s-note">算力芯片</div>
+                <div class="summary-text">随科创50整体延续强势，关注其盘中承接力度及大单买入情况。</div>
+            </div>
+            <div class="watch-card">
+                <h4><span class="s-name">通富微电</span> <span class="tag tag-blue">待确认</span></h4>
+                <div class="s-note">昨日涨停 (千亿市值)</div>
+                <div class="summary-text">昨日强势涨停报72.17元，今日开盘表现及是否具备持续逼空动能待确认。</div>
+            </div>
+            <div class="watch-card">
+                <h4><span class="s-name">浪潮信息</span> <span class="tag tag-blue">关键节点</span></h4>
+                <div class="s-note">AI服务器中军</div>
+                <div class="summary-text">昨日2连板，今日进入3板争夺战，能否晋级将直接影响算力硬件情绪。</div>
+            </div>
+            <div class="watch-card">
+                <h4><span class="s-name">招金/赤峰黄金</span> <span class="tag tag-yellow">观察企稳</span></h4>
+                <div class="s-note">贵金属双雄</div>
+                <div class="summary-text">本周呈现分化走势，当前处于调整期，关注午后是否能在支撑位企稳。</div>
+            </div>
+            <div class="watch-card">
+                <h4><span class="s-name">中芯国际</span> <span class="tag tag-red">核心锚点</span></h4>
+                <div class="s-note">半导体风向标</div>
+                <div class="summary-text">市值超越茅台后的首个交易日，其午后走势对科创板整体情绪至关重要。</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Generated for QoderDesign A-Share Weekly Report</p>
+        <p class="warn">免责声明：本报告由自动系统生成，数据仅供参考，不构成投资建议。</p>
+    </div>
+</div>
+
+</body>
+</html>
