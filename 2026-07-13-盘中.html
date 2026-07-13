@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A股盘中扫描 | 2026-07-13 14:30约</title>
+    <style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+thead{background:var(--bg);}
+th{text-align:left;padding:10px 12px;font-weight:600;font-size:12px;color:var(--text2);letter-spacing:0.5px;}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+.name{font-weight:600;}.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-left:4px;vertical-align:middle;}
+.tag-red{background:#FEF2F2;color:var(--error);}.tag-green{background:#DCFCE7;color:#166534;}
+.tag-blue{background:#DBEAFE;color:#1E40AF;}.tag-yellow{background:#FEF3C7;color:#92400E;}.tag-gray{background:#F3F4F6;color:var(--text2);}
+.sub-section{margin:20px 0;padding:16px;background:var(--bg);border-radius:var(--radius-md);}
+.sub-head{font-size:16px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;}
+.watch-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.item{display:flex;gap:8px;align-items:center;margin-bottom:2px;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.s-name{font-weight:600;font-size:14px;}
+.s-note{font-size:12px;color:var(--text2);margin-bottom:8px;padding-left:4px;}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:16px;margin:16px 0;}
+.alert-box .alert-title{font-weight:700;color:var(--secondary);margin-bottom:6px;font-size:15px;}
+.alert-box p{font-size:14px;line-height:1.7;}
+.conclusion{border-left:4px solid var(--secondary);background:#EFF6FF;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:16px 20px;margin:20px 0;font-size:15px;line-height:1.7;}
+.conclusion strong{color:var(--secondary);}
+.footer{margin-top:32px;text-align:center;}
+.footer p{font-size:13px;color:var(--text2);}
+.footer .warn{color:var(--secondary);font-size:12px;font-weight:500;margin-top:8px;}
+.top-nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:12px 32px;}
+.top-nav a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:var(--text2);padding:6px 14px;border-radius:9999px;border:1.5px solid var(--border);transition:all .2s;display:inline-flex;align-items:center;gap:4px;}
+.top-nav a:hover{border-color:var(--secondary);color:var(--secondary);}
+.top-nav .nav-home{background:var(--secondary);color:#fff;border-color:var(--secondary);}
+.top-nav .nav-home:hover{background:#1d4ed8;}
+.top-nav .nav-disabled{opacity:0.35;pointer-events:none;}
+.top-nav .nav-group{display:flex;gap:8px;}
+@media(max-width:640px){.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.container{padding:24px 16px 48px;}.section{padding:20px;}.data-cards{grid-template-columns:1fr 1fr;}.top-nav{padding:10px 16px;}.top-nav a{font-size:12px;padding:5px 10px;}}
+    </style>
+</head>
+<body>
+
+<div class="top-nav">
+    <a href="./index.html" class="nav-home">🏠 首页</a>
+    <div class="nav-group">
+        <a href="2026-07-13-半日.html">← 上一篇：半日</a>
+        <a href="#" class="nav-disabled">下一篇 →</a>
+    </div>
+</div>
+
+<div class="hero-band">
+    <div class="hero-content">
+        <div class="hero-week">A股盘中扫描 · 2026-07-13 (周一) 14:30约</div>
+        <h1 class="hero-title">沪指约-2.1%加速杀跌 百股跌超9%</h1>
+        <div class="hero-sub">极端行情日避险主导，科技成长全面退潮，防守类板块逆势走强，建议观望等待明确企稳信号。</div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <!-- Section 1 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">1</div>
+            <h2 class="section-title">大盘即时状态 (14:30约)</h2>
+        </div>
+        <div class="data-cards">
+            <div class="data-card">
+                <div class="label">上证指数</div>
+                <div class="value">~3890-3910</div>
+                <div class="change change-down">约-2.1%</div>
+            </div>
+            <div class="data-card">
+                <div class="label">深证成指</div>
+                <div class="value">~14300-14400</div>
+                <div class="change change-down">约-3.3%</div>
+            </div>
+            <div class="data-card">
+                <div class="label">创业板指</div>
+                <div class="value">~3650-3670</div>
+                <div class="change change-down">约-3.0%</div>
+            </div>
+            <div class="data-card">
+                <div class="label">科创50</div>
+                <div class="value">~1960-1980</div>
+                <div class="change change-down">约-3.0%</div>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>指数</th>
+                    <th>14:30约点位</th>
+                    <th>涨跌幅(约)</th>
+                    <th>午间收盘(确认)</th>
+                    <th>下午变化</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name">上证指数</td>
+                    <td>~3890-3910</td>
+                    <td class="change-down font-bold">约-2.1%</td>
+                    <td>3934.74 (-1.54%)</td>
+                    <td>下午加速下行</td>
+                </tr>
+                <tr>
+                    <td class="name">深证成指</td>
+                    <td>~14300-14400</td>
+                    <td class="change-down font-bold">约-3.3%</td>
+                    <td>14654.49 (-2.61%)</td>
+                    <td>跌幅扩大</td>
+                </tr>
+                <tr>
+                    <td class="name">创业板指</td>
+                    <td>~3650-3670</td>
+                    <td class="change-down font-bold">约-3.0%</td>
+                    <td>3751.33 (-2.38%)</td>
+                    <td>跌幅扩大</td>
+                </tr>
+                <tr>
+                    <td class="name">科创50</td>
+                    <td>~1960-1980</td>
+                    <td class="change-down font-bold">约-3.0%</td>
+                    <td>2026.96 (-1.84%)</td>
+                    <td>冲高回落</td>
+                </tr>
+                <tr>
+                    <td class="name">北证50</td>
+                    <td>~1120-1140</td>
+                    <td class="change-down font-bold">约-5.0%+</td>
+                    <td>-3.90%</td>
+                    <td>跌幅扩大</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="summary-text" style="margin-top:16px;">
+            <ul style="padding-left: 20px;">
+                <li>14:26成交额突破2.5万亿，预计全天约2.80-2.85万亿</li>
+                <li>较7/10全天3.41万亿缩量约6000亿</li>
+                <li>近4700只个股下跌，近370股跌超9%，百股跌超9%</li>
+                <li>市场呈现普跌格局，下午无方向性反弹</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Section 2 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">2</div>
+            <h2 class="section-title">异动板块扫描</h2>
+        </div>
+        
+        <div class="alert-box">
+            <div class="alert-title">⚠️ 今日为极端行情日（沪指约-2%+，百股跌超9%）</div>
+            <p>不建议操作，以下为观察记录。</p>
+        </div>
+        
+        <div class="sub-section">
+            <div class="sub-head">🛡️ 防守类（逆势走强）</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>板块</th>
+                        <th>表现</th>
+                        <th>关键个股</th>
+                        <th>催化</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="name">银行 ⭐</td>
+                        <td><span class="change-up font-bold">逆势拉升</span></td>
+                        <td>苏州银行+6%，建设银行/宁波银行/交通银行跟涨</td>
+                        <td>国有大行2025年度分红超4200亿，避险资金涌入</td>
+                    </tr>
+                    <tr>
+                        <td class="name">中药/创新药 ⭐</td>
+                        <td><span class="change-up font-bold">维持强势</span></td>
+                        <td>陇神戎发20cm涨停，立方制药封住3连板，哈药股份2连板，天目药业涨停</td>
+                        <td>国常会同意中医药"十五五"规划+基药目录扩容</td>
+                    </tr>
+                    <tr>
+                        <td class="name">电子特气 ⭐</td>
+                        <td><span class="change-up font-bold">延续强势</span></td>
+                        <td>九丰能源一字2连板（封单坚实），水发燃气一字涨停，华特气体/金宏气体跟涨</td>
+                        <td>氦气临时禁止出口管理</td>
+                    </tr>
+                    <tr>
+                        <td class="name">证券</td>
+                        <td>盘中异动</td>
+                        <td>中泰证券+5%，天风证券/长江证券跟涨</td>
+                        <td>券商中报业绩预告，中泰证券净利+146%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="sub-section">
+            <div class="sub-head">⚔️ 进攻类（全面杀跌）</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>板块</th>
+                        <th>表现</th>
+                        <th>关键个股</th>
+                        <th>催化</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="name">商业航天</td>
+                        <td><span class="change-down font-bold">集体退潮，无资金抄底</span></td>
+                        <td>巨力索具/航天发展/海格通信/通宇通讯/神剑股份跌停，航天科技跌停</td>
+                        <td>一日游确认，巨力索具被罚450万</td>
+                    </tr>
+                    <tr>
+                        <td class="name">存储芯片/半导体</td>
+                        <td><span class="change-down font-bold">全线杀跌</span></td>
+                        <td>德明利跌停，香农芯创逼近20cm跌停，兆易创新跌近12%</td>
+                        <td>韩国存储股暴跌（SK海力士-4.4%），兆易创新港股跌超10%</td>
+                    </tr>
+                    <tr>
+                        <td class="name">光纤</td>
+                        <td><span class="change-down font-bold">重挫</span></td>
+                        <td>烽火通信/特发信息/杭电股份/亨通光电跌停</td>
+                        <td>扩产潮引发"周期魔咒"担忧</td>
+                    </tr>
+                    <tr>
+                        <td class="name">MLCC</td>
+                        <td><span class="change-down font-bold">大跌</span></td>
+                        <td>风华高科直线跳水跌停，多氟多跌停</td>
+                        <td>业绩预告后利好出尽</td>
+                    </tr>
+                    <tr>
+                        <td class="name">赛力斯</td>
+                        <td><span class="change-down font-bold">跌停</span></td>
+                        <td>报53.91元/股</td>
+                        <td>上半年预亏15-18亿元，由盈转亏</td>
+                    </tr>
+                    <tr>
+                        <td class="name">培育钻石</td>
+                        <td>跌幅居前</td>
+                        <td>—</td>
+                        <td>科技成长股整体退潮</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Section 3 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">3</div>
+            <h2 class="section-title">试仓候选股</h2>
+        </div>
+        
+        <div class="alert-box">
+            <div class="alert-title">⚠️ 今日极端行情，不建议操作</div>
+            <p>以下为观察记录，不构成买入建议。今日沪指约-2.1%，百股跌超9%，属于极端行情日。盘中扫描的本质是找试仓机会，但恐慌日该功能应主动降级为观察记录。</p>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>个股</th>
+                    <th>代码</th>
+                    <th>当前表现</th>
+                    <th>试仓评估</th>
+                    <th>仓位建议</th>
+                    <th>风控提示</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name">立方制药</td>
+                    <td class="code">003020</td>
+                    <td><span class="change-up font-bold">3连板封住</span></td>
+                    <td>⚠️已3连板高位，分歧加大</td>
+                    <td>观察仓1%以下</td>
+                    <td>不追涨，等回调</td>
+                </tr>
+                <tr>
+                    <td class="name">九丰能源</td>
+                    <td class="code">605090</td>
+                    <td><span class="change-up font-bold">一字2连板</span></td>
+                    <td>封单坚实但一字板买不到</td>
+                    <td>不可操作</td>
+                    <td>等开板后再评估</td>
+                </tr>
+                <tr>
+                    <td class="name">中泰证券</td>
+                    <td class="code">—</td>
+                    <td><span class="change-up font-bold">涨超5%</span></td>
+                    <td>券商中报业绩催化</td>
+                    <td>观察为主</td>
+                    <td>看次日是否有延续性</td>
+                </tr>
+                <tr>
+                    <td class="name">苏州银行</td>
+                    <td class="code">—</td>
+                    <td><span class="change-up font-bold">涨超6%</span></td>
+                    <td>银行避险逻辑</td>
+                    <td>观察为主</td>
+                    <td>银行属防守，不适合短线</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="conclusion">
+            <strong>核心结论：</strong>今日无适合试仓的标的，观望等待明确企稳信号。
+        </div>
+    </div>
+    
+    <!-- Section 4 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">4</div>
+            <h2 class="section-title">上午盯盘清单追踪</h2>
+        </div>
+        <div class="summary-text" style="margin-bottom: 12px;">来自7/13半日报盯盘清单：</div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>个股</th>
+                    <th>代码</th>
+                    <th>方向</th>
+                    <th>下午表现</th>
+                    <th>备注</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name">中国卫通</td>
+                    <td class="code">601698</td>
+                    <td>商业航天</td>
+                    <td><span class="change-down font-bold">大幅下挫</span></td>
+                    <td>板块集体退潮，无抄底</td>
+                </tr>
+                <tr>
+                    <td class="name">中国卫星</td>
+                    <td class="code">600118</td>
+                    <td>商业航天</td>
+                    <td><span class="change-down font-bold">大幅下挫</span></td>
+                    <td>虽公告扭亏为盈但板块退潮</td>
+                </tr>
+                <tr>
+                    <td class="name">海兰信</td>
+                    <td class="code">300065</td>
+                    <td>商业航天</td>
+                    <td><span class="change-down font-bold">大幅回调</span></td>
+                    <td>上周五涨停后退潮跟跌</td>
+                </tr>
+                <tr>
+                    <td class="name">立方制药</td>
+                    <td class="code">003020</td>
+                    <td>创新药</td>
+                    <td><span class="change-up font-bold">3连板封住 ✅</span></td>
+                    <td>基药目录+创新药双驱动</td>
+                </tr>
+                <tr>
+                    <td class="name">哈药股份</td>
+                    <td class="code">600664</td>
+                    <td>创新药</td>
+                    <td><span class="change-up font-bold">2连板 ✅</span></td>
+                    <td>半年度净利润预增</td>
+                </tr>
+                <tr>
+                    <td class="name">常山药业</td>
+                    <td class="code">300255</td>
+                    <td>创新药</td>
+                    <td><span class="change-up font-bold">跟涨</span></td>
+                    <td>医药板块整体走强</td>
+                </tr>
+                <tr>
+                    <td class="name">昭衍新药</td>
+                    <td class="code">603127</td>
+                    <td>创新药</td>
+                    <td><span class="change-up font-bold">跟涨</span></td>
+                    <td>CXO/CRO概念活跃</td>
+                </tr>
+                <tr>
+                    <td class="name">九丰能源</td>
+                    <td class="code">605090</td>
+                    <td>电子特气</td>
+                    <td><span class="change-up font-bold">一字2连板 ✅</span></td>
+                    <td>封单未松动，最硬逻辑</td>
+                </tr>
+                <tr>
+                    <td class="name">招金黄金</td>
+                    <td class="code">000506</td>
+                    <td>贵金属</td>
+                    <td><span class="change-down font-bold">下挫</span></td>
+                    <td>港黄金股集体下跌</td>
+                </tr>
+                <tr>
+                    <td class="name">赤峰黄金</td>
+                    <td class="code">600988</td>
+                    <td>贵金属</td>
+                    <td><span class="change-down font-bold">下挫</span></td>
+                    <td>港股赤峰黄金跌超4%</td>
+                </tr>
+                <tr>
+                    <td class="name">深科达</td>
+                    <td class="code">688328</td>
+                    <td>半导体</td>
+                    <td><span class="change-down font-bold">大幅下挫</span></td>
+                    <td>半导体设备整体回调</td>
+                </tr>
+                <tr>
+                    <td class="name">兆易创新</td>
+                    <td class="code">603986</td>
+                    <td>存储芯片</td>
+                    <td><span class="change-down font-bold">跌近12%（港股）</span></td>
+                    <td>韩股暴跌传导</td>
+                </tr>
+                <tr>
+                    <td class="name">浪潮信息</td>
+                    <td class="code">000977</td>
+                    <td>算力</td>
+                    <td><span class="change-down font-bold">下挫</span></td>
+                    <td>AI算力硬件集体调整</td>
+                </tr>
+                <tr>
+                    <td class="name">恒尚节能</td>
+                    <td class="code">603137</td>
+                    <td>连板标</td>
+                    <td>9天8板（上交所监控中）</td>
+                    <td>7/10已炸板先例，随时可能断板</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Section 5 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">5</div>
+            <h2 class="section-title">尾盘策略提示</h2>
+        </div>
+        
+        <div class="sub-section">
+            <div class="sub-head">⏱️ 最后30分钟重点观察</div>
+            <ol style="padding-left: 24px; font-size: 15px; line-height: 1.8;">
+                <li>沪指3900点整数关口能否守住（若跌破可能加速至3850）</li>
+                <li>创新药板块尾盘是否分歧（立方制药3连板是否炸板）</li>
+                <li>电子特气九丰能源封单是否松动</li>
+                <li>券商异动是否有延续性（中泰证券能否维持涨超5%）</li>
+                <li>商业航天尾盘是否有资金抄底（目前无迹象）</li>
+                <li>近370股跌超9%，关注是否有融资盘强平风险</li>
+            </ol>
+        </div>
+        
+        <div class="sub-section">
+            <div class="sub-head">📋 尾盘策略</div>
+            <ul style="padding-left: 24px; font-size: 15px; line-height: 1.8;">
+                <li><strong style="color:var(--secondary);">不建议操作</strong>，极端行情日观望为主</li>
+                <li>不追涨创新药（已3连板高位）</li>
+                <li>不抄底科技/商业航天（无企稳信号）</li>
+                <li>关注沪指3900支撑，若破位则短期继续下探</li>
+                <li>缩量下跌=买方观望，非恐慌抛售，但"无人接盘"式阴跌可能持续</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Section 6 -->
+    <div class="section">
+        <div class="section-head">
+            <div class="section-num">6</div>
+            <h2 class="section-title">明日盯盘清单</h2>
+        </div>
+        
+        <div class="watch-grid">
+            <div class="watch-card">
+                <h4>⚔️ 进攻类（需等企稳信号）</h4>
+                <div class="item">
+                    <span class="s-name">创新药</span>
+                    <span class="tag tag-red">立方制药 / 常山药业 / 昭衍新药</span>
+                </div>
+                <div class="s-note">基药目录催化延续性，立方制药能否4连板</div>
+                
+                <div class="item" style="margin-top: 12px;">
+                    <span class="s-name">电子特气</span>
+                    <span class="tag tag-red">九丰能源 / 华特气体</span>
+                </div>
+                <div class="s-note">氦气禁止出口政策驱动，九丰能源开板后评估</div>
+
+                <div class="item" style="margin-top: 12px;">
+                    <span class="s-name">存储芯片</span>
+                    <span class="tag tag-gray">兆易创新</span>
+                </div>
+                <div class="s-note">韩股暴跌传导后是否超跌反弹</div>
+
+                <div class="item" style="margin-top: 12px;">
+                    <span class="s-name">半导体设备</span>
+                    <span class="tag tag-gray">深科达 / 拓荆科技</span>
+                </div>
+                <div class="s-note">拓荆复牌后方向</div>
+            </div>
+            
+            <div class="watch-card">
+                <h4>🛡️ 防守类</h4>
+                <div class="item">
+                    <span class="s-name">银行</span>
+                    <span class="tag tag-red">苏州银行 / 建设银行</span>
+                </div>
+                <div class="s-note">避险资金涌入，分红预期</div>
+                
+                <div class="item" style="margin-top: 12px;">
+                    <span class="s-name">券商</span>
+                    <span class="tag tag-red">中泰证券</span>
+                </div>
+                <div class="s-note">中报业绩预告催化</div>
+
+                <div class="item" style="margin-top: 12px;">
+                    <span class="s-name">贵金属</span>
+                    <span class="tag tag-gray">招金黄金 / 赤峰黄金</span>
+                </div>
+                <div class="s-note">美伊冲突+避险逻辑是否回归</div>
+            </div>
+            
+            <div class="watch-card">
+                <h4>🔄 风格切换信号</h4>
+                <ul style="padding-left: 20px; font-size: 14px; line-height: 1.7; color: var(--text);">
+                    <li><strong>恒尚节能</strong>若断板=投机情绪进一步恶化</li>
+                    <li><strong>沪指3900</strong>能否守住=短期趋势分水岭</li>
+                    <li>资金是否从银行/医药扩散到其他防守方向</li>
+                    <li><strong>韩国KOSPI</strong>是否企稳（今日跌超8%触发熔断）=外盘扰动是否减弱</li>
+                </ul>
+            </div>
+            
+            <div class="watch-card">
+                <h4>🌐 外部因素关注</h4>
+                <ul style="padding-left: 20px; font-size: 14px; line-height: 1.7; color: var(--text);">
+                    <li>长鑫科技7/16申购（295亿IPO虹吸）</li>
+                    <li>美伊冲突+霍尔木兹海峡关闭→油价</li>
+                    <li>SK海力士纳斯达克挂牌后走势→存储芯片传导</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2026 QoderDesign A股周报团队. All rights reserved.</p>
+        <p class="warn">股市有风险，投资需谨慎。本报告仅作复盘记录，不构成任何投资建议。</p>
+    </div>
+</div>
+
+</body>
+</html>
