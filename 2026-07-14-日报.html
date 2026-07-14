@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股日报 | 2026-07-14 收盘复盘</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;700;800&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:600;color:var(--text2);font-size:12px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:hover td{background:var(--bg);}
+.name{font-weight:600;}
+.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-red{background:#FFE4E6;color:#E11D48;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--primary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.sub-section{margin:16px 0;}
+.alert-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-title{font-weight:700;font-size:14px;margin-bottom:4px;}
+.conclusion{background:linear-gradient(135deg,#FFF1F2,#FFE4E6);border-radius:var(--radius-md);padding:20px;margin-top:16px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:16px 0;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:20px;border:1px solid var(--border);}
+.watch-card h4{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);font-weight:400;}
+.font-bold{font-weight:700;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--primary);text-decoration:none;}
+.nav-group{display:flex;gap:16px;}
+.nav-group a{font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s;}
+.nav-group a:hover{color:var(--primary);}
+.nav-disabled{opacity:0.35;pointer-events:none;}
+.footer{max-width:1120px;margin:0 auto;padding:32px;text-align:center;color:var(--text2);font-size:13px;}
+.footer .warn{margin-top:8px;font-size:12px;color:var(--text2);opacity:0.6;}
+.stock-card{background:var(--bg);border-radius:var(--radius-md);padding:20px;margin:16px 0;border-left:4px solid var(--primary);}
+.stock-card h4{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.stock-detail{font-size:14px;line-height:1.8;color:var(--text);}
+.stock-detail strong{color:var(--primary);}
+.timeline{position:relative;padding-left:24px;margin:16px 0;}
+.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--border);}
+.timeline-item{position:relative;margin-bottom:16px;padding-left:4px;}
+.timeline-item::before{content:'';position:absolute;left:-22px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid var(--surface);}
+.timeline-time{font-family:'Fira Code',monospace;font-size:12px;font-weight:600;color:var(--primary);margin-bottom:2px;}
+.timeline-text{font-size:14px;color:var(--text);}
+.note-pending{font-size:11px;color:var(--warning);margin-left:4px;}
+@media(max-width:768px){.container{padding:24px 16px 48px;}.section{padding:20px;}.hero-band{padding:40px 0 32px;}.hero-content{padding:0 20px;}.top-nav{padding:10px 16px;}.nav-group{gap:10px;}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+<a href="./index.html" class="nav-home">🏠 首页</a>
+<div class="nav-group">
+<a href="2026-07-14-盘中.html">← 上一篇：盘中</a>
+<a href="#" class="nav-disabled">下一篇 →</a>
+</div>
+</nav>
+
+<div class="hero-band">
+<div class="hero-content">
+<div class="hero-week">2026.07.14 · TUE · 收盘复盘</div>
+<h1 class="hero-title">深V反转日！沪指+1.36%收3967 · 创业板+3.43%领涨 · 科创50从-3.45%翻红 · 算力硬件PCB十余股涨停 · 油气+医药双线延续 · 成交2.70万亿缩量反弹</h1>
+<p class="hero-sub">7月14日收盘：沪指+1.36%（~3967），深成指+2.77%，创业板+3.43%，科创50+0.77%，北证50+2.25%。午后韩国KOSPI深V翻红催化A股急速拉升，PCB/CPO/光模块全线爆发。全天成交2.70万亿，缩量1138亿。上涨超4200只。</p>
+</div>
+</div>
+
+<div class="container">
+
+<!-- Section 1: 大盘总览 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">1</span>
+<h2 class="section-title">大盘总览</h2>
+</div>
+
+<div class="data-cards">
+<div class="data-card">
+<div class="label">全天成交额</div>
+<div class="value">2.70<span style="font-size:16px;">万亿</span></div>
+<div class="change change-down">缩量1138亿（昨日2.82万亿）</div>
+</div>
+<div class="data-card">
+<div class="label">上涨个股</div>
+<div class="value">4200<span style="font-size:16px;">+只</span></div>
+<div class="change change-up">大面积翻红</div>
+</div>
+<div class="data-card">
+<div class="label">涨停数</div>
+<div class="value">80<span style="font-size:16px;">股</span></div>
+<div class="change change-up">+48股（昨日32股）</div>
+</div>
+</div>
+
+<div class="sub-head">收盘指数一览</div>
+<table>
+<thead>
+<tr><th>指数</th><th>收盘涨幅</th><th>收盘点位（约）</th><th>午间对比</th><th>振幅</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">上证指数</td><td><span class="tag tag-up">+1.36%</span></td><td>~3967</td><td>午间3887.92(-0.66%) → 翻红</td><td>约2%</td></tr>
+<tr><td class="name">深证成指</td><td><span class="tag tag-up">+2.77%</span></td><td>~14937</td><td>午间-0.42% → 翻红</td><td>大幅V型反转</td></tr>
+<tr><td class="name">创业板指</td><td><span class="tag tag-up">+3.43%</span></td><td>~3840</td><td>午间-0.29% → 领涨</td><td>振幅超3.7%</td></tr>
+<tr><td class="name">科创50</td><td><span class="tag tag-up">+0.77%</span></td><td>从午间-3.45%翻红</td><td>-3.45% → +0.77%</td><td>振幅超4%</td></tr>
+<tr><td class="name">北证50</td><td><span class="tag tag-up">+2.25%</span></td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">走势回顾</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-time">早盘 09:30</div>
+<div class="timeline-text">沪指低开，科创50重挫超3%</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">午盘 11:30</div>
+<div class="timeline-text">沪指3887.92(-0.66%)，科创50-3.45%，恐慌情绪蔓延</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">午后 13:00</div>
+<div class="timeline-text">韩国KOSPI深V反弹催化，A50直线飙涨</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">午后 13:34</div>
+<div class="timeline-text">PCB概念十余股涨停，算力硬件全线爆拉</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">午后 14:30</div>
+<div class="timeline-text">沪指翻红涨超0.6%，创业板涨超2%</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">收盘 15:00</div>
+<div class="timeline-text">沪指+1.36%(~3967)，创业板+3.43%，深V反转完成</div>
+</div>
+</div>
+
+<div class="alert-box">
+<div class="alert-title">反弹驱动力</div>
+<div class="summary-text">韩国KOSPI午后深V翻红（盘中跌超5% → 收盘+0.73%报6856.83）→ 三星电子涨超4%、SK海力士抹去跌幅 → 全球科技恐慌缓解 → A股算力硬件产业链爆发 → 带动创业板领涨。</div>
+</div>
+</div>
+
+<!-- Section 2: 异动上涨板块 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">2</span>
+<h2 class="section-title">异动上涨板块</h2>
+</div>
+
+<div class="sub-head">⚔️ 进攻板块：算力硬件产业链午后大爆发 <span class="tag tag-red">多源验证</span></div>
+
+<h4 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;margin:16px 0 8px;">PCB概念 — 午后爆发，十余股涨停</h4>
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>涨停/涨幅</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">则成电子</td><td class="code">920821.BJ</td><td><span class="tag tag-up">涨停</span></td><td>北交所</td></tr>
+<tr><td class="name">民爆光电</td><td class="code">301362</td><td><span class="tag tag-up">涨停</span></td><td>—</td></tr>
+<tr><td class="name">东材科技</td><td class="code">603208</td><td><span class="tag tag-up">涨停</span></td><td>—</td></tr>
+<tr><td class="name">中国巨石</td><td class="code">—</td><td><span class="tag tag-up">涨停</span></td><td>玻璃纤维龙头</td></tr>
+<tr><td class="name">沪电股份</td><td class="code">002463</td><td><span class="tag tag-up">涨停</span></td><td>PCB龙头</td></tr>
+<tr><td class="name">福斯特</td><td class="code">—</td><td><span class="tag tag-up">涨停</span></td><td>—</td></tr>
+<tr><td class="name">生益科技</td><td class="code">—</td><td><span class="tag tag-up">涨停</span></td><td>覆铜板龙头</td></tr>
+<tr><td class="name">信通电子</td><td class="code">—</td><td><span class="tag tag-amber">2连板</span></td><td>—</td></tr>
+<tr><td class="name">华正新材</td><td class="code">—</td><td><span class="tag tag-up">涨停</span></td><td>—</td></tr>
+<tr><td class="name">宝鼎科技</td><td class="code">—</td><td><span class="tag tag-up">涨停</span></td><td>—</td></tr>
+<tr><td class="name">南亚新材</td><td class="code">—</td><td><span class="tag tag-up">涨超14%</span></td><td>—</td></tr>
+</tbody>
+</table>
+<p class="summary-text" style="margin-top:8px;"><strong>上涨逻辑：</strong>①韩国KOSPI深V翻红 → 全球科技恐慌缓解 ②PCB板块超跌反弹 ③元件板块午间已获61.44亿主力净流入（全行业首位），午后验证</p>
+
+<h4 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;margin:20px 0 8px;">CPO/光模块 — "易中天"全线大涨</h4>
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>涨幅</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">东山精密</td><td class="code">002384</td><td><span class="tag tag-up">涨停</span></td><td>市值4769亿</td></tr>
+<tr><td class="name">亨通光电</td><td class="code">600487</td><td><span class="tag tag-up">涨停</span></td><td>—</td></tr>
+<tr><td class="name">新易盛</td><td class="code">300502</td><td><span class="tag tag-up">涨超9%</span></td><td>光模块龙头</td></tr>
+<tr><td class="name">中际旭创</td><td class="code">300308</td><td><span class="tag tag-up">涨超5%</span></td><td>"易中天"之一</td></tr>
+<tr><td class="name">天孚通信</td><td class="code">300394</td><td><span class="tag tag-up">涨超5%</span></td><td>"易中天"之一</td></tr>
+<tr><td class="name">长光华芯</td><td class="code">—</td><td><span class="tag tag-up">涨近17%</span></td><td>CPO概念</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">🛡️ 防守板块：油气延续强势</div>
+<div class="alert-box" style="background:#FFF7ED;border-color:#FED7AA;">
+<div class="alert-title">催化</div>
+<div class="summary-text">美伊冲突持续升级，WTI原油涨5%破75美元，布伦特涨5.3%至80美元</div>
+</div>
+<table>
+<thead>
+<tr><th>个股</th><th>表现</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">蓝焰控股</td><td><span class="tag tag-up">涨停</span></td></tr>
+<tr><td class="name">中曼石油</td><td><span class="tag tag-up">涨停</span></td></tr>
+<tr><td class="name">科力股份</td><td><span class="tag tag-up">涨超13%</span></td></tr>
+<tr><td class="name">潜能恒信</td><td><span class="tag tag-up">涨超5%</span></td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">🛡️ 防守板块：医药/中药延续</div>
+<div class="alert-box" style="background:#FFF7ED;border-color:#FED7AA;">
+<div class="alert-title">催化</div>
+<div class="summary-text">基药目录扩容利好</div>
+</div>
+<table>
+<thead>
+<tr><th>个股</th><th>表现</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">立方制药</td><td><span class="tag tag-amber">连板</span></td><td>创新药最高标</td></tr>
+<tr><td class="name">陇神戎发</td><td><span class="tag tag-up">涨超15%</span></td><td>中药</td></tr>
+<tr><td class="name">药易购</td><td><span class="tag tag-up">20cm涨停</span></td><td>医药商业</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">其他异动</div>
+<table>
+<thead>
+<tr><th>板块</th><th>表现</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">有色金属</td><td>午后拉升，铜铝现货库存加速去化</td></tr>
+<tr><td class="name">煤炭</td><td>早盘逆势走强，大有能源涨停</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 3: 连板股排列 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">3</span>
+<h2 class="section-title">连板股排列</h2>
+</div>
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>连板数</th><th>所属板块</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">恒尚节能</td><td class="code">603137</td><td><span class="tag tag-red">11天10板</span></td><td>并购重组</td><td>全场最高标，拟收购金胜电子（存储），7/10曾炸板后恢复</td></tr>
+<tr><td class="name">立方制药</td><td class="code">003020</td><td><span class="tag tag-amber">3连板（7/13）</span><span class="note-pending">⚠️待确认</span></td><td>创新药</td><td>7/14是否晋级4连板未确认</td></tr>
+<tr><td class="name">九丰能源</td><td class="code">605090</td><td><span class="tag tag-amber">3交易日涨幅偏离值超20%</span></td><td>电子特气/油气</td><td>7/14连板待确认</td></tr>
+<tr><td class="name">贵绳股份</td><td class="code">600992</td><td><span class="tag tag-amber">3连板（7/13）</span></td><td>商业航天</td><td>—</td></tr>
+<tr><td class="name">信通电子</td><td class="code">—</td><td><span class="tag tag-amber">2连板</span></td><td>PCB</td><td>午后新进</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 4: 下跌板块概览 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">4</span>
+<h2 class="section-title">下跌板块概览</h2>
+</div>
+<table>
+<thead>
+<tr><th>板块</th><th>跌幅/表现</th><th>关键事件</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">半导体</td><td><span class="tag tag-down">遭162亿主力资金抛售（全行业首位）</span></td><td>韩国SK海力士暴跌传导，科创50早盘独立熊市(-3.45%)</td></tr>
+<tr><td class="name">商业航天</td><td><span class="tag tag-down">盘初批量跌停</span></td><td>中国卫星、巨力索具、航天发展等下挫，7/10热点全面退潮</td></tr>
+<tr><td class="name">存储芯片</td><td><span class="tag tag-down">持续调整</span></td><td>兆易创新净流出居前，SK海力士暴跌影响</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 5: 涨停数据汇总 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">5</span>
+<h2 class="section-title">涨停数据汇总</h2>
+</div>
+<table>
+<thead>
+<tr><th>指标</th><th>7/14</th><th>7/13</th><th>变化</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">涨停数</td><td class="font-bold">80股</td><td>32股</td><td><span class="tag tag-up">+48股</span></td></tr>
+<tr><td class="name">连板股总数</td><td class="font-bold">5只</td><td>9只</td><td><span class="tag tag-down">-4只</span></td></tr>
+<tr><td class="name">三连板及以上</td><td class="font-bold">1只</td><td>—</td><td>—</td></tr>
+<tr><td class="name">连板晋级率</td><td class="font-bold">11.11%</td><td>—</td><td><span class="tag tag-down">极低</span></td></tr>
+<tr><td class="name">跌停数</td><td class="font-bold">大幅减少</td><td>172只</td><td><span class="tag tag-up">恐慌消退</span></td></tr>
+</tbody>
+</table>
+<div class="alert-box">
+<div class="alert-title">关键特征</div>
+<div class="summary-text">涨停80股但连板晋级率仅11.11%，说明新涨停多为首板（PCB产业链为主），高位连板股大面积断板。连板生态脆弱。</div>
+</div>
+</div>
+
+<!-- Section 6: 龙虎榜重点 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">6</span>
+<h2 class="section-title">龙虎榜重点</h2>
+</div>
+<table>
+<thead>
+<tr><th>项目</th><th>数据</th><th>置信度</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">新易盛</td><td>主力资金净流入居首（算力硬件方向）</td><td><span class="tag tag-up">高</span></td></tr>
+<tr><td class="name">兆易创新</td><td>主力资金净流出居前（半导体方向）</td><td><span class="tag tag-up">高</span></td></tr>
+<tr><td class="name">中国联通</td><td>机构净买入9594万</td><td><span class="tag tag-amber">单一个股</span></td></tr>
+<tr><td class="name">北向资金</td><td>具体净额未确认</td><td><span class="tag tag-amber">待确认</span></td></tr>
+<tr><td class="name">南向资金</td><td>净买入超90亿港元</td><td><span class="tag tag-up">高</span></td></tr>
+</tbody>
+</table>
+<div class="sub-head">资金面核心</div>
+<table>
+<thead>
+<tr><th>方向</th><th>金额</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">半导体（净流出）</td><td><span class="tag tag-down">-162.06亿</span></td><td>全行业首位</td></tr>
+<tr><td class="name">元件/PCB（净流入）</td><td><span class="tag tag-up">+61.44亿</span></td><td>全行业领先</td></tr>
+<tr><td class="name">算力硬件方向</td><td><span class="tag tag-up">主力净流入前十占多数</span></td><td>新易盛居首</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 7: 平台突破股筛选 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">7</span>
+<h2 class="section-title">平台突破股筛选</h2>
+</div>
+<p class="summary-text">基于今日异动板块（PCB/CPO/光模块）筛选：</p>
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>今日表现</th><th>突破特征</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">沪电股份</td><td class="code">002463</td><td><span class="tag tag-up">涨停</span></td><td>PCB龙头，放量突破近期平台</td></tr>
+<tr><td class="name">生益科技</td><td class="code">—</td><td><span class="tag tag-up">涨停</span></td><td>覆铜板龙头，突破前期高点</td></tr>
+<tr><td class="name">东山精密</td><td class="code">002384</td><td><span class="tag tag-up">涨停</span></td><td>市值4769亿，CPO方向放量突破</td></tr>
+<tr><td class="name">南亚新材</td><td class="code">—</td><td><span class="tag tag-up">涨超14%</span></td><td>放量大涨突破均线系统</td></tr>
+<tr><td class="name">长光华芯</td><td class="code">—</td><td><span class="tag tag-up">涨近17%</span></td><td>CPO概念，放量大涨</td></tr>
+<tr><td class="name">新易盛</td><td class="code">300502</td><td><span class="tag tag-up">涨超9%</span></td><td>光模块龙头，突破近期下降趋势线</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 8: 高壁垒个股深度分析 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">8</span>
+<h2 class="section-title">300亿以上高壁垒个股深度分析</h2>
+</div>
+<p class="summary-text">在今日异动板块（PCB/CPO/光模块）中筛选：</p>
+
+<div class="stock-card">
+<h4>1. 沪电股份 <span class="s-code">002463</span> — PCB龙头</h4>
+<div class="stock-detail">
+<p><strong>主营业务：</strong>印制电路板（PCB），企业通讯市场板、汽车板</p>
+<p><strong>核心客户：</strong>华为、思科、诺基亚等通信设备巨头</p>
+<p><strong>护城河：</strong>国内企业通讯PCB龙头，高频高速PCB技术壁垒，AI服务器PCB核心供应商</p>
+<p><strong>财报趋势：</strong>2025年受益AI算力建设，营收利润高增长</p>
+<p><strong>上涨逻辑：</strong>①全球科技恐慌缓解 ②AI服务器PCB需求爆发 ③午后PCB产业链集体爆发</p>
+<p><strong>下跌风险：</strong>半导体产业链整体资金流出可能拖累；SK海力士等存储链波动传导</p>
+<p><strong>适合买入条件：</strong>明日高开不破板可试仓1-2成；若低开回踩5日线不破可低吸</p>
+</div>
+</div>
+
+<div class="stock-card">
+<h4>2. 新易盛 <span class="s-code">300502</span> — 光模块龙头</h4>
+<div class="stock-detail">
+<p><strong>主营业务：</strong>光通信收发模块，AI数据中心800G/1.6T光模块</p>
+<p><strong>核心客户：</strong>Google、Meta、Amazon等北美云厂商</p>
+<p><strong>护城河：</strong>全球光模块龙头之一（与中际旭创并列），800G/1.6T量产能力，北美CSP大客户深度绑定</p>
+<p><strong>财报趋势：</strong>2025年Q2受益AI算力爆发，业绩超预期</p>
+<p><strong>上涨逻辑：</strong>①"易中天"三剑客午后全线大涨 ②主力资金净流入居首 ③全球科技恐慌缓解</p>
+<p><strong>下跌风险：</strong>前期连续调整后反弹，反弹高度受量能制约（今日缩量）；科创50仍偏弱</p>
+<p><strong>适合买入条件：</strong>回调至5日线附近缩量企稳可建仓1-2成；追涨需配合放量</p>
+</div>
+</div>
+
+<div class="stock-card">
+<h4>3. 东山精密 <span class="s-code">002384</span> — CPO/PCB双概念</h4>
+<div class="stock-detail">
+<p><strong>主营业务：</strong>精密制造（PCB+FPC+LED），收购Multek后全球PCB布局</p>
+<p><strong>核心客户：</strong>苹果、特斯拉等</p>
+<p><strong>护城河：</strong>FPC龙头+PCB协同，CPO方向布局</p>
+<p><strong>市值：</strong>4769亿</p>
+<p><strong>上涨逻辑：</strong>CPO+PCB双概念叠加，午后涨停</p>
+<p><strong>适合买入条件：</strong>明日若高开震荡消化获利盘，回踩不破今日涨停价可试仓</p>
+</div>
+</div>
+</div>
+
+<!-- Section 9: 异常成交量个股 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">9</span>
+<h2 class="section-title">异常成交量个股</h2>
+</div>
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>异常特征</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">长光华芯</td><td class="code">—</td><td>涨近17%，成交量异常放大（CPO概念午后爆发）</td></tr>
+<tr><td class="name">南亚新材</td><td class="code">—</td><td>涨超14%，成交量放大突破</td></tr>
+<tr><td class="name">信通电子</td><td class="code">—</td><td>2连板，成交量持续放大</td></tr>
+<tr><td class="name">科力股份</td><td class="code">—</td><td>涨超13%，油气方向放量</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 10: 展望+策略建议 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">10</span>
+<h2 class="section-title">展望 + 策略建议</h2>
+</div>
+
+<div class="sub-head">关键变量</div>
+<table>
+<thead>
+<tr><th>#</th><th>变量</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td class="font-bold">1</td><td class="name">7/15中报预告强制披露截止日</td><td>沪深主板最后披露窗口，可能引发个股大幅波动（利好或暴雷）</td></tr>
+<tr><td class="font-bold">2</td><td class="name">长鑫科技7/16申购</td><td>募资295亿，今年最大IPO，可能分流市场资金</td></tr>
+<tr><td class="font-bold">3</td><td class="name">美伊冲突持续升级</td><td>油价飙升（美油破75美元），若进一步升级可能推升通胀预期</td></tr>
+<tr><td class="font-bold">4</td><td class="name">美国6月CPI（7/15公布）</td><td>关键通胀数据，影响美联储降息预期</td></tr>
+<tr><td class="font-bold">5</td><td class="name">韩国股市是否延续反弹</td><td>KOSPI今日深V翻红，明日是否延续决定科技股方向</td></tr>
+<tr><td class="font-bold">6</td><td class="name">成交量能否放大</td><td>今日2.70万亿缩量反弹，反弹含金量待验证</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">策略建议（不模棱两可）</div>
+<table>
+<thead>
+<tr><th>维度</th><th>建议</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">反弹性质判断</td><td>今日V型反弹由外部催化（韩国股市企稳）驱动，缩量反弹，定性为<strong style="color:var(--primary);">超跌反弹而非趋势反转</strong></td></tr>
+<tr><td class="name">仓位建议</td><td>维持3-4成，不加仓。等明日量能确认（需放量至3万亿+）后再决定是否加仓</td></tr>
+<tr><td class="name">进攻方向</td><td>算力硬件产业链（PCB/CPO/光模块）是午后新主线，但需明日验证延续性。重点关注沪电股份、新易盛是否能连板/高开不破板</td></tr>
+<tr><td class="name">防守方向</td><td>油气+医药双线有持续性（事件+政策催化），回调可低吸</td></tr>
+<tr><td class="name">规避方向</td><td>半导体高位股仍有资金流出压力（162亿抛售），短期规避存储芯片方向</td></tr>
+<tr><td class="name">关键时间节点</td><td>7/15中报预告截止日是分水岭，业绩超预期品种可能出现独立行情</td></tr>
+</tbody>
+</table>
+
+<div class="conclusion">
+<p class="summary-text"><strong>核心判断：</strong>今日深V反弹定性为超跌反弹，核心驱动来自外部（韩国KOSPI企稳），量能不足（缩量1138亿）。明日是7/15中报预告截止日+美国CPI公布+长鑫科技申购前夕，三重时间窗口叠加，需保持谨慎。维持3-4成仓位，重点验证算力硬件主线延续性。</p>
+</div>
+</div>
+
+<!-- Section 11: 明日重点盯盘清单 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">11</span>
+<h2 class="section-title">明日重点盯盘清单</h2>
+</div>
+
+<div class="watch-grid">
+<div class="watch-card">
+<h4>⚔️ 进攻类</h4>
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>观察信号</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">沪电股份</td><td class="code">002463</td><td>是否连板/高开不破板</td></tr>
+<tr><td class="name">新易盛</td><td class="code">300502</td><td>量能是否配合</td></tr>
+<tr><td class="name">东山精密</td><td class="code">002384</td><td>市值4769亿能否继续走强</td></tr>
+<tr><td class="name">长光华芯</td><td class="code">—</td><td>是否连板确认算力硬件主线</td></tr>
+<tr><td class="name">浪潮信息</td><td class="code">000977</td><td>今日回暖，是否延续</td></tr>
+</tbody>
+</table>
+</div>
+<div class="watch-card">
+<h4>🛡️ 防守类</h4>
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>观察信号</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">立方制药</td><td class="code">003020</td><td>4连板确认</td></tr>
+<tr><td class="name">九丰能源</td><td class="code">605090</td><td>连板确认</td></tr>
+<tr><td class="name">蓝焰控股</td><td class="code">—</td><td>油价走势+连板延续</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="sub-head">🔄 风格切换信号</div>
+<table>
+<thead>
+<tr><th>#</th><th>信号</th></tr>
+</thead>
+<tbody>
+<tr><td class="font-bold">1</td><td>韩国KOSPI是否延续反弹 → 决定科技股是否见底</td></tr>
+<tr><td class="font-bold">2</td><td>7/15中报预告截止日 → 业绩驱动可能切换市场焦点</td></tr>
+<tr><td class="font-bold">3</td><td>长鑫科技7/16申购 → 申购前后流动性变化</td></tr>
+<tr><td class="font-bold">4</td><td>PCB/CPO涨停股明日封板率 → 算力硬件主线是否成立</td></tr>
+<tr><td class="font-bold">5</td><td>科创50是否收复失地 → 科技股全面企稳 vs 独立熊市延续</td></tr>
+<tr><td class="font-bold">6</td><td>成交量是否放大至3万亿+ → 反弹含金量验证</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 12: 连续趋势追踪 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">12</span>
+<h2 class="section-title">连续趋势追踪</h2>
+</div>
+
+<div class="sub-head">个股多日走势追踪（延续7/9、7/10、7/13日报）</div>
+<table>
+<thead>
+<tr><th>个股</th><th>代码</th><th>7/9</th><th>7/10</th><th>7/13</th><th>7/14</th><th>趋势</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">恒尚节能</td><td class="code">603137</td><td>8连板</td><td>9连板</td><td>炸板(+4.83%)</td><td><span class="tag tag-red">11天10板</span></td><td><strong style="color:var(--primary);">恢复连板【新高】</strong></td></tr>
+<tr><td class="name">立方制药</td><td class="code">003020</td><td>—</td><td>—</td><td>3连板</td><td>⚠️4连板待确认</td><td>加速</td></tr>
+<tr><td class="name">九丰能源</td><td class="code">605090</td><td>—</td><td>—</td><td>2连板</td><td>⚠️连板待确认</td><td>延续</td></tr>
+<tr><td class="name">兆易创新</td><td class="code">603986</td><td>—</td><td>天量大跌</td><td>跌停</td><td><span class="tag tag-down">继续承压</span></td><td>破位下行</td></tr>
+<tr><td class="name">浪潮信息</td><td class="code">000977</td><td>2连板</td><td>回调</td><td>下挫</td><td><span class="tag tag-up">回暖</span></td><td>底部反弹</td></tr>
+<tr><td class="name">沪电股份</td><td class="code">002463</td><td>—</td><td>—</td><td>—</td><td><span class="tag tag-up">涨停</span></td><td><strong style="color:var(--primary);">爆发【新】</strong></td></tr>
+<tr><td class="name">新易盛</td><td class="code">300502</td><td>—</td><td>—</td><td>—</td><td><span class="tag tag-up">+9%</span></td><td><strong style="color:var(--primary);">爆发【新】</strong></td></tr>
+<tr><td class="name">东山精密</td><td class="code">002384</td><td>—</td><td>—</td><td>—</td><td><span class="tag tag-up">涨停</span></td><td><strong style="color:var(--primary);">爆发【新】</strong></td></tr>
+<tr><td class="name">赛力斯</td><td class="code">601127</td><td>—</td><td>—</td><td>跌停</td><td><span class="tag tag-up">反弹</span></td><td>超跌反弹</td></tr>
+<tr><td class="name">中国卫通</td><td class="code">601698</td><td>—</td><td>千亿秒板</td><td>大幅下挫</td><td><span class="tag tag-down">修复有限</span></td><td>弱势</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">板块轮动追踪（7/6 - 7/14）</div>
+<table>
+<thead>
+<tr><th>日期</th><th>领涨板块</th><th>领跌板块</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">7/6（周一）</td><td>煤炭、银行、服务器</td><td>玻璃纤维、玻璃基板</td></tr>
+<tr><td class="name">7/7（周二）</td><td>游戏、半导体（逆势）、银行</td><td>贵金属、医疗美容</td></tr>
+<tr><td class="name">7/8（周三）</td><td>旅游、软件开发、IT服务</td><td>能源金属、机器人、锂矿</td></tr>
+<tr><td class="name">7/9（周四）</td><td>算力/CDN、半导体、AI服务器</td><td>锂电池、稀土永磁、培育钻石</td></tr>
+<tr><td class="name">7/10（周五）</td><td>商业航天、创新药/CRO、半导体设备</td><td>存储芯片、CPO、锂矿、电子化学品</td></tr>
+<tr><td class="name">7/13（周一）</td><td>中药、电子特气、创新药、银行</td><td>培育钻石、MLCC、铜箔、商业航天、存储芯片、光纤</td></tr>
+<tr style="background:#FFF1F2;"><td class="name font-bold" style="color:var(--primary);">7/14（周二）</td><td class="font-bold">PCB、CPO/光模块、油气、医药</td><td class="font-bold">半导体(资金-162亿)、商业航天、存储芯片</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">连板梯队演变</div>
+<table>
+<thead>
+<tr><th>标的</th><th>7/8</th><th>7/9</th><th>7/10</th><th>7/13</th><th>7/14</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">恒尚节能</td><td>7连板</td><td>8连板</td><td>9连板</td><td>炸板(+4.83%)</td><td><span class="tag tag-red">11天10板</span></td></tr>
+<tr><td class="name">立方制药</td><td>—</td><td>—</td><td>—</td><td>3连板</td><td>⚠️4连板待确认</td></tr>
+<tr><td class="name">浪潮信息</td><td>—</td><td>2连板</td><td>回调</td><td>下挫</td><td><span class="tag tag-up">回暖</span></td></tr>
+<tr><td class="name">信通电子</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="tag tag-amber">2连板【新】</span></td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">🔄 风格切换核心信号</div>
+<table>
+<thead>
+<tr><th>#</th><th>信号</th></tr>
+</thead>
+<tbody>
+<tr><td class="font-bold">1</td><td><strong style="color:var(--primary);">超跌反弹 vs 趋势反转：</strong>今日V型反弹由外部催化（韩国KOSPI深V）驱动，缩量（2.70万亿），定性为超跌反弹。需明日放量至3万亿+确认趋势反转。</td></tr>
+<tr><td class="font-bold">2</td><td><strong style="color:var(--primary);">算力硬件产业链回归：</strong>7/9半导体暴涨 → 7/10全回吐 → 7/13继续暴跌 → 7/14午后PCB/CPO/光模块爆发。进攻方向从半导体切换至算力硬件（PCB/CPO），半导体遭162亿抛售但PCB获61亿流入。</td></tr>
+<tr><td class="font-bold">3</td><td><strong style="color:var(--primary);">连板生态脆弱：</strong>涨停80股但连板晋级率仅11.11%，高位股大面积断板。恒尚节能恢复连板（11天10板）是唯一亮点。投机情绪仍偏弱。</td></tr>
+<tr><td class="font-bold">4</td><td><strong style="color:var(--primary);">防御双线持续验证：</strong>油气（美伊冲突+油价暴涨）+医药（基药目录扩容）已连续2日强势，有持续性。从7/13的"仅存四条活口"扩展为7/14的"进攻+防守双线齐涨"。</td></tr>
+<tr><td class="font-bold">5</td><td><strong style="color:var(--primary);">7/15分水岭：</strong>中报预告强制披露截止日+美国CPI数据+长鑫科技申购前夕。多因素叠加，明日可能成为市场方向选择的关键日。</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- 重要消息面 -->
+<div class="section">
+<div class="section-head">
+<span class="section-num">📢</span>
+<h2 class="section-title">重要消息面</h2>
+</div>
+<table>
+<thead>
+<tr><th>#</th><th>消息</th><th>置信度</th></tr>
+</thead>
+<tbody>
+<tr><td class="font-bold">1</td><td class="name">上半年进出口同比+16.9%</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">2</td><td class="name">长鑫科技7/16申购，代码688825，募资295亿</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">3</td><td class="name">美伊冲突持续升级：WTI涨5%破75美元，布伦特涨5.3%至80美元</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">4</td><td class="name">韩国KOSPI深V翻红：收盘+0.73%报6856.83，三星电子涨超4%</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">5</td><td class="name">中金公司：反弹或随时到来</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">6</td><td class="name">东方财富陈果：上证3900点不宜看空</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">7</td><td class="name">7/15中报预告强制披露截止日</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">8</td><td class="name">7/15美国6月CPI公布</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">9</td><td class="name">扩大消费"十五五"规划：剑指社零60万亿</td><td><span class="tag tag-up">已验证</span></td></tr>
+<tr><td class="font-bold">10</td><td class="name">COMEX黄金-2.55%报4008.70美元</td><td><span class="tag tag-up">已验证</span></td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 QoderDesign A股深度复盘系统</p>
+<div class="warn">本报告涉及个股及板块仅供复盘分析使用，不构成任何投资建议，股市有风险，入市需谨慎。</div>
+</div>
+
+</body>
+</html>
