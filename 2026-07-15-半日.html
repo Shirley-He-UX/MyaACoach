@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股半日分析 | 2026-07-15 午间</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;700;800&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+<link rel="icon" href="./phai.ico" type="image/x-icon">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:600;color:var(--text2);font-size:12px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:hover td{background:var(--bg);}
+.name{font-weight:600;}
+.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-red{background:#FFE4E6;color:#E11D48;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--secondary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.sub-section{margin:16px 0;}
+.alert-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-title{font-weight:700;font-size:14px;margin-bottom:4px;}
+.conclusion{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:var(--radius-md);padding:20px;margin-top:16px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:16px 0;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:20px;border:1px solid var(--border);}
+.watch-card h4{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);font-weight:400;}
+.font-bold{font-weight:700;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--secondary);text-decoration:none;}
+.nav-group{display:flex;gap:16px;}
+.nav-group a{font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s;}
+.nav-group a:hover{color:var(--secondary);}
+.nav-disabled{opacity:0.35;pointer-events:none;}
+.footer{max-width:1120px;margin:0 auto;padding:32px;text-align:center;color:var(--text2);font-size:13px;}
+.footer .warn{margin-top:8px;font-size:12px;color:var(--text2);opacity:0.6;}
+.note-pending{font-size:11px;color:var(--warning);font-weight:500;margin-left:4px;}
+.news-list{list-style:none;padding:0;margin:8px 0;}
+.news-list li{padding:8px 12px;border-left:3px solid var(--secondary);background:var(--bg);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:6px;font-size:14px;}
+.news-list li strong{color:var(--secondary);}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="./index.html" class="nav-home">🏠 首页</a>
+  <div class="nav-group">
+    <a href="2026-07-14-日报.html">← 上一篇：日报</a>
+    <a href="#" class="nav-disabled">下一篇 →</a>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.07.15 · WED · 半日分析</div>
+    <h1 class="hero-title">科技全面回调！科创50暴跌3.67% · 昨日算力硬件爆发一日游 · 资金大举切换医药+消费 · 博瑞/迪哲/睿智/药康20CM涨停 · 哈药4连板 · 中报预告截止日分水岭</h1>
+    <p class="hero-sub">7月15日午间：沪指3963.90(-0.08%)，深成指-0.38%，创业板-0.36%，科创50-3.67%。半日成交1.72万亿放量898亿，超4600股下跌。隔夜美国CPI低于预期，美股反弹（费城半导体+2.54%），但A股科技股利好出尽高位回调，资金避险涌入医药+大消费。</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Section 1 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">1</div>
+      <div class="section-title">大盘即时状态</div>
+    </div>
+    <p class="summary-text">隔夜美国6月CPI低于预期催化美股反弹，A股早盘受此提振高开冲高，但随后震荡下行翻绿。三大指数中除沪指微跌外，深成指、创业板均现回调，科创50则独立暴跌-3.67%，科技成长与权重蓝筹形成巨大剪刀差。市场呈现典型"利好出尽"特征。</p>
+
+    <div class="sub-head">午间收盘指数</div>
+    <table>
+      <thead>
+        <tr><th>指数</th><th>午间点位</th><th>涨跌幅</th><th>对比昨日收盘</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">上证指数</td><td>3963.90</td><td><span class="tag tag-down">-0.08%</span></td><td>昨日+1.36%(~3967) → 微跌</td></tr>
+        <tr><td class="name">深证成指</td><td>~14868.23</td><td><span class="tag tag-down">-0.38%</span></td><td>昨日+2.77% → 回调</td></tr>
+        <tr><td class="name">创业板指</td><td>~3837.23</td><td><span class="tag tag-down">-0.36%</span></td><td>昨日+3.43% → 回调</td></tr>
+        <tr><td class="name">科创50</td><td>—</td><td><span class="tag tag-down">-3.67%</span></td><td>昨日+0.77% → 暴跌，科技独立熊市</td></tr>
+      </tbody>
+    </table>
+
+    <div class="data-cards">
+      <div class="data-card">
+        <div class="label">半日成交额</div>
+        <div class="value">1.72万亿</div>
+        <div class="change change-up">放量898亿 ↑</div>
+      </div>
+      <div class="data-card">
+        <div class="label">下跌个股</div>
+        <div class="value">超4600只</div>
+        <div class="change change-down">个股普跌</div>
+      </div>
+      <div class="data-card">
+        <div class="label">涨停</div>
+        <div class="value" style="color:var(--error);">64</div>
+        <div class="change">涨停板</div>
+      </div>
+      <div class="data-card">
+        <div class="label">跌停</div>
+        <div class="value" style="color:var(--success);">16</div>
+        <div class="change">跌停板</div>
+      </div>
+    </div>
+
+    <div class="sub-head">走势特征</div>
+    <ul class="news-list">
+      <li>三大指数早盘冲高回落（受隔夜美股CPI利好提振高开），随后震荡下行翻绿</li>
+      <li>科创50暴跌-3.67%，与沪指(-0.08%)形成巨大剪刀差——<strong>科技成长暴跌，权重蓝筹抗跌</strong></li>
+      <li>创业板指黄白分时线明显分化，个股普跌</li>
+      <li>市场呈现典型"利好出尽"特征：隔夜美股反弹+CPI利好未能带动A股科技延续，反而获利了结</li>
+    </ul>
+
+    <div class="alert-box">
+      <div class="alert-title">核心逻辑确认</div>
+      昨日V型反弹定性为超跌反弹已确认（昨日日报判断正确），算力硬件（PCB/CPO/光模块）爆发仅持续一日，今日全面熄火。
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">2</div>
+      <div class="section-title">异动板块扫描（进攻 / 防守框架）</div>
+    </div>
+
+    <div class="sub-head">🔴 进攻板块全面回调（昨日爆发今日熄火）</div>
+    <table>
+      <thead>
+        <tr><th>板块</th><th>今日上午表现</th><th>昨日对比</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">半导体</td><td>集体下挫，昨日被抛162亿后继续杀跌</td><td>昨日科创50勉强翻红 → 今日暴跌-3.67%</td></tr>
+        <tr><td class="name">PCB</td><td>昨日午后十余股涨停，今日全面回调未延续</td><td>沪电股份等涨停股回落</td></tr>
+        <tr><td class="name">CPO / 光模块</td><td>长光华芯(+17%)、新易盛(+9%)等高位回落</td><td>昨日爆发 → 今日熄火</td></tr>
+        <tr><td class="name">元件</td><td>回调</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <div class="alert-box">
+      <div class="alert-title">关键判断</div>
+      昨日由韩国KOSPI深V催化的算力硬件爆发，今日确认为<strong>一日游</strong>。长鑫科技295亿IPO明日申购的抽血预期 + 科技股连续调整后获利了结，构成科技方向的双重压力。
+    </div>
+
+    <div class="sub-head">🟢 防御板块：医药集体爆发（最大亮点）</div>
+    <table>
+      <thead>
+        <tr><th>细分方向</th><th>个股</th><th>涨幅</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>创新药</td><td class="name">博瑞医药</td><td><span class="tag tag-up">20CM涨停</span></td></tr>
+        <tr><td>创新药</td><td class="name">迪哲医药-U</td><td><span class="tag tag-up">20CM涨停</span></td></tr>
+        <tr><td>CXO</td><td class="name">睿智医药</td><td><span class="tag tag-up">20CM涨停</span></td></tr>
+        <tr><td>创新药</td><td class="name">药康生物</td><td><span class="tag tag-up">20CM涨停</span></td></tr>
+        <tr><td>医药</td><td class="name">万邦医药</td><td><span class="tag tag-up">涨超17%</span></td></tr>
+        <tr><td>中药 / 医药</td><td class="name">哈药股份</td><td><span class="tag tag-up">4连板</span></td></tr>
+      </tbody>
+    </table>
+    <p class="summary-text"><strong>上涨逻辑：</strong>①AI产业链高位回调，避险资金涌入医药；②中报预告截止日，创新药业绩预期向好；③基药目录扩容政策催化持续；④资金"高切低"防御切换。</p>
+
+    <div class="sub-head">🟢 大消费逆势走强</div>
+    <table>
+      <thead>
+        <tr><th>板块</th><th>表现</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">白酒</td><td><span class="tag tag-up">逆势走强</span></td></tr>
+        <tr><td class="name">零售</td><td><span class="tag tag-up">走强</span></td></tr>
+        <tr><td class="name">影视</td><td><span class="tag tag-up">走强</span></td></tr>
+      </tbody>
+    </table>
+    <p class="summary-text"><strong>逻辑：</strong>扩大消费"十五五"规划（剑指社零60万亿）政策催化 + 避险防御需求。</p>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">3</div>
+      <div class="section-title">涨停股梳理 + 连板晋级</div>
+    </div>
+    <p class="summary-text">半日涨停 <strong style="color:var(--error);">64</strong> 只 / 跌停 <strong style="color:var(--success);">16</strong> 只。</p>
+
+    <div class="sub-head">连板梯队</div>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>连板数</th><th>所属板块</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">哈药股份</td><td><span class="tag tag-up">4连板 ✅</span></td><td>医药</td><td>创新药情绪风向标，今日新晋最高标</td></tr>
+        <tr><td class="name">信通电子</td><td><span class="tag tag-up">3连板 ✅</span></td><td>PCB / 元件</td><td>昨日2连板 → 今日3连板</td></tr>
+        <tr><td class="name">贤丰控股</td><td><span class="tag tag-up">2连板</span></td><td>—</td><td>新进</td></tr>
+        <tr><td class="name">智能自控</td><td><span class="tag tag-up">2连板</span></td><td>—</td><td>新进</td></tr>
+        <tr><td class="name">立方制药</td><td><span class="tag tag-amber">连板 ⚠️</span></td><td>创新药</td><td>东方财富称"逆势连板"，<span class="note-pending">板数待确认</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub-head">20CM涨停（首板）</div>
+    <p class="summary-text">博瑞医药、迪哲医药-U、睿智医药、药康生物 —— 均为<strong>创新药 / CXO</strong>方向，资金高度聚焦防御主线。</p>
+
+    <div class="sub-head">连板生态变化</div>
+    <ul class="news-list">
+      <li>恒尚节能（昨日11天10板）今日表现待确认 <span class="note-pending">⚠️ 待确认</span></li>
+      <li>九丰能源（油气）今日表现待确认 <span class="note-pending">⚠️ 待确认</span></li>
+      <li>昨日PCB涨停股（沪电股份 / 东山精密等）今日随板块回调</li>
+    </ul>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">4</div>
+      <div class="section-title">资金面 / 龙虎榜</div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>项目</th><th>数据</th><th>置信度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">半日成交额</td><td>1.72万亿（放量898亿）</td><td><span class="tag tag-up">✅ 已验证</span></td></tr>
+        <tr><td class="name">资金方向</td><td>从科技撤出 → 涌入医药消费</td><td><span class="tag tag-up">✅ 已验证</span></td></tr>
+        <tr><td class="name">北向资金</td><td>具体净额待确认</td><td><span class="tag tag-amber">⚠️ 待确认</span></td></tr>
+        <tr><td class="name">半导体资金</td><td>昨日-162亿，今日继续流出</td><td><span class="tag tag-amber">⚠️ 待确认</span></td></tr>
+      </tbody>
+    </table>
+    <div class="alert-box">
+      <div class="alert-title">资金面核心</div>
+      典型的板块轮动切换——从进攻（半导体 / 算力硬件）撤退至防御（医药 / 消费），<strong>放量说明分歧加大</strong>。
+    </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">5</div>
+      <div class="section-title">下午盘关注重点 + 策略提示</div>
+    </div>
+
+    <div class="sub-head">下午重点观察</div>
+    <ol style="padding-left:20px;font-size:15px;line-height:2;">
+      <li><strong>科创50能否收窄跌幅：</strong>目前-3.67%，若午后收窄至-2%以内则科技股有企稳迹象</li>
+      <li><strong>医药板块封板率：</strong>4只20CM涨停 + 哈药4连板，午后是否被砸是情绪风向标</li>
+      <li><strong>成交量变化：</strong>半日已1.72万亿（放量），若全天超3万亿则分歧加剧</li>
+      <li><strong>中报预告最后窗口：</strong>今日收盘前可能有密集披露，关注业绩暴雷 / 超预期个股</li>
+      <li><strong>长鑫科技明日申购：</strong>尾盘可能出现流动性博弈</li>
+    </ol>
+
+    <div class="sub-head">策略建议</div>
+    <ul class="news-list">
+      <li>昨日日报判断"超跌反弹而非趋势反转"已验证。算力硬件一日游确认。</li>
+      <li>科技股短期规避，等长鑫科技申购落地 + 中报预告消化后再评估</li>
+      <li>医药 + 消费防御线今日验证，但不宜追高20CM涨停（博弈性质）</li>
+      <li>仓位维持3-4成，今日不加仓</li>
+      <li>关注中报预告超预期品种，可能成为下一阶段主线</li>
+    </ul>
+
+    <div class="conclusion">
+      <p style="font-size:15px;line-height:1.8;"><strong style="color:var(--secondary);">小结：</strong>7/15午间盘确认了昨日"超跌反弹非反转"的判断，资金从科技高位撤退、涌入医药消费防御，是典型的避险切换日。午后核心看科创50跌幅收窄情况与医药封板稳定性，中报预告截止日+长鑫科技申购将主导短期节奏。</p>
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">6</div>
+      <div class="section-title">昨日盯盘清单追踪</div>
+    </div>
+    <p class="summary-text">延续7/14日报Section 11的盯盘清单，逐只追踪今日午间表现：</p>
+    <table>
+      <thead>
+        <tr><th>个股</th><th>代码</th><th>7/14收盘</th><th>7/15午间</th><th>趋势判断</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">沪电股份</td><td class="code">002463</td><td>涨停(PCB龙头)</td><td>随板块回调 <span class="note-pending">⚠️</span></td><td><span class="tag tag-amber">一日游</span></td></tr>
+        <tr><td class="name">新易盛</td><td class="code">300502</td><td>+9%(光模块龙头)</td><td>高位回落 <span class="note-pending">⚠️</span></td><td><span class="tag tag-amber">一日游</span></td></tr>
+        <tr><td class="name">东山精密</td><td class="code">002384</td><td>涨停(CPO+PCB)</td><td>随板块回调 <span class="note-pending">⚠️</span></td><td><span class="tag tag-amber">一日游</span></td></tr>
+        <tr><td class="name">长光华芯</td><td class="code">—</td><td>+17%(CPO)</td><td>高位回落 <span class="note-pending">⚠️</span></td><td><span class="tag tag-amber">一日游</span></td></tr>
+        <tr><td class="name">浪潮信息</td><td class="code">000977</td><td>回暖(算力硬件)</td><td>随科技回调 <span class="note-pending">⚠️</span></td><td><span class="tag tag-down">反弹中断</span></td></tr>
+        <tr><td class="name">立方制药</td><td class="code">003020</td><td>⚠️4连板待确认</td><td>逆势连板(板数待确认)</td><td><span class="tag tag-up">延续</span></td></tr>
+        <tr><td class="name">九丰能源</td><td class="code">605090</td><td>⚠️连板待确认</td><td>待确认 <span class="note-pending">⚠️</span></td><td><span class="tag tag-amber">观察</span></td></tr>
+        <tr><td class="name">蓝焰控股</td><td class="code">—</td><td>涨停(油气)</td><td>今日未见突出异动 <span class="note-pending">⚠️</span></td><td><span class="tag tag-down">减弱</span></td></tr>
+        <tr><td class="name">哈药股份</td><td class="code">—</td><td>—</td><td><span class="tag tag-up">4连板</span>（医药）</td><td><span class="tag tag-up">爆发【新最高标】</span></td></tr>
+        <tr><td class="name">信通电子</td><td class="code">—</td><td>2连板</td><td><span class="tag tag-up">3连板</span></td><td><span class="tag tag-up">加速</span></td></tr>
+        <tr><td class="name">恒尚节能</td><td class="code">603137</td><td>11天10板</td><td>今日表现待确认 <span class="note-pending">⚠️</span></td><td><span class="tag tag-amber">观察</span></td></tr>
+      </tbody>
+    </table>
+    <div class="alert-box">
+      <div class="alert-title">关键验证</div>
+      昨日日报策略建议"重点关注沪电股份、新易盛是否能连板/高开不破板"——今日答案是<strong>否定的</strong>，算力硬件全面回调确认一日游。
+    </div>
+
+    <div class="sub-head">重要消息面</div>
+    <ul class="news-list">
+      <li><strong>美国6月CPI低于预期</strong> ✅ 降息预期升温</li>
+      <li><strong>隔夜美股反弹：</strong>纳指+0.90%，费城半导体+2.54%，SK海力士ADR飙升27% ✅</li>
+      <li><strong>长鑫科技7/16申购：</strong>发行价8.66元，募资295亿，年内最大IPO ✅</li>
+      <li><strong>美伊冲突持续升级：</strong>美军再打击伊朗140+目标，伊朗威胁封锁霍尔木兹海峡 ✅</li>
+      <li><strong>中报预告强制披露截止日：</strong>隆基绿能/通威股份预亏，中盐化工拉开半年报披露 ✅</li>
+      <li><strong>现货黄金重新升破4000美元</strong> ✅</li>
+      <li><strong>扩大消费"十五五"规划：</strong>剑指社零60万亿 ✅</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>© 2026 QoderDesign A股深度复盘系统</p>
+  <div class="warn">本报告涉及个股及板块仅供复盘分析使用，不构成任何投资建议，股市有风险，入市需谨慎。</div>
+</div>
+
+</body>
+</html>
