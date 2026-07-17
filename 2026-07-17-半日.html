@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股半日分析 | 2026-07-17 午间</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;700;800&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:680px;}
+.container{max-width:1120px;margin:0 auto;padding:48px 32px 64px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.summary-text{font-size:15px;line-height:1.8;color:var(--text);}
+.data-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;}
+.data-card .change{font-size:12px;margin-top:4px;}
+.change-up{color:var(--error);}.change-down{color:var(--success);}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:600;color:var(--text2);font-size:12px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:hover td{background:var(--bg);}
+.name{font-weight:600;}
+.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-red{background:#FFE4E6;color:#E11D48;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--secondary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.sub-section{margin:16px 0;}
+.alert-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-title{font-weight:700;font-size:14px;margin-bottom:4px;}
+.conclusion{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:var(--radius-md);padding:20px;margin-top:16px;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:16px 0;}
+.watch-card{background:var(--bg);border-radius:var(--radius-md);padding:20px;border:1px solid var(--border);}
+.watch-card h4{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.s-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);font-weight:400;}
+.font-bold{font-weight:700;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--secondary);text-decoration:none;}
+.nav-group{display:flex;gap:16px;}
+.nav-group a{font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s;}
+.nav-group a:hover{color:var(--secondary);}
+.nav-disabled{opacity:0.35;pointer-events:none;}
+.footer{max-width:1120px;margin:0 auto;padding:32px;text-align:center;color:var(--text2);font-size:13px;}
+.footer .warn{margin-top:8px;font-size:12px;color:var(--text2);opacity:0.6;}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<a href="./index.html" class="nav-home">🏠 首页</a>
+<div class="nav-group">
+<a href="2026-07-16-日报.html">← 上一篇：日报</a>
+<a href="#" class="nav-disabled">下一篇 →</a>
+</div>
+</nav>
+
+<div class="hero-band">
+<div class="hero-content">
+<div class="hero-week">2026.07.17 · FRI · 半日分析</div>
+<h1 class="hero-title">恐慌性放量杀跌！创业板-4.71% · 科技第7天加速补跌 · 医药熄火断板 · 电力逆势领涨 · 日经-3%全球存储恐慌 · 24只涨停情绪冰点 · 沪指逼近3800</h1>
+<p class="hero-sub">7月17日午间：周五放量重挫，沪指-1.64%逼近3800，创业板-4.71%领跌，科创50-4.53%连续3日暴跌超4%。科技股连续第7天杀跌加速补跌：德明利三连一字跌停，光迅科技跌停，东山精密触及跌停，剑桥科技跌停。医药板块今日熄火——昭衍新药/灵康药业/百花医药跌停，第5天未能延续。资金转向纯防御：电力逆势领涨（桂冠电力/深南电A/乐山电力/华银电力涨停），大金融抗跌（湘财股份封板）。半日成交1.60万亿放量1219亿，恐慌性抛售特征。外围：日经-3%+，SK海力士-13%，全球存储芯片恐慌。今日WAIC大会开幕但算力利好出尽。</p>
+</div>
+</div>
+
+<div class="container">
+
+<!-- Section 1 -->
+<div class="section">
+<div class="section-head">
+<div class="section-num">1</div>
+<div class="section-title">大盘即时状态</div>
+</div>
+
+<div class="sub-head">昨日收盘基准（7/16 收盘）</div>
+<table>
+<thead><tr><th>指数</th><th>昨日(7/16)收盘</th><th>涨跌幅</th></tr></thead>
+<tbody>
+<tr><td class="name">上证指数</td><td>3882.41</td><td><span class="change-down">-1.85%</span></td></tr>
+<tr><td class="name">深证成指</td><td>14488.65</td><td><span class="change-down">-1.97%</span></td></tr>
+<tr><td class="name">创业板指</td><td>—</td><td><span class="change-down">-2.95%</span></td></tr>
+<tr><td class="name">科创50</td><td>1846.88</td><td><span class="change-down">-4.25%</span></td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">今日午间数据（7/17 半日）</div>
+<table>
+<thead><tr><th>指数</th><th>午间涨跌幅</th><th>点位（约）</th><th>走势</th><th>置信度</th></tr></thead>
+<tbody>
+<tr><td class="name">沪指</td><td class="font-bold change-down">-1.64%</td><td>约 3818</td><td>失守3850，逼近3800</td><td>✅ 多源</td></tr>
+<tr><td class="name">深成指</td><td class="font-bold change-down">-3.70%</td><td>—</td><td>重挫</td><td>✅ 多源</td></tr>
+<tr><td class="name">创业板指</td><td class="font-bold change-down">-4.71%</td><td>—</td><td>领跌，科技杀跌延续</td><td>✅ 多源</td></tr>
+<tr><td class="name">科创50</td><td class="font-bold change-down">-4.53%</td><td>—</td><td>连续第3日大跌超4%</td><td>✅ 多源</td></tr>
+</tbody>
+</table>
+
+<div class="data-cards">
+<div class="data-card">
+<div class="label">半日成交额</div>
+<div class="value">1.60<span style="font-size:14px;">万亿</span></div>
+<div class="change change-down">较昨日半日放量约 1219 亿</div>
+</div>
+<div class="data-card">
+<div class="label">涨跌家数</div>
+<div class="value">4300+</div>
+<div class="change change-down">超 4300 只下跌</div>
+</div>
+<div class="data-card">
+<div class="label">涨停家数</div>
+<div class="value">24<span style="font-size:14px;">只</span></div>
+<div class="change change-down">昨日 41 只 → 大幅萎缩</div>
+</div>
+<div class="data-card">
+<div class="label">封板率</div>
+<div class="value">65<span style="font-size:14px;">%</span></div>
+<div class="change">炸板 13 只</div>
+</div>
+</div>
+
+<div class="sub-head">与昨日对比</div>
+<table>
+<thead><tr><th>维度</th><th>7/16（昨日）</th><th>7/17（今日午间）</th><th>变化</th></tr></thead>
+<tbody>
+<tr><td class="name">沪指</td><td>-1.85%</td><td>-1.64%</td><td>略收窄（金融护盘）</td></tr>
+<tr><td class="name">创业板</td><td>-2.95%</td><td>-4.71%</td><td><span class="tag tag-down">⚠️ 加速恶化</span></td></tr>
+<tr><td class="name">科创50</td><td>-4.25%</td><td>-4.53%</td><td>继续恶化</td></tr>
+<tr><td class="name">成交</td><td>2.40 万亿（缩量）</td><td>1.60 万亿半日（放量）</td><td><span class="tag tag-down">放量恐慌</span></td></tr>
+<tr><td class="name">涨停</td><td>41 只</td><td>24 只（午间）</td><td>大幅萎缩</td></tr>
+<tr><td class="name">医药</td><td>逆势第 4 天</td><td>集体走弱</td><td><span class="tag tag-down">⚠️ 熄火</span></td></tr>
+<tr><td class="name">电力</td><td>—</td><td>逆势领涨</td><td><span class="tag tag-up">新方向切换</span></td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">走势特征</div>
+<ul class="summary-text" style="padding-left:20px;">
+<li><span class="font-bold">放量重挫：</span>半日 1.60 万亿放量 1219 亿，恐慌性抛售特征明显</li>
+<li><span class="font-bold">沪指相对抗跌（-1.64%）</span>因大金融/电力护盘，但创业板 -4.71%、深成指 -3.70% 惨烈</li>
+<li><span class="font-bold">超 4300 只个股下跌</span>，市场情绪冰点</li>
+<li><span class="font-bold">周五=周线收盘日</span>，本周沪指大幅收跌已成定局</li>
+</ul>
+</div>
+
+<!-- Section 2 -->
+<div class="section">
+<div class="section-head">
+<div class="section-num">2</div>
+<div class="section-title">异动板块扫描（进攻/防守框架）</div>
+</div>
+
+<div class="sub-section">
+<div class="sub-head">🔴 进攻板块：科技第 7 天杀跌，加速补跌</div>
+<table>
+<thead><tr><th>板块</th><th>表现</th><th>关键个股</th><th>置信度</th></tr></thead>
+<tbody>
+<tr><td class="name">存储/算力芯片</td><td>德明利三连一字跌停</td><td>德明利</td><td>✅</td></tr>
+<tr><td class="name">光模块</td><td>光迅科技跌停</td><td>光迅科技</td><td>✅</td></tr>
+<tr><td class="name">PCB/元件</td><td>东山精密触及跌停，逸豪新材 -17%</td><td>东山精密 / 逸豪新材</td><td>✅</td></tr>
+<tr><td class="name">算力硬件</td><td>剑桥科技跌停</td><td>剑桥科技</td><td>✅</td></tr>
+<tr><td class="name">半导体整体</td><td>兆易创新延续调整</td><td>兆易创新</td><td>✅</td></tr>
+<tr><td class="name">沪电股份/红板科技/广合科技</td><td>下挫</td><td>—</td><td>✅</td></tr>
+</tbody>
+</table>
+<div class="alert-box">
+<div class="alert-title">关键判断</div>
+科技股连续第 7 天杀跌，今日不仅未企稳反而<span class="font-bold">加速补跌</span>。隔夜美股半导体暴跌 + SK 海力士 -13% 传导，全球存储芯片恐慌。日经 -3%+ 跌破 65000。WAIC 大会开幕但算力<span class="font-bold">利好出尽</span>。
+</div>
+</div>
+
+<div class="sub-section">
+<div class="sub-head">⚠️ 医药板块：今日熄火！（昨日逆势第 4 天，第 5 天未能延续）</div>
+<table>
+<thead><tr><th>个股</th><th>今日表现</th><th>置信度</th></tr></thead>
+<tbody>
+<tr><td class="name">昭衍新药</td><td><span class="tag tag-down">跌停</span></td><td>✅</td></tr>
+<tr><td class="name">灵康药业</td><td><span class="tag tag-down">跌停</span></td><td>✅</td></tr>
+<tr><td class="name">百花医药</td><td><span class="tag tag-down">跌停</span></td><td>✅</td></tr>
+<tr><td class="name">创新药 / CXO 整体</td><td>跌幅居前</td><td>✅</td></tr>
+</tbody>
+</table>
+<div class="alert-box">
+<div class="alert-title">重要变化</div>
+医药板块昨日（7/16）逆势第 4 天，今日（7/17）上午集体走弱，第 5 天未能延续。CXO / 创新药 / 医药板块集体走弱，成为今日杀跌新灾区。这是与昨日最大的结构性变化——<span class="font-bold">防守方向也出现松动</span>。
+</div>
+</div>
+
+<div class="sub-section">
+<div class="sub-head">🟢 防御新方向：电力逆势领涨 + 大金融抗跌</div>
+<table>
+<thead><tr><th>方向</th><th>表现</th><th>关键个股</th><th>上涨逻辑</th><th>置信度</th></tr></thead>
+<tbody>
+<tr><td class="name">电力</td><td><span class="font-bold change-up">逆势领涨</span>，电力ETF +2.47%</td><td>桂冠电力 / 深南电A / 乐山电力 / 华银电力涨停</td><td>"十五五"碳达峰+能源降碳政策催化</td><td>✅</td></tr>
+<tr><td class="name">大金融</td><td>证券ETF +0.38%，抗跌</td><td>湘财股份直线封板</td><td>逆势抗跌</td><td>✅</td></tr>
+<tr><td class="name">数字货币</td><td>主力净流入 +6.60 亿（板块第一）</td><td>—</td><td>政策预期</td><td>⚠️</td></tr>
+<tr><td class="name">抽水蓄能</td><td>主力净流入 +4.46 亿</td><td>—</td><td>政策驱动</td><td>⚠️</td></tr>
+<tr><td class="name">超超临界发电</td><td>主力净流入 +5.39 亿，3 只涨停</td><td>—</td><td>政策驱动</td><td>⚠️</td></tr>
+</tbody>
+</table>
+<div class="alert-box" style="background:#EFF6FF;border-color:#BFDBFE;">
+<div class="alert-title" style="color:var(--secondary);">资金切换路径</div>
+科技（7/10-7/16，7 天杀跌）→ 医药（7/13-7/16，4 天逆势）→ 电力 / 金融（7/17，纯防御）。风险偏好进一步降低，<span class="font-bold">从成长防御转向公用事业防御</span>。
+</div>
+</div>
+
+<div class="sub-section">
+<div class="sub-head">新涨停方向</div>
+<table>
+<thead><tr><th>个股</th><th>涨停方向</th><th>置信度</th></tr></thead>
+<tbody>
+<tr><td class="name">桂冠电力</td><td>电力</td><td>✅</td></tr>
+<tr><td class="name">深南电A</td><td>电力</td><td>✅</td></tr>
+<tr><td class="name">乐山电力</td><td>电力</td><td>✅</td></tr>
+<tr><td class="name">华银电力</td><td>电力</td><td>✅</td></tr>
+<tr><td class="name">湘财股份</td><td>大金融</td><td>✅</td></tr>
+<tr><td class="name">米奥会展</td><td>端侧 AI（20CM）</td><td>✅</td></tr>
+<tr><td class="name">天音控股</td><td>消费电子</td><td>✅</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Section 3 -->
+<div class="section">
+<div class="section-head">
+<div class="section-num">3</div>
+<div class="section-title">涨停股梳理 + 连板梯队</div>
+</div>
+
+<div class="sub-head">涨停概况（午间）</div>
+<table>
+<thead><tr><th>指标</th><th>数据</th><th>置信度</th></tr></thead>
+<tbody>
+<tr><td class="name">涨停家数</td><td>24 只（昨日 41 只 → 大幅萎缩）</td><td>✅ 财联社</td></tr>
+<tr><td class="name">炸板数</td><td>13 只</td><td>✅</td></tr>
+<tr><td class="name">封板率</td><td>65%</td><td>✅</td></tr>
+<tr><td class="name">连板股总数</td><td>5 只</td><td>✅</td></tr>
+<tr><td class="name">跌停家数</td><td>约 56 只</td><td>⚠️ 单源</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">连板梯队追踪</div>
+<table>
+<thead><tr><th>个股</th><th>昨日(7/16)</th><th>今日(7/17)午间</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td class="name">哈药股份</td><td>5 连板</td><td>❓ 未明确 6 连板</td><td><span class="tag tag-amber">医药板块今日走弱，断板概率大 ⚠️</span></td></tr>
+<tr><td class="name">片仔癀</td><td>涨停（首板）</td><td>❓ 未明确 2 连板</td><td><span class="tag tag-amber">医药回调，大概率未连板 ⚠️</span></td></tr>
+<tr><td class="name">创新医疗</td><td>涨停</td><td>❓ 未明确 2 连板</td><td><span class="tag tag-amber">同上 ⚠️</span></td></tr>
+<tr><td class="name">德明利</td><td>跌停</td><td><span class="tag tag-down">三连一字跌停 ✅</span></td><td>跌停连板</td></tr>
+<tr><td class="name">恒尚节能</td><td>跌停</td><td>连续跌停中</td><td>⚠️</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">连板生态变化</div>
+<ul class="summary-text" style="padding-left:20px;">
+<li>涨停从 41 只 → 24 只大幅萎缩，市场情绪冰点</li>
+<li>医药连板梯队大概率断板（哈药 / 片仔癀 / 创新医疗均未确认连板）</li>
+<li><span class="font-bold">德明利三连一字跌停</span> = 科技方向最极端的恐慌信号</li>
+<li>电力方向首日涨停，能否形成连板梯队待观察</li>
+</ul>
+</div>
+
+<!-- Section 4 -->
+<div class="section">
+<div class="section-head">
+<div class="section-num">4</div>
+<div class="section-title">资金面 / 龙虎榜</div>
+</div>
+
+<table>
+<thead><tr><th>项目</th><th>数据</th><th>置信度</th></tr></thead>
+<tbody>
+<tr><td class="name">半日成交额</td><td>1.60 万亿（放量 1219 亿）</td><td>✅</td></tr>
+<tr><td class="name">主力净流入板块 TOP3</td><td>数字货币 +6.60 亿 / 超超临界发电 +5.39 亿 / 抽水蓄能 +4.46 亿</td><td>⚠️</td></tr>
+<tr><td class="name">ETF 半日成交</td><td>3708.4 亿（放量 456.7 亿）</td><td>✅</td></tr>
+<tr><td class="name">北向资金（7/16）</td><td>成交 3558.69 亿，占两市 14.81%</td><td>✅</td></tr>
+<tr><td class="name">7/16 北向成交前三</td><td>兆易创新 / 寒武纪 / 中微公司</td><td>✅</td></tr>
+<tr><td class="name">今日北向净额</td><td>未获取</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div class="alert-box" style="background:#EFF6FF;border-color:#BFDBFE;">
+<div class="alert-title" style="color:var(--secondary);">资金面核心</div>
+放量下跌 = <span class="font-bold">恐慌性抛售</span>。资金从科技 → 医药 → 今日转向电力 / 公用事业 / 金融，风险偏好进一步降低。ETF 放量 456 亿说明被动配置资金涌入。
+</div>
+
+<div class="sub-head">重要消息面</div>
+<table>
+<thead><tr><th>#</th><th>消息</th><th>置信度</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="name">WAIC 大会开幕</td><td>✅</td></tr>
+<tr><td></td><td>7/17 上海开幕，习近平出席并发表主旨讲话。华为 Atlas 950 超节点真机亮相。但算力概念今日仍大跌，<span class="font-bold">利好出尽</span>效应。</td><td></td></tr>
+<tr><td>2</td><td class="name">隔夜美股半导体暴跌</td><td>✅</td></tr>
+<tr><td></td><td>SK 海力士美股跌超 13%（7/16 已暴跌 15.37%，7/17 续跌）</td><td></td></tr>
+<tr><td>3</td><td class="name">日经 -3%+ 跌破 65000</td><td>✅</td></tr>
+<tr><td></td><td>较 6 月高点跌超 10%，全球存储芯片恐慌</td><td></td></tr>
+<tr><td>4</td><td class="name">韩国休市</td><td>✅</td></tr>
+<tr><td></td><td>7/17 因制宪节休市一日</td><td></td></tr>
+<tr><td>5</td><td class="name">长鑫科技申购完成</td><td>✅</td></tr>
+<tr><td></td><td>7/16 申购完成，7/20 中签公布，中签率 0.47%</td><td></td></tr>
+<tr><td>6</td><td class="name">外汇局发布会</td><td>✅</td></tr>
+<tr><td></td><td>上半年银行结售汇顺差 18731 亿元，前 5 月外资来华投资净增 1600 亿美元</td><td></td></tr>
+<tr><td>7</td><td class="name">消费数据</td><td>✅</td></tr>
+<tr><td></td><td>上半年社零 24.87 万亿同比 +1.3%，烟酒类 +13.2%</td><td></td></tr>
+<tr><td>8</td><td class="name">"十五五"碳达峰行动方案</td><td>✅</td></tr>
+<tr><td></td><td>电力 / 储能 / 虚拟电厂政策催化</td><td></td></tr>
+<tr><td>9</td><td class="name">周五特殊因素</td><td>✅</td></tr>
+<tr><td></td><td>今日是周五 = 本周最后交易日，周线收盘日，明日非交易日</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 5 -->
+<div class="section">
+<div class="section-head">
+<div class="section-num">5</div>
+<div class="section-title">下午盘关注重点 + 策略提示</div>
+</div>
+
+<div class="sub-head">下午重点观察</div>
+<ol class="summary-text" style="padding-left:20px;">
+<li><span class="font-bold">沪指 3800 点整数关口支撑：</span>若午后跌破 3800 则恐慌加剧</li>
+<li><span class="font-bold">科技股超跌反弹信号：</span>连续 7 天杀跌后，午后是否出现技术性反抽</li>
+<li><span class="font-bold">电力 / 金融护盘持续性：</span>能否维持到收盘</li>
+<li><span class="font-bold">哈药是否断板：</span>若 5 连板断板则医药方向短期见顶确认</li>
+<li><span class="font-bold">尾盘资金博弈周末消息面：</span>WAIC 大会 + 中报披露 + 外围不确定性</li>
+<li><span class="font-bold">周线收盘形态：</span>本周大幅收跌已成定局，周线中阴线对下周情绪指引</li>
+</ol>
+
+<div class="sub-head">策略建议</div>
+<ul class="summary-text" style="padding-left:20px;">
+<li>科技股连续 7 天杀跌，短期超跌但无企稳信号，<span class="font-bold">继续规避</span></li>
+<li>医药今日熄火，说明防御方向也有极限，<span class="font-bold">持有为主不加仓</span></li>
+<li>电力方向首日逆势，政策催化（"十五五"碳达峰），<span class="font-bold">可观察但首日不追</span></li>
+<li>仓位维持 <span class="font-bold">2-3 成</span>，周五 + 周末不确定性下保持现金</li>
+<li>7/20 长鑫中签公布 = 关键时间节点，届时流动性可能回流</li>
+<li>下周一(7/21)关注科技是否出现超跌反弹</li>
+</ul>
+
+<div class="alert-box">
+<div class="alert-title">⚠️ 风险警示</div>
+<ul style="padding-left:20px;margin-top:6px;">
+<li>放量下跌 = 恐慌性抛售，非底部信号</li>
+<li>医药熄火 = 防御方向也出现松动，市场无安全岛</li>
+<li>德明利三连一字跌停 = 科技方向极端恐慌</li>
+<li>日经 -3%+ 跌破 65000 = 外围系统性风险传导</li>
+<li>56 只跌停 = 个股风险大面积释放</li>
+</ul>
+</div>
+
+<div class="conclusion">
+<div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:8px;color:var(--secondary);">午间结论</div>
+<p class="summary-text">今日半日呈<span class="font-bold">恐慌性放量杀跌</span>特征：沪指 -1.64% 逼近 3800、创业板 -4.71%、科创50 -4.53%，科技连续第 7 天加速补跌（德明利三连一字跌停），医药第 5 天熄火断板（防守也松动），资金转向纯防御（电力逆势领涨 + 大金融抗跌）。外围日经 -3%+、SK 海力士 -13% 全球存储恐慌。24 只涨停、56 只跌停，情绪冰点。午后关注 3800 关口、科技超跌反弹信号、电力护盘持续性。仓位维持 2-3 成，周五 + 周末不确定性下保持现金，7/20 长鑫中签公布为关键时间节点。</p>
+</div>
+</div>
+
+<!-- Section 6 -->
+<div class="section">
+<div class="section-head">
+<div class="section-num">6</div>
+<div class="section-title">昨日盯盘清单追踪</div>
+</div>
+<p class="summary-text" style="margin-bottom:12px;">延续 7/16 日报 Section 11 的明日盯盘清单：</p>
+
+<div class="sub-head">进攻类（待企稳后关注）</div>
+<table>
+<thead><tr><th>个股</th><th>代码</th><th>7/16 收盘</th><th>7/17 上午</th><th>趋势判断</th></tr></thead>
+<tbody>
+<tr><td class="name">寒武纪</td><td class="code">688256</td><td>随科技杀跌</td><td>继续杀跌 ⚠️</td><td>连续 7 天</td></tr>
+<tr><td class="name">中际旭创</td><td class="code">300308</td><td>-5%+（净卖出 28 亿）</td><td>随科技继续杀跌 ⚠️</td><td>弱势延续</td></tr>
+<tr><td class="name">澜起科技</td><td class="code">688008</td><td>-18%+</td><td>随科技继续杀跌 ⚠️</td><td>恐慌性杀跌</td></tr>
+<tr><td class="name">兆易创新</td><td class="code">603986</td><td>跌停（-10%）</td><td>延续调整 ⚠️</td><td>持续破位</td></tr>
+<tr><td class="name">沪电股份</td><td class="code">002463</td><td>随科技杀跌</td><td>下挫 ⚠️</td><td>弱势</td></tr>
+<tr><td class="name">东山精密</td><td class="code">002384</td><td>—</td><td><span class="tag tag-down">触及跌停 ✅</span></td><td>加速补跌</td></tr>
+<tr><td class="name">光迅科技</td><td class="code">—</td><td>—</td><td><span class="tag tag-down">跌停 ✅</span></td><td>新跌停</td></tr>
+<tr><td class="name">剑桥科技</td><td class="code">—</td><td>—</td><td><span class="tag tag-down">跌停 ✅</span></td><td>新跌停</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">防御类</div>
+<table>
+<thead><tr><th>个股</th><th>代码</th><th>7/16 收盘</th><th>7/17 上午</th><th>趋势判断</th></tr></thead>
+<tbody>
+<tr><td class="name">哈药股份</td><td class="code">600664</td><td>5 连板</td><td>❓ 断板概率大 ⚠️</td><td>医药熄火</td></tr>
+<tr><td class="name">片仔癀</td><td class="code">600436</td><td>涨停</td><td>❓ 大概率未连板 ⚠️</td><td>医药回调</td></tr>
+<tr><td class="name">锦波生物</td><td class="code">—</td><td>+16.73%</td><td>随医药回调 ⚠️</td><td>动能减弱</td></tr>
+<tr><td class="name">恒瑞医药</td><td class="code">600276</td><td>延续</td><td>随医药走弱 ⚠️</td><td>回调</td></tr>
+<tr><td class="name">古井贡酒</td><td class="code">000596</td><td>白酒延续</td><td>随消费调整 ⚠️</td><td>观察</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">新题材观察</div>
+<table>
+<thead><tr><th>个股</th><th>代码</th><th>7/16 状态</th><th>7/17 上午</th><th>趋势判断</th></tr></thead>
+<tbody>
+<tr><td class="name">创新医疗</td><td class="code">503055</td><td>涨停（脑机接口）</td><td>❓ 未确认 ⚠️</td><td>医药走弱影响</td></tr>
+<tr><td class="name">瑞芯微</td><td class="code">—</td><td>涨停（AI 手机）</td><td>随科技杀跌 ⚠️</td><td>利好出尽</td></tr>
+<tr><td class="name">红板科技</td><td class="code">603459</td><td>"地天板"后回落</td><td><span class="tag tag-down">下挫 ✅</span></td><td>分歧后继续下行</td></tr>
+</tbody>
+</table>
+
+<div class="sub-head">关键验证</div>
+<ul class="summary-text" style="padding-left:20px;">
+<li>7/16 日报判断"科技连续 6 天杀跌无企稳信号，继续规避"——今日验证正确，第 7 天加速补跌</li>
+<li>7/16 日报判断"医药持有为主不追高，6 连板则继续升温，炸板则短期见顶"——今日医药熄火，短期见顶信号</li>
+<li>7/16 日报判断"7/20 长鑫中签公布=关键时间节点"——7/20 仍为关注焦点</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 QoderDesign A股深度复盘系统</p>
+<div class="warn">本报告涉及个股及板块仅供复盘分析使用，不构成任何投资建议，股市有风险，入市需谨慎。</div>
+</div>
+
+</body>
+</html>
