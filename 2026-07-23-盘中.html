@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026.07.23 A股盘中扫描</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--secondary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--secondary);}
+.nav-disabled{color:var(--text2);opacity:0.4;cursor:not-allowed;}
+.hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(24px,4.2vw,38px);font-weight:800;line-height:1.2;margin-bottom:12px;}
+.hero-sub{font-size:16px;opacity:0.85;max-width:760px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:var(--text);}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-red{background:#FEE2E2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.tag-up-red{background:#FEE2E2;color:#DC2626;}
+.tag-down-green{background:#DCFCE7;color:#16A34A;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--secondary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.sub-section{margin:16px 0;}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.conclusion{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:var(--radius-md);padding:20px;margin-top:16px;}
+.font-bold{font-weight:700;}
+.font-mono{font-family:'Fira Code',monospace;font-size:12px;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;vertical-align:middle;}
+.tl-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--border);}
+.tl-item:last-child{border-bottom:none;}
+.tl-time{font-family:'Fira Code',monospace;font-size:12px;font-weight:700;color:var(--secondary);min-width:64px;}
+.tl-text{font-size:13px;}
+.arrow-down{color:var(--error);font-weight:700;}
+.arrow-up{color:var(--success);font-weight:700;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">← 首页</a>
+  <div class="nav-group">
+    <a href="2026-07-23-半日.html">← 上一篇：7/23半日</a>
+    <span class="nav-disabled">下一篇：日报 →</span>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.07.23 · THU · 盘中扫描 14:30</div>
+    <h1 class="hero-title">主板午后翻红！沪指+0.07%/深成指+0.16%回升 · 创业板几乎平盘(-0.02%) · 科创50仍暴跌-3.63%科技未企稳 · 电网设备掀涨停潮（中国西电等十余股）· 锂矿大爆发（永杉锂业/盛新锂能涨停）· 光伏风电批量20余只涨停 · 立新能源6连板封住 · 超3900只个股上涨 · 兵装重组午后异动 · 风格高切低加速进行时</h1>
+    <div class="hero-sub">午后主板翻红回升 · 上涨家数从午收3086扩大至3900+ · 资源能源方向午后进一步加强 · 科技方向仍深跌未企稳 · 量能预估全天2.1-2.3万亿（vs昨日2.65万亿，缩量）· 风格高切低加速</div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== Section 1: 大盘即时状态 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">1</div>
+    <div class="section-title">大盘即时状态（14:10-14:30实时）</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">📊 走势特征：</span>午后主板翻红回升，创业板几乎平盘，但科创50仍暴跌 <span class="font-mono font-bold">-3.63%</span> 科技未企稳。上涨家数从午收3086扩大至 <span class="font-bold">3900+</span>，市场情绪回暖但结构分化极端——赚钱方向集中在资源能源+政策催化，科技方向仍惨烈。
+  </div>
+
+  <div class="sub-head">五大指数 · 14:10-14:30实时</div>
+  <div class="data-grid">
+    <div class="data-card data-card-up">
+      <div class="label">上证指数</div>
+      <div class="value">3869.73</div>
+      <div class="sub font-bold" style="color:var(--success);">+0.07% <span class="conf">✅多源</span></div>
+      <div class="sub">午收3859.69(-0.19%) <span class="arrow-up">⬆️ 翻红回升</span></div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">深证成指</div>
+      <div class="value">14084.17</div>
+      <div class="sub font-bold" style="color:var(--success);">+0.16% <span class="conf">✅多源</span></div>
+      <div class="sub">午收14035.01(-0.19%) <span class="arrow-up">⬆️ 翻红</span></div>
+    </div>
+    <div class="data-card">
+      <div class="label">创业板指</div>
+      <div class="value">3566.16</div>
+      <div class="sub font-bold" style="color:var(--text2);">-0.02% <span class="conf">✅多源</span></div>
+      <div class="sub">午收3555.09(-0.33%) <span class="arrow-up">⬆️ 几乎平盘</span></div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">科创50</div>
+      <div class="value">1792.48</div>
+      <div class="sub font-bold" style="color:var(--error);">-3.63% <span class="conf">✅多源</span></div>
+      <div class="sub">午收1783.94(-4.09%) <span class="arrow-up">⬆️ 小幅反弹但仍深跌</span></div>
+    </div>
+    <div class="data-card">
+      <div class="label">北证50</div>
+      <div class="value">≈1075</div>
+      <div class="sub font-bold" style="color:var(--success);">≈+0.1% <span class="conf">📊估算</span></div>
+      <div class="sub">微升</div>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="label">成交额（截至14:10）</div>
+      <div class="value">≈1.9-2.0万亿</div>
+      <div class="sub">全天预估 <span class="font-bold">2.1-2.3万亿</span>（vs昨日2.65万亿，缩量）<span class="conf">📊估算</span></div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">上涨个股数</div>
+      <div class="value" style="color:var(--success);">3900+</div>
+      <div class="sub">vs午收3086，大幅扩大 <span class="conf">✅多源</span></div>
+    </div>
+  </div>
+
+  <div class="sub-head">基准对比表</div>
+  <table>
+    <thead>
+      <tr><th>指标</th><th>昨日收盘</th><th>今日午收</th><th>14:30盘中</th><th>变化趋势</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">沪指</td>
+        <td>3867.03 <span class="tag tag-up-red">+0.07%</span></td>
+        <td>3859.69 <span class="tag tag-down-green">-0.19%</span></td>
+        <td class="font-bold">3869.73 <span class="tag tag-up-red">+0.07%</span></td>
+        <td><span class="arrow-up">✅ 翻红回升</span></td>
+      </tr>
+      <tr>
+        <td class="name">深成指</td>
+        <td>14061.44 <span class="tag tag-down-green">-1.42%</span></td>
+        <td>14035.01 <span class="tag tag-down-green">-0.19%</span></td>
+        <td class="font-bold">14084.17 <span class="tag tag-up-red">+0.16%</span></td>
+        <td><span class="arrow-up">✅ 翻红</span></td>
+      </tr>
+      <tr>
+        <td class="name">创业板指</td>
+        <td>3566.73 <span class="tag tag-down-green">-3.23%</span></td>
+        <td>3555.09 <span class="tag tag-down-green">-0.33%</span></td>
+        <td class="font-bold">3566.16 <span class="tag tag-down-green">-0.02%</span></td>
+        <td><span class="arrow-up">✅ 几乎平盘</span></td>
+      </tr>
+      <tr>
+        <td class="name">科创50</td>
+        <td class="muted">-2.25%</td>
+        <td>1783.94 <span class="tag tag-down-green">-4.09%</span></td>
+        <td class="font-bold" style="color:var(--error);">1792.48 <span class="tag tag-down-green">-3.63%</span></td>
+        <td><span style="color:var(--warning);font-weight:700;">⚠️ 小幅反弹仍深跌</span></td>
+      </tr>
+      <tr>
+        <td class="name">成交</td>
+        <td>2.65万亿</td>
+        <td>1.46万亿</td>
+        <td class="font-bold">≈2.0万亿（截至14:10）</td>
+        <td><span style="color:var(--warning);font-weight:700;">缩量延续</span></td>
+      </tr>
+      <tr>
+        <td class="name">涨停</td>
+        <td>48只</td>
+        <td>71只</td>
+        <td class="font-bold">80-90只</td>
+        <td><span class="arrow-up">⬆️ 持续增加</span></td>
+      </tr>
+      <tr>
+        <td class="name">上涨家数</td>
+        <td class="muted">—</td>
+        <td>3086</td>
+        <td class="font-bold" style="color:var(--success);">3900+</td>
+        <td><span class="arrow-up">⬆️ 大幅扩大</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 2: 异动板块扫描 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">2</div>
+    <div class="section-title">异动板块扫描（进攻/防守框架）</div>
+  </div>
+
+  <div class="alert-warn">
+    <div class="warn-title">⚡ 核心定调：午后"风格高切低"进一步加速</div>
+    科技方向延续杀跌未企稳（科创50仍 <span class="font-mono font-bold">-3.63%</span>），资源能源方向午后进一步加强——电网设备掀涨停潮、锂矿大爆发、光伏风电批量涨停。<span class="font-bold">新异动：兵装重组概念午后拉升</span>。
+  </div>
+
+  <div class="sub-head">进攻板块（科技方向 — 延续杀跌，未企稳）</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>14:30状态</th><th>vs上午</th><th>置信度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">集成电路制造</td>
+        <td class="font-bold" style="color:var(--error);"><span class="tag tag-down-green">-5%以上</span> 延续弱势</td>
+        <td>延续弱势</td>
+        <td><span class="conf">⚠️单源</span></td>
+      </tr>
+      <tr>
+        <td class="name">半导体设备</td>
+        <td class="font-bold" style="color:var(--error);"><span class="tag tag-down-green">-4%以上</span> 延续弱势</td>
+        <td>延续弱势</td>
+        <td><span class="conf">⚠️单源</span></td>
+      </tr>
+      <tr>
+        <td class="name">存储芯片</td>
+        <td class="font-bold" style="color:var(--error);"><span class="tag tag-down-green">-4%以上</span> 延续弱势</td>
+        <td>延续弱势</td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+      <tr>
+        <td class="name">封测</td>
+        <td class="font-bold" style="color:var(--error);"><span class="tag tag-down-green">-4%以上</span> 延续弱势</td>
+        <td>延续弱势</td>
+        <td><span class="conf">⚠️单源</span></td>
+      </tr>
+      <tr>
+        <td class="name">AI手机</td>
+        <td class="font-bold" style="color:var(--error);"><span class="tag tag-down-green">-3%以上</span> 东山精密跌超6%</td>
+        <td>延续调整</td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+      <tr>
+        <td class="name">半导体</td>
+        <td class="font-bold" style="color:var(--error);"><span class="tag tag-down-green">跌</span> 燕东微跌超10%</td>
+        <td>延续杀跌</td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">防御/资源板块（午后进一步加强 + 新方向）</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>14:30状态</th><th>vs上午</th><th>置信度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">电网设备 <span class="tag tag-red">掀涨停潮！</span></td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">涨停潮</span> 中能电气20cm、中国西电等十余股涨停</td>
+        <td><span class="arrow-up">延续暴涨</span>，政策催化</td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+      <tr>
+        <td class="name">锂矿/能源金属 <span class="tag tag-red">大爆发！</span></td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">涨</span> 永杉锂业/盛新锂能涨停，中矿资源/融捷股份跟涨</td>
+        <td><span class="arrow-up">延续暴涨</span>，高盛唱多</td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+      <tr>
+        <td class="name">光伏/风电 <span class="tag tag-amber">批量涨停</span></td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">涨</span> 新能股份一字涨停，20余只概念股涨停</td>
+        <td>政策引爆</td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+      <tr>
+        <td class="name">电力</td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">涨</span> 华电辽能4天3板，银星能源涨停，华电能源逼近涨停</td>
+        <td><span class="arrow-up">午后进一步加强</span></td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+      <tr>
+        <td class="name">贵金属/白银</td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">涨</span> 盛达资源涨停(2连板)，山金国际涨停</td>
+        <td><span class="arrow-up">延续强势</span></td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+      <tr>
+        <td class="name">油气</td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">+6.33%</span> 延续强势</td>
+        <td>延续</td>
+        <td><span class="conf">⚠️单源</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">下午新异动方向（14:00后）</div>
+  <table>
+    <thead>
+      <tr><th>新异动</th><th>龙头</th><th>催化</th><th>置信度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">兵装重组概念 <span class="tag tag-blue">⬆️午后异动</span></td>
+        <td>长城军工涨停、湖南天雁涨停</td>
+        <td>重组预期</td>
+        <td><span class="conf">✅多源</span></td>
+      </tr>
+      <tr>
+        <td class="name">商业航天/卫星</td>
+        <td>火炬电子涨停，卫星ETF涨超2%</td>
+        <td>反弹</td>
+        <td><span class="conf">⚠️单源</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">板块涨幅 Top 5</div>
+  <table>
+    <thead><tr><th style="width:40px;">#</th><th>板块</th><th>表现</th></tr></thead>
+    <tbody>
+      <tr><td class="font-bold">1</td><td class="name">电网设备</td><td><span class="tag tag-up-red">+5%以上</span> 十余股涨停</td></tr>
+      <tr><td class="font-bold">2</td><td class="name">锂矿</td><td><span class="tag tag-up-red">+5%以上</span> 永杉锂业/盛新锂能涨停</td></tr>
+      <tr><td class="font-bold">3</td><td class="name">光伏风电</td><td><span class="tag tag-up-red">+4%以上</span> 20余只涨停</td></tr>
+      <tr><td class="font-bold">4</td><td class="name">电力</td><td><span class="tag tag-up-red">+3%以上</span> 华电辽能4天3板</td></tr>
+      <tr><td class="font-bold">5</td><td class="name">兵装重组</td><td><span class="tag tag-blue">午后异动</span> 长城军工/湖南天雁涨停</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">板块跌幅 Top 5</div>
+  <table>
+    <thead><tr><th style="width:40px;">#</th><th>板块</th><th>表现</th></tr></thead>
+    <tbody>
+      <tr><td class="font-bold">1</td><td class="name">集成电路制造</td><td><span class="tag tag-down-green">-5%以上</span></td></tr>
+      <tr><td class="font-bold">2</td><td class="name">半导体设备</td><td><span class="tag tag-down-green">-4%以上</span></td></tr>
+      <tr><td class="font-bold">3</td><td class="name">存储芯片</td><td><span class="tag tag-down-green">-4%以上</span></td></tr>
+      <tr><td class="font-bold">4</td><td class="name">封测</td><td><span class="tag tag-down-green">-4%以上</span></td></tr>
+      <tr><td class="font-bold">5</td><td class="name">AI手机</td><td><span class="tag tag-down-green">-3%以上</span> 东山精密跌超6%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">主力资金流向（📊预估）</div>
+  <table>
+    <thead><tr><th>方向</th><th>板块</th><th>规模</th><th>趋势</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="tag tag-up-red">流入</span></td>
+        <td class="name">电力</td>
+        <td class="font-bold">+65亿 → 预计+80亿+</td>
+        <td><span class="arrow-up">⬆️ 加强</span></td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-up-red">流入</span></td>
+        <td class="name">有色</td>
+        <td class="font-bold">+63亿 → 预计+80亿+</td>
+        <td><span class="arrow-up">⬆️ 加强</span></td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-up-red">流入</span></td>
+        <td class="name">电网设备</td>
+        <td class="font-bold">午后大幅流入</td>
+        <td><span class="arrow-up">⬆️ 新增强</span></td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-up-red">流入</span></td>
+        <td class="name">光伏风电</td>
+        <td class="font-bold">新增流入</td>
+        <td><span class="arrow-up">⬆️ 新增</span></td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-down-green">流出</span></td>
+        <td class="name">电子</td>
+        <td class="font-bold" style="color:var(--error);">-203亿</td>
+        <td><span class="arrow-down">⬇️ 延续</span></td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-down-green">流出</span></td>
+        <td class="name">半导体</td>
+        <td class="font-bold" style="color:var(--error);">-177亿</td>
+        <td><span class="arrow-down">⬇️ 延续</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="font-bold">📌 北向资金：</span>❌ 盘中实时数据缺失
+  </div>
+</div>
+
+<!-- ===== Section 3: 试仓候选股 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">3</div>
+    <div class="section-title">试仓候选股</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">🎯 试仓方向定调：</span>尾盘试仓聚焦<span class="font-bold">资源能源+政策催化方向</span>，回避科技抄底和高位连板打板。
+  </div>
+
+  <div class="sub-head">⭐ 电力电网方向（最高优先级）</div>
+  <table>
+    <thead>
+      <tr><th>股票</th><th>代码</th><th>当前涨幅</th><th>试仓理由</th><th>建议仓位</th><th>风控提示</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">中国西电</td>
+        <td class="code">601179</td>
+        <td><span class="tag tag-red">涨停</span> 封单超120万手</td>
+        <td>电网设备龙头，中标国网41.29亿项目，政策催化</td>
+        <td class="font-bold">2-3成</td>
+        <td style="color:var(--warning);">已涨停，打板风险大，关注封单稳定性</td>
+      </tr>
+      <tr>
+        <td class="name">许继电气</td>
+        <td class="code">000400</td>
+        <td><span class="tag tag-up-red">跟涨</span></td>
+        <td>中标12.45亿，平台突破形态</td>
+        <td class="font-bold">1-2成</td>
+        <td>未涨停更安全，关注量能配合</td>
+      </tr>
+      <tr>
+        <td class="name">金冠股份</td>
+        <td class="code">300517</td>
+        <td><span class="tag tag-up-red">跟涨</span></td>
+        <td>中标2.52亿，中盘弹性好</td>
+        <td class="font-bold">1-2成</td>
+        <td>设置5%止损</td>
+      </tr>
+      <tr>
+        <td class="name">华电辽能</td>
+        <td class="code">600396</td>
+        <td><span class="tag tag-red">4天3板涨停</span></td>
+        <td>电力+算电协同</td>
+        <td class="font-bold">1成</td>
+        <td style="color:var(--warning);">波动大，严控仓位</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">⭐ 锂电锂矿方向</div>
+  <table>
+    <thead>
+      <tr><th>股票</th><th>代码</th><th>当前涨幅</th><th>试仓理由</th><th>建议仓位</th><th>风控提示</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">中矿资源</td>
+        <td class="code">002738</td>
+        <td><span class="tag tag-up-red">跟涨</span></td>
+        <td>中报预增，未涨停中盘股</td>
+        <td class="font-bold">2成</td>
+        <td>关注下方支撑</td>
+      </tr>
+      <tr>
+        <td class="name">融捷股份</td>
+        <td class="code">002192</td>
+        <td><span class="tag tag-up-red">跟涨</span></td>
+        <td>锂矿概念，量能放大</td>
+        <td class="font-bold">1-2成</td>
+        <td>设置5%止损</td>
+      </tr>
+      <tr>
+        <td class="name">天齐锂业</td>
+        <td class="code">002466</td>
+        <td><span class="tag tag-up-red">跟涨</span></td>
+        <td>中报预增近50倍，大市值龙头</td>
+        <td class="font-bold">1-2成</td>
+        <td>大市值弹性较小</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">⚠️ 不建议试仓</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>原因</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">立新能源</td>
+        <td class="code">001258</td>
+        <td style="color:var(--error);"><span class="font-bold">6连板高位</span>，已公告无算力业务，纯情绪炒作，打板风险极大</td>
+      </tr>
+      <tr>
+        <td class="name">科技方向（半导体/AI芯片/存储）</td>
+        <td class="code muted">—</td>
+        <td style="color:var(--error);">趋势向下未企稳，抄底风险大</td>
+      </tr>
+      <tr>
+        <td class="name">寒武纪</td>
+        <td class="code">688256</td>
+        <td style="color:var(--error);">AI芯片龙头 <span class="tag tag-down-green">-5.12%</span> 补跌，不追</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 4: 上午盯盘清单追踪 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">4</div>
+    <div class="section-title">上午盯盘清单追踪</div>
+  </div>
+
+  <p style="color:var(--text2);margin-bottom:12px;">昨日/今日半日盯盘清单个股下午表现：</p>
+
+  <table>
+    <thead>
+      <tr><th>股票</th><th>上午表现</th><th>14:30表现</th><th>变化</th><th>置信度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">立新能源</td>
+        <td><span class="tag tag-red">6连板 +9.99%</span></td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-red">✅ 封住6连板</span></td>
+        <td>电力板块午后加强，封板更稳</td>
+        <td><span class="conf">✅</span></td>
+      </tr>
+      <tr>
+        <td class="name">德明利</td>
+        <td><span class="tag tag-down-green">-3.54%</span></td>
+        <td style="color:var(--error);"><span class="tag tag-down-green">继续调整</span> 存储芯片仍弱</td>
+        <td>无改善</td>
+        <td><span class="conf">⚠️</span></td>
+      </tr>
+      <tr>
+        <td class="name">赤峰黄金</td>
+        <td><span class="tag tag-up-red">+3.40%</span></td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">延续走强</span></td>
+        <td>贵金属线延续</td>
+        <td><span class="conf">⚠️</span></td>
+      </tr>
+      <tr>
+        <td class="name">华电能源</td>
+        <td><span class="tag tag-up-red">+5.00%</span></td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">逼近涨停</span></td>
+        <td>电力线加强</td>
+        <td><span class="conf">✅</span></td>
+      </tr>
+      <tr>
+        <td class="name">大有能源</td>
+        <td><span class="tag tag-up-red">+7.72%</span></td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-up-red">延续强势</span></td>
+        <td>煤炭跟涨资源</td>
+        <td><span class="conf">⚠️</span></td>
+      </tr>
+      <tr>
+        <td class="name">寒武纪</td>
+        <td><span class="tag tag-down-green">-5.12%</span></td>
+        <td style="color:var(--error);"><span class="tag tag-down-green">延续杀跌</span></td>
+        <td>AI芯片龙头补跌</td>
+        <td><span class="conf">⚠️</span></td>
+      </tr>
+      <tr>
+        <td class="name">盛达资源</td>
+        <td><span class="tag tag-red">涨停</span></td>
+        <td class="font-bold" style="color:var(--success);"><span class="tag tag-red">2连板涨停</span></td>
+        <td>白银龙头延续</td>
+        <td><span class="conf">✅</span></td>
+      </tr>
+      <tr>
+        <td class="name">中际旭创</td>
+        <td><span class="tag tag-up-red">+0.64%</span></td>
+        <td><span class="tag tag-up">企稳</span></td>
+        <td>CPO龙头相对抗跌</td>
+        <td><span class="conf">⚠️</span></td>
+      </tr>
+      <tr>
+        <td class="name">新易盛</td>
+        <td><span class="tag tag-down-green">-2.00%</span></td>
+        <td style="color:var(--error);"><span class="tag tag-down-green">继续调整</span></td>
+        <td>CPO方向仍弱</td>
+        <td><span class="conf">⚠️</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 5: 尾盘策略提示 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">5</div>
+    <div class="section-title">尾盘策略提示（14:30-15:00）</div>
+  </div>
+
+  <div class="sub-head">最后30分钟重点观察</div>
+  <table>
+    <thead><tr><th style="width:40px;">#</th><th>观察项</th><th>逻辑</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="font-bold">1</td>
+        <td class="name">电网设备涨停潮持续性</td>
+        <td>中国西电封单是否稳定，是否有开板风险。尾盘若封单减少需谨慎。</td>
+      </tr>
+      <tr>
+        <td class="font-bold">2</td>
+        <td class="name">立新能源6连板收盘状态</td>
+        <td>最高标风向标。若尾盘炸板则情绪退潮信号。</td>
+      </tr>
+      <tr>
+        <td class="font-bold">3</td>
+        <td class="name">科创50尾盘是否加速杀跌</td>
+        <td>-3.63%若尾盘扩大到-4%以上则明日可能继续探底。</td>
+      </tr>
+      <tr>
+        <td class="font-bold">4</td>
+        <td class="name">量能</td>
+        <td>全天预估2.1-2.3万亿，若不足2万亿则反弹动能不足。</td>
+      </tr>
+      <tr>
+        <td class="font-bold">5</td>
+        <td class="name">锂矿方向</td>
+        <td>永杉锂业/盛新锂能能否封住涨停，中矿资源/融捷股份是否放量突破。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-danger">
+    <div class="danger-title">⚠️ 尾盘策略</div>
+    <ul style="margin:8px 0 0 20px;line-height:2;">
+      <li><span class="font-bold" style="color:var(--success);">可做：</span>轻仓试入电网设备中未涨停的突破型个股（许继电气/金冠股份），锂矿中报预增中盘股（中矿资源/融捷股份）</li>
+      <li><span class="font-bold" style="color:var(--error);">不做：</span>不追高位连板（立新能源6板/华电辽能4天3板），不抄底科技（科创50-3.63%未企稳）</li>
+      <li><span class="font-bold">总仓位：</span>控制在3-4成，留现金等明日确认</li>
+      <li><span class="font-bold">风格判断：</span>高切低加速进行时，资金从科技→资源能源趋势明确，顺势而为</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== Section 6: 明日盯盘清单 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">6</div>
+    <div class="section-title">明日盯盘清单（7/24 周五）</div>
+  </div>
+
+  <div class="sub-head">进攻方向（关注企稳信号）</div>
+  <table>
+    <thead><tr><th>股票</th><th>代码</th><th>关注理由</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="name">中际旭创</td>
+        <td class="code">300308</td>
+        <td>CPO龙头，今日相对抗跌(+0.64%)，若科技企稳则先锋</td>
+      </tr>
+      <tr>
+        <td class="name">寒武纪</td>
+        <td class="code">688256</td>
+        <td>AI芯片龙头，今日-5.12%补跌，关注是否止跌</td>
+      </tr>
+      <tr>
+        <td class="name">新易盛</td>
+        <td class="code">300502</td>
+        <td>CPO方向，关注是否企稳回升</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">防御/资源方向（关注延续性）</div>
+  <table>
+    <thead><tr><th>股票</th><th>代码</th><th>关注理由</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="name">中国西电</td>
+        <td class="code">601179</td>
+        <td>电网设备龙头，政策催化+中标大单</td>
+      </tr>
+      <tr>
+        <td class="name">立新能源</td>
+        <td class="code">001258</td>
+        <td>6连板最高标，情绪风向标 <span class="tag tag-amber">⚠️高位风险</span></td>
+      </tr>
+      <tr>
+        <td class="name">中矿资源</td>
+        <td class="code">002738</td>
+        <td>锂矿中报预增，未涨停中盘股</td>
+      </tr>
+      <tr>
+        <td class="name">盛达资源</td>
+        <td class="code">000603</td>
+        <td>白银龙头2连板，贵金属线</td>
+      </tr>
+      <tr>
+        <td class="name">华电能源</td>
+        <td class="code">600726</td>
+        <td>电力煤炭，逼近涨停</td>
+      </tr>
+      <tr>
+        <td class="name">许继电气</td>
+        <td class="code">000400</td>
+        <td>电网设备，平台突破+中标大单</td>
+      </tr>
+      <tr>
+        <td class="name">赤峰黄金</td>
+        <td class="code">600988</td>
+        <td>贵金属龙头，金价4127美元高位</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="conclusion">
+    <span class="font-bold">📊 今日一句话总结：</span>午后主板翻红回升、创业板几乎平盘，但科创50仍暴跌-3.63%科技未企稳，市场结构分化极端。赚钱方向集中在资源能源+政策催化——电网设备掀涨停潮（中国西电等十余股）、锂矿大爆发（永杉锂业/盛新锂能涨停）、光伏风电批量20余只涨停、立新能源6连板封住，上涨家数扩大至3900+。新异动：兵装重组概念午后拉升。资金从科技→资源能源的"高切低"趋势加速进行时，全天成交预估2.1-2.3万亿缩量延续，尾盘策略聚焦资源能源未涨停突破型个股，回避科技抄底和高位连板打板。
+  </div>
+</div>
+
+</div>
+
+<footer style="max-width:1120px;margin:0 auto;padding:24px 32px 40px;color:var(--text2);font-size:12px;line-height:1.8;">
+  <div style="border-top:1px solid var(--border);padding-top:16px;">
+    <div><span class="font-bold">日期：</span>2026年7月23日 · 14:30盘中扫描</div>
+    <div><span class="font-bold">数据采集：</span>约14:10-14:30实时</div>
+    <div><span class="font-bold">置信度标注说明：</span>
+      <span class="tag tag-up">✅多源</span> 多个独立信源交叉验证 ·
+      <span class="tag tag-amber">⚠️单源</span> 仅单一信源，待验证 ·
+      <span class="tag tag-blue">📊估算</span> 基于关联数据推算
+    </div>
+    <div style="margin-top:8px;opacity:0.7;">CreateSpace Design System · 盘中扫描报告 · 蓝色主题</div>
+  </div>
+</footer>
+
+</body>
+</html>
