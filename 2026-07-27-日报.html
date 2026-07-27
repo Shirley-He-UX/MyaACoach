@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026.07.27 A股日报 · 长鑫科技登顶A股一哥 创业板暴涨3.16%</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--secondary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--secondary);}
+.nav-disabled{color:var(--text2);opacity:0.4;cursor:not-allowed;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.6vw,34px);font-weight:800;line-height:1.25;margin-bottom:12px;}
+.hero-sub{font-size:15px;opacity:0.85;max-width:780px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:var(--text);}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-red{background:#FEE2E2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.tag-purple{background:#F3E8FF;color:#6B21A8;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--primary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.sub-section{margin:16px 0;}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-success{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.conclusion{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:var(--radius-md);padding:20px;margin-top:16px;}
+.font-bold{font-weight:700;}
+.font-mono{font-family:'Fira Code',monospace;font-size:12px;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;vertical-align:middle;}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;margin:2px;}
+.pill-offense{background:#FEE2E2;color:#DC2626;}
+.pill-defense{background:#DBEAFE;color:#2563EB;}
+.pill-neutral{background:#F3F4F6;color:#6B7280;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+.success-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--success);margin-bottom:6px;}
+.tl-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--border);}
+.tl-item:last-child{border-bottom:none;}
+.tl-time{font-family:'Fira Code',monospace;font-size:12px;font-weight:700;color:var(--primary);min-width:64px;}
+.tl-text{font-size:13px;}
+.arrow-down{color:var(--error);font-weight:700;}
+.arrow-up{color:var(--success);font-weight:700;}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-07-27-盘中.html">&larr; 上一篇：7/27盘中</a>
+    <span class="nav-disabled">下一篇：周报 &rarr;</span>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.07.27 &middot; MON &middot; 收盘日报</div>
+    <h1 class="hero-title">长鑫科技+465%登顶A股一哥！成交1411亿创历史纪录 &middot; 创业板暴涨+3.16%/深成指+2.72%/沪指+1.15% &middot; 121涨停/封板率92% &middot; 5195只上涨仅286只下跌 &middot; PCB午后10+涨停 &middot; 脑机接口涨停潮 &middot; 立新能源8天7板 &middot; 成交2.08万亿放量</h1>
+    <div class="hero-sub">长鑫科技(688825)首日+465.82%收49元 &middot; 市值3.277万亿超越工商银行登顶A股一哥 &middot; 单股单日成交1411亿破东方财富900亿纪录 &middot; 脑机接口Science Corp欧盟获批催化爱朋医疗等5+涨停 &middot; PCB午后爆发景旺电子/红板科技等10+涨停 &middot; 7/24日报预判"半导体新主线"&check;完美兑现 &middot; 科技全面接管市场风格切换确认</div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== Section 1: 大盘总览 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">1</div>
+    <div class="section-title">大盘总览</div>
+  </div>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 极致普涨日 &middot; 创业板暴涨3.16% &middot; 科技全线爆发</span>
+    7/24暴跌后全面反攻。三大指数集体大涨，创业板+3.16%领涨。<span class="font-bold">5195只上涨 vs 仅286只下跌</span>，121只涨停/封板率92%。成交2.08万亿较7/24放量1400亿。长鑫科技单日贡献1411亿成交（占全市场6.8%），一己之力拉动科创板。
+  </div>
+
+  <div class="sub-head">五大指数收盘</div>
+  <div class="data-grid">
+    <div class="data-card data-card-up">
+      <div class="label">上证指数</div>
+      <div class="value">3858.25</div>
+      <div class="sub font-bold" style="color:var(--success);">+1.15% (+44.05) <span class="conf">&check;多源</span></div>
+      <div class="sub">昨收3814.20</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">深证成指</div>
+      <div class="value">14148.73</div>
+      <div class="sub font-bold" style="color:var(--success);">+2.72% (+374.05) <span class="conf">&check;多源</span></div>
+      <div class="sub">昨收13774.68</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">创业板指</div>
+      <div class="value">3590.79</div>
+      <div class="sub font-bold" style="color:var(--success);">+3.16% (+109.92) <span class="conf">&check;多源</span></div>
+      <div class="sub">昨收3480.87</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">科创50</div>
+      <div class="value">&asymp;+5%</div>
+      <div class="sub font-bold" style="color:var(--success);">长鑫科技权重拉动 <span class="conf">&approx;估算</span></div>
+      <div class="sub">存储芯片全线暴涨</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">北证50</div>
+      <div class="value">&asymp;+2%</div>
+      <div class="sub font-bold" style="color:var(--success);">维琪科技首日+599% <span class="conf">&approx;估算</span></div>
+      <div class="sub">北交所跟涨</div>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card data-card-up">
+      <div class="label">成交额</div>
+      <div class="value" style="color:var(--success);">2.08万亿</div>
+      <div class="sub font-bold" style="color:var(--success);">放量1400亿 <span class="conf">&check;多源</span></div>
+      <div class="sub">沪市10313亿+深市10453亿</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">上涨个股</div>
+      <div class="value" style="color:var(--success);">5195</div>
+      <div class="sub font-bold">仅286只下跌 <span class="conf">&check;多源</span></div>
+      <div class="sub">涨跌比 18:1 极致普涨</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">涨停/跌停</div>
+      <div class="value">121 / 6</div>
+      <div class="sub font-bold">涨停vs7/24仅31只(+290%) <span class="conf">&check;多源</span></div>
+      <div class="sub">跌停仅6只(油气为主)</div>
+    </div>
+  </div>
+
+  <div class="sub-head">分时走势对比</div>
+  <table>
+    <thead>
+      <tr><th>时点</th><th>沪指</th><th>深成指</th><th>创业板</th><th>特征</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">7/24收盘</td><td>3814.20 <span class="tag tag-down">-1.61%</span></td><td>13774.68 <span class="tag tag-down">-2.47%</span></td><td>3480.87 <span class="tag tag-down">-2.65%</span></td><td>特斯拉暴跌全线杀跌</td></tr>
+      <tr><td class="name">7/27开盘</td><td>低开-0.14%</td><td>低开-0.04%</td><td>微涨+0.03%</td><td>分化开盘·长鑫高开471%</td></tr>
+      <tr><td class="name">7/27午收</td><td>3829.39 <span class="tag tag-up">+0.40%</span></td><td>13969.37 <span class="tag tag-up">+1.41%</span></td><td>3534.83 <span class="tag tag-up">+1.55%</span></td><td>探底回升·半日1.36万亿</td></tr>
+      <tr><td class="name">7/27盘中14:30</td><td>3843.34 <span class="tag tag-up">+0.76%</span></td><td>14026.06 <span class="tag tag-up">+1.83%</span></td><td>3550.49 <span class="tag tag-up">+2.00%</span></td><td>午后继续走高</td></tr>
+      <tr><td class="name font-bold">7/27收盘</td><td class="font-bold">3858.25 <span class="tag tag-up">+1.15%</span></td><td class="font-bold">14148.73 <span class="tag tag-up">+2.72%</span></td><td class="font-bold">3590.79 <span class="tag tag-up">+3.16%</span></td><td class="font-bold">尾盘加速拉升！</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <span class="font-bold">&check; 走势特征</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">低开高走全天单边上攻</span>：开盘微跌后探底回升，午后加速，尾盘再加速</div>
+      <div>&bull; <span class="font-bold">午后加速是最大亮点</span>：14:30沪指+0.76% &rarr; 收盘+1.15%，最后30分钟贡献近一半涨幅</div>
+      <div>&bull; <span class="font-bold">量能回归2万亿+</span>：2.08万亿较7/24的1.94万亿放量1400亿，量价齐升</div>
+      <div>&bull; <span class="font-bold">创业板+3.16%创近期最大单日涨幅</span>：科技权重全面拉升带动</div>
+      <div>&bull; <span class="font-bold">沪指收复7/24全部跌幅</span>：3858 &gt; 7/23的3876.78仍差18点，但已基本回补7/24跳空缺口</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 2: 异动上涨板块 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">2</div>
+    <div class="section-title">异动上涨板块（进攻/防守框架）</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">&check; 科技全面接管 &middot; 仅3板块飘绿</span>：仅资源开采概念、保险、石油石化三大板块飘绿。人脑工程、玻璃玻纤、酒店餐饮涨幅居前。PCB午后突然爆发成最大增量方向。
+  </div>
+
+  <div class="sub-head">进攻方向（半导体/PCB/AI/脑机接口/电池/机器人）&mdash; 全线爆发</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>表现</th><th>上涨逻辑</th><th>强度</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF3C7;">
+        <td class="name" style="color:var(--primary);">存储芯片 &star;</td>
+        <td>长鑫科技(688825) &middot; 普冉股份(688766) &middot; 江波龙(301308) &middot; 澜起科技(688008)</td>
+        <td><span class="tag tag-up">长鑫+465.82%</span> <span class="tag tag-up">全产业链跟涨</span></td>
+        <td>长鑫科技上市首日市值3.277万亿登顶A股一哥 &middot; 成交1411亿破A股单股单日纪录(vs东方财富900亿) &middot; DRAM全球市占率第四(7%) &middot; 存储芯片涨价周期+国产替代</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr style="background:#FEF3C7;">
+        <td class="name" style="color:var(--primary);">PCB &star;午后爆发</td>
+        <td>景旺电子(603228) &middot; 红板科技 &middot; 逾10股涨停</td>
+        <td><span class="tag tag-up">10+涨停</span> <span class="tag tag-up">午后集体爆发</span></td>
+        <td>AI服务器PCB需求激增 &middot; 红板科技此前公告投资7亿扩产HDI &middot; PCB作为AI硬件核心载板受益于算力扩张 &middot; 午后突然启动显示资金集中进场</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr style="background:#FEF3C7;">
+        <td class="name" style="color:var(--primary);">脑机接口 &star;</td>
+        <td>爱朋医疗(300753) &middot; 创新医疗(002173) &middot; 塞力医疗(603716) &middot; 海南海药(000566) &middot; 南京熊猫(600775)</td>
+        <td><span class="tag tag-up">爱朋20cm涨停</span> <span class="tag tag-up">5+股涨停</span></td>
+        <td>Science Corp获欧盟批准销售视网膜芯片 &middot; 美国BCI公司首次大规模商业化里程碑 &middot; 脑机接口进入商业化元年</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">AI应用</td>
+        <td>米奥会展(300795) &middot; 宣亚国际(300612) &middot; 游族网络(002174) &middot; 中文在线(300364)</td>
+        <td><span class="tag tag-up">米奥20cm涨停</span></td>
+        <td>OpenAI发布AI智能体运营平台Presence &middot; AI应用商业化加速 &middot; 上半年电子行业利润+96.9%</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">半导体设备</td>
+        <td>托伦斯(688502) &middot; 至纯科技(603690) &middot; 通富微电(002156)</td>
+        <td><span class="tag tag-up">延续强势</span></td>
+        <td>长鑫科技催化半导体设备链 &middot; 先进封装+国产替代持续吸金 &middot; 7/24逆势走强后延续</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">人形机器人</td>
+        <td>鑫宏业(600162) 等</td>
+        <td><span class="tag tag-up">板块持续拉升</span></td>
+        <td>机器人主题持续催化 &middot; 产业链订单预期</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">电池/锂电</td>
+        <td>欣旺达(300207) &middot; 宁德时代(300750) &middot; 圣阳股份</td>
+        <td><span class="tag tag-up">欣旺达+7% 宁德+4%</span> <span class="tag tag-up">圣阳涨停</span></td>
+        <td>电池板块走强 &middot; 固态电池标准讨论会(7/27-28工信部) &middot; 锂电链7/24暴跌后修复</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">MLCC概念</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">涨幅居前</span></td>
+        <td>AI硬件上游被动元器件需求增长 &middot; 深圳华强主动补库存</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">防守方向（电力/医药/消费）</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>涨跌</th><th>上涨逻辑</th><th>强度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--success);">电力 &star;</td>
+        <td>立新能源(001258) 等</td>
+        <td><span class="tag tag-up">立新能源8天7板</span> <span class="tag tag-up">板块走强</span></td>
+        <td>电力板块走强 &middot; 立新能源从7/23的6连板到7/24断板再到7/27反包涨停 = 8天7板 &middot; 算电协同概念持续</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">医药</td>
+        <td>哈三联(002900) &middot; 海南海药(000566) &middot; 益佰制药(600594) &middot; 爱朋医疗(300753)</td>
+        <td><span class="tag tag-up">多股涨停</span></td>
+        <td>医药板块强势 &middot; 脑机接口概念交叉催化 &middot; 创新药方向走强</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">玻纤/玻璃</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">板块涨幅居前</span></td>
+        <td>玻璃玻纤概念走强</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">酒店餐饮/旅游</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">涨幅居前</span></td>
+        <td>暑期消费旺季预期</td>
+        <td><span class="pill pill-defense">&starf;&starf;</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">逆势下跌板块</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>跌幅</th><th>代表股</th><th>下跌逻辑</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--error);">石油石化</td>
+        <td><span class="tag tag-down">飘绿</span></td>
+        <td>中曼石油<span class="tag tag-down">跌停</span></td>
+        <td>地缘溢价消退 &middot; 7/24大涨后获利了结 &middot; 油气概念持续退潮</td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">保险</td>
+        <td><span class="tag tag-down">小幅下跌</span></td>
+        <td>中国人寿领跌</td>
+        <td>大金融防御让位 &middot; 资金从保险转向科技进攻</td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">资源开采概念</td>
+        <td><span class="tag tag-down">飘绿</span></td>
+        <td>&mdash;</td>
+        <td>周期资源股退潮 &middot; 有色金属/煤炭继续调整</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 3: 连板股排列 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">3</div>
+    <div class="section-title">连板股排列（从高到低）</div>
+  </div>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 连板梯队回暖 &middot; 爱丽家居5+连板领跑</span>
+    7/24仅31涨停(断板潮)，7/27回归121涨停/封板率92%。连板梯队重新壮大。
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>连板数</th><th>股票</th><th>代码</th><th>所属板块</th><th>备注</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF3C7;">
+        <td class="font-bold" style="color:var(--primary);">8天7板</td>
+        <td class="name">立新能源</td>
+        <td class="code">001258</td>
+        <td>电力/算电协同</td>
+        <td>7/23六连板&rarr;7/24断板&rarr;7/27反包涨停 &middot; 电力妖股回归 &middot; 最高标(非连续)</td>
+      </tr>
+      <tr style="background:#FEF3C7;">
+        <td class="font-bold" style="color:var(--warning);">5+连板</td>
+        <td class="name">爱丽家居</td>
+        <td class="code">603272</td>
+        <td>并购重组</td>
+        <td>7/24四连板 &rarr; 7/27竞价涨停(5连板+) &middot; 最高连板标 &middot; 并购重组概念龙头</td>
+      </tr>
+      <tr style="background:#FEF3C7;">
+        <td class="font-bold" style="color:var(--warning);">4+连板(20cm)</td>
+        <td class="name">五洲医疗</td>
+        <td class="code">688382</td>
+        <td>医疗器械/并购重组</td>
+        <td>7/24三连板 &rarr; 7/27竞价涨停(4连板) &middot; 科创板20cm &middot; 收购旋智科技跨界半导体</td>
+      </tr>
+      <tr>
+        <td class="font-bold">4+连板</td>
+        <td class="name">长缆科技</td>
+        <td class="code">002879</td>
+        <td>电网设备</td>
+        <td>7/24四连板(电网龙头) &middot; 7/27走势待确认</td>
+      </tr>
+      <tr>
+        <td class="font-bold">4天3板</td>
+        <td class="name">哈三联</td>
+        <td class="code">002900</td>
+        <td>医药</td>
+        <td>今日涨停 &middot; 医药强势龙头</td>
+      </tr>
+      <tr>
+        <td class="font-bold">4天2板</td>
+        <td class="name">海南海药</td>
+        <td class="code">000566</td>
+        <td>医药/脑机接口</td>
+        <td>双重概念叠加 &middot; 今日涨停</td>
+      </tr>
+      <tr>
+        <td class="font-bold">3+连板</td>
+        <td class="name">汉森制药</td>
+        <td class="code">002498</td>
+        <td>医药</td>
+        <td>7/24时三连板 &middot; 医药方向</td>
+      </tr>
+      <tr>
+        <td class="font-bold">3连板</td>
+        <td class="name">顺钠股份</td>
+        <td class="code">000533</td>
+        <td>电力/电网</td>
+        <td>7/24二连板 &rarr; 电力方向延续</td>
+      </tr>
+      <tr>
+        <td class="font-bold">3连板</td>
+        <td class="name">长城军工</td>
+        <td class="code">601677</td>
+        <td>军工/兵装重组</td>
+        <td>7/24二连板 &rarr; 兵装重组概念龙头</td>
+      </tr>
+      <tr>
+        <td class="font-bold">3连板</td>
+        <td class="name">深康佳A</td>
+        <td class="code">000016</td>
+        <td>消费电子</td>
+        <td>7/24二连板 &rarr; 消费电子方向</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 4: 下跌板块概览 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">4</div>
+    <div class="section-title">下跌板块概览</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">仅3板块飘绿</span>，极致普涨日下跌方向极少。资金全面转向科技进攻，资源/金融防御让位。
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>板块</th><th>跌幅</th><th>关键事件</th><th>影响评估</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--error);">石油石化</td>
+        <td><span class="tag tag-down">飘绿</span></td>
+        <td>中曼石油跌停 &middot; 科力股份-14%+ &middot; 地缘溢价消退</td>
+        <td>油气链持续退潮 &middot; 7/23-7/24短线炒作结束</td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">保险</td>
+        <td><span class="tag tag-down">小幅下跌</span></td>
+        <td>中国人寿领跌 &middot; 大金融板块资金外流</td>
+        <td>风险偏好回升但资金选择科技而非金融</td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">资源开采概念</td>
+        <td><span class="tag tag-down">飘绿</span></td>
+        <td>有色金属/煤炭继续调整 &middot; 贵金属退潮延续</td>
+        <td>7/22-7/23贵金属主线彻底退潮</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 5: 涨停数据汇总 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">5</div>
+    <div class="section-title">涨停数据汇总</div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card data-card-up">
+      <div class="label">涨停数</div>
+      <div class="value" style="color:var(--success);">121</div>
+      <div class="sub font-bold">vs 7/24仅31只(+290%) <span class="conf">&check;多源</span></div>
+      <div class="sub">涨停潮回归</div>
+    </div>
+    <div class="data-card">
+      <div class="label">炸板数</div>
+      <div class="value">10</div>
+      <div class="sub">炸板率极低 <span class="conf">&check;多源</span></div>
+      <div class="sub">市场封板意愿强</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">封板率</div>
+      <div class="value" style="color:var(--success);">92.37%</div>
+      <div class="sub font-bold">极高封板率 <span class="conf">&check;多源</span></div>
+      <div class="sub">vs 7/24午盘80% &middot; 买盘信心充足</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">连板晋级率</div>
+      <div class="value" style="color:var(--success);">&asymp;50%</div>
+      <div class="sub">7/24连板12只晋级一半 <span class="conf">&approx;估算</span></div>
+      <div class="sub">爱丽家居/五洲医疗/立新能源均晋级</div>
+    </div>
+  </div>
+
+  <div class="sub-head">涨停板块分布</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>涨停数</th><th>龙头</th><th>特征</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">PCB</td><td class="font-bold" style="color:var(--success);">10+</td><td>景旺电子/红板科技</td><td>午后突然爆发 &middot; 最大增量方向</td></tr>
+      <tr><td class="name">脑机接口/医药</td><td class="font-bold" style="color:var(--success);">10+</td><td>爱朋医疗/创新医疗/海南海药</td><td>Science Corp催化 &middot; 涨停潮</td></tr>
+      <tr><td class="name">半导体/存储</td><td class="font-bold" style="color:var(--success);">多只</td><td>长鑫科技+存储链</td><td>长鑫科技催化全产业链</td></tr>
+      <tr><td class="name">AI应用</td><td class="font-bold" style="color:var(--success);">5+</td><td>米奥会展20cm</td><td>OpenAI Presence催化</td></tr>
+      <tr><td class="name">电力</td><td class="font-bold" style="color:var(--success);">多只</td><td>立新能源8天7板</td><td>算电协同+反包涨停</td></tr>
+      <tr><td class="name">电池/锂电</td><td class="font-bold" style="color:var(--success);">多只</td><td>圣阳股份</td><td>固态电池标准讨论会</td></tr>
+      <tr><td class="name">玻纤/MLCC</td><td class="font-bold" style="color:var(--success);">多只</td><td>&mdash;</td><td>AI硬件上游</td></tr>
+      <tr><td class="name">并购重组</td><td class="font-bold" style="color:var(--success);">多只</td><td>爱丽家居5+连板</td><td>重组概念持续</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 6: 龙虎榜重点 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">6</div>
+    <div class="section-title">龙虎榜重点</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">数据说明：</span>龙虎榜数据通常在收盘后18:00-20:00陆续披露。以下基于盘中已知信息整理，完整数据以交易所晚间披露为准。
+  </div>
+
+  <div class="sub-head">重点标的龙虎关注</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>今日表现</th><th>预期龙虎关注点</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--primary);">长鑫科技(688825)</td>
+        <td>+465.82% &middot; 成交1411亿</td>
+        <td>首日成交创纪录 &middot; 关注机构/游资买卖席位分布 &middot; 13家银行持股市值1480亿</td>
+      </tr>
+      <tr>
+        <td class="name">立新能源(001258)</td>
+        <td>涨停8天7板</td>
+        <td>7/23龙虎：北向净卖出189.78万 &middot; 今日反包涨停关注游资接力</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居(603272)</td>
+        <td>5+连板</td>
+        <td>并购重组概念龙头 &middot; 关注是否出现机构进场</td>
+      </tr>
+      <tr>
+        <td class="name">景旺电子(603228)</td>
+        <td>PCB午后涨停</td>
+        <td>PCB龙头 &middot; 关注午后集中买入资金性质</td>
+      </tr>
+      <tr>
+        <td class="name">爱朋医疗(300753)</td>
+        <td>20cm涨停</td>
+        <td>脑机接口龙头 &middot; 关注游资席位</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">北向资金关注</span>
+    <div style="margin-top:8px;">
+      <div>&bull; 7/27极致普涨日，北向资金预计净流入（待晚间数据确认）</div>
+      <div>&bull; 上周7/24暴跌时北向动向是重要参考 &middot; 如7/27净流入则确认外资回流科技</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 7: 平台突破股筛选 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">7</div>
+    <div class="section-title">平台突破股筛选</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">筛选标准：</span>近10日连续5天小阳线稳量上涨 + 当日放量突破半年/一年平台 + 优先当日异动板块
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>股票</th><th>代码</th><th>突破形态</th><th>所属异动板块</th><th>确认度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">欣旺达</td>
+        <td class="code">300207</td>
+        <td>7/24暴跌后7/27强势反弹+7% &middot; 电池龙头放量突破近期震荡平台</td>
+        <td>电池/锂电</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+      </tr>
+      <tr>
+        <td class="name">通富微电</td>
+        <td class="code">002156</td>
+        <td>7/24触及涨停+7/27延续强势 &middot; 先进封装龙头突破</td>
+        <td>半导体/先进封装</td>
+        <td><span class="tag tag-up">较确认</span></td>
+      </tr>
+      <tr>
+        <td class="name">景旺电子</td>
+        <td class="code">603228</td>
+        <td>PCB午后突然涨停 &middot; 可能为放量突破</td>
+        <td>PCB</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+      </tr>
+      <tr>
+        <td class="name">江波龙</td>
+        <td class="code">301308</td>
+        <td>存储链跟涨 &middot; 4-8亿回购+长鑫催化</td>
+        <td>存储芯片</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">说明</span>
+    精确的平台突破筛选需要K线图逐日比对，以上基于已知信息初步筛选。建议收盘后用K线图逐一确认。
+  </div>
+</div>
+
+<!-- ===== Section 8: 300亿以上高壁垒个股深度分析 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">8</div>
+    <div class="section-title">300亿以上高壁垒个股深度分析</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">仅在异动板块中筛选市值300亿+标的</span>，聚焦护城河与财报兑现。
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head" style="color:var(--primary);">长鑫科技 (688825) &middot; 存储芯片 &middot; 市值3.277万亿</div>
+    <table>
+      <tbody>
+        <tr><td class="name" style="width:120px;">主营业务</td><td>DRAM存储芯片设计+制造 &middot; 全球DRAM市占率约7%(第四位) &middot; 国内唯一大规模量产DRAM</td></tr>
+        <tr><td class="name">核心客户</td><td>手机/PC/服务器厂商 &middot; 13家银行持股(市值1480亿) &middot; 下游覆盖消费电子+数据中心</td></tr>
+        <tr><td class="name">护城河</td><td>国产DRAM唯一龙头 &middot; 募资295亿用于扩产 &middot; 技术壁垒极高(全球仅三星/SK海力士/美光/长鑫四家量产)</td></tr>
+        <tr><td class="name">今日表现</td><td>首日+465.82%收49元 &middot; 成交1411亿破A股纪录 &middot; 市值超越工商银行登顶</td></tr>
+        <tr><td class="name">上涨逻辑</td><td>存储芯片涨价周期 &middot; AI算力驱动HBM需求 &middot; 国产替代 &middot; 战略稀缺性</td></tr>
+        <tr><td class="name">下跌风险</td><td>首日涨幅巨大(发行价8.66&rarr;49元) &middot; 估值已包含大量预期 &middot; 次日可能回调 &middot; 存储周期见顶风险</td></tr>
+        <tr><td class="name" style="color:var(--error);">买入条件</td><td style="color:var(--error);">首日不建议介入。等待：(1) 回调至40元附近(约-20%)企稳放量 (2) 存储芯片涨价数据持续验证 (3) 季报业绩兑现后</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">宁德时代 (300750) &middot; 电池 &middot; 市值万亿+</div>
+    <table>
+      <tbody>
+        <tr><td class="name" style="width:120px;">主营业务</td><td>动力电池+储能电池全球龙头 &middot; 全球市占率超35%</td></tr>
+        <tr><td class="name">核心客户</td><td>特斯拉/宝马/奔驰/蔚来等全球车企</td></tr>
+        <tr><td class="name">护城河</td><td>技术壁垒(固态电池/钠离子电池研发领先) &middot; 规模效应 &middot; 客户粘性</td></tr>
+        <tr><td class="name">今日表现</td><td>+4% &middot; 电池板块走强 &middot; 固态电池标准讨论会催化</td></tr>
+        <tr><td class="name">上涨逻辑</td><td>固态电池产业化加速 &middot; 储能需求增长 &middot; 海外产能释放</td></tr>
+        <tr><td class="name">下跌风险</td><td>锂价波动 &middot; 海外贸易摩擦 &middot; 竞争加剧(比亚迪/中创新航)</td></tr>
+        <tr><td class="name">买入条件</td><td>回踩20日均线企稳+固态电池标准落地确认+储能订单超预期</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">欣旺达 (300207) &middot; 电池 &middot; 市值约500亿</div>
+    <table>
+      <tbody>
+        <tr><td class="name" style="width:120px;">主营业务</td><td>消费电池+动力电池 &middot; 手机电池全球龙头 &middot; 动力电池快速追赶</td></tr>
+        <tr><td class="name">核心客户</td><td>苹果/华为/小米(消费电池) &middot; 吉利/小鹏(动力电池)</td></tr>
+        <tr><td class="name">护城河</td><td>消费电池份额稳定 &middot; 动力电池产能扩张 &middot; 苹果链核心供应商</td></tr>
+        <tr><td class="name">今日表现</td><td>+7% &middot; 电池板块强势 &middot; 7/24暴跌后强势反弹</td></tr>
+        <tr><td class="name">上涨逻辑</td><td>苹果新机周期 &middot; 动力电池放量 &middot; 固态电池标准讨论会催化</td></tr>
+        <tr><td class="name">下跌风险</td><td>动力电池亏损扩大 &middot; 苹果砍单风险</td></tr>
+        <tr><td class="name">买入条件</td><td>动力电池季度扭亏+苹果新品发布确认+回踩20日均线</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-head">通富微电 (002156) &middot; 先进封装 &middot; 市值约600亿</div>
+    <table>
+      <tbody>
+        <tr><td class="name" style="width:120px;">主营业务</td><td>半导体封测龙头 &middot; 先进封装(CoWoS/Chiplet) &middot; AMD核心封测合作伙伴</td></tr>
+        <tr><td class="name">核心客户</td><td>AMD(最大客户) &middot; 高通 &middot; 国内AI芯片厂商</td></tr>
+        <tr><td class="name">护城河</td><td>AMD深度绑定 &middot; 先进封装产能稀缺 &middot; AI芯片封装需求爆发</td></tr>
+        <tr><td class="name">今日表现</td><td>延续强势 &middot; 7/24触及涨停后今日继续走强</td></tr>
+        <tr><td class="name">上涨逻辑</td><td>AI芯片封装需求爆发 &middot; AMD订单增长 &middot; 长鑫科技催化半导体链</td></tr>
+        <tr><td class="name">下跌风险</td><td>AMD砍单风险 &middot; 估值偏高 &middot; 7/24触及涨停未封住说明分歧</td></tr>
+        <tr><td class="name">买入条件</td><td>沪指站稳3850+回踩5日线不破+AMD季度财报超预期</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== Section 9: 异常成交量个股 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">9</div>
+    <div class="section-title">异常成交量个股</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">筛选标准：</span>当日成交量 &gt; 近半年最高量 &times; 2
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>股票</th><th>代码</th><th>今日成交</th><th>异常程度</th><th>解读</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF3C7;">
+        <td class="name" style="color:var(--primary);">长鑫科技</td>
+        <td class="code">688825</td>
+        <td class="font-bold">1411亿</td>
+        <td><span class="tag tag-red">A股历史纪录</span></td>
+        <td>首日上市 &middot; 打破东方财富900亿单股单日纪录 &middot; 换手率极高 &middot; 纯新上市无历史量可比</td>
+      </tr>
+      <tr>
+        <td class="name">爱朋医疗</td>
+        <td class="code">300753</td>
+        <td>涨停放量</td>
+        <td><span class="tag tag-amber">显著放量</span></td>
+        <td>20cm涨停 &middot; 脑机接口龙头 &middot; 成交量预计远超半年均量</td>
+      </tr>
+      <tr>
+        <td class="name">米奥会展</td>
+        <td class="code">300795</td>
+        <td>涨停放量</td>
+        <td><span class="tag tag-amber">显著放量</span></td>
+        <td>20cm涨停 &middot; AI应用龙头 &middot; 成交额大幅增长</td>
+      </tr>
+      <tr>
+        <td class="name">景旺电子</td>
+        <td class="code">603228</td>
+        <td>涨停放量</td>
+        <td><span class="tag tag-amber">显著放量</span></td>
+        <td>PCB午后涨停 &middot; 午后集中买入 &middot; 关注资金持续性</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 10: 展望+策略建议 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">10</div>
+    <div class="section-title">展望 + 策略建议</div>
+  </div>
+
+  <div class="sub-head">关键变量</div>
+  <div class="alert-box">
+    <div style="margin-top:4px;">
+      <div>&bull; <span class="font-bold">长鑫科技次日走势</span>：首日+465%后次日是关键 &middot; 如高开继续走强 &rarr; 存储链行情延续 &middot; 如低开回落 &rarr; 短期利好兑现</div>
+      <div>&bull; <span class="font-bold">成交额能否维持2万亿+</span>：量能是行情持续性的核心指标 &middot; 缩量则反弹受限</div>
+      <div>&bull; <span class="font-bold">PCB持续性</span>：午后突然爆发10+涨停 &middot; 明日是否延续是判断PCB能否成为新主线的关键</div>
+      <div>&bull; <span class="font-bold">沪指能否站稳3850</span>：站稳则7/24缺口完全回补 &middot; 技术面转多</div>
+      <div>&bull; <span class="font-bold">美股/外围</span>：纳指走势 &middot; 费城半导体指数 &middot; 特斯拉能否止跌</div>
+      <div>&bull; <span class="font-bold">工信部固态电池标准讨论会(7/27-28)</span>：电池板块短期催化</div>
+    </div>
+  </div>
+
+  <div class="sub-head">明确策略建议</div>
+  <div class="alert-success">
+    <span class="success-title">&check; 进攻为主 &middot; 科技方向加仓</span>
+    <div style="margin-top:8px;">
+      <div><span class="font-bold">仓位：</span>可加至<span class="font-bold" style="color:var(--success);">7-8成</span>。7/27极致普涨+量价齐升+科技全面确认 = 进攻窗口打开。</div>
+      <div><span class="font-bold">主线配置：</span></div>
+      <div>&bull; <span class="font-bold">存储芯片链</span>（江波龙/普冉股份/澜起科技）：长鑫科技催化+涨价周期 &middot; 但避开长鑫科技本身</div>
+      <div>&bull; <span class="font-bold">PCB</span>（景旺电子/红板科技/沪电股份）：午后爆发如明日延续则确认为新主线 &middot; 优先布局</div>
+      <div>&bull; <span class="font-bold">先进封装</span>（通富微电）：AMD绑定+AI封装需求 &middot; 中期逻辑最硬</div>
+      <div><span class="font-bold">观察配置：</span></div>
+      <div>&bull; <span class="font-bold">脑机接口</span>：题材属性强但持续性存疑 &middot; 如爱朋医疗明日继续20cm可追</div>
+      <div>&bull; <span class="font-bold">电池</span>（欣旺达/宁德时代）：固态电池催化+估值修复</div>
+      <div><span class="font-bold" style="color:var(--error);">不碰：</span>油气/保险/有色/煤炭 &middot; 退潮中不抄底</div>
+      <div><span class="font-bold">止损线：</span>沪指跌破3800清仓 &middot; 个股跌破5日线减半仓</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 11: 下周重点盯盘清单 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">11</div>
+    <div class="section-title">明日（7/28）重点盯盘清单</div>
+  </div>
+
+  <div class="sub-head">进攻方向</div>
+  <table>
+    <thead>
+      <tr><th>股票</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--primary);">长鑫科技</td>
+        <td class="code">688825</td>
+        <td>首日+465%次日表现决定存储链持续性</td>
+        <td>高开走强=继续催化 &middot; 低开回落=利好兑现 &middot; 关注开盘前30分钟</td>
+      </tr>
+      <tr>
+        <td class="name">江波龙</td>
+        <td class="code">301308</td>
+        <td>存储链核心 &middot; 4-8亿回购 &middot; 长鑫催化</td>
+        <td>跟随长鑫科技走势 &middot; 独立走强=资金认可</td>
+      </tr>
+      <tr>
+        <td class="name">普冉股份</td>
+        <td class="code">688766</td>
+        <td>H1净利+1925% &middot; 存储芯片涨价周期</td>
+        <td>业绩兑现+涨价确认 &middot; 关注季报预告</td>
+      </tr>
+      <tr>
+        <td class="name">景旺电子</td>
+        <td class="code">603228</td>
+        <td>PCB午后涨停 &middot; AI服务器PCB需求</td>
+        <td>明日能否连板或高开 = PCB主线确认信号</td>
+      </tr>
+      <tr>
+        <td class="name">红板科技</td>
+        <td class="code">&mdash;</td>
+        <td>PCB &middot; 7亿扩产HDI &middot; 今日涨停</td>
+        <td>连板确认PCB主线 &middot; 开板则谨慎</td>
+      </tr>
+      <tr>
+        <td class="name">通富微电</td>
+        <td class="code">002156</td>
+        <td>先进封装龙头 &middot; AMD绑定</td>
+        <td>站稳5日线 &middot; 成交额维持高位</td>
+      </tr>
+      <tr>
+        <td class="name">爱朋医疗</td>
+        <td class="code">300753</td>
+        <td>脑机接口20cm龙头</td>
+        <td>明日连板则脑机接口升级为短线主线</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">防守方向</div>
+  <table>
+    <thead>
+      <tr><th>股票</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">立新能源</td>
+        <td class="code">001258</td>
+        <td>8天7板 &middot; 电力妖股 &middot; 算电协同</td>
+        <td>能否继续涨停 = 电力方向是否回归</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居</td>
+        <td class="code">603272</td>
+        <td>最高连板标 &middot; 并购重组</td>
+        <td>继续封板=市场情绪高涨 &middot; 断板则高位股退潮</td>
+      </tr>
+      <tr>
+        <td class="name">宁德时代</td>
+        <td class="code">300750</td>
+        <td>电池龙头 &middot; 固态电池催化</td>
+        <td>站稳均线 &middot; 关注工信部会议结果</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">风格切换观察</div>
+  <table>
+    <thead>
+      <tr><th>信号</th><th>观察指标</th><th>判断标准</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">科技主线持续性</td>
+        <td>PCB+存储+先进封装能否连续2天走强</td>
+        <td>连续2天 = 新主线确认 &middot; 仅1天 = 一日游</td>
+      </tr>
+      <tr>
+        <td class="name">量能持续性</td>
+        <td>成交能否维持2万亿+</td>
+        <td>维持2万亿 = 行情延续 &middot; 缩量至1.8万亿以下 = 谨慎</td>
+      </tr>
+      <tr>
+        <td class="name">电力是否回归</td>
+        <td>立新能源/电力板块走势</td>
+        <td>电力回归 = 双主线 &middot; 电力继续弱 = 纯科技主导</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 12: 连续趋势追踪 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">12</div>
+    <div class="section-title">连续趋势追踪</div>
+  </div>
+
+  <div class="sub-head">个股多日走势表</div>
+  <table>
+    <thead>
+      <tr><th>股票</th><th>7/22</th><th>7/23</th><th>7/24</th><th>7/27</th><th>状态</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--primary);">立新能源</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">涨停(6连板)</span></td>
+        <td><span class="tag tag-amber">断板</span></td>
+        <td><span class="tag tag-up">涨停(8天7板)</span></td>
+        <td>反包涨停回归 &middot; 妖股属性确认</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">3连板</span></td>
+        <td><span class="tag tag-up">4连板</span></td>
+        <td><span class="tag tag-up">5+连板</span></td>
+        <td>持续晋级 &middot; 最高连板标</td>
+      </tr>
+      <tr>
+        <td class="name">五洲医疗</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">2连板(20cm)</span></td>
+        <td><span class="tag tag-up">3连板(20cm)</span></td>
+        <td><span class="tag tag-up">4+连板(20cm)</span></td>
+        <td>科创板20cm持续晋级</td>
+      </tr>
+      <tr>
+        <td class="name">长缆科技</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">3连板</span></td>
+        <td><span class="tag tag-up">4连板</span></td>
+        <td><span class="tag tag-amber">待确认</span></td>
+        <td>电网方向 &middot; 7/24后走势待观察</td>
+      </tr>
+      <tr>
+        <td class="name">长城军工</td>
+        <td>&mdash;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">涨停(2连板)</span></td>
+        <td><span class="tag tag-up">3连板(预估)</span></td>
+        <td>兵装重组龙头</td>
+      </tr>
+      <tr>
+        <td class="name">通富微电</td>
+        <td>&mdash;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">+9.77%触及涨停</span></td>
+        <td><span class="tag tag-up">延续强势</span></td>
+        <td>先进封装龙头持续走强</td>
+      </tr>
+      <tr style="background:#FEF3C7;">
+        <td class="name" style="color:var(--primary);">长鑫科技</td>
+        <td>&mdash;</td>
+        <td>&mdash;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">+465.82%(首日)</span></td>
+        <td>A股市值一哥 &middot; 成交1411亿创纪录</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">板块轮动追踪（近3日涨跌对比）</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>7/23</th><th>7/24</th><th>7/27</th><th>趋势判断</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--success);">半导体/存储</td>
+        <td><span class="tag tag-down">科创50 -3.78%</span></td>
+        <td><span class="tag tag-up">科创50 -0.14%(抗跌)</span></td>
+        <td><span class="tag tag-up">暴涨(长鑫催化)</span></td>
+        <td><span class="pill pill-offense">进攻主线 &uarr;&uarr;</span></td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--success);">PCB</td>
+        <td>&mdash;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">午后10+涨停</span></td>
+        <td><span class="pill pill-offense">新爆发方向 &uarr;</span></td>
+      </tr>
+      <tr>
+        <td class="name">脑机接口</td>
+        <td>&mdash;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">5+涨停(涨停潮)</span></td>
+        <td><span class="pill pill-offense">题材爆发 &uarr;</span></td>
+      </tr>
+      <tr>
+        <td class="name">电力</td>
+        <td><span class="tag tag-up">40+涨停(立新能源6板)</span></td>
+        <td><span class="tag tag-down">大面积跌停</span></td>
+        <td><span class="tag tag-up">走强(立新能源8天7板)</span></td>
+        <td><span class="pill pill-defense">分化反复 &harr;</span></td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">贵金属/有色</td>
+        <td><span class="tag tag-up">贵金属暴涨</span></td>
+        <td><span class="tag tag-down">-4.92%(崩塌)</span></td>
+        <td><span class="tag tag-down">飘绿(资源开采)</span></td>
+        <td><span class="pill pill-neutral">退潮 &darr;&darr;</span></td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">煤炭</td>
+        <td><span class="tag tag-up">防御走强</span></td>
+        <td><span class="tag tag-down">-4.49%</span></td>
+        <td><span class="tag tag-down">继续调整</span></td>
+        <td><span class="pill pill-neutral">退潮 &darr;&darr;</span></td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">油气</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">中曼石油涨</span></td>
+        <td><span class="tag tag-down">中曼跌停</span></td>
+        <td><span class="pill pill-neutral">退潮 &darr;</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">连板梯队演变</div>
+  <table>
+    <thead>
+      <tr><th>日期</th><th>最高标</th><th>次高标</th><th>涨停数</th><th>市场情绪</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">7/23</td>
+        <td>立新能源(6连板)</td>
+        <td>美利云(4连板)</td>
+        <td>128+</td>
+        <td><span class="tag tag-up">极热</span></td>
+      </tr>
+      <tr>
+        <td class="name">7/24</td>
+        <td>爱丽家居(4连板)</td>
+        <td>长缆科技(4连板)</td>
+        <td>31</td>
+        <td><span class="tag tag-down">冰冻</span></td>
+      </tr>
+      <tr>
+        <td class="name font-bold">7/27</td>
+        <td class="font-bold">爱丽家居(5+连板)</td>
+        <td class="font-bold">立新能源(8天7板)/五洲医疗(4+连板)</td>
+        <td class="font-bold" style="color:var(--success);">121</td>
+        <td><span class="tag tag-up">回归火热</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">风格切换信号</div>
+  <div class="alert-success">
+    <span class="success-title">&check; 科技进攻风格全面确认</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">7/24日报预判："半导体/军工能否成为新主线"</span> &rarr; <span style="color:var(--success);font-weight:700;">7/27完美兑现</span></div>
+      <div>&bull; <span class="font-bold">资金流向：</span>从电力/贵金属/煤炭(防守) &rarr; 存储/PCB/AI/脑机接口(进攻) &middot; 风格切换已完成</div>
+      <div>&bull; <span class="font-bold">板块强弱：</span>进攻板块全面爆发(8个方向走强) vs 防守板块仅3板块飘绿 &middot; 极端分化</div>
+      <div>&bull; <span class="font-bold">量能配合：</span>2.08万亿放量 &middot; 量价齐升确认进攻风格有效</div>
+      <div>&bull; <span class="font-bold">赚钱效应：</span>5195上涨/121涨停/封板率92% &middot; 极致赚钱效应 = 做多窗口</div>
+      <div>&bull; <span class="font-bold">结论：</span>科技成长进攻风格已完全取代此前的周期防守风格。当前是<span class="font-bold" style="color:var(--success);">科技主导的进攻行情</span>，应重仓科技方向。</div>
+    </div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">数据来源：</span>历史数据提取自 A股周报/2026-07-24-日报.html、2026-07-27-半日.html、2026-07-27-盘中.html。
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
