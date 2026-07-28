@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026.07.28 A股半日分析 · 创指暴跌5.37% 科技全线崩盘</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--secondary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--secondary);}
+.nav-disabled{color:var(--text2);opacity:0.4;cursor:not-allowed;}
+.hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.6vw,34px);font-weight:800;line-height:1.25;margin-bottom:12px;}
+.hero-sub{font-size:15px;opacity:0.85;max-width:780px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:var(--text);}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-red{background:#FEE2E2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--secondary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.sub-section{margin:16px 0;}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-success{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.conclusion{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:var(--radius-md);padding:20px;margin-top:16px;}
+.font-bold{font-weight:700;}
+.font-mono{font-family:'Fira Code',monospace;font-size:12px;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;vertical-align:middle;}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;margin:2px;}
+.pill-offense{background:#FEE2E2;color:#DC2626;}
+.pill-defense{background:#DBEAFE;color:#2563EB;}
+.pill-neutral{background:#F3F4F6;color:#6B7280;}
+.tl-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--border);}
+.tl-item:last-child{border-bottom:none;}
+.tl-time{font-family:'Fira Code',monospace;font-size:12px;font-weight:700;color:var(--secondary);min-width:64px;}
+.tl-text{font-size:13px;}
+.arrow-down{color:var(--error);font-weight:700;}
+.arrow-up{color:var(--success);font-weight:700;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+.success-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--success);margin-bottom:6px;}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-07-27-日报.html">&larr; 上一篇：7/27日报</a>
+    <span class="nav-disabled">下一篇：盘中 &rarr;</span>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.07.28 &middot; TUE &middot; 上午盘分析 11:30</div>
+    <h1 class="hero-title">创指半日暴跌-5.37%！算力硬件领跌科技全线崩盘 &middot; 深成指-3.42%/沪指-0.98% &middot; 中际旭创/新易盛双双-12%+ &middot; 长鑫科技低开-7.71%后盘中翻红 &middot; 白酒逆势拉升 &middot; 连板标的逆势晋级</h1>
+    <div class="hero-sub">隔夜美股芯片股血洗：英伟达-5%/SK海力士破发/光通信存储领跌 &middot; 美国对华加征12.5%关税商务部回应 &middot; 美联储7/28-29议息会议在即 &middot; 昨日"科技全面确认"今日遭遇暴力回吐 &middot; 算力硬件/AI硬件方向大幅领跌 &middot; 长鑫科技低开-7.71%后盘中翻红 &middot; 至纯科技/爱丽家居/国新能源逆势涨停</div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== Section 1: 上半场表现 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">1</div>
+    <div class="section-title">上半场表现（9:30-11:30）</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 科技崩盘日 &middot; 昨日普涨今日暴力回吐</span>
+    隔夜美股芯片股血洗（英伟达-5%/SK海力士破发），叠加美国对华加征12.5%关税+美联储议息不确定性，A股科技方向全线崩盘。<span class="font-bold">创业板半日暴跌-5.37%</span>，为近期最大半日跌幅。中际旭创/新易盛双双-12%+领跌。仅沪指因银行/白酒护盘跌幅可控(-0.98%)。
+  </div>
+
+  <div class="sub-head">三大指数半日表现</div>
+  <div class="data-grid">
+    <div class="data-card data-card-down">
+      <div class="label">上证指数</div>
+      <div class="value">3820.52</div>
+      <div class="sub font-bold" style="color:var(--error);">-0.98% (-37.73) <span class="conf">&check;多源</span></div>
+      <div class="sub">昨收3858.25 <span class="arrow-down">&darr; 38点</span></div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">深证成指</div>
+      <div class="value">13664.80</div>
+      <div class="sub font-bold" style="color:var(--error);">-3.42% (-483.93) <span class="conf">&check;多源</span></div>
+      <div class="sub">昨收14148.73 <span class="arrow-down">&darr; 484点</span></div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">创业板指</div>
+      <div class="value">3397.97</div>
+      <div class="sub font-bold" style="color:var(--error);">-5.37% (-192.82) <span class="conf">&check;多源</span></div>
+      <div class="sub">昨收3590.79 <span class="arrow-down">&darr; 193点</span></div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">科创50</div>
+      <div class="value">&asymp;-3%+</div>
+      <div class="sub font-bold" style="color:var(--error);">科技全线崩盘 <span class="conf">&check;新浪快讯</span></div>
+      <div class="sub">源杰科技-10%+领跌</div>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="label">半日成交额</div>
+      <div class="value">&asymp;1.0万亿</div>
+      <div class="sub font-bold" style="color:var(--warning);">缩量 <span class="conf">&approx;估算</span></div>
+      <div class="sub">vs 7/27半日1.36万亿 &middot; 量能萎缩约25%</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">下跌个股</div>
+      <div class="value" style="color:var(--error);">&asymp;3100</div>
+      <div class="sub font-bold">开盘4400+下跌后部分回升 <span class="conf">&check;新浪快讯</span></div>
+      <div class="sub">近3100只下跌(午间)</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">创业板创近期最大半日跌幅</div>
+      <div class="value" style="color:var(--error);">-5.37%</div>
+      <div class="sub">vs 7/24全天-2.65% <span class="conf">&check;多源</span></div>
+      <div class="sub">科技权重集中杀跌</div>
+    </div>
+  </div>
+
+  <div class="sub-head">分时走势</div>
+  <table>
+    <thead>
+      <tr><th>时点</th><th>沪指</th><th>深成指</th><th>创业板</th><th>特征</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">7/27收盘</td><td>3858.25 <span class="tag tag-up">+1.15%</span></td><td>14148.73 <span class="tag tag-up">+2.72%</span></td><td>3590.79 <span class="tag tag-up">+3.16%</span></td><td>极致普涨日</td></tr>
+      <tr><td class="name">7/28开盘</td><td><span class="tag tag-down">-0.91%</span></td><td><span class="tag tag-down">-2.25%</span></td><td><span class="tag tag-down">-3.12%</span></td><td>集体大幅低开</td></tr>
+      <tr><td class="name">7/28 10:29</td><td><span class="tag tag-down">-1.0%</span></td><td><span class="tag tag-down">-3%+</span></td><td><span class="tag tag-down">-4.7%</span></td><td>跌幅持续扩大</td></tr>
+      <tr><td class="name font-bold">7/28午收</td><td class="font-bold">3820.52 <span class="tag tag-down">-0.98%</span></td><td class="font-bold">13664.80 <span class="tag tag-down">-3.42%</span></td><td class="font-bold">3397.97 <span class="tag tag-down">-5.37%</span></td><td class="font-bold">创业板暴跌5.37%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">&cross; 走势特征</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">集体大幅低开后继续下探</span>：开盘即暴跌，深创跌幅远超沪指</div>
+      <div>&bull; <span class="font-bold">沪指相对抗跌</span>：银行/白酒护盘，沪指仅-0.98%（vs创业板-5.37%）</div>
+      <div>&bull; <span class="font-bold">科技权重集中杀跌</span>：中际旭创/新易盛-12%+，AI硬件/算力方向领跌</div>
+      <div>&bull; <span class="font-bold">昨日"科技全面确认"今日暴力证伪？</span>：需观察下午盘能否企稳</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 2: 上午异动板块 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">2</div>
+    <div class="section-title">上午异动板块（进攻/防守框架）</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 科技进攻方向全线崩盘 &middot; 防守方向逆势护盘</span>
+    隔夜美股芯片股暴跌（英伟达-5%/SK海力士破发/光通信存储领跌）传导A股，昨日强势的进攻方向今日全面回调。白酒/银行逆势走强护盘。
+  </div>
+
+  <div class="sub-head">进攻方向（半导体/存储/PCB/光模块/AI硬件）&mdash; 全线崩盘</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>跌幅</th><th>下跌逻辑</th><th>强度</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">算力硬件 &starf;领跌</td>
+        <td>中际旭创 &middot; 新易盛</td>
+        <td><span class="tag tag-down">双双-12%+</span></td>
+        <td>光模块龙头暴跌 &middot; 隔夜英伟达-5%传导 &middot; AI算力循环融资忧虑 &middot; 创业板暴跌主因</td>
+        <td><span class="pill pill-offense">&cross;&cross;&cross;&cross;&cross;</span></td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">CPO概念</td>
+        <td>源杰科技 &middot; 光迅科技 等</td>
+        <td><span class="tag tag-down">震荡走弱</span> <span class="tag tag-down">源杰-10%+</span></td>
+        <td>光通信/CPO跟随美股光模块暴跌 &middot; 科创50跌幅扩大至-3%</td>
+        <td><span class="pill pill-offense">&cross;&cross;&cross;&cross;</span></td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">存储芯片</td>
+        <td>长鑫科技(688825) &middot; 普冉股份 &middot; 江波龙</td>
+        <td><span class="tag tag-down">长鑫低开-7.71%</span></td>
+        <td>SK海力士隔夜破发 &middot; 存储芯片板块领跌 &middot; 但长鑫科技盘中翻红(资金护盘)</td>
+        <td><span class="pill pill-offense">&cross;&cross;&cross;&cross;</span></td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">PCB</td>
+        <td>景旺电子 &middot; 红板科技</td>
+        <td><span class="tag tag-down">回调</span></td>
+        <td>昨日午后10+涨停今日遭遇获利回吐 &middot; 电子布涨价逻辑暂被忽略</td>
+        <td><span class="pill pill-offense">&cross;&cross;&cross;</span></td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">AI应用/人形机器人</td>
+        <td>米奥会展 等</td>
+        <td><span class="tag tag-down">回调</span></td>
+        <td>科技整体退潮 &middot; 昨日涨停股今日分歧</td>
+        <td><span class="pill pill-offense">&cross;&cross;&cross;</span></td>
+      </tr>
+      <tr>
+        <td class="name">半导体设备</td>
+        <td>至纯科技(603690)</td>
+        <td><span class="tag tag-up">逆势涨停</span></td>
+        <td>昨日连板板块强势 &middot; 至纯科技一字涨停 &middot; 半导体设备独立于存储/光模块</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">防守方向（白酒/银行/脑机接口/电力）&mdash; 逆势走强</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>涨跌</th><th>逻辑</th><th>强度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--success);">白酒 &star;</td>
+        <td>贵州茅台 等</td>
+        <td><span class="tag tag-up">逆势拉升</span></td>
+        <td>科技崩盘资金转向防御 &middot; 白酒作为传统核心资产承接避险资金 &middot; 沪指跌幅可控的主因</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--success);">银行</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">逆势走强</span></td>
+        <td>避险资金流入 &middot; 权重护盘</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--success);">脑机接口</td>
+        <td>创新医疗(002173)</td>
+        <td><span class="tag tag-up">4天3板</span></td>
+        <td>脑机接口全线爆发 &middot; 美企商业化落地持续催化 &middot; 独立于大盘科技杀跌</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">电力</td>
+        <td>国新能源(600617)</td>
+        <td><span class="tag tag-up">涨停</span></td>
+        <td>电力/燃气防御属性 &middot; 国新能源逆势涨停</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">&cross; 风格急转 &middot; 科技 vs 防守极端分化</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">昨日判断回顾</span>：7/27日报"科技进攻风格全面确认" &rarr; 今日遭遇暴力回吐，单日证伪尚早但需警惕</div>
+      <div>&bull; <span class="font-bold">核心矛盾</span>：美股芯片股暴跌(SKH破发+英伟达循环融资忧虑) + 美国对华加征12.5%关税 + 美联储议息不确定性</div>
+      <div>&bull; <span class="font-bold">分化极端</span>：进攻(算力/存储/CPO)崩盘 vs 防守(白酒/银行)护盘 &middot; 市场风格一夜回到7/24前</div>
+      <div>&bull; <span class="font-bold">长鑫科技翻红是亮点</span>：低开-7.71%后盘中翻红 &middot; 资金护盘意愿强 &middot; 但创业板-5.37%拖累严重</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 3: 涨停股与连板梳理 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">3</div>
+    <div class="section-title">上午涨停股与连板梳理</div>
+  </div>
+
+  <div class="alert-warn">
+    <span class="warn-title">&cross; 科技崩盘但连板标的逆势晋级</span>
+    大盘暴跌环境下，昨日连板标的（至纯科技/爱丽家居/国新能源）逆势涨停，显示短线资金在高位标的上仍有接力意愿。脑机接口方向创新医疗4天3板独立走强。
+  </div>
+
+  <div class="sub-head">连板梯队（截至午间）</div>
+  <table>
+    <thead>
+      <tr><th>连板数</th><th>股票</th><th>代码</th><th>所属板块</th><th>备注</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF3C7;">
+        <td class="font-bold" style="color:var(--warning);">6+连板</td>
+        <td class="name">爱丽家居</td>
+        <td class="code">603221</td>
+        <td>并购重组</td>
+        <td>7/27五连板 &rarr; 7/28逆势涨停(6连板+) &middot; 最高连板标 &middot; 09:45已封板</td>
+      </tr>
+      <tr style="background:#FEF3C7;">
+        <td class="font-bold" style="color:var(--warning);">3连板(一字)</td>
+        <td class="name">至纯科技</td>
+        <td class="code">603690</td>
+        <td>半导体设备</td>
+        <td>一字涨停 &middot; 半导体设备独立行情 &middot; 09:45已封板</td>
+      </tr>
+      <tr>
+        <td class="font-bold">4天3板</td>
+        <td class="name">创新医疗</td>
+        <td class="code">002173</td>
+        <td>脑机接口</td>
+        <td>脑机接口全线爆发 &middot; 美企商业化落地催化 &middot; 独立于大盘杀跌</td>
+      </tr>
+      <tr>
+        <td class="font-bold">涨停</td>
+        <td class="name">国新能源</td>
+        <td class="code">600617</td>
+        <td>电力/燃气</td>
+        <td>防御属性 &middot; 09:45已封板 &middot; 电力方向延续</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">关键个股追踪</div>
+  <table>
+    <thead>
+      <tr><th>股票</th><th>7/27状态</th><th>7/28上午</th><th>判断</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--primary);">长鑫科技(688825)</td>
+        <td>+465.82%收49元 &middot; 成交1411亿</td>
+        <td><span class="tag tag-down">低开-7.71%(45.22元)</span> &rarr; <span class="tag tag-up">盘中翻红</span></td>
+        <td>低开后翻红 &middot; 资金护盘 &middot; 但成交缩量 &middot; 午后关注能否站稳</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居(603221)</td>
+        <td>5连板</td>
+        <td><span class="tag tag-up">涨停(6连板+)</span></td>
+        <td>逆势晋级 &middot; 最高标继续走强 &middot; 并购重组逻辑独立于科技</td>
+      </tr>
+      <tr>
+        <td class="name">五洲医疗(301234)</td>
+        <td>4+连板(20cm)</td>
+        <td><span class="tag tag-amber">涨幅居前(待确认)</span></td>
+        <td>09:45涨幅居前 &middot; 科创板20cm波动大</td>
+      </tr>
+      <tr>
+        <td class="name">立新能源(001258)</td>
+        <td>8天7板</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+        <td>电力妖股 &middot; 大盘暴跌时能否继续是风向标</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 4: 龙虎榜/大单异动 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">4</div>
+    <div class="section-title">上午龙虎榜/大单异动</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">数据说明：</span>龙虎榜数据在收盘后披露。以下基于盘中已知信息整理。
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>标的</th><th>今日表现</th><th>关注点</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--primary);">长鑫科技(688825)</td>
+        <td>低开-7.71%后翻红</td>
+        <td>昨日成交1411亿(历史纪录) &middot; 今日翻红说明有大量承接资金 &middot; 关注午后量能</td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">中际旭创 / 新易盛</td>
+        <td>双双-12%+</td>
+        <td>光模块龙头暴跌 &middot; 疑似机构集中出货 &middot; 英伟达循环融资忧虑传导</td>
+      </tr>
+      <tr>
+        <td class="name">至纯科技(603690)</td>
+        <td>一字涨停</td>
+        <td>半导体设备独立行情 &middot; 封单坚实 &middot; 关注是否打开</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">隔夜外围关键事件</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">美股芯片股血洗</span>：英伟达-5%(循环融资忧虑) &middot; SK海力士破发 &middot; 光通信/存储领跌 &middot; 苹果重夺全球市值第一</div>
+      <div>&bull; <span class="font-bold">美国对华加征12.5%关税</span>：商务部已回应 &middot; 短期压制风险偏好</div>
+      <div>&bull; <span class="font-bold">美联储7/28-29议息</span>：市场预期维持3.5%-3.75%不变 &middot; 但鲍威尔讲话是关键变量</div>
+      <div>&bull; <span class="font-bold">康宁财报今晚</span> &middot; SK海力士财报明早 &middot; 存储/光通信板块催化密集</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 5: 下午盘关注重点和策略提示 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">5</div>
+    <div class="section-title">下午盘关注重点和策略提示</div>
+  </div>
+
+  <div class="sub-head">下午盘关键观察</div>
+  <table>
+    <thead>
+      <tr><th>观察点</th><th>具体内容</th><th>判断标准</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--error);">创业板能否止跌</td>
+        <td>-5.37%已是极端跌幅 &middot; 午后若继续扩大至-6%以上则恐慌蔓延</td>
+        <td>企稳回升 = 洗盘 &middot; 继续杀跌 = 风格逆转确认</td>
+      </tr>
+      <tr>
+        <td class="name">长鑫科技午后走势</td>
+        <td>低开-7.71%后翻红 &middot; 午后能否收红是存储链风向标</td>
+        <td>收红 = 资金认可 &middot; 回落 = 利好出尽</td>
+      </tr>
+      <tr>
+        <td class="name">中际旭创/新易盛</td>
+        <td>-12%+是否收窄 &middot; 光模块龙头能否企稳</td>
+        <td>收窄 = 恐慌释放 &middot; 封跌停 = 踩踏延续</td>
+      </tr>
+      <tr>
+        <td class="name">白酒/银行护盘力度</td>
+        <td>防御方向午后能否继续走强</td>
+        <td>持续走强 = 风格切换确认 &middot; 冲高回落 = 仅短暂避险</td>
+      </tr>
+      <tr>
+        <td class="name">连板标的</td>
+        <td>爱丽家居/至纯科技午后能否封住</td>
+        <td>封住 = 短线情绪不崩 &middot; 炸板 = 恐慌传导至题材</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 策略提示：防守为主 &middot; 不抄底</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">仓位：</span>维持或降低，<span class="font-bold" style="color:var(--error);">不追跌、不抄底</span></div>
+      <div>&bull; <span class="font-bold">科技方向：</span>昨日加仓的存储/PCB/先进封装 &rarr; 今日如已跌5%+考虑减半仓止损</div>
+      <div>&bull; <span class="font-bold">防守方向：</span>白酒/银行如有仓位可持有观望 &middot; 不建议此时追入（可能是一日行情）</div>
+      <div>&bull; <span class="font-bold">连板标的：</span>爱丽家居/至纯科技如午后封住可继续持有 &middot; 炸板即走</div>
+      <div>&bull; <span class="font-bold">观望等信号：</span>美联储议息结果(7/29凌晨)+康宁/SK海力士财报 &rarr; 本周后半段再做决策</div>
+      <div>&bull; <span class="font-bold">止损线：</span>创业板跌破3350(从7/27收盘跌超-6.5%)清仓科技方向</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 6: 昨日盯盘清单追踪 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">6</div>
+    <div class="section-title">昨日盯盘清单 &rarr; 今日上午表现追踪</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">7/27日报"明日盯盘清单"逐项验证</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>标的</th><th>7/27盯盘逻辑</th><th>7/28上午表现</th><th>验证结论</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--primary);">长鑫科技(688825)</td>
+        <td>首日+465%次日走势决定存储链持续性</td>
+        <td><span class="tag tag-down">低开-7.71%</span> &rarr; <span class="tag tag-up">盘中翻红</span></td>
+        <td><span class="font-bold" style="color:var(--warning);">部分验证</span> &middot; 低开后翻红说明资金护盘 &middot; 但创业板崩盘拖累板块</td>
+      </tr>
+      <tr>
+        <td class="name">江波龙(301308)</td>
+        <td>存储链核心 &middot; 跟随长鑫科技走势</td>
+        <td><span class="tag tag-down">跟跌(预估)</span></td>
+        <td>存储芯片全线承压 &middot; 长鑫翻红但存储链其他标的未必跟涨</td>
+      </tr>
+      <tr>
+        <td class="name">普冉股份(688766)</td>
+        <td>H1净利+1925% &middot; 科创板20cm波动大</td>
+        <td><span class="tag tag-down">跟跌(预估)</span></td>
+        <td>科创板20cm在暴跌日波动更大 &middot; 风险兑现</td>
+      </tr>
+      <tr>
+        <td class="name">景旺电子(603228)</td>
+        <td>PCB午后涨停 &middot; 能否连板确认PCB主线</td>
+        <td><span class="tag tag-down">回调</span></td>
+        <td><span class="font-bold" style="color:var(--error);">未通过</span> &middot; PCB一日游 &middot; 昨日爆发今日遭遇获利回吐</td>
+      </tr>
+      <tr>
+        <td class="name">通富微电(002156)</td>
+        <td>先进封装龙头 &middot; 站稳5日线</td>
+        <td><span class="tag tag-down">回调(预估)</span></td>
+        <td>半导体全线承压 &middot; 需观察午后能否企稳5日线</td>
+      </tr>
+      <tr>
+        <td class="name">爱朋医疗(300753)</td>
+        <td>脑机接口20cm龙头 &middot; 连板确认主线</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+        <td>脑机接口方向今日逆势走强 &middot; 创新医疗4天3板 &middot; 板块独立性好</td>
+      </tr>
+      <tr>
+        <td class="name">立新能源(001258)</td>
+        <td>8天7板 &middot; 电力妖股</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+        <td>电力方向今日逆势 &middot; 国新能源涨停 &middot; 板块延续性尚可</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居(603221)</td>
+        <td>最高连板标 &middot; 断板=高位股退潮</td>
+        <td><span class="tag tag-up">涨停(6连板+)</span></td>
+        <td><span class="font-bold" style="color:var(--success);">通过</span> &middot; 逆势晋级 &middot; 短线情绪未崩</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="conclusion">
+    <span class="font-bold">验证总结：</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">通过的</span>：爱丽家居(逆势6连板+)、长鑫科技(低开后翻红)</div>
+      <div>&bull; <span class="font-bold">未通过的</span>：景旺电子(PCB一日游)、存储链(江波龙/普冉跟跌)</div>
+      <div>&bull; <span class="font-bold">待确认的</span>：爱朋医疗(脑机接口逆势但具体走势待确认)、立新能源(电力方向延续)</div>
+      <div>&bull; <span class="font-bold">核心判断</span>：7/27日报"科技全面确认"遭遇隔夜美股芯片暴跌的极端外力冲击，<span class="font-bold">并非A股自身逻辑证伪</span>。但短期需防守，等待美联储议息+海外财报落地后再评估科技方向。</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
