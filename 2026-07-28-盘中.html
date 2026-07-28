@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026.07.28 A股盘中扫描 · 创业板跌7.13%科技全面杀跌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--secondary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--secondary);}
+.nav-disabled{color:var(--text2);opacity:0.4;cursor:not-allowed;}
+.hero-band{background:var(--secondary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.6vw,34px);font-weight:800;line-height:1.25;margin-bottom:12px;}
+.hero-sub{font-size:15px;opacity:0.85;max-width:780px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:var(--text);}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-red{background:#FEE2E2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--secondary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.sub-section{margin:16px 0;}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-success{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.conclusion{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:var(--radius-md);padding:20px;margin-top:16px;}
+.font-bold{font-weight:700;}
+.font-mono{font-family:'Fira Code',monospace;font-size:12px;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;vertical-align:middle;}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;margin:2px;}
+.pill-offense{background:#FEE2E2;color:#DC2626;}
+.pill-defense{background:#DBEAFE;color:#2563EB;}
+.pill-neutral{background:#F3F4F6;color:#6B7280;}
+.tl-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--border);}
+.tl-item:last-child{border-bottom:none;}
+.tl-time{font-family:'Fira Code',monospace;font-size:12px;font-weight:700;color:var(--secondary);min-width:64px;}
+.tl-text{font-size:13px;}
+.arrow-down{color:var(--error);font-weight:700;}
+.arrow-up{color:var(--success);font-weight:700;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+.success-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--success);margin-bottom:6px;}
+.candidate{border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;margin:10px 0;position:relative;}
+.candidate::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:var(--radius-md) 0 0 var(--radius-md);}
+.candidate-offense::before{background:var(--primary);}
+.candidate-defense::before{background:var(--secondary);}
+.cand-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.cand-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;}
+.cand-code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);margin-left:8px;}
+.cand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;font-size:12px;}
+.cand-item{display:flex;flex-direction:column;}
+.cand-label{color:var(--text2);font-size:11px;}
+.cand-value{font-weight:600;}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-07-28-半日.html">&larr; 上一篇：7/28半日</a>
+    <span class="nav-disabled">下一篇：日报 &rarr;</span>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.07.28 &middot; TUE &middot; 盘中扫描 14:30</div>
+    <h1 class="hero-title">创业板午后跌7.13%！科技全面杀跌 &middot; 科创50跌超5% &middot; 源杰科技-15%+ &middot; 存储链午后崩(兆易创新跌停/澜起科技由涨停翻绿) &middot; 景旺电子午后跌停 &middot; 德明利月内跌近70%</h1>
+    <div class="hero-sub">午后跌幅继续扩大：沪指-1.37%(vs半日-0.98%) &middot; 深成指-4.43%(vs-3.42%) &middot; 创业板-7.13%(vs-5.37%) &middot; 半日报告判断"存储逆势走强"午后被证伪 &middot; 澜起科技由涨停翻绿 &middot; 兆易创新跌停 &middot; 白酒午后能否继续护盘成关键 &middot; 尾盘策略：空仓观望等美联储议息落地</div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== Section 1: 大盘即时状态 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">1</div>
+    <div class="section-title">大盘即时状态（14:30）</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 午后跌幅继续扩大 &middot; 恐慌加剧</span>
+    上午收盘时创业板-5.37%，午后继续走低扩大至<span class="font-bold">-7.13%</span>。科创50跌超5%，源杰科技-15%+。半日报告中"存储/脑机接口逆势走强"的判断午后被证伪——澜起科技由涨停翻绿、兆易创新跌停。<span class="font-bold">科技方向午后全面杀跌，无一幸免。</span>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card data-card-down">
+      <div class="label">上证指数</div>
+      <div class="value">3805.21</div>
+      <div class="sub font-bold" style="color:var(--error);">-1.37% (-53.03) <span class="conf">&check;sina实时</span></div>
+      <div class="sub">半日-0.98% &rarr; 午后跌幅扩大</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">深证成指</div>
+      <div class="value">13521.90</div>
+      <div class="sub font-bold" style="color:var(--error);">-4.43% (-626.83) <span class="conf">&check;sina实时</span></div>
+      <div class="sub">半日-3.42% &rarr; 午后跌幅扩大</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">创业板指</div>
+      <div class="value">3334.93</div>
+      <div class="sub font-bold" style="color:var(--error);">-7.13% (-255.86) <span class="conf">&check;sina实时</span></div>
+      <div class="sub">半日-5.37% &rarr; 午后再跌-1.76%</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">科创50</div>
+      <div class="value" style="color:var(--error);">-5%+</div>
+      <div class="sub font-bold" style="color:var(--error);">半导体芯片持续下挫 <span class="conf">&check;sina快讯</span></div>
+      <div class="sub">源杰科技-15%+领跌</div>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card data-card-down">
+      <div class="label">半日成交（已知）</div>
+      <div class="value">1.33万亿</div>
+      <div class="sub font-bold" style="color:var(--warning);">缩量217亿 <span class="conf">&check;财联社</span></div>
+      <div class="sub">vs 7/27半日1.35万亿 &middot; 量能略缩</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">下跌个股</div>
+      <div class="value" style="color:var(--error);">&asymp;3000+</div>
+      <div class="sub font-bold">午后进一步扩散 <span class="conf">&check;sina快讯</span></div>
+      <div class="sub">上午10:30时近2800只 &rarr; 午后扩大</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">午后跌停新增</div>
+      <div class="value" style="color:var(--error);">兆易创新/景旺电子/德明利</div>
+      <div class="sub font-bold">存储/PCB午后加入跌停 <span class="conf">&check;多源</span></div>
+      <div class="sub">科技午后全面杀跌</div>
+    </div>
+  </div>
+
+  <div class="sub-head">vs 半日数据对比（午后恶化程度）</div>
+  <table>
+    <thead>
+      <tr><th>指标</th><th>半日(11:30)</th><th>盘中(14:30)</th><th>午后变化</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">沪指</td><td>3820.52 (-0.98%)</td><td>3805.21 (-1.37%)</td><td><span class="arrow-down">&darr; -0.39%</span></td></tr>
+      <tr><td class="name">深成指</td><td>13664.80 (-3.42%)</td><td>13521.90 (-4.43%)</td><td><span class="arrow-down">&darr; -1.01%</span></td></tr>
+      <tr><td class="name" style="color:var(--error);">创业板</td><td>3397.97 (-5.37%)</td><td class="font-bold">3334.93 (-7.13%)</td><td><span class="arrow-down">&darr;&darr; -1.76%</span></td></tr>
+      <tr><td class="name">科创50</td><td>&asymp;-3%+</td><td class="font-bold" style="color:var(--error);">-5%+</td><td><span class="arrow-down">&darr;&darr; 跌幅加速</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 2: 异动板块扫描 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">2</div>
+    <div class="section-title">异动板块扫描（进攻/防守框架）</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 半日判断修正 &middot; 存储午后证伪 &middot; 科技全面杀跌</span>
+    半日报告判断"存储/脑机接口逆势走强"，午后被证伪。澜起科技由涨停翻绿、兆易创新跌停。<span class="font-bold">科技方向午后无一幸免</span>，恐慌情绪全面蔓延。
+  </div>
+
+  <div class="sub-head">午后新变化 &mdash; 跌幅扩大/新增跌停</div>
+  <table>
+    <thead>
+      <tr><th>板块/标的</th><th>午后表现</th><th>vs 半日</th><th>判断</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">存储芯片 &cross;午后崩盘</td>
+        <td><span class="tag tag-down">兆易创新跌停</span> <span class="tag tag-down">澜起科技翻绿</span></td>
+        <td>半日翻红/涨停 &rarr; 午后跌停/翻绿</td>
+        <td><span class="font-bold" style="color:var(--error);">半日判断被证伪</span> &middot; SK海力士破发影响午后继续发酵 &middot; 存储链午后无差别杀跌</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">PCB &cross;午后跌停</td>
+        <td><span class="tag tag-down">景旺电子跌停(73.85元)</span></td>
+        <td>半日回调 &rarr; 午后封跌停</td>
+        <td>PCB一日游确认 &middot; 昨日爆发今日获利盘集中出逃 &middot; 封单701手</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">半导体芯片 &cross;持续下挫</td>
+        <td><span class="tag tag-down">源杰科技-15%+</span> <span class="tag tag-down">科创50-5%+</span></td>
+        <td>半日-10% &rarr; 午后-15%+</td>
+        <td>跌幅持续扩大 &middot; 恐慌情绪午后加剧</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">德明利(存储)</td>
+        <td><span class="tag tag-down">再跌停(361.44元)</span></td>
+        <td>月内回撤近70%</td>
+        <td>融资余额较6月底腰斩 &middot; 高位科技标的极端案例</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">算力硬件/光模块</td>
+        <td><span class="tag tag-down">中际旭创/新易盛-12%+(维持)</span></td>
+        <td>午后跌幅未见明显收窄</td>
+        <td>光模块龙头持续杀跌 &middot; 创业板暴跌核心拖累</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">午后仍逆势走强的方向</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>午后表现</th><th>逻辑</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--success);">白酒</td>
+        <td>贵州茅台 等</td>
+        <td><span class="tag tag-up">维持逆势拉升</span></td>
+        <td>防御资金持续流入 &middot; 沪指跌幅可控的核心原因</td>
+      </tr>
+      <tr>
+        <td class="name">脑机接口</td>
+        <td>创新医疗(002173)</td>
+        <td><span class="tag tag-amber">午后待确认</span></td>
+        <td>上午4天3板 &middot; 午后能否封住是题材情绪风向标</td>
+      </tr>
+      <tr>
+        <td class="name">电力/燃气</td>
+        <td>国新能源(600617) &middot; 顺钠股份</td>
+        <td><span class="tag tag-amber">午后待确认</span></td>
+        <td>顺钠股份4连板(电网设备) &middot; 防御+独立逻辑</td>
+      </tr>
+      <tr>
+        <td class="name">医药</td>
+        <td>珍宝岛(9天5板)</td>
+        <td><span class="tag tag-amber">午后待确认</span></td>
+        <td>医药板块上午涨停数只 &middot; 午后分化需观察</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">&cross; 午后格局总结</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">科技全面杀跌</span>：上午存储/脑机接口还逆势走强，午后存储链也崩了(兆易创新跌停/澜起翻绿)，恐慌无差别扩散</div>
+      <div>&bull; <span class="font-bold">创业板从-5.37%扩至-7.13%</span>：午后又跌了近2个百分点，接近7/2全天-5.71%的水平</div>
+      <div>&bull; <span class="font-bold">沪指仅-1.37%</span>：白酒/银行护盘有效 &middot; 但深创已崩</div>
+      <div>&bull; <span class="font-bold">爱丽家居6连板(上午确认)</span>：最高标逆势晋级 &middot; 但午后能否封住存疑</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 3: 试仓候选股 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">3</div>
+    <div class="section-title">试仓候选股</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 当前环境不建议试仓</span>
+    创业板-7.13%、科技全面杀跌、恐慌无差别扩散。<span class="font-bold">在暴跌日尾盘不建议试仓任何科技方向</span>。仅有白酒/银行等防御方向可极轻仓观察，但追高风险大。建议等美联储议息(7/29凌晨)+康宁/SK海力士财报落地后再做决策。
+  </div>
+
+  <div class="sub-head">如必须试仓（极轻仓/防御方向）</div>
+
+  <div class="candidate candidate-defense">
+    <div class="cand-head">
+      <div><span class="cand-name">贵州茅台</span><span class="cand-code">600519</span></div>
+      <span class="pill pill-defense">防御 &middot; 白酒</span>
+    </div>
+    <div class="cand-grid">
+      <div class="cand-item"><span class="cand-label">当前状态</span><span class="cand-value">午后逆势走强</span></div>
+      <div class="cand-item"><span class="cand-label">试仓理由</span><span class="cand-value">科技崩盘日白酒承接避险资金 &middot; 沪指跌幅可控核心 &middot; 权重护盘逻辑清晰</span></div>
+      <div class="cand-item"><span class="cand-label">建议仓位</span><span class="cand-value" style="color:var(--warning);">&le;5%（极轻仓试探）</span></div>
+      <div class="cand-item"><span class="cand-label">风控提示</span><span class="cand-value" style="color:var(--error);">若午后白酒冲高回落则放弃 &middot; 可能是一日行情 &middot; 不追高</span></div>
+    </div>
+  </div>
+
+  <div class="candidate candidate-defense">
+    <div class="cand-head">
+      <div><span class="cand-name">国新能源</span><span class="cand-code">600617</span></div>
+      <span class="pill pill-defense">防御 &middot; 电力/燃气</span>
+    </div>
+    <div class="cand-grid">
+      <div class="cand-item"><span class="cand-label">当前状态</span><span class="cand-value">上午涨停(待午后确认)</span></div>
+      <div class="cand-item"><span class="cand-label">试仓理由</span><span class="cand-value">防御属性+独立逻辑(电力方向延续) &middot; 上午封板坚实</span></div>
+      <div class="cand-item"><span class="cand-label">建议仓位</span><span class="cand-value" style="color:var(--warning);">&le;3%（极轻仓）</span></div>
+      <div class="cand-item"><span class="cand-label">风控提示</span><span class="cand-value" style="color:var(--error);">午后若炸板即放弃 &middot; 尾盘排板不追 &middot; 次日低开风险大</span></div>
+    </div>
+  </div>
+
+  <div class="alert-warn">
+    <span class="warn-title">&cross; 绝对不碰的方向</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold" style="color:var(--error);">算力硬件/光模块</span>：中际旭创/新易盛-12%+ &middot; 趋势破位 &middot; 不抄底</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">存储芯片</span>：午后崩盘(兆易创新跌停) &middot; 半日翻红已被证伪 &middot; 不碰</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">CPO概念</span>：源杰科技-15%+ &middot; 科创50-5%+ &middot; 不碰</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">PCB</span>：景旺电子午后跌停 &middot; 一日游确认 &middot; 不碰</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 4: 上午盯盘清单追踪 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">4</div>
+    <div class="section-title">上午盯盘清单 &rarr; 午后表现追踪</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">7/28半日报告盯盘清单 &rarr; 午后逐项验证</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>标的</th><th>半日判断</th><th>午后实际</th><th>验证结论</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--primary);">长鑫科技(688825)</td>
+        <td>午后能否收红=存储链风向标</td>
+        <td><span class="tag tag-amber">午后待确认</span></td>
+        <td>上午翻红 &middot; 午后存储链全面崩盘(兆易创新跌停) &middot; 长鑫大概率回落</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">中际旭创/新易盛</td>
+        <td>-12%+能否收窄=恐慌释放</td>
+        <td><span class="tag tag-down">午后跌幅未收窄</span></td>
+        <td><span class="font-bold" style="color:var(--error);">未通过</span> &middot; 恐慌持续 &middot; 踩踏延续</td>
+      </tr>
+      <tr>
+        <td class="name">白酒/银行</td>
+        <td>午后能否继续走强=风格切换</td>
+        <td><span class="tag tag-up">白酒维持走强</span></td>
+        <td><span class="font-bold" style="color:var(--success);">通过</span> &middot; 防御方向午后继续有效 &middot; 但可能是一日行情</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居/至纯科技</td>
+        <td>午后能否封住=短线情绪</td>
+        <td><span class="tag tag-amber">午后待确认</span></td>
+        <td>上午封板坚实 &middot; 午后大盘恐慌加剧 &middot; 封板压力大</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">景旺电子(603228)</td>
+        <td>半日回调</td>
+        <td><span class="tag tag-down">午后跌停(73.85元)</span></td>
+        <td><span class="font-bold" style="color:var(--error);">一日游确认</span> &middot; PCB昨日爆发今日全线回吐</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 5: 尾盘策略提示 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">5</div>
+    <div class="section-title">尾盘策略提示（最后30分钟）</div>
+  </div>
+
+  <div class="sub-head">最后30分钟重点观察</div>
+  <table>
+    <thead>
+      <tr><th>观察点</th><th>具体内容</th><th>信号含义</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--error);">创业板能否止跌</td>
+        <td>-7.13%已接近7/2全天-5.71% &middot; 若收盘超-7%则恐慌级别升级</td>
+        <td>收窄至-6%以内 = 尾盘有资金抄底 &middot; 超-7%收盘 = 恐慌加剧</td>
+      </tr>
+      <tr>
+        <td class="name">沪指能否守住3800</td>
+        <td>当前3805 &middot; 整数关口心理位</td>
+        <td>守住3800 = 银行/白酒护盘有效 &middot; 跌破3800 = 全面恐慌</td>
+      </tr>
+      <tr>
+        <td class="name">尾盘有无抄底资金</td>
+        <td>最后15分钟量能是否放大</td>
+        <td>放量拉升 = 有资金抄底 &middot; 缩量或继续跌 = 无承接</td>
+      </tr>
+      <tr>
+        <td class="name">连板标的封板情况</td>
+        <td>爱丽家居/至纯科技午后是否炸板</td>
+        <td>封住 = 题材情绪韧性 &middot; 炸板 = 恐慌传导至题材</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 尾盘策略：空仓观望 &middot; 等催化剂落地</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">科技方向：</span>全天不加仓 &middot; 不抄底 &middot; 不追跌</div>
+      <div>&bull; <span class="font-bold">已有仓位：</span>科技仓位如已超30%建议尾盘减至20%以下 &middot; 保留白酒/银行防御仓</div>
+      <div>&bull; <span class="font-bold">关键催化剂等待：</span>美联储议息(7/29凌晨)、康宁财报(今晚)、SK海力士财报(明早)</div>
+      <div>&bull; <span class="font-bold">明日预判：</span>今日暴跌后明日大概率低开 &middot; 但催化剂落地后可能有技术性反弹 &middot; 不要今日抄底</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">止损线：创业板收盘若跌破3300(从7/27收盘跌超-8%) &rarr; 明日开盘清仓所有科技</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 6: 明日盯盘清单 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">6</div>
+    <div class="section-title">明日盯盘清单（7/29）</div>
+  </div>
+
+  <div class="alert-warn">
+    <span class="warn-title">&cross; 明日环境：暴跌后+美联储议息+财报密集 &middot; 高波动</span>
+    美联储7/28-29议息（北京时间7/30凌晨公布），康宁今晚财报，SK海力士明早财报。明日开盘前将有大量新信息，高波动日。
+  </div>
+
+  <div class="sub-head">进攻方向（仅观察，不急于操作）</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>观察逻辑</th><th>明日关注点</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">长鑫科技</td>
+        <td class="code">688825</td>
+        <td>存储龙头 &middot; 今日低开后翻红但午后存储链崩盘</td>
+        <td>SK海力士财报(明早)后走势 &middot; 若SKH财报超预期则存储修复</td>
+      </tr>
+      <tr>
+        <td class="name">创新医疗</td>
+        <td class="code">002173</td>
+        <td>脑机接口龙头 &middot; 4天3板 &middot; 午后是否封住影响明日</td>
+        <td>今日封住 &rarr; 明日关注能否继续晋级 &middot; 炸板 &rarr; 明日回避</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居</td>
+        <td class="code">603272</td>
+        <td>最高连板标 &middot; 6连板 &middot; 午后封板情况</td>
+        <td>今日封住 &rarr; 明日7连板可能 &middot; 炸板 &rarr; 高位退潮信号</td>
+      </tr>
+      <tr>
+        <td class="name">至纯科技</td>
+        <td class="code">603690</td>
+        <td>半导体设备2连板 &middot; 午后封板情况</td>
+        <td>今日封住 &rarr; 明日关注3连板 &middot; 设备方向独立逻辑</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">防守方向（如风格切换确认）</div>
+  <table>
+    <thead>
+      <tr><th>标的/方向</th><th>观察逻辑</th><th>明日关注点</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">白酒板块</td>
+        <td>今日逆势护盘 &middot; 是否延续</td>
+        <td>明日若继续走强=风格切换确认 &middot; 回落=一日行情 &middot; 关注贵州茅台/五粮液</td>
+      </tr>
+      <tr>
+        <td class="name">银行板块</td>
+        <td>权重护盘 &middot; 避险属性</td>
+        <td>美联储议息结果对银行股影响 &middot; 若降息预期升温则利好</td>
+      </tr>
+      <tr>
+        <td class="name">电力/燃气</td>
+        <td>国新能源涨停 &middot; 顺钠股份4连板</td>
+        <td>防御方向延续性 &middot; 明日能否继续是验证信号</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="conclusion">
+    <span class="font-bold">明日操作思路：</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">首选策略：观望</span>。等美联储+康宁/SK海力士财报落地，看清方向再动</div>
+      <div>&bull; <span class="font-bold">若创业板明日低开-2%以上</span>：不追空 &middot; 恐慌可能已释放 &middot; 等技术性反弹</div>
+      <div>&bull; <span class="font-bold">若创业板明日反弹</span>：极轻仓试仓存储链(若SKH财报好) &middot; 不碰算力/光模块</div>
+      <div>&bull; <span class="font-bold">脑机接口/连板标的</span>：今日封住则明日可轻仓参与 &middot; 独立于大盘逻辑</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">红线：创业板收盘若破3300 &rarr; 清仓所有科技 &middot; 等周线企稳再说</span></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
