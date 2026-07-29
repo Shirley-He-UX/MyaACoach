@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026.07.29 A股盘中扫描 · 午后弱修复 深成指转涨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--secondary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--secondary);}
+.nav-disabled{color:var(--text2);opacity:0.4;cursor:not-allowed;}
+.hero-band{background:linear-gradient(135deg,#2563EB 0%,#3B82F6 100%);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.6vw,34px);font-weight:800;line-height:1.25;margin-bottom:12px;}
+.hero-sub{font-size:15px;opacity:0.85;max-width:780px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:var(--text);}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.tag-purple{background:#F3E8FF;color:#6B21A8;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--secondary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-success{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.font-bold{font-weight:700;}
+.font-mono{font-family:'Fira Code',monospace;font-size:12px;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;vertical-align:middle;}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;margin:2px;}
+.pill-offense{background:#FEE2E2;color:#DC2626;}
+.pill-defense{background:#DBEAFE;color:#2563EB;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+.success-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--success);margin-bottom:6px;}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-07-29-半日.html">&larr; 上一篇：7/29半日</a>
+    <span class="nav-disabled">下一篇：日报 &rarr;</span>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.07.29 &middot; WED &middot; 盘中扫描 14:30</div>
+    <h1 class="hero-title">午后弱修复！深成指转涨+0.10% &middot; 沪指-0.29%收窄 &middot; 大消费延续强势 &middot; 科技硬件午后企稳迹象 &middot; 尾盘策略：轻仓过夜等美联储</h1>
+    <div class="hero-sub">沪指从午间-0.53%收窄至-0.29%(3802.20) &middot; 深成指转涨+0.10%(13523.13) &middot; 大消费连续2日强势确认风格切换 &middot; 科创50仍跌约4%但午后略有收窄 &middot; 中际旭创40-80亿回购效应午后逐步显现 &middot; 今晚美联储议息为短期最大变量</div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== Section 1: 大盘即时状态 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">1</div>
+    <div class="section-title">大盘即时状态（14:30）</div>
+  </div>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 午后延续弱修复 &middot; 深成指转涨 &middot; 跌幅持续收窄</span>
+    相比午间收盘（沪指-0.53%/创业板-0.47%），午后各指数继续修复。深成指率先转涨+0.10%。沪指从-0.53%收窄至-0.29%。创业板跌幅亦在收窄。<span class="font-bold">科创50仍跌约4%但午后略有企稳</span>。
+  </div>
+
+  <div class="sub-head">指数实时（14:30截取）</div>
+  <div class="data-grid">
+    <div class="data-card data-card-down">
+      <div class="label">上证指数</div>
+      <div class="value">3802.20</div>
+      <div class="sub font-bold" style="color:var(--error);">-0.29% (-11.11) <span class="conf">&check;Yahoo Finance</span></div>
+      <div class="sub">午间-0.53% &rarr; 午后-0.29% &middot; 持续收窄</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">深证成指</div>
+      <div class="value">13523.13</div>
+      <div class="sub font-bold" style="color:var(--success);">+0.10% &middot; 转涨! <span class="conf">&check;Yahoo Finance</span></div>
+      <div class="sub">午间-0.43% &rarr; 午后+0.10% &middot; 率先翻红</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">创业板指</div>
+      <div class="value">~3315</div>
+      <div class="sub font-bold" style="color:var(--error);">约-0.35% &middot; 收窄中 <span class="conf">推算</span></div>
+      <div class="sub">午间-0.47% &rarr; 午后持续收窄</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">科创50</div>
+      <div class="value">~1625</div>
+      <div class="sub font-bold" style="color:var(--error);">约-4.0% &middot; 略有收窄 <span class="conf">推算</span></div>
+      <div class="sub">午间-4.22% &rarr; 午后微幅企稳</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">北证50</div>
+      <div class="value">~1062</div>
+      <div class="sub font-bold" style="color:var(--success);">约+0.7% <span class="conf">推算</span></div>
+      <div class="sub">全天飘红 &middot; 北交所逆势走强</div>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="label">成交额预估</div>
+      <div class="value">~2.5万亿</div>
+      <div class="sub font-bold">午间1.48万亿 &middot; 全天预计2.4-2.6万亿</div>
+      <div class="sub">较7/28全天(2.08万亿)放量</div>
+    </div>
+    <div class="data-card data-card-up">
+      <div class="label">上涨个股</div>
+      <div class="value" style="color:var(--success);">~3600+</div>
+      <div class="sub font-bold">午间3431 &rarr; 午后持续扩大</div>
+      <div class="sub">涨跌比约 1.8:1</div>
+    </div>
+    <div class="data-card">
+      <div class="label">涨停数</div>
+      <div class="value">~65+</div>
+      <div class="sub font-bold">午间58 &rarr; 午后继续增加</div>
+      <div class="sub">vs 7/28全天61涨停</div>
+    </div>
+  </div>
+
+  <div class="sub-head">分时走势对比</div>
+  <table>
+    <thead>
+      <tr><th>时点</th><th>沪指</th><th>深成指</th><th>创业板</th><th>特征</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">7/28收盘</td><td>3813.31 <span class="tag tag-down">-1.16%</span></td><td class="muted">&mdash;</td><td>3327.03 <span class="tag tag-down">-7.35%</span></td><td>暴跌日</td></tr>
+      <tr><td class="name">7/29开盘</td><td><span class="tag tag-up">+0.26%</span></td><td><span class="tag tag-down">-0.08%</span></td><td><span class="tag tag-up">+0.19%</span></td><td>高开 &middot; AI应用/短剧/CXO走强</td></tr>
+      <tr><td class="name">7/29盘中</td><td><span class="tag tag-up">+0.2%</span></td><td><span class="tag tag-up">+0.6%</span></td><td><span class="tag tag-up">+1%+</span></td><td>创业板冲高 &middot; 消费领涨</td></tr>
+      <tr><td class="name">7/29午收</td><td>3793.18 <span class="tag tag-down">-0.53%</span></td><td>13452.05 <span class="tag tag-down">-0.43%</span></td><td>3311.32 <span class="tag tag-down">-0.47%</span></td><td>冲高回落 &middot; 科创50-4.22%拖累</td></tr>
+      <tr style="background:#F0FDF4;">
+        <td class="name font-bold">7/29 14:30</td>
+        <td class="font-bold">3802.20 <span class="tag tag-down">-0.29%</span></td>
+        <td class="font-bold">13523.13 <span class="tag tag-up">+0.10%</span></td>
+        <td class="font-bold">~3315 <span class="tag tag-down">~-0.35%</span></td>
+        <td class="font-bold">午后弱修复 &middot; 深成指转涨</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <span class="font-bold">午后修复特征</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">深成指率先转涨</span>：从-0.43%翻红至+0.10% &middot; 抄底资金午后入场</div>
+      <div>&bull; <span class="font-bold">沪指跌幅持续收窄</span>：从-0.53%收窄至-0.29% &middot; 3800关口反复争夺</div>
+      <div>&bull; <span class="font-bold">创业板跌幅收窄</span>：从-0.47%收窄至约-0.35% &middot; 接近翻红</div>
+      <div>&bull; <span class="font-bold">科创50午后略有企稳</span>：从-4.22%收窄至约-4.0% &middot; SKH ADR盘后转涨有微弱传导</div>
+      <div>&bull; <span class="font-bold">放量修复</span>：成交预计2.5万亿 &middot; 较昨日2.08万亿放量 &middot; 抄底+出逃共振</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 2: 异动板块扫描 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">2</div>
+    <div class="section-title">异动板块扫描（进攻/防守框架）</div>
+  </div>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 防守方向延续强势 &middot; 大消费主线确认 &middot; 科技硬件午后略有企稳</span>
+    饮料乳品/教育/休闲食品/代糖/乘用车/调味品/专业连锁/游戏持续涨幅居前。<span class="font-bold">午后新增：CPO/光模块午后跌幅收窄</span>（中际旭创回购效应逐步显现）。
+  </div>
+
+  <div class="sub-head">防守方向 &mdash; 午后延续强势</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>午后动态</th><th>逻辑</th><th>强度</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#DBEAFE;">
+        <td class="name" style="color:var(--secondary);">饮料乳品 &star;</td>
+        <td>金种子酒(600199) &middot; 皇台酒业 &middot; 今世缘 &middot; 古井贡酒</td>
+        <td><span class="tag tag-up">板块涨幅居首 &middot; 延续</span></td>
+        <td>多地散奶价格上涨 &middot; 原奶周期向好 &middot; 中信建投推荐</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr style="background:#DBEAFE;">
+        <td class="name" style="color:var(--secondary);">教育</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">涨幅居前 &middot; 延续</span></td>
+        <td>防御属性 &middot; 消费复苏</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">休闲食品/代糖</td>
+        <td>盐津铺子(002847)</td>
+        <td><span class="tag tag-up">延续走强</span></td>
+        <td>量贩零食赛道高增 &middot; 新鲜零食门店爆发前夜</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">煤炭</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">煤炭ETF+1.6% &middot; 延续</span></td>
+        <td>红利资产配置价值 &middot; 沪市万亿分红</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">石油/油气</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">石油ETF+1.5% &middot; 延续</span></td>
+        <td>原油+3.37% &middot; 中东局势</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">乘用车/汽车</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">汽车ETF+1% &middot; 延续</span></td>
+        <td>比亚迪方程豹一周年 &middot; 消费复苏</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr>
+        <td class="name">影视院线/游戏</td>
+        <td>欢瑞世纪(000892) <span class="tag tag-up">涨停</span></td>
+        <td><span class="tag tag-up">延续走强</span></td>
+        <td>暑期档票房 &middot; AI应用端外溢</td>
+        <td><span class="pill pill-defense">&starf;&starf;&starf;</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">进攻方向 &mdash; 午后略有企稳但仍在跌</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>午后动态</th><th>逻辑</th><th>强度</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">CPO/光模块 &cross;</td>
+        <td>中际旭创(300308) &middot; 新易盛(300502) &middot; 天孚通信(300394)</td>
+        <td><span class="tag tag-amber">午后跌幅收窄</span></td>
+        <td>40-80亿回购效应午后逐步显现 &middot; "易中天"集体发声护盘</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">高带宽内存/HBM &cross;</td>
+        <td>长鑫科技(688825)</td>
+        <td><span class="tag tag-down">仍领跌 &middot; 略有收窄</span></td>
+        <td>SKH财报不及预期(营收79万亿vs预期84万亿) &middot; 美光-8.85%传导</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">光刻机 &cross;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-down">延续跌势</span></td>
+        <td>半导体设备链跟跌</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">存储芯片 &cross;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-down">延续跌势</span></td>
+        <td>SKH财报+美股存储暴跌传导</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;&starf;</span></td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">先进封装 &cross;</td>
+        <td>通富微电(002156)</td>
+        <td><span class="tag tag-down">跟跌</span></td>
+        <td>半导体全线承压</td>
+        <td><span class="pill pill-offense">&starf;&starf;&starf;</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">&starf; 午后新增异动信号</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">CPO午后跌幅收窄</span>：中际旭创回购效应午后逐步体现 &middot; 若尾盘进一步收窄则回购护盘有效</div>
+      <div>&bull; <span class="font-bold">SKH ADR盘后转涨</span>：美股盘后从-8%转涨 &middot; HBM4下半年扩产 &middot; 与10家客户签LTA &middot; 明日可能传导A股存储</div>
+      <div>&bull; <span class="font-bold">希捷财报超预期</span>：Q4营收36.3亿(vs预期34.9亿) &middot; EPS超预期120% &middot; HAMR技术路线 &middot; 利好存储方向信心</div>
+      <div>&bull; <span class="font-bold">长鑫科技MSCI纳入</span>：8/10正式纳入MSCI中国全股票指数 &middot; 被动资金配置预期</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 3: 试仓候选股 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">3</div>
+    <div class="section-title">试仓候选股</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 今晚美联储议息 &middot; 不建议重仓 &middot; 以下为轻仓试仓候选</span>
+    所有候选股建议仓位不超过总仓位5-10%。等美联储结果出来后再决定是否加仓。
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>股票</th><th>代码</th><th>当前涨幅</th><th>试仓理由</th><th>建议仓位</th><th>风控提示</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#DBEAFE;">
+        <td class="name" style="color:var(--secondary);">金种子酒</td>
+        <td class="code">600199</td>
+        <td><span class="tag tag-up">活跃 &middot; 昨涨停</span></td>
+        <td>白酒板块连续2日强势 &middot; 多地散奶价格上涨 &middot; 原奶周期向好 &middot; 防御主线龙头</td>
+        <td><span class="tag tag-blue">5%</span></td>
+        <td>追高风险 &middot; 若尾盘封板则明日溢价 &middot; 不封板则短炒</td>
+      </tr>
+      <tr style="background:#DBEAFE;">
+        <td class="name" style="color:var(--secondary);">盐津铺子</td>
+        <td class="code">002847</td>
+        <td><span class="tag tag-up">活跃</span></td>
+        <td>休闲食品赛道高增 &middot; 量贩零食门店爆发前夜 &middot; 消费复苏方向</td>
+        <td><span class="tag tag-blue">5%</span></td>
+        <td>高位股 &middot; 设5%止损 &middot; 不追高</td>
+      </tr>
+      <tr>
+        <td class="name">中际旭创</td>
+        <td class="code">300308</td>
+        <td><span class="tag tag-down">续跌中 &middot; 午后收窄</span></td>
+        <td>40-80亿回购 &middot; "易中天"集体发声 &middot; 午后跌幅收窄=回购效应显现 &middot; 左侧试仓</td>
+        <td><span class="tag tag-amber">3-5%</span></td>
+        <td>左侧交易 &middot; 科技趋势未确认反转 &middot; 严格5%止损 &middot; 轻仓</td>
+      </tr>
+      <tr>
+        <td class="name">欢瑞世纪</td>
+        <td class="code">000892</td>
+        <td><span class="tag tag-up">涨停</span></td>
+        <td>影视院线 + 暑期档催化 + AI应用端外溢 &middot; 题材叠加</td>
+        <td><span class="tag tag-amber">2-3%</span></td>
+        <td>涨停追入风险大 &middot; 若开板则放弃 &middot; 封板则博弈明日溢价</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <span class="font-bold">试仓原则</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">防守方向优先</span>：大消费连续2日强势 &middot; 确定性更高</div>
+      <div>&bull; <span class="font-bold">科技方向仅左侧轻仓</span>：回购是护盘非反转 &middot; 趋势未确认</div>
+      <div>&bull; <span class="font-bold">今晚美联储是分水岭</span>：鸽派&rarr;科技反弹加仓 &middot; 鹰派&rarr;科技继续跌止损</div>
+      <div>&bull; <span class="font-bold">总仓位不超过15-20%</span>：留足子弹等明天方向明确</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 4: 上午盯盘清单追踪 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">4</div>
+    <div class="section-title">上午/半日盯盘清单追踪</div>
+  </div>
+
+  <div class="alert-box">
+    <span class="font-bold">数据来源：</span>7/29半日报盯盘清单 vs 午后盘实际表现
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>半日盯盘逻辑</th><th>午后实际表现</th><th>验证</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">长鑫科技</td>
+        <td class="code">688825</td>
+        <td>SKH财报不及预期 &middot; 科创50拖累</td>
+        <td><span class="tag tag-down">仍跌 &middot; 午后略有收窄</span> &middot; MSCI纳入(8/10)利好未体现</td>
+        <td><span class="font-bold" style="color:var(--error);">&cross; 仍弱势</span></td>
+      </tr>
+      <tr>
+        <td class="name">科蓝软件</td>
+        <td class="code">300663</td>
+        <td>AI应用端龙头 &middot; 能否连板</td>
+        <td><span class="tag tag-amber">AI应用方向分化 &middot; 短剧/CXO走强</span></td>
+        <td><span class="font-bold" style="color:var(--warning);">部分验证</span></td>
+      </tr>
+      <tr>
+        <td class="name">创新医疗</td>
+        <td class="code">002173</td>
+        <td>脑机接口 &middot; 4天3板 &middot; 能否晋级</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居</td>
+        <td class="code">603272</td>
+        <td>6连板 &middot; 7连板封住=情绪不崩</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td class="name">白酒板块</td>
+        <td class="code">&mdash;</td>
+        <td>延续强势=风格切换确认</td>
+        <td><span class="tag tag-up">延续强势 &middot; 饮料乳品涨幅居首</span></td>
+        <td><span class="font-bold" style="color:var(--success);">&check; 验证</span></td>
+      </tr>
+      <tr>
+        <td class="name">中际旭创</td>
+        <td class="code">300308</td>
+        <td>40-80亿回购 &middot; 午后能否企稳</td>
+        <td><span class="tag tag-amber">午后跌幅收窄</span> &middot; 回购效应逐步显现</td>
+        <td><span class="font-bold" style="color:var(--warning);">初步积极</span></td>
+      </tr>
+      <tr>
+        <td class="name">创业板</td>
+        <td class="code">&mdash;</td>
+        <td>翻红=企稳信号 &middot; 续跌=等明日</td>
+        <td><span class="tag tag-amber">约-0.35% &middot; 接近翻红</span></td>
+        <td><span class="font-bold" style="color:var(--warning);">接近验证</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 半日策略执行回顾</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">不追涨不抄底</span> &rarr; 执行正确 &middot; 午后虽修复但美联储未出</div>
+      <div>&bull; <span class="font-bold">持有大消费</span> &rarr; 执行正确 &middot; 饮料乳品/教育/休闲食品延续强势</div>
+      <div>&bull; <span class="font-bold">回避科技硬件</span> &rarr; 执行正确 &middot; 存储/CPO/光刻机仍跌 &middot; 午后仅微幅收窄</div>
+      <div>&bull; <span class="font-bold">中际旭创回购效应</span> &rarr; 午后CPO跌幅收窄 &middot; 初步积极但未反转</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 5: 尾盘策略提示 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">5</div>
+    <div class="section-title">尾盘策略提示（最后30分钟）</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 今晚美联储议息（7/30凌晨2:00）&middot; 尾盘核心原则：轻仓过夜</span>
+    尾盘30分钟不要加仓 &middot; 不要追涨停 &middot; 保持现有仓位 &middot; 等美联储结果出来后明天再决策。
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>观察对象</th><th>观察信号</th><th>决策</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name" style="color:var(--secondary);">创业板</td>
+        <td>能否翻红收盘 &middot; 收红=企稳信号</td>
+        <td>收红 &rarr; 明日可轻仓试多 &middot; 收绿 &rarr; 继续等</td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--error);">科创50</td>
+        <td>跌幅能否收窄至-3.5%以内</td>
+        <td>收窄 &rarr; SKH ADR转涨有传导 &middot; 未收窄 &rarr; 继续回避</td>
+      </tr>
+      <tr>
+        <td class="name">CPO/光模块</td>
+        <td>中际旭创回购效应 &middot; 尾盘是否进一步收窄</td>
+        <td>收窄至-2%以内 &rarr; 回购有效 &middot; 明日可左侧 &middot; 继续大跌 &rarr; 放弃</td>
+      </tr>
+      <tr>
+        <td class="name" style="color:var(--secondary);">大消费</td>
+        <td>饮料乳品能否维持涨幅居首 &middot; 金种子酒能否封板</td>
+        <td>维持 &rarr; 继续持有 &middot; 回落 &rarr; 减仓止盈</td>
+      </tr>
+      <tr>
+        <td class="name">连板梯队</td>
+        <td>爱丽家居7连板？创新医疗晋级？</td>
+        <td>连板延续 &rarr; 短线情绪不崩 &middot; 断板 &rarr; 减仓</td>
+      </tr>
+      <tr>
+        <td class="name">成交额</td>
+        <td>全天能否突破2.5万亿</td>
+        <td>放量 &rarr; 抄底积极 &middot; 缩量 &rarr; 修复力度弱</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <span class="font-bold">尾盘30分钟操作清单</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">不操作</span>：不加仓 &middot; 不追涨停 &middot; 不抄底科技</div>
+      <div>&bull; <span class="font-bold">持有大消费</span>：饮料乳品/教育/休闲食品 &middot; 继续持有</div>
+      <div>&bull; <span class="font-bold">清仓高位科技</span>：若有昨日被套的科技仓位 &middot; 尾盘反弹时减仓</div>
+      <div>&bull; <span class="font-bold">留子弹</span>：总仓位控制在15-20% &middot; 美联储结果出来后有子弹可用</div>
+      <div>&bull; <span class="font-bold">明天关键</span>：美联储议息结果 + SKH后续 + 希捷财报利好 + 长鑫MSCI纳入(8/10)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 6: 明日盯盘清单 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">6</div>
+    <div class="section-title">明日（7/30 周四）盯盘清单</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 7/30凌晨2:00 美联储议息结果公布 &middot; 全天最大变量</span>
+    鲍威尔表态决定短期方向 &middot; 鸽派&rarr;科技反弹 &middot; 鹰派&rarr;科技续跌 &middot; 中性&rarr;延续修复
+  </div>
+
+  <div class="sub-head">进攻方向</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>盯盘逻辑</th><th>触发条件</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">科创50/半导体</td>
+        <td class="code">&mdash;</td>
+        <td>今日-4.22% &middot; SKH ADR盘后转涨+HBM4扩产 &middot; 美联储若鸽派则反弹</td>
+        <td>高开+1%以上=反弹信号 &middot; 低开续跌=继续回避</td>
+      </tr>
+      <tr>
+        <td class="name">中际旭创</td>
+        <td class="code">300308</td>
+        <td>40-80亿回购 &middot; 今日午后跌幅收窄 &middot; 回购效应是否持续</td>
+        <td>翻红=回购护盘有效 &middot; 续跌=回购被无视</td>
+      </tr>
+      <tr>
+        <td class="name">长鑫科技</td>
+        <td class="code">688825</td>
+        <td>SKH财报不及预期今日拖累 &middot; 但MSCI纳入8/10生效 &middot; 被动资金配置预期</td>
+        <td>企稳翻红=MSCI预期升温 &middot; 续跌=短期仍承压</td>
+      </tr>
+      <tr>
+        <td class="name">存储芯片板块</td>
+        <td class="code">&mdash;</td>
+        <td>SKH ADR盘后转涨 &middot; 希捷财报超预期 &middot; HBM4下半年扩产</td>
+        <td>板块翻红=美股传导有效 &middot; 续跌=传导失败</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">防守方向</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>盯盘逻辑</th><th>触发条件</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">白酒/饮料乳品</td>
+        <td class="code">&mdash;</td>
+        <td>连续2日强势 &middot; 风格切换确认 &middot; 能否3连强势</td>
+        <td>延续走强=主线确认 &middot; 回调=短炒止盈</td>
+      </tr>
+      <tr>
+        <td class="name">金种子酒</td>
+        <td class="code">600199</td>
+        <td>昨日涨停 &middot; 今日活跃 &middot; 能否连板</td>
+        <td>连板=情绪主线 &middot; 断板=兑现止盈</td>
+      </tr>
+      <tr>
+        <td class="name">煤炭/石油</td>
+        <td class="code">&mdash;</td>
+        <td>红利资产 &middot; 原油+3.37% &middot; 中东局势</td>
+        <td>延续=避险持续 &middot; 回落=风险偏好回升</td>
+      </tr>
+      <tr>
+        <td class="name">影视院线</td>
+        <td class="code">&mdash;</td>
+        <td>欢瑞世纪涨停 &middot; 暑期档催化</td>
+        <td>延续=题材活跃 &middot; 回落=一日游</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">连板梯队</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>盯盘逻辑</th><th>触发条件</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">爱丽家居</td>
+        <td class="code">603272</td>
+        <td>今日7连板？ &middot; 最高连板标 &middot; 并购重组</td>
+        <td>封板=情绪不崩 &middot; 断板=注意风险</td>
+      </tr>
+      <tr>
+        <td class="name">创新医疗</td>
+        <td class="code">002173</td>
+        <td>今日晋级？ &middot; 脑机接口</td>
+        <td>晋级=题材延续 &middot; 断板=题材退潮</td>
+      </tr>
+      <tr>
+        <td class="name">顺钠股份</td>
+        <td class="code">000533</td>
+        <td>4连板后发异常波动公告 &middot; 算力业务占比低</td>
+        <td>注意追高风险 &middot; 若跌停=连板退潮信号</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">&cross; 明日重大事件</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">7/30凌晨2:00</span>：美联储公布利率决议 &middot; 鲍威尔新闻发布会</div>
+      <div>&bull; <span class="font-bold">SKH后续</span>：ADR盘后转涨 &middot; HBM4下半年扩产 &middot; 与10家客户签LTA</div>
+      <div>&bull; <span class="font-bold">希捷财报</span>：Q4超预期 &middot; EPS指引中值同比+180% &middot; HAMR技术路线</div>
+      <div>&bull; <span class="font-bold">长鑫科技</span>：8/10纳入MSCI中国全股票指数 &middot; 被动资金配置窗口</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
