@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026.07.30 A股盘中 · 科技重挫创业板-5.89% · 白酒金融科技逆势爆发</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--shadow-md:4px 4px 16px rgba(0,0,0,0.10);--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--secondary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--secondary);}
+.nav-disabled{color:var(--text2);opacity:0.4;cursor:not-allowed;}
+.hero-band{background:linear-gradient(135deg,#2563EB 0%,#1E40AF 100%);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.6vw,34px);font-weight:800;line-height:1.25;margin-bottom:12px;}
+.hero-sub{font-size:15px;opacity:0.85;max-width:780px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--secondary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:var(--text);}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--secondary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-success{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.font-bold{font-weight:700;}
+.font-mono{font-family:'Fira Code',monospace;font-size:12px;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;vertical-align:middle;}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;margin:2px;}
+.pill-offense{background:#FEE2E2;color:#DC2626;}
+.pill-defense{background:#DBEAFE;color:#2563EB;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+.success-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--success);margin-bottom:6px;}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-07-29-日报.html">&larr; 上一篇：7/29日报</a>
+    <span class="nav-disabled">下一篇：日报 &rarr;</span>
+  </div>
+</nav>
+
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.07.30 &middot; THU &middot; 盘中扫描 14:30</div>
+    <h1 class="hero-title">美联储鹰派按兵不动！科技再遭血洗 &middot; 创业板-5.89% &middot; 科创50-6.34% &middot; 白酒+金融科技逆势爆发 &middot; 爱丽家居8连板 &middot; 一鸣食品3连板</h1>
+    <div class="hero-sub">凌晨美联储9:3投票维持利率不变 &middot; 3票反对要求加息(2016年来首次) &middot; 鲍威尔鹰派表态 &middot; 美股道指-2.19%纳指-1.74% &middot; A股科技方向(CPO/半导体/光刻机)全面重挫 &middot; 但白酒(茅台+3%创2月新高)/金融科技(中科金财等涨停)/创新药/汽车整车午后逆势拉升 &middot; 防守方向连续4日强势</div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== Section 1: 大盘即时状态 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">1</div>
+    <div class="section-title">大盘即时状态（14:30）</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 美联储鹰派冲击 &middot; 科技方向再遭血洗 &middot; 创业板-5.89%</span>
+    凌晨美联储9:3投票维持利率3.50%-3.75%不变（连续第5次），但3票反对要求加息25bp（2016年来首次三张方向一致反对票）。鲍威尔称"通胀顽固，讨论是否可能加息"。美股暴跌（道指-2.19%/纳指-1.74%/VIX+13.45%），A股科技方向承接暴跌，创业板-5.89%，科创50-6.34%。但防守方向（白酒/金融科技/创新药）逆势爆发。
+  </div>
+
+  <div class="sub-head">五大指数午间收盘 &rarr; 14:30预估</div>
+  <div class="data-grid">
+    <div class="data-card data-card-down">
+      <div class="label">上证指数</div>
+      <div class="value">~3780</div>
+      <div class="sub font-bold" style="color:var(--error);">-1.27% <span class="conf">&check;东方财富11:30+午后推算</span></div>
+      <div class="sub">昨收3828.47 &middot; 午间3784.55(-1.15%)</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">深证成指</div>
+      <div class="value">~13150</div>
+      <div class="sub font-bold" style="color:var(--error);">-3.72% <span class="conf">&check;推算</span></div>
+      <div class="sub">昨收13658.44 &middot; 午间13141.22(-3.79%)</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">创业板指</div>
+      <div class="value">~3200</div>
+      <div class="sub font-bold" style="color:var(--error);">-5.27% <span class="conf">&check;推算</span></div>
+      <div class="sub">昨收3378.70 &middot; 午间3179.58(-5.89%) &middot; 午后小幅收窄</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">科创50</div>
+      <div class="value">~1580</div>
+      <div class="sub font-bold" style="color:var(--error);">-5.87% <span class="conf">&check;推算</span></div>
+      <div class="sub">昨收1678.74 &middot; 午间1572.25(-6.34%) &middot; 科技重挫</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">北证50</div>
+      <div class="value">~1055</div>
+      <div class="sub font-bold" style="color:var(--error);">-0.85% <span class="conf">&check;推算</span></div>
+      <div class="sub">午间1059.40(-0.46%) &middot; 相对抗跌</div>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="label">预计全天成交额</div>
+      <div class="value">~2.5万亿</div>
+      <div class="sub font-bold">半日1.45万亿 <span class="conf">&check;东方财富</span></div>
+      <div class="sub">vs 昨日全天2.3万亿 &middot; 放量出逃</div>
+    </div>
+    <div class="data-card data-card-down">
+      <div class="label">上涨个股</div>
+      <div class="value" style="color:var(--error);">~1900</div>
+      <div class="sub font-bold">占比约34% <span class="conf">&check;东方财富11:30</span></div>
+      <div class="sub">下跌3458只 &middot; 涨跌比约 1:1.8</div>
+    </div>
+    <div class="data-card">
+      <div class="label">涨停数</div>
+      <div class="value">~60+</div>
+      <div class="sub font-bold">午间51涨停 <span class="conf">&check;东方财富</span></div>
+      <div class="sub">午后金融科技拉升 &middot; 涨停增加</div>
+    </div>
+  </div>
+
+  <div class="sub-head">外围环境</div>
+  <table>
+    <thead>
+      <tr><th>市场</th><th>收盘</th><th>涨跌幅</th><th>关键事件</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">道琼斯</td>
+        <td class="font-mono">51,594.14</td>
+        <td><span class="tag tag-down">-2.19%</span></td>
+        <td>美联储鹰派 &middot; 3票反对要求加息</td>
+      </tr>
+      <tr>
+        <td class="name">纳斯达克</td>
+        <td class="font-mono">24,442.94</td>
+        <td><span class="tag tag-down">-1.74%</span></td>
+        <td>科技股集体下跌</td>
+      </tr>
+      <tr>
+        <td class="name">标普500</td>
+        <td class="font-mono">7,316.15</td>
+        <td><span class="tag tag-down">-1.52%</span></td>
+        <td>创去年11月以来新低</td>
+      </tr>
+      <tr>
+        <td class="name">VIX</td>
+        <td class="font-mono">20.66</td>
+        <td><span class="tag tag-down">+13.45%</span></td>
+        <td>恐慌指数飙升</td>
+      </tr>
+      <tr>
+        <td class="name">韩国KOSPI</td>
+        <td class="font-mono">5,663.24</td>
+        <td><span class="tag tag-down">-5.98%</span></td>
+        <td>连续熔断后继续暴跌 &middot; 杠杆去化</td>
+      </tr>
+      <tr>
+        <td class="name">三星Q2</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-up">营业利润+1814%</span></td>
+        <td>创历史新高 &middot; 存储需求加速</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 2: 异动板块扫描 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">2</div>
+    <div class="section-title">异动板块扫描</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 进攻方向全面崩溃</span>
+    CPO/光模块/半导体/光刻机/先进封装/电子化学品全线重挫。美联储鹰派+韩国杠杆去化+AI"循环融资"质疑三重打击。科技方向连续2日暴跌（7/28崩盘+7/30再杀），中间7/29反弹一日游。
+  </div>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 防守方向逆势爆发 &middot; 连续4日强势</span>
+    白酒（茅台+3%创2月新高）/金融科技（中科金财等涨停）/创新药/汽车整车/教育/旅游全线走强。资金从科技向消费切换趋势明确。
+  </div>
+
+  <div class="sub-head">防守方向（逆势走强）&mdash; 午后加速</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>代码</th><th>表现</th><th>上涨逻辑</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#F0FDF4;">
+        <td class="name" style="color:var(--success);">白酒 &starf;</td>
+        <td class="name">贵州茅台(盘中+3%创2月新高)</td><td class="code">600519</td>
+        <td><span class="tag tag-up">板块领涨</span></td>
+        <td>茅台提价+政策催化 &middot; 资金高低切 &middot; 连续4日强势</td>
+      </tr>
+      <tr style="background:#F0FDF4;">
+        <td class="name" style="color:var(--success);">金融科技 &star;</td>
+        <td class="name">中科金财/南天信息/税友股份</td><td class="code">002657/000948/603171</td>
+        <td><span class="tag tag-up">10%涨停</span></td>
+        <td>午后集体拉升 &middot; 金融科技赛道利好 &middot; 科蓝软件+7%</td>
+      </tr>
+      <tr>
+        <td class="name">创新药</td>
+        <td class="name">海南海药(一度涨停)/九典制药/哈药股份</td><td class="code">000566/300705</td>
+        <td><span class="tag tag-up">震荡拉升</span></td>
+        <td>安永报告：中国创新药地位上升 &middot; 全球合作金额占比8%→34%</td>
+      </tr>
+      <tr>
+        <td class="name">汽车整车</td>
+        <td class="name">江淮汽车(涨停)/北汽蓝谷/赛力斯</td><td class="code">600418</td>
+        <td><span class="tag tag-up">反弹</span></td>
+        <td>小米增程SUV/小鹏Mona L03等新车型 &middot; 乘用车出口超预期</td>
+      </tr>
+      <tr>
+        <td class="name">教育</td>
+        <td class="name">&mdash;</td><td class="code">&mdash;</td>
+        <td><span class="tag tag-up">涨幅居前</span></td>
+        <td>消费复苏链条 &middot; 防御属性</td>
+      </tr>
+      <tr>
+        <td class="name">贵金属</td>
+        <td class="name">&mdash;</td><td class="code">&mdash;</td>
+        <td><span class="tag tag-up">走强</span></td>
+        <td>黄金$4134 &middot; 避险情绪 &middot; VIX飙升</td>
+      </tr>
+      <tr>
+        <td class="name">旅游酒店</td>
+        <td class="name">华天酒店(4连板)</td><td class="code">000428</td>
+        <td><span class="tag tag-up">4连板</span></td>
+        <td>暑期旅游旺季 &middot; 消费复苏</td>
+      </tr>
+      <tr>
+        <td class="name">固态电池</td>
+        <td class="name">&mdash;</td><td class="code">&mdash;</td>
+        <td><span class="tag tag-up">活跃</span></td>
+        <td>技术持续突破 &middot; 21股机构预测净利增速超20%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">进攻方向（重挫）&mdash; 美联储冲击</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>代表股</th><th>跌幅</th><th>下跌逻辑</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">CPO概念 &cross;</td>
+        <td>中际旭创/新易盛</td>
+        <td><span class="tag tag-down">领跌</span></td>
+        <td>美联储鹰派 &middot; 高估值科技杀跌 &middot; 回购效应消退</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">高带宽内存(HBM) &cross;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-down">重挫</span></td>
+        <td>SKH财报不及预期余震 &middot; 三星虽利好但市场不买账</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">半导体 &cross;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-down">跌幅居前</span></td>
+        <td>美联储鹰派 &middot; 科技全面出逃 &middot; 韩国杠杆去化传导</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">光刻机 &cross;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-down">重挫</span></td>
+        <td>半导体链全线杀跌</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">先进封装 &cross;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-down">跌幅居前</span></td>
+        <td>科技方向全面回调</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name" style="color:var(--error);">百元股 &cross;</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-down">领跌</span></td>
+        <td>高估值成长股杀跌 &middot; 风格切换加速</td>
+      </tr>
+      <tr>
+        <td class="name">玻璃基板</td>
+        <td>&mdash;</td>
+        <td><span class="tag tag-down">跟跌</span></td>
+        <td>科技链承压</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 3: 试仓候选股 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">3</div>
+    <div class="section-title">试仓候选股</div>
+  </div>
+
+  <div class="alert-warn">
+    <span class="warn-title">&starf; 仅从逆势走强的防守方向筛选 &middot; 科技方向不抄底</span>
+    今日科技方向重挫，不建议左侧抄底科技。仅从白酒/金融科技/创新药等逆势走强方向筛选试仓标的。
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>股票</th><th>代码</th><th>当前表现</th><th>试仓理由</th><th>建议仓位</th><th>风控</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">贵州茅台</td>
+        <td class="code">600519</td>
+        <td><span class="tag tag-up">盘中+3%</span> 创2月新高</td>
+        <td>白酒龙头 &middot; 提价+政策催化 &middot; 突破半年线 &middot; 资金高低切核心标的</td>
+        <td><span class="tag tag-amber">5%</span></td>
+        <td>跌破前日低点止损</td>
+      </tr>
+      <tr>
+        <td class="name">一鸣食品</td>
+        <td class="code">605179</td>
+        <td><span class="tag tag-up">3连板</span></td>
+        <td>食品饮料情绪龙头 &middot; 从2连板晋级3连板 &middot; 大消费方向确认</td>
+        <td><span class="tag tag-amber">3%</span></td>
+        <td>连板股高波动 &middot; 严格3%止损</td>
+      </tr>
+      <tr>
+        <td class="name">中科金财</td>
+        <td class="code">002657</td>
+        <td><span class="tag tag-up">10%涨停</span></td>
+        <td>金融科技龙头 &middot; 午后涨停 &middot; 赛道利好催化 &middot; 新方向</td>
+        <td><span class="tag tag-amber">3%</span></td>
+        <td>若开板不追 &middot; 翌日低开止损</td>
+      </tr>
+      <tr>
+        <td class="name">江淮汽车</td>
+        <td class="code">600418</td>
+        <td><span class="tag tag-up">涨停</span></td>
+        <td>汽车整车反弹 &middot; 小米增程SUV催化 &middot; 出口高景气</td>
+        <td><span class="tag tag-amber">3%</span></td>
+        <td>若封板不追 &middot; 回落5日线止损</td>
+      </tr>
+      <tr>
+        <td class="name">海南海药</td>
+        <td class="code">000566</td>
+        <td><span class="tag tag-up">一度涨停</span></td>
+        <td>创新药方向 &middot; 中国创新药全球地位上升 &middot; 估值底部</td>
+        <td><span class="tag tag-amber">3%</span></td>
+        <td>冲高回落不持有 &middot; 翌日不续涨止盈</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 不建议抄底的方向</span>
+    <div style="margin-top:6px;">
+      <div>&bull; <span class="font-bold">中际旭创/新易盛</span>：回购效应仅维持1日 &middot; 美联储鹰派+AI循环融资质疑 &middot; 趋势破坏 &middot; 不左侧抄底</div>
+      <div>&bull; <span class="font-bold">长鑫科技</span>：昨日+10%后今日必然承压 &middot; 新股波动巨大 &middot; 等MSCI纳入(8/10)再看</div>
+      <div>&bull; <span class="font-bold">半导体/光刻机</span>：板块趋势向下 &middot; 等企稳信号</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 4: 上午盯盘清单追踪 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">4</div>
+    <div class="section-title">盯盘清单追踪</div>
+  </div>
+
+  <div class="sub-head">7/29日报盯盘清单 &mdash; 今日表现</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>昨日盯盘逻辑</th><th>今日表现</th><th>判断</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF2F2;">
+        <td class="name">长鑫科技</td>
+        <td class="code">688825</td>
+        <td>MSCI纳入预期 &middot; 昨日+10%</td>
+        <td><span class="tag tag-down">大跌</span></td>
+        <td class="font-bold" style="color:var(--error);">美联储冲击 &middot; 新股承压 &middot; 等8/10</td>
+      </tr>
+      <tr style="background:#FEF2F2;">
+        <td class="name">中际旭创</td>
+        <td class="code">300308</td>
+        <td>回购护盘 &middot; 昨日午后收窄</td>
+        <td><span class="tag tag-down">续跌</span></td>
+        <td class="font-bold" style="color:var(--error);">回购效应仅1日 &middot; 趋势破坏 &middot; 放弃</td>
+      </tr>
+      <tr style="background:#F0FDF4;">
+        <td class="name">一鸣食品</td>
+        <td class="code">605179</td>
+        <td>食品饮料龙头 &middot; 昨日2连板</td>
+        <td><span class="tag tag-up">3连板! &star;</span></td>
+        <td class="font-bold" style="color:var(--success);">晋级 &middot; 大消费主线确认</td>
+      </tr>
+      <tr style="background:#F0FDF4;">
+        <td class="name">东百集团</td>
+        <td class="code">600693</td>
+        <td>零售龙头 &middot; 昨日2连板</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+        <td class="font-bold" style="color:var(--warning);">零售板块今日走强 &middot; 关注是否晋级</td>
+      </tr>
+      <tr>
+        <td class="name">华林证券</td>
+        <td class="code">002945</td>
+        <td>券商信号标 &middot; 昨日涨停</td>
+        <td><span class="tag tag-down">回落</span></td>
+        <td class="font-bold" style="color:var(--text2);">券商今日未延续 &middot; 但金融科技接棒</td>
+      </tr>
+      <tr style="background:#F0FDF4;">
+        <td class="name">白酒/乳业</td>
+        <td class="code">&mdash;</td>
+        <td>连续3日强势 &middot; 风格切换</td>
+        <td><span class="tag tag-up">茅台+3% &middot; 继续</span></td>
+        <td class="font-bold" style="color:var(--success);">连续4日强势 &middot; 风格切换确认</td>
+      </tr>
+      <tr>
+        <td class="name">端侧AI(博通集成)</td>
+        <td class="code">603068</td>
+        <td>昨日涨停 &middot; AI扩散</td>
+        <td><span class="tag tag-down">跟跌</span></td>
+        <td class="font-bold" style="color:var(--error);">科技方向全面杀跌 &middot; 未延续</td>
+      </tr>
+      <tr>
+        <td class="name">创新医疗</td>
+        <td class="code">002173</td>
+        <td>昨日跌停 &middot; 脑机退潮</td>
+        <td><span class="tag tag-down">续跌</span></td>
+        <td class="font-bold" style="color:var(--error);">退潮确认 &middot; 放弃跟踪</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">连板梯队变化（vs 7/29）</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>7/29状态</th><th>7/30状态</th><th>变化</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FEF3C7;">
+        <td class="name">爱丽家居</td>
+        <td>7连板?</td>
+        <td><span class="font-bold" style="color:var(--primary);">8连板! &starf;</span></td>
+        <td>一字板 &middot; 封单30万手 &middot; 并购重组</td>
+      </tr>
+      <tr>
+        <td class="name">一鸣食品</td>
+        <td>2连板</td>
+        <td><span class="font-bold" style="color:var(--success);">3连板 &star;</span></td>
+        <td>大消费龙头 &middot; 晋级</td>
+      </tr>
+      <tr>
+        <td class="name">明新旭腾</td>
+        <td>&mdash;</td>
+        <td><span class="font-bold">4连板</span></td>
+        <td>新进连板 &middot; 汽车内饰</td>
+      </tr>
+      <tr>
+        <td class="name">传智教育</td>
+        <td>&mdash;</td>
+        <td><span class="font-bold">4连板</span></td>
+        <td>新进连板 &middot; 教育</td>
+      </tr>
+      <tr>
+        <td class="name">华天酒店</td>
+        <td>&mdash;</td>
+        <td><span class="font-bold">4连板</span></td>
+        <td>新进连板 &middot; 旅游酒店</td>
+      </tr>
+      <tr>
+        <td class="name">艾艾精工</td>
+        <td>12天8板?</td>
+        <td><span class="tag tag-amber">待确认</span></td>
+        <td>最高标 &middot; 独立逻辑</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 5: 尾盘策略提示 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">5</div>
+    <div class="section-title">尾盘策略提示</div>
+  </div>
+
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 最后30分钟重点观察</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>观察点</th><th>信号</th><th>策略</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">创业板能否收窄至-5%以内</td>
+        <td>若收窄 = 抄底资金入场</td>
+        <td>可轻仓过夜消费方向 &middot; 不追科技</td>
+      </tr>
+      <tr>
+        <td class="name">茅台能否守住+3%</td>
+        <td>守住 = 白酒主线持续</td>
+        <td>白酒仓位持有 &middot; 明日继续看涨</td>
+      </tr>
+      <tr>
+        <td class="name">金融科技封板情况</td>
+        <td>中科金财封板 = 新方向确认</td>
+        <td>明日关注金融科技延续性</td>
+      </tr>
+      <tr>
+        <td class="name">一鸣食品能否封住3板</td>
+        <td>封住 = 大消费情绪不退</td>
+        <td>消费仓位持有</td>
+      </tr>
+      <tr>
+        <td class="name">长鑫科技跌幅</td>
+        <td>跌超-10% = 恐慌出逃</td>
+        <td>不抄底 &middot; 等8/10 MSCI纳入</td>
+      </tr>
+      <tr>
+        <td class="name">成交额</td>
+        <td>2.5万亿+ = 放量出逃</td>
+        <td>减仓科技 &middot; 加仓消费</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <span class="font-bold">尾盘策略</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">持有</span>：白酒/食品饮料/零售等大消费仓位 &middot; 连续4日强势确认</div>
+      <div>&bull; <span class="font-bold">减仓</span>：科技方向任何反弹都是减仓窗口 &middot; 趋势已破坏</div>
+      <div>&bull; <span class="font-bold">不追</span>：金融科技涨停股 &middot; 翌日观察延续性</div>
+      <div>&bull; <span class="font-bold">不抄底</span>：半导体/CPO/光刻机 &middot; 等企稳信号（连续2日不创新低）</div>
+      <div>&bull; <span class="font-bold">现金</span>：保持20%+ &middot; 科技可能继续杀跌 &middot; 留子弹</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Section 6: 明日盯盘清单 ===== -->
+<div class="section">
+  <div class="section-head">
+    <div class="section-num">6</div>
+    <div class="section-title">明日（7/31 周五）盯盘清单</div>
+  </div>
+
+  <div class="alert-warn">
+    <span class="warn-title">&starf; 7/31为月末最后一个交易日 &middot; 月末调仓+周五避险双重效应</span>
+  </div>
+
+  <div class="sub-head">防守方向（优先关注）</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">贵州茅台</td>
+        <td class="code">600519</td>
+        <td>白酒龙头 &middot; 今日+3%创2月新高 &middot; 资金高低切核心</td>
+        <td>能否站稳半年线 &middot; 是否带动整个白酒板块</td>
+      </tr>
+      <tr>
+        <td class="name">一鸣食品</td>
+        <td class="code">605179</td>
+        <td>食品饮料情绪龙头 &middot; 3连板 &middot; 大消费方向</td>
+        <td>能否4连板 &middot; 食品饮料板块持续性</td>
+      </tr>
+      <tr>
+        <td class="name">金融科技方向</td>
+        <td class="code">002657等</td>
+        <td>今日新爆发 &middot; 中科金财涨停 &middot; 赛道利好</td>
+        <td>能否延续 &middot; 是否有新标的加入</td>
+      </tr>
+      <tr>
+        <td class="name">爱丽家居</td>
+        <td class="code">603272</td>
+        <td>8连板 &middot; 最高连板标 &middot; 并购重组</td>
+        <td>能否9连板 &middot; 封单变化 &middot; 并购重组方向</td>
+      </tr>
+      <tr>
+        <td class="name">华天酒店</td>
+        <td class="code">000428</td>
+        <td>4连板 &middot; 旅游酒店 &middot; 暑期催化</td>
+        <td>能否5连板 &middot; 旅游板块跟涨</td>
+      </tr>
+      <tr>
+        <td class="name">传智教育</td>
+        <td class="code">003033</td>
+        <td>4连板 &middot; 教育 &middot; 消费复苏</td>
+        <td>能否5连板 &middot; 教育板块表现</td>
+      </tr>
+      <tr>
+        <td class="name">乳业方向</td>
+        <td class="code">&mdash;</td>
+        <td>银河证券：7月生鲜乳价格同比+0.3% &middot; 时隔5年转正</td>
+        <td>均瑶健康/阳光乳业等表现</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">进攻方向（观察企稳信号）</div>
+  <table>
+    <thead>
+      <tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">长鑫科技</td>
+        <td class="code">688825</td>
+        <td>昨日+10% &middot; 今日大跌 &middot; MSCI纳入8/10</td>
+        <td>跌幅是否收窄 &middot; 8/10前是否有资金提前布局</td>
+      </tr>
+      <tr>
+        <td class="name">中际旭创</td>
+        <td class="code">300308</td>
+        <td>回购40-80亿 &middot; 但趋势已破坏</td>
+        <td>连续2日不创新低 = 企稳信号 &middot; 否则放弃</td>
+      </tr>
+      <tr>
+        <td class="name">三星Q2</td>
+        <td class="code">&mdash;</td>
+        <td>营业利润+1814%创新高 &middot; 存储需求加速</td>
+        <td>能否带动存储板块反弹 &middot; 与SKH形成对比</td>
+      </tr>
+      <tr>
+        <td class="name">半导体板块</td>
+        <td class="code">&mdash;</td>
+        <td>连续2日暴跌(7/28+7/30) &middot; 中间7/29反弹一日游</td>
+        <td>是否出现企稳 &middot; 不急于抄底</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">风格切换信号追踪</div>
+  <table>
+    <thead>
+      <tr><th>指标</th><th>7/29状态</th><th>7/30状态</th><th>信号</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">大消费 vs 科技</td>
+        <td><span class="tag tag-up">消费3日强势</span></td>
+        <td><span class="tag tag-up">消费4日强势 &middot; 科技再崩</span></td>
+        <td class="font-bold" style="color:var(--success);">风格切换完全确认</td>
+      </tr>
+      <tr>
+        <td class="name">白酒/食品</td>
+        <td>一鸣食品2连板</td>
+        <td>一鸣食品3连板 &middot; 茅台+3%</td>
+        <td class="font-bold" style="color:var(--success);">主线升级</td>
+      </tr>
+      <tr>
+        <td class="name">科技硬件</td>
+        <td>午后收窄(科创50-0.87%)</td>
+        <td><span class="tag tag-down">科创50-6.34%</span></td>
+        <td class="font-bold" style="color:var(--error);">反弹一日游 &middot; 趋势破坏</td>
+      </tr>
+      <tr>
+        <td class="name">连板梯队</td>
+        <td>消费接棒 &middot; 脑机退潮</td>
+        <td>爱丽8连板 &middot; 一鸣3连板 &middot; 3只4连板</td>
+        <td class="font-bold" style="color:var(--success);">连板高度提升 &middot; 情绪不退</td>
+      </tr>
+      <tr>
+        <td class="name">成交额</td>
+        <td>2.3万亿</td>
+        <td><span class="tag tag-amber">预计2.5万亿+</span></td>
+        <td class="font-bold" style="color:var(--warning);">放量出逃 &middot; 多空分歧大</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 核心判断</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">风格切换完全确认</span>：大消费连续4日强势(7/27至今) &middot; 科技反弹仅1日(7/29)即遭7/30再杀 &middot; 资金从科技向消费迁移明确</div>
+      <div>&bull; <span class="font-bold">美联储是分水岭</span>：鹰派按兵不动(3票要加息) &middot; 高估值科技杀估值 &middot; 消费/红利抗跌</div>
+      <div>&bull; <span class="font-bold">明日7/31=月末+周五</span>：月末调仓效应 &middot; 周五避险 &middot; 预计缩量 &middot; 消费占优</div>
+      <div>&bull; <span class="font-bold">操作方向</span>：重仓消费(白酒/食品/零售/旅游) &middot; 轻仓金融科技 &middot; 回避科技 &middot; 保持20%+现金</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
