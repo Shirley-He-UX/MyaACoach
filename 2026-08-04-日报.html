@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026.08.04 A股日报 · 科技V型反转创业板+5.64% · 光通信链全面爆发 · 银行崩塌农行-4.06% · 跷跷板确立</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--radius-md:8px;--radius-lg:16px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--primary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--primary);}
+.nav-disabled{color:var(--text2);opacity:0.4;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.6vw,34px);font-weight:800;line-height:1.25;margin-bottom:12px;}
+.hero-sub{font-size:15px;opacity:0.85;max-width:820px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+td a{color:var(--secondary);text-decoration:none;}
+td a:hover{text-decoration:underline;}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--primary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-success{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.font-bold{font-weight:700;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;margin:2px;}
+.pill-offense{background:#FEE2E2;color:#DC2626;}
+.pill-defense{background:#DBEAFE;color:#2563EB;}
+.success-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--success);margin-bottom:6px;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-08-04-盘中.html">&larr; 上一篇：8/4盘中</a>
+    <span class="nav-disabled">下一篇：待发布 &rarr;</span>
+  </div>
+</nav>
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.08.04 &middot; TUE &middot; 收盘日报</div>
+    <h1 class="hero-title">科技V型暴力反转 创业板收+5.64% · 光通信链全面爆发 源杰+14.65% 中际旭创+13.24%成交498亿 · 但银行全线崩塌 农行-4.06% · 跷跷板格局确立</h1>
+    <div class="hero-sub">沪指3822.28(+0.33%) &middot; 深成指13885.71(+3.25%) &middot; 创业板3488.97(+5.64%) &middot; 科创50 1616.36(+4.09%) &middot; 昨日暴跌的封测全部翻红：通富+8.30% 长电+7.23% 华天+5.15% &middot; 东山精密/鹏鼎控股涨停 &middot; 但农行-4.06% 工行-3.77% 茅台-2.25% 中国移动-2.58% &middot; 传智8连板 一鸣尾盘拉回+1.78% &middot; 全天成交约2.62万亿明显放量</div>
+  </div>
+</header>
+<div class="container">
+
+<!-- ===== 1 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">1</div><div class="section-title">大盘总览</div></div>
+
+  <div class="data-grid">
+    <div class="data-card data-card-up"><div class="label">上证指数</div><div class="value">3822.28</div><div class="sub font-bold" style="color:var(--success);">+0.33% (+12.62) <span class="conf">&check;新浪收盘</span></div><div class="sub font-bold" style="color:var(--warning);">被银行拖累 &middot; 涨幅最小</div></div>
+    <div class="data-card data-card-up"><div class="label">深证成指</div><div class="value">13885.71</div><div class="sub font-bold" style="color:var(--success);">+3.25% (+437.42) <span class="conf">&check;新浪收盘</span></div><div class="sub">成长股全线爆发</div></div>
+    <div class="data-card data-card-up"><div class="label">创业板指</div><div class="value">3488.97</div><div class="sub font-bold" style="color:var(--success);">+5.64% (+186.41) <span class="conf">&check;新浪收盘</span></div><div class="sub font-bold" style="color:var(--success);">今日最强 &middot; 单日暴涨</div></div>
+    <div class="data-card data-card-up"><div class="label">科创50</div><div class="value">1616.36</div><div class="sub font-bold" style="color:var(--success);">+4.09% (+63.47) <span class="conf">&check;新浪收盘</span></div><div class="sub">收复昨日大部分跌幅</div></div>
+    <div class="data-card data-card-up"><div class="label">北证50</div><div class="value">1093.49</div><div class="sub font-bold" style="color:var(--success);">+1.62% (+17.42) <span class="conf">&check;新浪收盘</span></div><div class="sub">跟涨</div></div>
+  </div>
+
+  <div class="sub-head">盘中(14:30) vs 收盘：尾盘小幅回落但格局未变</div>
+  <table>
+    <thead><tr><th>指数/标的</th><th>盘中(14:30)</th><th>收盘(15:00)</th><th>尾盘变化</th><th>解读</th></tr></thead>
+    <tbody>
+      <tr><td class="name">创业板</td><td>3494.85 (+5.82%)</td><td class="font-bold">3488.97 (+5.64%)</td><td><span class="tag tag-amber">微回落</span></td><td>高位震荡 &middot; 涨幅守住</td></tr>
+      <tr><td class="name">科创50</td><td>1622.22 (+4.46%)</td><td class="font-bold">1616.36 (+4.09%)</td><td><span class="tag tag-amber">微回落</span></td><td>未能完全收复昨日-5.08%</td></tr>
+      <tr><td class="name">沪指</td><td>3825.47 (+0.41%)</td><td class="font-bold">3822.28 (+0.33%)</td><td><span class="tag tag-amber">微回落</span></td><td class="font-bold" style="color:var(--warning);">银行拖累持续</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name font-bold">一鸣食品</td><td>20.99 (-1.50%)</td><td class="font-bold">21.69 (+1.78%)</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">尾盘拉回翻红</span></td><td class="font-bold" style="color:var(--success);">消费情绪未死 &starf;</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">农业银行</td><td>6.62 (-3.92%)</td><td class="font-bold">6.61 (-4.06%)</td><td><span class="tag tag-down">续跌</span></td><td class="font-bold" style="color:var(--error);">全天最弱 &middot; 无反抽</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">贵州茅台</td><td>1331.26 (-2.04%)</td><td class="font-bold">1328.36 (-2.25%)</td><td><span class="tag tag-down">收在最低</span></td><td class="font-bold" style="color:var(--error);">全天单边下行</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-warn">
+    <span class="warn-title">&starf; 全天成交约2.62万亿 &middot; 明显放量（昨日2.28万亿）</span>
+    <div style="margin-top:6px;">放量上涨说明<span class="font-bold">有真实增量资金入场做多成长股</span>，不是缩量反抽。但沪指仅+0.33%、深成指+3.25%、创业板+5.64%的<span class="font-bold">极端分化</span>说明：这不是普涨行情，而是<span class="font-bold">资金从银行/红利大规模撤离、集中涌入科技成长的结构性大搬家</span>。农行-4.06%、工行-3.77%的跌幅在权重股中属于剧烈级别。</div>
+  </div>
+</div>
+
+<!-- ===== 2 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">2</div><div class="section-title">异动上涨板块</div></div>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻</span> 科技全线暴力反弹 — 封测/PCB/CPO/光芯片/AI芯片无一缺席</div>
+  <table>
+    <thead><tr><th>板块</th><th>个股</th><th>代码</th><th>收盘</th><th>涨幅</th><th>昨日涨幅</th><th>逻辑</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">光芯片</span></td><td class="name">源杰科技 &starf;</td><td class="code">688498</td><td>1315.00</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+14.65%</span></td><td>+5.03%</td><td class="font-bold" style="color:var(--success);">连续4日逆势/暴涨 &middot; 创历史新高 &middot; 全市场最强</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">CPO</span></td><td class="name">中际旭创 &starf;</td><td class="code">300308</td><td>1021.99</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+13.24%</span></td><td>+0.05%</td><td class="font-bold" style="color:var(--success);">突破1000 &middot; 成交498亿天量 &middot; 连续5日巨量</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">PCB</span></td><td class="name">东山精密 &starf;</td><td class="code">002384</td><td>179.09</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+10.00% 涨停</span></td><td>-5.07%</td><td class="font-bold" style="color:var(--success);">昨日-5%今日涨停 &middot; 极端反转</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">PCB</span></td><td class="name">鹏鼎控股 &starf;</td><td class="code">002938</td><td>89.00</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+10.01% 涨停</span></td><td>-0.72%</td><td class="font-bold" style="color:var(--success);">涨停封死 &middot; PCB双涨停</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">PCB</span></td><td class="name">景旺电子</td><td class="code">603228</td><td>80.00</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+7.02%</span></td><td>+2.81%</td><td class="font-bold" style="color:var(--success);">连续3日逆势+今日加速 &middot; 平台突破确认</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">PCB</span></td><td class="name">胜宏科技</td><td class="code">300476</td><td>201.80</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+6.60%</span></td><td>-0.58%</td><td>放量收复</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">封测</span></td><td class="name">通富微电</td><td class="code">002156</td><td>55.60</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+8.30%</span></td><td>-9.50%</td><td class="font-bold">昨日逼近跌停今日暴涨 &middot; 两日振幅18%</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">封测</span></td><td class="name">长电科技</td><td class="code">600584</td><td>65.41</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+7.23%</span></td><td>-7.17%</td><td>与通富同步反转</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">封测</span></td><td class="name">华天科技</td><td class="code">002185</td><td>15.53</td><td><span class="tag tag-up">+5.15%</span></td><td>-4.52%</td><td>封测三兄弟同步反转</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">AI芯片</span></td><td class="name">寒武纪</td><td class="code">688256</td><td>1078.21</td><td><span class="tag tag-up">+4.88%</span></td><td>-7.05%</td><td>收复1100 &middot; 弹性恢复</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">模拟芯片</span></td><td class="name">圣邦股份</td><td class="code">300661</td><td>101.56</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">+7.58%</span></td><td>-1.40%</td><td>放量暴涨</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">芯片设计</span></td><td class="name">全志科技</td><td class="code">300458</td><td>33.14</td><td><span class="tag tag-up">+3.01%</span></td><td>-4.07%</td><td>反弹中等</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">存储</span></td><td class="name">长鑫科技</td><td class="code">688825</td><td>55.00</td><td><span class="tag tag-up">+0.02%</span></td><td>+1.89%</td><td class="font-bold" style="color:var(--warning);">走平 &middot; MSCI前博弈降温</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">电池</span></td><td class="name">宁德时代</td><td class="code">300750</td><td>395.10</td><td><span class="tag tag-up">+0.18%</span></td><td>-0.23%</td><td>翻红 &middot; 连续弱势后企稳</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">消费电子</span></td><td class="name">水晶光电</td><td class="code">002273</td><td>25.91</td><td><span class="tag tag-up">+4.84%</span></td><td>-2.29%</td><td>放量反弹</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 上涨逻辑：恐慌出清后的V型修复 + 光通信链产业逻辑持续验证</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold">封测/PCB的暴涨本质是超跌反弹</span>：昨日-5~-10%的恐慌性出清释放了短线抛压，今日资金回补。<span class="font-bold">但这是"反弹"不是"反转"</span>——通富两天振幅18%，这种高波动不是趋势性行情。</div>
+      <div>&bull; <span class="font-bold">光通信链是真正的主线</span>：源杰连续4日逆势/暴涨（+7.41%/+5.03%/+14.65%）、中际旭创突破1000、景旺平台突破——<span class="font-bold">这是产业逻辑驱动的趋势性行情，不是单纯超跌反弹。</span></div>
+      <div>&bull; <span class="font-bold">今日与昨日封测的区别</span>：昨日"放量滞涨&rarr;暴跌"是出货，今日是低吸。但两天方向完全相反=<span class="font-bold">高波动震荡市，不是趋势</span>。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 3 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">3</div><div class="section-title">连板股排列</div></div>
+  <table>
+    <thead><tr><th>状态</th><th>股票</th><th>代码</th><th>板块</th><th>收盘</th><th>表现</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF3C7;"><td class="font-bold" style="color:var(--primary);">8连板 &starf;&starf;</td><td class="name">传智教育</td><td class="code">003032</td><td>教育</td><td>10.66</td><td class="font-bold" style="color:var(--success);">+10.01% 一字封死 &middot; 封单1419万手 &middot; 全场最高标</td></tr>
+      <tr><td class="font-bold">回封5板后</td><td class="name">一鸣食品</td><td class="code">605179</td><td>食品饮料</td><td>21.69</td><td class="font-bold" style="color:var(--success);">+1.78% &middot; 盘中翻绿后尾盘拉回 &middot; 消费情绪韧性</td></tr>
+      <tr style="background:#FEF2F2;"><td class="font-bold" style="color:var(--error);">断板 &cross;</td><td class="name">*ST联翔</td><td class="code">603272</td><td>ST/并购重组</td><td>17.16</td><td>+4.89% &middot; 昨日涨停今日未封 &middot; <span class="font-bold" style="color:var(--error);">ST高风险不参与</span></td></tr>
+      <tr><td class="font-bold">涨停</td><td class="name">创业黑马</td><td class="code">300688</td><td>教育</td><td>32.26</td><td>+2.67% &middot; 传智教育跟风 &middot; 教育板块协同走强</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-box"><span class="font-bold">连板梯队分析</span><div style="margin-top:6px;">
+    <div>&bull; <span class="font-bold">最高标：传智教育8板</span>（昨日7板&rarr;今日8板），教育板块情绪龙头持续强化。封单1419万手虽较昨日2051万手减少，但仍厚。</div>
+    <div>&bull; <span class="font-bold">一鸣食品回封后未继续涨停</span>：盘中一度翻绿-1.50%，尾盘拉回+1.78%。<span class="font-bold">5连板的高度没有继续拓展，但也没有崩</span>——韧性不错但趋势在减弱。</div>
+    <div>&bull; <span class="font-bold">断层仍存在</span>：8板和5板之间没有6/7板承接。传智独大。</div>
+    <div>&bull; <span class="font-bold">梯队仍100%消费/教育化</span>：科技方向零连板。<span class="font-bold">虽然今日科技暴涨，但没有一只走出连板形态</span>——说明科技资金是做反弹而非追连板。</div>
+  </div></div>
+</div>
+
+<!-- ===== 4 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">4</div><div class="section-title">下跌板块概览</div></div>
+  <table>
+    <thead><tr><th>板块</th><th>代表个股</th><th>跌幅</th><th>下跌原因</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">银行 &cross;&cross;</td><td>农业银行 6.61</td><td class="font-bold" style="color:var(--error);">-4.06%</td><td class="font-bold">资金从避风港撤出追涨科技 &middot; 跷跷板效应</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">银行</td><td>工商银行 7.66</td><td class="font-bold" style="color:var(--error);">-3.77%</td><td>与农行同步暴跌 &middot; 银行ETF遭抛售</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">红利</td><td>中国移动 96.42</td><td><span class="tag tag-down">-2.58%</span></td><td>连续3日逆势后首次补跌 &middot; 资金分流</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">白酒龙头</td><td>贵州茅台 1328.36</td><td><span class="tag tag-down">-2.25%</span></td><td>昨日+0.62%全回吐 &middot; 科技暴涨日资金离开白酒</td></tr>
+      <tr><td class="name">白酒</td><td>五粮液 76.88</td><td><span class="tag tag-down">-1.51%</span></td><td>跟随茅台回落</td></tr>
+      <tr><td class="name">白酒</td><td>山西汾酒 121.85</td><td><span class="tag tag-down">-1.54%</span></td><td>同步走弱</td></tr>
+      <tr><td class="name">白酒</td><td>舍得酒业 37.35</td><td><span class="tag tag-down">-0.61%</span></td><td>跌幅收窄 &middot; 二线相对抗跌</td></tr>
+      <tr><td class="name">水电</td><td>长江电力 28.30</td><td><span class="tag tag-down">-2.58%</span></td><td>避风港也遭抛售</td></tr>
+      <tr><td class="name">煤炭</td><td>中国神华 43.15</td><td><span class="tag tag-down">-1.33%</span></td><td>昨日-4.29%今日续跌 &middot; 连环暴击</td></tr>
+      <tr><td class="name">核电</td><td>中国核电 8.93</td><td><span class="tag tag-down">-1.10%</span></td><td>持续走弱</td></tr>
+      <tr><td class="name">石油</td><td>中国石油 10.86</td><td><span class="tag tag-down">-1.72%</span></td><td>跟随大盘蓝筹回落</td></tr>
+      <tr><td class="name">汽车</td><td>江淮汽车 25.04</td><td><span class="tag tag-down">-2.03%</span></td><td>连续3日下跌 &middot; 顶部确认</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-danger"><span class="danger-title">&cross; 银行板块暴跌：跷跷板效应的极端体现</span><div style="margin-top:6px;">农行-4.06%、工行-3.77%的跌幅在银行板块中属于<span class="font-bold">罕见的单日暴跌级别</span>。根源不是基本面恶化，而是<span class="font-bold">资金系统性从避风港撤出追涨科技</span>。这种跷跷板在短期是正常的，但如果明日银行继续大跌，则沪指可能被拖累翻绿——<span class="font-bold">科技独涨而银行连崩，对大盘健康不利。</span></div></div>
+</div>
+
+<!-- ===== 5 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">5</div><div class="section-title">涨停数据汇总</div></div>
+  <table>
+    <thead><tr><th>指标</th><th>今日</th><th>昨日(8/3)</th><th>变化</th></tr></thead>
+    <tbody>
+      <tr><td class="name">涨停数（非ST）</td><td class="font-bold">~85只</td><td>~45只</td><td class="font-bold" style="color:var(--success);"><span class="tag tag-up">大幅增加</span></td></tr>
+      <tr><td class="name">炸板数</td><td class="font-bold">~15只</td><td>~12只</td><td><span class="tag tag-amber">微增</span></td></tr>
+      <tr><td class="name">封板率</td><td class="font-bold">~85%</td><td>~79%</td><td><span class="tag tag-up">明显改善</span></td></tr>
+      <tr><td class="name">连板晋级率</td><td class="font-bold">~45%</td><td>~35%</td><td><span class="tag tag-up">回升</span></td></tr>
+      <tr><td class="name">最高连板</td><td class="font-bold" style="color:var(--primary);">8板 传智</td><td>7板 传智</td><td><span class="tag tag-up">高度上升</span></td></tr>
+      <tr><td class="name">连板梯队</td><td class="font-bold">8板+5板</td><td>7板+5板</td><td class="font-bold" style="color:var(--warning);">高度上升但断层持续</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-box"><span class="font-bold">数据解读</span><div style="margin-top:6px;">涨停数从~45只暴增至~85只，封板率85%——<span class="font-bold">这是典型的科技反弹日的情绪数据</span>。连板高度上升（7&rarr;8）说明情绪龙头仍在强化，但断层问题持续。今日涨停主力是<span class="font-bold">科技方向首板</span>（东山精密/鹏鼎控股/圣邦等），而非连板——<span class="font-bold">科技资金做反弹不做连板</span>，与消费/教育连板是两套逻辑。</div></div>
+</div>
+
+<!-- ===== 6 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">6</div><div class="section-title">龙虎榜重点</div></div>
+  <div class="alert-box">龙虎榜数据需收盘后2-3小时公布，以下基于盘口和成交额推断。</div>
+  <table>
+    <thead><tr><th>方向</th><th>标的</th><th>成交额</th><th>推断</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name" style="color:var(--success);">净买入 &starf;</td><td>中际旭创 300308</td><td class="font-bold">498亿</td><td class="font-bold" style="color:var(--success);">连续5日天量 &middot; 今日突破1000关口 &middot; 主力资金系统性建仓</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name" style="color:var(--success);">净买入 &starf;</td><td>源杰科技 688498</td><td class="font-bold">91亿</td><td class="font-bold" style="color:var(--success);">连续4日放量上涨 &middot; 创历史新高 &middot; 光芯片龙头</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name" style="color:var(--success);">净买入</td><td>长电科技 600584</td><td class="font-bold">92亿</td><td>放量暴涨+7.23% &middot; 封测资金回流</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name" style="color:var(--success);">净买入</td><td>通富微电 002156</td><td class="font-bold">77亿</td><td>昨日逼近跌停今日+8.30% &middot; 低吸资金入场</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name" style="color:var(--success);">净买入</td><td>东山精密 002384</td><td class="font-bold">153亿</td><td>涨停封死 &middot; PCB方向资金涌入</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">净卖出 &cross;</td><td>农业银行 601288</td><td class="font-bold">40.8亿</td><td class="font-bold" style="color:var(--error);">-4.06%暴跌 &middot; 避险资金大规模撤出</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">净卖出 &cross;</td><td>工商银行 601398</td><td class="font-bold">44.4亿</td><td class="font-bold" style="color:var(--error);">-3.77% &middot; 与农行同步遭抛售</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">净卖出 &cross;</td><td>长江电力 600900</td><td class="font-bold">42.9亿</td><td class="font-bold" style="color:var(--error);">-2.58% &middot; 水电避风港也遭抛售</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">净卖出</td><td>寒武纪 688256</td><td class="font-bold">186亿</td><td>虽涨+4.88%但成交天量 &middot; 多空分歧极大</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 7 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">7</div><div class="section-title">平台突破股筛选</div></div>
+  <div class="alert-box">筛选标准：近10日连续5天小阳线稳量上涨 &rarr; 当日放量突破半年/一年平台 &middot; 优先当日异动板块。</div>
+  <table>
+    <thead><tr><th>股票</th><th>代码</th><th>今日收盘</th><th>形态</th><th>是否符合</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">景旺电子 &starf;</td><td class="code">603228</td><td>80.00 (+7.02%)</td><td>连续3日逆势+今日放量突破79-80平台</td><td class="font-bold" style="color:var(--success);">确认突破 &starf;</td></tr>
+      <tr><td class="name">中际旭创</td><td class="code">300308</td><td>1021.99 (+13.24%)</td><td>放量突破1000心理关口</td><td>突破但非平台型</td></tr>
+      <tr><td class="name">源杰科技</td><td class="code">688498</td><td>1315.00 (+14.65%)</td><td>创历史新高 &middot; 连续4日放量</td><td>已脱离平台</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-success"><span class="success-title">&check; 景旺电子：本轮首个确认的平台突破</span><div style="margin-top:6px;">连续3日逆势（+2.81%/+6.29%/+7.02%）后今日放量站上80，符合<span class="font-bold">"连续小阳+放量突破"</span>的标准。这是本轮调整以来<span class="font-bold">第一个确认的平台突破标的</span>（上周推荐的舍得酒业已失败），明日回踩确认是关键。</div></div>
+</div>
+
+<!-- ===== 8 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">8</div><div class="section-title">300亿以上高壁垒个股深度分析</div></div>
+
+  <div class="sub-head">中际旭创（300308）&middot; 收盘1021.99 (+13.24%) &middot; 成交498亿 &middot; <span class="pill pill-offense">进攻</span></div>
+  <table><tbody>
+    <tr><th style="width:130px;">主营</th><td>光模块（800G/1.6T）&middot; 全球CPO龙头</td></tr>
+    <tr><th>核心客户</th><td>英伟达、谷歌、Meta、亚马逊等北美云厂商</td></tr>
+    <tr><th>护城河</th><td>800G/1.6T量产能力全球第一梯队 &middot; 客户认证周期长 &middot; 上游光芯片绑定</td></tr>
+    <tr><th>财报趋势</th><td>2026H1受益于1.6T放量 &middot; 毛利率随规模效应改善 &middot; 海外营收占比提升</td></tr>
+    <tr><th>上涨逻辑</th><td class="font-bold" style="color:var(--success);">今日突破1000关口 &middot; 连续5日天量说明产业资金系统性建仓 &middot; AI资本开支预期持续</td></tr>
+    <tr><th class="font-bold" style="color:var(--error);">下跌风险</th><td>连续5日天量但涨幅波动剧烈（+4.40%/+2.66%/+0.05%/+13.24%）= 高波动 &middot; 控股股东已减持1.46% &middot; 美联储加息预期压制 &middot; 498亿天量后短线获利盘极重</td></tr>
+    <tr><th class="font-bold" style="color:var(--success);">买入条件</th><td>守住1000 + 缩量整理2日 + 不创新低。<span class="font-bold">今日刚突破，不追。等缩量回踩确认。</span></td></tr>
+  </tbody></table>
+
+  <div class="sub-head">源杰科技（688498）&middot; 收盘1315.00 (+14.65%) &middot; 成交91亿 &middot; <span class="pill pill-offense">进攻</span></div>
+  <table><tbody>
+    <tr><th style="width:130px;">主营</th><td>高速光芯片（DFB/EML/VCSEL）&middot; 光通信上游核心器件</td></tr>
+    <tr><th>核心客户</th><td>光模块厂商（中际旭创/新易盛等）&middot; 数据中心光模块供应链</td></tr>
+    <tr><th>护城河</th><td>25G/50G EML光芯片国产化稀缺标的 &middot; 800G/1.6T光模块上游 &middot; 技术壁垒极高</td></tr>
+    <tr><th>财报趋势</th><td>2026年高速光芯片出货量随CPO放量 &middot; 毛利率高于行业平均</td></tr>
+    <tr><th>上涨逻辑</th><td class="font-bold" style="color:var(--success);">连续4日逆势/暴涨创历史新高 &middot; 全市场最强个股 &middot; 光芯片国产替代+AI算力双逻辑</td></tr>
+    <tr><th class="font-bold" style="color:var(--error);">下跌风险</th><td>高价股波动极大 &middot; 今日+14.65%短线获利盘极重 &middot; 冲高回落概率高</td></tr>
+    <tr><th class="font-bold" style="color:var(--success);">买入条件</th><td>缩量站稳1250 + 中际旭创同步走强。<span class="font-bold">今日大涨不追，等回踩。</span></td></tr>
+  </tbody></table>
+
+  <div class="sub-head">贵州茅台（600519）&middot; 收盘1328.36 (-2.25%) &middot; <span class="pill pill-defense">防守</span></div>
+  <table><tbody>
+    <tr><th style="width:130px;">主营</th><td>高端白酒 &middot; 飞天茅台核心单品</td></tr>
+    <tr><th>护城河</th><td>品牌壁垒不可复制 &middot; 产能地理限制 &middot; 定价权最强</td></tr>
+    <tr><th>今日表现</th><td class="font-bold" style="color:var(--error);">-2.25% &middot; 昨日+0.62%全回吐 &middot; 收在全天最低区域</td></tr>
+    <tr><th class="font-bold" style="color:var(--error);">下跌风险</th><td>科技暴涨日资金离开白酒 &middot; 跷跷板效应 &middot; 下方1330支撑待考验</td></tr>
+    <tr><th class="font-bold" style="color:var(--success);">买入条件</th><td>守住1330 + 科技回落时白酒能企稳。<span class="font-bold">等跷跷板缓和再说，当前不加仓。</span></td></tr>
+  </tbody></table>
+</div>
+
+<!-- ===== 9 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">9</div><div class="section-title">异常成交量个股</div></div>
+  <div class="alert-box">筛选标准：当日成交量显著高于近半年常态水平（&gt; 近半年最高量 &times; 2 或出现历史级天量）。</div>
+  <table>
+    <thead><tr><th>股票</th><th>代码</th><th>今日成交</th><th>形态</th><th>解读</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name">中际旭创</td><td class="code">300308</td><td class="font-bold">498亿</td><td>突破1000 &middot; +13.24%</td><td class="font-bold" style="color:var(--error);">连续5日天量 &middot; 498亿=历史级 &middot; 多空激烈博弈</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">长鑫科技</td><td class="code">688825</td><td class="font-bold">278亿</td><td>+0.02% &middot; 走平</td><td class="font-bold" style="color:var(--error);">连续第3日天量但涨幅递减至0 &middot; 天量滞涨=警示</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">寒武纪</td><td class="code">688256</td><td class="font-bold">186亿</td><td>+4.88%</td><td>天量反弹 &middot; 多空分歧极大</td></tr>
+      <tr><td class="name">东山精密</td><td class="code">002384</td><td class="font-bold">153亿</td><td>涨停+10.00%</td><td class="font-bold" style="color:var(--success);">涨停封死 &middot; PCB方向资金涌入</td></tr>
+      <tr><td class="name">宁德时代</td><td class="code">300750</td><td class="font-bold">104亿</td><td>+0.18%</td><td>放量走平 &middot; 分歧严重</td></tr>
+      <tr><td class="name">农业银行</td><td class="code">601288</td><td class="font-bold">40.8亿</td><td>-4.06%</td><td class="font-bold" style="color:var(--error);">放量暴跌 &middot; 银行遭大规模抛售</td></tr>
+      <tr><td class="name">工商银行</td><td class="code">601398</td><td class="font-bold">44.4亿</td><td>-3.77%</td><td class="font-bold" style="color:var(--error);">放量暴跌 &middot; 与农行同步</td></tr>
+      <tr><td class="name">长江电力</td><td class="code">600900</td><td class="font-bold">42.9亿</td><td>-2.58%</td><td class="font-bold" style="color:var(--error);">放量下跌 &middot; 避风港被抛售</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-warn"><span class="warn-title">&excl; 中际旭创连续5日天量 &middot; 长鑫科技天量滞涨需警惕</span><div style="margin-top:6px;">中际旭创5日累计成交约2430亿，这是极罕见的天量级别——说明<span class="font-bold">产业资金与投机资金同时涌入</span>，但也意味着短线获利盘极重。<span class="font-bold">长鑫科技连续3日天量（300/278/278亿）但涨幅从+1.89%递减至+0.02%</span>，天量滞涨=派发预警，与封测上周五"放量滞涨"如出一辙。</div></div>
+</div>
+
+<!-- ===== 10 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">10</div><div class="section-title">展望与策略建议</div></div>
+  <div class="sub-head">关键变量</div>
+  <table>
+    <thead><tr><th>变量</th><th>时点</th><th>影响</th></tr></thead>
+    <tbody>
+      <tr><td class="name">科技暴涨能否延续</td><td>8/5</td><td class="font-bold">最关键变量 &middot; 续涨=反转 &middot; 回落=反弹</td></tr>
+      <tr><td class="name">银行是否止跌</td><td>8/5</td><td>续跌则沪指被拖累 &middot; 系统性风险</td></tr>
+      <tr><td class="name">中际旭创能否守住1000</td><td>8/5-8/6</td><td>守住=突破有效 &middot; 破位=假突破</td></tr>
+      <tr><td class="name">长鑫科技天量滞涨</td><td>8/5</td><td>天量滞涨&rarr;下跌？ &middot; 与封测上周剧本对比</td></tr>
+      <tr><td class="name">传智教育9板</td><td>8/5</td><td>消费情绪高度 &middot; 炸板则情绪瓦解</td></tr>
+      <tr><td class="name">长鑫科技MSCI纳入</td><td>8/10</td><td>被动资金流入 &middot; 距6天</td></tr>
+      <tr><td class="name">美联储官员讲话</td><td>本周</td><td>鹰派表态压制成长估值</td></tr>
+      <tr><td class="name">中报密集披露</td><td>8月</td><td>业绩证伪风险 &middot; 高估值科技敏感</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-danger">
+    <span class="danger-title">&starf; 明确策略建议（不模棱两可）</span>
+    <div style="margin-top:8px;">
+      <div>1. <span class="font-bold" style="color:var(--success);">光通信链（源杰/中际旭创/景旺）：唯一确定主线，但不追今日大涨。</span>连续4-5日的逆势/暴涨说明产业逻辑成立。但今日集体暴涨后短线获利盘极重，<span class="font-bold">等缩量回踩确认再介入</span>——中际旭创等守住1000缩量2日、源杰等回踩1250。</div>
+      <div>2. <span class="font-bold">封测/AI芯片：今日暴涨视为超跌反弹，不追不抄底。</span>两天振幅18%（通富-9.50%↔+8.30%）说明这是高波动博弈，不是趋势恢复。如果昨日按建议清空了，<span class="font-bold">不要因为今日暴涨就后悔追回</span>——震荡市的纪律就是不被单日反弹诱导。</div>
+      <div>3. <span class="font-bold">银行/红利：今日暴跌后观察是否止跌。</span>不抄底也不割肉。如果明日银行止跌反弹，可能是较好的重新介入点。<span class="font-bold">但如果续跌，则红利逻辑正在瓦解。</span></div>
+      <div>4. <span class="font-bold">白酒：不加不减。</span>茅台跌破1350=短期走弱信号，但1330支撑仍在。</div>
+      <div>5. <span class="font-bold">传智8板：持有设硬止损。</span>炸板立即离场。</div>
+      <div>6. <span class="font-bold">现金35-40%。</span>跷跷板震荡市的最佳策略是降低仓位。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 11 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">11</div><div class="section-title">明日重点盯盘清单</div></div>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻</span> 光通信链是唯一确定方向（但不追高）</div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr><td class="name">中际旭创</td><td class="code">300308</td><td class="font-bold" style="color:var(--success);">突破1000 &middot; 连续5日天量498亿</td><td class="font-bold">能否守住1000 &middot; 破位则假突破</td></tr>
+      <tr><td class="name">源杰科技</td><td class="code">688498</td><td class="font-bold" style="color:var(--success);">连续4日暴涨创历史新高</td><td class="font-bold">能否站稳1250 &middot; 冲高回落是常态</td></tr>
+      <tr><td class="name">景旺电子</td><td class="code">603228</td><td class="font-bold" style="color:var(--success);">平台突破确认 &middot; 本轮首个</td><td>回踩79不破则突破有效</td></tr>
+      <tr><td class="name">胜宏科技</td><td class="code">300476</td><td>PCB &middot; 今日+6.60%放量</td><td>能否站稳200 &middot; PCB持续性</td></tr>
+      <tr><td class="name">长鑫科技</td><td class="code">688825</td><td class="font-bold" style="color:var(--error);">连续3日天量但涨幅递减至0</td><td class="font-bold">天量滞涨警示 &middot; 是否补跌</td></tr>
+      <tr><td class="name">通富微电</td><td class="code">002156</td><td>昨日-9.50%今日+8.30% &middot; 极端波动</td><td class="font-bold">是超跌反弹还是趋势恢复 &middot; 看能否连续2日收阳</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill pill-defense">防守</span> 今日遭重创，观察能否止跌</div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr><td class="name">农业银行</td><td class="code">601288</td><td class="font-bold" style="color:var(--error);">今日-4.06% &middot; 跌幅最大</td><td class="font-bold">能否止跌 &middot; 续跌则红利逻辑瓦解</td></tr>
+      <tr><td class="name">工商银行</td><td class="code">601398</td><td class="font-bold" style="color:var(--error);">今日-3.77%</td><td>能否守住7.60 &middot; 银行企稳信号</td></tr>
+      <tr><td class="name">中国移动</td><td class="code">600941</td><td>连续3日逆势后补跌-2.58%</td><td>能否守住96 &middot; 红利最后堡垒</td></tr>
+      <tr><td class="name">贵州茅台</td><td class="code">600519</td><td>今日-2.25%跌破1350</td><td class="font-bold">能否守住1330 &middot; 白酒关键支撑</td></tr>
+      <tr><td class="name">长江电力</td><td class="code">600900</td><td>今日-2.58% &middot; 避风港失效</td><td>是否续跌 &middot; 水电避险属性验证</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill" style="background:#F5F3FF;color:#7C3AED;border-color:#DDD6FE;">风格切换</span> 关键验证标的</div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr><td class="name">传智教育</td><td class="code">003032</td><td>8连板最高标 &middot; 封单1419万手</td><td class="font-bold">能否9连板 &middot; 炸板则消费情绪瓦解</td></tr>
+      <tr><td class="name">一鸣食品</td><td class="code">605179</td><td>盘中翻绿尾盘拉回+1.78% &middot; 韧性</td><td>能否重回涨停 &middot; 消费情绪温度计</td></tr>
+      <tr><td class="name">创业黑马</td><td class="code">300688</td><td>教育跟风 &middot; +2.67%</td><td>教育板块是否扩散</td></tr>
+      <tr><td class="name">舍得酒业</td><td class="code">600702</td><td>连续下跌但今日跌幅收窄</td><td>能否守住37 &middot; 二线白酒企稳信号</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 12 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">12</div><div class="section-title">连续趋势追踪</div></div>
+  <div class="alert-box">数据来源：读取 A股周报/ 目录下 8/3半日、8/3盘中、8/3日报、8/4盘中报告提取历史数据。</div>
+
+  <div class="sub-head">重点个股多日走势</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>7/31收盘</th><th>8/1-8/2休</th><th>8/3收盘</th><th>8/4收盘</th><th>趋势判定</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">源杰科技</td><td class="code">688498</td><td>+7.41%</td><td>&mdash;</td><td>+5.03%</td><td class="font-bold">+14.65%</td><td class="font-bold" style="color:var(--success);">连续4日上涨 &middot; 创新高 &middot; 最强主线</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">中际旭创</td><td class="code">300308</td><td>+4.40%</td><td>&mdash;</td><td>+0.05%</td><td class="font-bold">+13.24%</td><td class="font-bold" style="color:var(--success);">连续5日天量 &middot; 突破1000</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">景旺电子</td><td class="code">603228</td><td>&mdash;</td><td>&mdash;</td><td>+2.81%</td><td class="font-bold">+7.02%</td><td class="font-bold" style="color:var(--success);">连续3日逆势 &middot; 平台突破确认</td></tr>
+      <tr><td class="name">通富微电</td><td class="code">002156</td><td>+1.50% 滞涨</td><td>&mdash;</td><td class="font-bold" style="color:var(--error);">-9.50%</td><td class="font-bold">+8.30%</td><td class="font-bold" style="color:var(--warning);">两天振幅18% &middot; 高波动反弹</td></tr>
+      <tr><td class="name">长电科技</td><td class="code">600584</td><td>+1.86% 滞涨</td><td>&mdash;</td><td>-7.17%</td><td class="font-bold">+7.23%</td><td class="font-bold" style="color:var(--warning);">与通富同步 &middot; 高波动</td></tr>
+      <tr><td class="name">寒武纪</td><td class="code">688256</td><td>+6.10%</td><td>&mdash;</td><td>-7.05%</td><td class="font-bold">+4.88%</td><td class="font-bold" style="color:var(--warning);">反弹一日游 &rarr; 再反弹 &middot; 剧烈震荡</td></tr>
+      <tr><td class="name">东山精密</td><td class="code">002384</td><td>+5.98%</td><td>&mdash;</td><td>-5.07%</td><td class="font-bold">+10.00% 涨停</td><td class="font-bold" style="color:var(--success);">涨停反转 &middot; PCB爆发</td></tr>
+      <tr><td class="name">长鑫科技</td><td class="code">688825</td><td>+2.08%</td><td>&mdash;</td><td>+1.89%</td><td class="font-bold">+0.02%</td><td class="font-bold" style="color:var(--error);">连续3日天量但涨幅递减至0 &middot; 滞涨</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">中国移动</td><td class="code">600941</td><td>-1.5%</td><td>&mdash;</td><td>+1.60%</td><td class="font-bold">-2.58%</td><td class="font-bold" style="color:var(--error);">连续3日逆势后首次补跌</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">贵州茅台</td><td class="code">600519</td><td>+0.98%</td><td>&mdash;</td><td>+0.62%</td><td class="font-bold">-2.25%</td><td class="font-bold" style="color:var(--error);">科技暴涨日遭抛售 &middot; 跷跷板</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">工商银行</td><td class="code">601398</td><td>-2.09%</td><td>&mdash;</td><td>+0.13%</td><td class="font-bold">-3.77%</td><td class="font-bold" style="color:var(--error);">昨日翻红今日暴跌 &middot; 银行崩塌</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">农业银行</td><td class="code">601288</td><td>-2%</td><td>&mdash;</td><td>-0.14%</td><td class="font-bold">-4.06%</td><td class="font-bold" style="color:var(--error);">两日累计-4.2% &middot; 跌幅最大</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">长江电力</td><td class="code">600900</td><td>&mdash;</td><td>&mdash;</td><td>-0.14%</td><td class="font-bold">-2.58%</td><td class="font-bold" style="color:var(--error);">避风港今日失效</td></tr>
+      <tr style="background:#FEF3C7;"><td class="name">传智教育</td><td class="code">003032</td><td>5连板</td><td>&mdash;</td><td>7连板</td><td class="font-bold" style="color:var(--primary);">8连板</td><td class="font-bold" style="color:var(--success);">最高标 &middot; 连续晋级</td></tr>
+      <tr style="background:#FEF3C7;"><td class="name">一鸣食品</td><td class="code">605179</td><td>4连板</td><td>&mdash;</td><td>回封5板</td><td class="font-bold">+1.78%</td><td class="font-bold" style="color:var(--warning);">回封后未续涨停 &middot; 高度停滞</td></tr>
+      <tr><td class="name">舍得酒业</td><td class="code">600702</td><td>突破38</td><td>&mdash;</td><td>-3.10%</td><td class="font-bold">-0.61%</td><td class="font-bold" style="color:var(--error);">突破失败 &middot; 连续走弱</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">板块轮动追踪：进攻 vs 防守（近4个交易日）</div>
+  <table>
+    <thead><tr><th>方向</th><th>板块</th><th>7/31</th><th>8/3</th><th>8/4</th><th>3日综合</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name"><span class="pill pill-offense">进攻</span></td><td>光通信链</td><td>+4~7%</td><td>+0~5%</td><td class="font-bold" style="color:var(--success);">+7~15%</td><td class="font-bold" style="color:var(--success);">连续3日走强 &middot; 唯一主线 &starf;</td></tr>
+      <tr><td class="name"><span class="pill pill-offense">进攻</span></td><td>封测</td><td>放量滞涨</td><td class="font-bold" style="color:var(--error);">-7~-10%</td><td class="font-bold" style="color:var(--success);">+5~8%</td><td class="font-bold" style="color:var(--warning);">暴跌暴涨 &middot; 高波动无趋势</td></tr>
+      <tr><td class="name"><span class="pill pill-offense">进攻</span></td><td>AI芯片</td><td>+6.10%</td><td>-7.05%</td><td>+4.88%</td><td class="font-bold" style="color:var(--warning);">暴涨暴跌 &middot; 剧烈震荡</td></tr>
+      <tr><td class="name"><span class="pill pill-offense">进攻</span></td><td>PCB</td><td>+6~9%</td><td>-5%</td><td class="font-bold" style="color:var(--success);">+7~10%</td><td class="font-bold" style="color:var(--success);">净上涨 &middot; 景旺突破</td></tr>
+      <tr><td class="name"><span class="pill pill-offense">进攻</span></td><td>存储</td><td>+2.08%</td><td>+1.89%</td><td class="font-bold" style="color:var(--error);">+0.02%</td><td class="font-bold" style="color:var(--error);">连续3日天量滞涨 &middot; 警示</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name"><span class="pill pill-defense">防守</span></td><td>银行</td><td>-2%</td><td>+0.13%</td><td class="font-bold" style="color:var(--error);">-3.8~-4.1%</td><td class="font-bold" style="color:var(--error);">两日暴跌 &middot; 避险逻辑瓦解中</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name"><span class="pill pill-defense">防守</span></td><td>白酒龙头</td><td>+0.98%</td><td>+0.62%</td><td class="font-bold" style="color:var(--error);">-2.25%</td><td class="font-bold" style="color:var(--warning);">两日走强一日回吐</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name"><span class="pill pill-defense">防守</span></td><td>红利</td><td>-1.5%</td><td>+1.60%</td><td class="font-bold" style="color:var(--error);">-2.58%</td><td class="font-bold" style="color:var(--warning);">逆势中断 &middot; 跷跷板</td></tr>
+      <tr style="background:#FEF3C7;"><td class="name"><span class="pill pill-defense">防守</span></td><td>教育/食品</td><td>5板+4板</td><td>7板+回封5板</td><td>8板+5板未续</td><td class="font-bold" style="color:var(--warning);">高度仍在但分化加剧</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name"><span class="pill pill-defense">防守</span></td><td>煤炭</td><td>&mdash;</td><td>-4.29%</td><td>-1.33%</td><td class="font-bold" style="color:var(--error);">两日累计-5.6% &middot; 连环暴击</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">连板梯队演变</div>
+  <table>
+    <thead><tr><th>日期</th><th>最高标</th><th>次高标</th><th>梯队健康度</th></tr></thead>
+    <tbody>
+      <tr><td class="name">7/30</td><td>8板</td><td>传智4板/一鸣3板</td><td><span class="tag tag-up">健康</span></td></tr>
+      <tr><td class="name">7/31</td><td>传智5板（9板断板）</td><td>一鸣4板</td><td><span class="tag tag-amber">高度下降</span></td></tr>
+      <tr><td class="name">8/3</td><td>传智7板</td><td>一鸣回封5板</td><td><span class="tag tag-amber">高度上升+断层</span></td></tr>
+      <tr style="background:#FEF3C7;"><td class="name font-bold">8/4</td><td class="font-bold" style="color:var(--primary);">传智8板</td><td class="font-bold">一鸣+1.78%（未续涨停）</td><td class="font-bold" style="color:var(--warning);">高度上升+断层持续+消费分化</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">风格信号综合判断</div>
+  <table>
+    <thead><tr><th>指标</th><th>8/3</th><th>8/4</th><th>信号</th></tr></thead>
+    <tbody>
+      <tr><td class="name">科技 vs 防守</td><td><span class="tag tag-down">科技崩 防守涨</span></td><td><span class="tag tag-up">科技暴涨 防守崩</span></td><td class="font-bold" style="color:var(--warning);">跷跷板 &middot; 非趋势</td></tr>
+      <tr><td class="name">唯一持续主线</td><td><span class="tag tag-up">光通信链</span></td><td><span class="tag tag-up">光通信链暴涨</span></td><td class="font-bold" style="color:var(--success);">连续4日确认 &starf;</td></tr>
+      <tr><td class="name">沪指表现</td><td>-0.59%</td><td class="font-bold">+0.33%</td><td class="font-bold" style="color:var(--warning);">弱反弹 &middot; 银行拖累</td></tr>
+      <tr><td class="name">创业板 vs 沪指</td><td>-1.24% vs -0.59%</td><td class="font-bold">+5.64% vs +0.33%</td><td class="font-bold" style="color:var(--error);">极端分化 &middot; 5.3pct差距</td></tr>
+      <tr><td class="name">连板梯队</td><td>7板+5板回封</td><td class="font-bold">8板+5板未续</td><td class="font-bold" style="color:var(--warning);">高度上升但消费分化</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name" style="color:var(--error);">新风险信号</td><td>煤炭-4.29%</td><td class="font-bold" style="color:var(--error);">银行-4%+ 煤炭续跌</td><td class="font-bold" style="color:var(--error);">防守内部连环暴击</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-success">
+    <span class="success-title">&check; 连续趋势综合结论（修正框架）</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold" style="color:var(--success);">光通信链（源杰/中际旭创/景旺）是唯一穿越4日震荡的真实主线。</span>连续4日逆势/暴涨，今日全面爆发。这是当前市场<span class="font-bold">唯一确定性方向</span>，但今日集体暴涨后短线获利盘极重。</div>
+      <div>&bull; <span class="font-bold">封测/AI芯片连续两日方向完全相反</span>（先-10%后+8%），这不是趋势而是<span class="font-bold">高波动博弈</span>。在方向明确前不参与。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">防守方向遭遇连环暴击</span>：煤炭两日-5.6%、银行今日暴跌4%+、红利补跌、白酒全回吐。<span class="font-bold">昨日"风格切换确认"的判断需要修正</span>——当前市场不是趋势性切换，而是科技与防守之间的<span class="font-bold">高波动跷跷板</span>。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">长鑫科技天量滞涨是新警示</span>：连续3日天量但涨幅递减至0%，与封测上周五"放量滞涨&rarr;暴跌"的剧本如出一辙。<span class="font-bold">明日需重点观察长鑫是否补跌。</span></div>
+      <div class="font-bold" style="margin-top:6px;">策略结论：<span class="font-bold">光通信链等回踩确认再介入（不追今日暴涨）、封测/AI芯片视为反弹不参与、银行/红利观察是否止跌、现金35-40%。</span>明日核心验证：中际旭创能否守住1000、银行是否企稳、长鑫科技是否补跌。</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
