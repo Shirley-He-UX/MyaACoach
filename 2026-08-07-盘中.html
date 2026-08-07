@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026.08.07 A股盘中 · 中际旭创午后跳水-3.78%跌破950 封测加速通富+5.99% 光通信内部剧烈分化</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--radius-md:8px;--radius-lg:16px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--primary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--primary);}
+.nav-disabled{color:var(--text2);opacity:0.4;}
+.hero-band{background:linear-gradient(135deg,#2563EB,#1E40AF);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.6vw,34px);font-weight:800;line-height:1.25;margin-bottom:12px;}
+.hero-sub{font-size:15px;opacity:0.85;max-width:820px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--secondary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+td a{color:var(--secondary);text-decoration:none;}
+td a:hover{text-decoration:underline;}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--primary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-success{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.font-bold{font-weight:700;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;margin:2px;}
+.pill-offense{background:#FEE2E2;color:#DC2626;}
+.pill-defense{background:#DBEAFE;color:#2563EB;}
+.success-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--success);margin-bottom:6px;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-08-07-半日.html">&larr; 上一篇：8/7半日</a>
+    <span class="nav-disabled">下一篇：待发布 &rarr;</span>
+  </div>
+</nav>
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026.08.07 &middot; FRI &middot; 14:30 盘中扫描</div>
+    <h1 class="hero-title">中际旭创午后跳水-3.78%跌破950企稳证伪 · 封测午后加速通富+5.99%华天+3.30% · 光通信内部剧烈分化 · 沪指+0.72%走强创业板回落至+0.89% · 情绪股午后走高一鸣+5.26%</h1>
+    <div class="hero-sub">14:30：沪指3928.27(+0.72%) &middot; 深成指14251.58(+1.00%) &middot; 创业板3546.70(+0.89%) &middot; 科创50 1728.31(+1.59%) &middot; 两市约2.3万亿+ &middot; 午后重大反转：中际旭创从午间+2.34%(977)跳水至-3.78%(918.89)跌破950 &middot; 拖累创业板从+1.75%回落至+0.89% &middot; 封测午后加速接棒（通富+5.99%/华天+3.30%/长电+1.89%） &middot; 寒武纪翻红+0.37%科创50拉升 &middot; 防守继续回落（工行-0.53%/移动-0.95%）</div>
+  </div>
+</header>
+<div class="container">
+
+<!-- ===== 1 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">1</div><div class="section-title">大盘即时状态（14:30）</div></div>
+  <div class="data-grid">
+    <div class="data-card data-card-up"><div class="label">上证指数</div><div class="value">3928.27</div><div class="sub font-bold" style="color:var(--success);">+0.72% (+27.91)</div><div class="sub font-bold" style="color:var(--success);">午后拉升</div></div>
+    <div class="data-card data-card-up"><div class="label">深证成指</div><div class="value">14251.58</div><div class="sub font-bold" style="color:var(--success);">+1.00% (+141.46)</div><div class="sub font-bold" style="color:var(--error);">从+1.31%回落</div></div>
+    <div class="data-card data-card-up"><div class="label">创业板指</div><div class="value">3546.70</div><div class="sub font-bold" style="color:var(--success);">+0.89% (+31.14)</div><div class="sub font-bold" style="color:var(--error);">从+1.75%大幅回落</div></div>
+    <div class="data-card data-card-up"><div class="label">科创50</div><div class="value">1728.31</div><div class="sub font-bold" style="color:var(--success);">+1.59% (+27.02)</div><div class="sub font-bold" style="color:var(--success);">逆势拉升 &middot; 寒武纪翻红</div></div>
+  </div>
+  <table>
+    <thead><tr><th>指标</th><th>14:30</th><th>午间11:30</th><th>午后变化</th></tr></thead>
+    <tbody>
+      <tr><td class="name">上证指数</td><td class="font-bold">3928.27 (+0.72%)</td><td>3919.51 (+0.49%)</td><td class="font-bold" style="color:var(--success);">午后拉升 +0.23%</td></tr>
+      <tr><td class="name">深证成指</td><td class="font-bold">14251.58 (+1.00%)</td><td>14295.08 (+1.31%)</td><td class="font-bold" style="color:var(--error);">回落 -0.31%</td></tr>
+      <tr><td class="name">创业板指</td><td class="font-bold">3546.70 (+0.89%)</td><td>3577.20 (+1.75%)</td><td class="font-bold" style="color:var(--error);">大幅回落 -0.86%</td></tr>
+      <tr><td class="name">科创50</td><td class="font-bold">1728.31 (+1.59%)</td><td>1718.59 (+1.02%)</td><td class="font-bold" style="color:var(--success);">逆势拉升 +0.57%</td></tr>
+      <tr><td class="name">两市成交</td><td class="font-bold">约2.3万亿+</td><td>1.68万亿(半日)</td><td class="font-bold">放量</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 午后重大反转：中际旭创跳水跌破950 · 企稳判断证伪</span>
+    <div style="margin-top:6px;">
+      <div>今日午间半日报判定中际旭创"连续2日守住950，企稳完全确认"。但<span class="font-bold">午后中际旭创从977直接跳水至918.89（-3.78%），跌破950关键位</span>，企稳判断被证伪。</div>
+      <div style="margin-top:4px;"><span class="font-bold" style="color:var(--primary);">修正框架：连续天量个股的"2日企稳"标准不够，需观察午后尾盘是否出现二次抛压。缩量企稳可能只是开盘效应，午后大单出逃才是真实方向。</span></div>
+      <div style="margin-top:4px;">创业板从+1.75%大幅回落至+0.89%，主因就是光通信跳水拖累。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 2 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">2</div><div class="section-title">异动板块扫描</div></div>
+
+  <div class="sub-head"><span class="pill" style="background:#FEE2E2;color:#DC2626;border-color:#FECACA;">&cross; 午后跳水-光通信</span> 中际旭创暴跌 &middot; 光通信分化逆转</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>现价</th><th>涨幅</th><th>午后变化</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name">中际旭创 &cross;</td><td class="code">300308</td><td>918.89</td><td class="font-bold" style="color:var(--error);">-3.78%</td><td class="font-bold" style="color:var(--error);">午间+2.34%&rarr;午后-3.78% &middot; 跌破950</td><td class="font-bold" style="color:var(--error);">企稳证伪 &middot; 二次探底</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">新易盛 &cross;</td><td class="code">300502</td><td>419.87</td><td class="font-bold" style="color:var(--error);">-0.36%</td><td class="font-bold" style="color:var(--error);">午间+4.35%&rarr;午后-0.36% &middot; 翻绿</td><td class="font-bold" style="color:var(--error);">午后翻绿 &middot; 放量226亿</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">天孚通信</td><td class="code">300394</td><td>228.45</td><td class="font-bold" style="color:var(--success);">+1.41%</td><td class="font-bold" style="color:var(--error);">午间+3.61%&rarr;午后+1.41%</td><td>涨幅大幅收窄 &middot; 仍正</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">源杰科技</td><td class="code">688498</td><td>1331.87</td><td class="font-bold" style="color:var(--error);">-0.09%</td><td class="font-bold" style="color:var(--error);">午间+3.60%&rarr;午后-0.09%</td><td>翻绿</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-danger" style="margin-bottom:16px;">
+    <span class="danger-title">&cross; 光通信午后集体跳水</span>
+    <div style="margin-top:6px;">
+      <div>上午光通信"集体反攻"，午后全部跳水：<span class="font-bold">中际旭创-3.78%、新易盛从+4.35%到-0.36%、天孚从+3.61%到+1.41%、源杰从+3.60%到-0.09%。</span></div>
+      <div style="margin-top:4px;">上午的"集体反攻"被午后完全证伪。中际旭创连续天量（8/5: 675亿 &rarr; 8/6: 398亿 &rarr; 8/7: 470亿），今日再次放量到470亿——<span class="font-bold" style="color:var(--primary);">证明缩量企稳判断不够。连续天量的个股，即使缩量也可能再次放量跳水。</span></div>
+    </div>
+  </div>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻-封测</span> 午后加速 &middot; 接棒PCB</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>现价</th><th>涨幅</th><th>午后变化</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">通富微电 &starf;</td><td class="code">002156</td><td>64.61</td><td class="font-bold" style="color:var(--success);">+5.99%</td><td class="font-bold" style="color:var(--success);">午间+1.38%&rarr;午后+5.99% &middot; 大幅加速</td><td>连续4日 &middot; 午后爆发</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">华天科技 &starf;</td><td class="code">002185</td><td>17.83</td><td class="font-bold" style="color:var(--success);">+3.30%</td><td class="font-bold" style="color:var(--success);">午间+2.49%&rarr;午后+3.30%</td><td>连续4日 &middot; 加速</td></tr>
+      <tr><td class="name">长电科技</td><td class="code">600584</td><td>77.30</td><td class="font-bold" style="color:var(--success);">+1.89%</td><td class="font-bold" style="color:var(--success);">午间+1.19%&rarr;午后+1.89%</td><td>连续4日 &middot; 午后加速</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-success" style="margin-bottom:16px;">
+    <span class="success-title">&check; 封测午后加速接棒</span>
+    <div style="margin-top:6px;">上午半日报观察到"封测涨幅递减、趋势后半段"信号，但午后封测大幅加速——通富从+1.38%飙至+5.99%，华天从+2.49%到+3.30%，长电从+1.19%到+1.89%。<span class="font-bold">上午的"趋势后半段"判断至少今日被推翻。</span>连续4日上涨且午后加速，封测趋势仍在延续。</div>
+  </div>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻-PCB</span> 维持强势 &middot; 景旺2连板</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>现价</th><th>涨幅</th><th>午后变化</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">胜宏科技</td><td class="code">300476</td><td>277.83</td><td class="font-bold" style="color:var(--success);">+11.02%</td><td>午间+11.55%&rarr;午后+11.02%</td><td>微降 &middot; 高位维持</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">景旺电子 &starf;</td><td class="code">603228</td><td>94.95</td><td class="font-bold" style="color:var(--success);">+10.01%</td><td>涨停封死</td><td class="font-bold" style="color:var(--primary);">连续2日涨停</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">沪电股份</td><td class="code">002463</td><td>124.98</td><td class="font-bold" style="color:var(--success);">+6.64%</td><td>午间+7.24%&rarr;午后+6.64%</td><td>微降 &middot; 仍强势</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">鹏鼎控股</td><td class="code">002938</td><td>101.05</td><td class="font-bold" style="color:var(--success);">+7.67%</td><td>午间+8.55%&rarr;午后+7.67%</td><td>微降 &middot; 仍强势</td></tr>
+      <tr><td class="name">东山精密</td><td class="code">002384</td><td>193.06</td><td class="font-bold" style="color:var(--success);">+2.87%</td><td>午间+4.91%&rarr;午后+2.87%</td><td>回落 &middot; 仍正</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻-AI芯片</span> 寒武纪午后翻红 &middot; 海光加速</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>现价</th><th>涨幅</th><th>午后变化</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">寒武纪 &starf;</td><td class="code">688256</td><td>1174.96</td><td class="font-bold" style="color:var(--success);">+0.59%</td><td class="font-bold" style="color:var(--success);">午间-0.88%&rarr;午后+0.59%</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">海光信息</td><td class="code">688041</td><td>295.36</td><td class="font-bold" style="color:var(--success);">+1.48%</td><td class="font-bold" style="color:var(--success);">午间+0.67%&rarr;午后+1.48%</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">圣邦股份 &starf;</td><td class="code">300661</td><td>111.35</td><td class="font-bold" style="color:var(--success);">+4.81%</td><td class="font-bold" style="color:var(--success);">午间+4.50%&rarr;午后+4.81%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill" style="background:#F5F3FF;color:#7C3AED;border-color:#DDD6FE;">情绪股</span> 午后继续走高</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>现价</th><th>涨幅</th><th>午后变化</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF3C7;"><td class="name">传智教育</td><td class="code">003032</td><td>11.52</td><td class="font-bold" style="color:var(--success);">+5.21%</td><td>午间+4.11%&rarr;午后+5.21%</td></tr>
+      <tr style="background:#FEF3C7;"><td class="name">一鸣食品</td><td class="code">605179</td><td>22.81</td><td class="font-bold" style="color:var(--success);">+5.26%</td><td>午间+6.14%&rarr;午后+5.26%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill pill-defense">防守</span> 继续回落</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>现价</th><th>涨幅</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name">中国移动</td><td class="code">600941</td><td>95.53</td><td class="font-bold" style="color:var(--error);">-0.95%</td><td>连续下跌</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">工商银行</td><td class="code">601398</td><td>7.53</td><td class="font-bold" style="color:var(--error);">-0.53%</td><td>昨日翻红今日续跌</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">农业银行</td><td class="code">601288</td><td>6.46</td><td class="font-bold" style="color:var(--error);">-0.61%</td><td>续跌</td></tr>
+      <tr><td class="name">中国神华</td><td class="code">601088</td><td>43.92</td><td><span class="tag tag-down">-0.11%</span></td><td>微跌</td></tr>
+      <tr><td class="name">贵州茅台</td><td class="code">600519</td><td>1310.84</td><td><span class="tag tag-up">+0.18%</span></td><td>微弹</td></tr>
+      <tr><td class="name">长江电力</td><td class="code">600900</td><td>27.73</td><td><span class="tag tag-down">-0.07%</span></td><td>基本平盘</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 3 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">3</div><div class="section-title">试仓候选股</div></div>
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 光通信午后跳水，今日试仓需极度谨慎</span>
+    <div style="margin-top:6px;">中际旭创午后跳水证明光通信仍不稳定。今日试仓只考虑<span class="font-bold">封测（午后加速接棒）</span>和<span class="font-bold">AI芯片（温和上涨）</span>方向，且仓位极轻。</div>
+  </div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>现价</th><th>涨幅</th><th>试仓理由</th><th>建议仓位</th><th>风控</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="name">海光信息</td><td class="code">688041</td><td>295.36</td><td class="font-bold" style="color:var(--success);">+1.48%</td>
+        <td>AI芯片 &middot; 连续3日温和上涨 &middot; 午后加速 &middot; 涨幅适中不追高</td>
+        <td class="font-bold">轻仓 3-5%</td>
+        <td class="font-bold" style="color:var(--error);">止损288</td>
+      </tr>
+      <tr>
+        <td class="name">圣邦股份</td><td class="code">300661</td><td>111.35</td><td class="font-bold" style="color:var(--success);">+4.81%</td>
+        <td>模拟芯片 &middot; 连续5日小阳后加速 &middot; 走势健康</td>
+        <td class="font-bold">观察仓 2-3%</td>
+        <td class="font-bold" style="color:var(--error);">止损106</td>
+      </tr>
+      <tr>
+        <td class="name">华天科技</td><td class="code">002185</td><td>17.83</td><td class="font-bold" style="color:var(--success);">+3.30%</td>
+        <td>封测 &middot; 午后加速 &middot; 封测中价格最低弹性大 &middot; 连续4日</td>
+        <td class="font-bold">观察仓 2%</td>
+        <td class="font-bold" style="color:var(--error);">止损17.10</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 明确不试仓</span>
+    <div style="margin-top:6px;">
+      <div>&bull; <span class="font-bold">中际旭创/新易盛/光通信</span>：午后跳水，方向不明，坚决不碰。</div>
+      <div>&bull; <span class="font-bold">胜宏/景旺/沪电/鹏鼎</span>：PCB连续3日暴涨，涨幅过大，追高风险极大。等回踩。</div>
+      <div>&bull; <span class="font-bold">通富微电</span>：午后+5.99%加速，但当前价位已高，等回踩58-60。</div>
+      <div>&bull; <span class="font-bold">传智/一鸣</span>：超跌反弹是卖点。坚决回避。</div>
+      <div>&bull; <span class="font-bold">长鑫科技</span>：派发持续，天量241亿。回避。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 4 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">4</div><div class="section-title">上午盯盘清单追踪</div></div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>午间11:30</th><th>14:30</th><th>午后变化</th><th>状态</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name">中际旭创 &cross;</td><td class="code">300308</td><td>+2.34%</td><td class="font-bold">-3.78%</td><td class="font-bold" style="color:var(--error);">跳水跌破950</td><td class="font-bold" style="color:var(--error);">企稳证伪 &middot; 二次探底</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">通富微电</td><td class="code">002156</td><td>+1.38%</td><td class="font-bold">+5.99%</td><td class="font-bold" style="color:var(--success);">午后大幅加速</td><td class="font-bold" style="color:var(--success);">封测接棒</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">华天科技</td><td class="code">002185</td><td>+2.49%</td><td class="font-bold">+3.30%</td><td style="color:var(--success);">午后加速</td><td>封测加速</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">长电科技</td><td class="code">600584</td><td>+1.19%</td><td class="font-bold">+1.89%</td><td style="color:var(--success);">午后加速</td><td>连续4日</td></tr>
+      <tr><td class="name">胜宏科技</td><td class="code">300476</td><td>+11.55%</td><td class="font-bold">+11.02%</td><td><span class="tag tag-amber">微降</span></td><td>高位维持</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">景旺电子</td><td class="code">603228</td><td>+10.01%涨停</td><td class="font-bold">+10.01%</td><td>封板</td><td class="font-bold" style="color:var(--primary);">连续2日涨停</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">寒武纪</td><td class="code">688256</td><td>-0.88%</td><td class="font-bold">+0.59%</td><td class="font-bold" style="color:var(--success);">午后翻红</td><td>AI芯片企稳</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">海光信息</td><td class="code">688041</td><td>+0.67%</td><td class="font-bold">+1.48%</td><td class="font-bold" style="color:var(--success);">午后加速</td><td>连续3日</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">新易盛</td><td class="code">300502</td><td>+4.35%</td><td class="font-bold">-0.36%</td><td class="font-bold" style="color:var(--error);">午后翻绿</td><td class="font-bold" style="color:var(--error);">光通信跳水</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">天孚通信</td><td class="code">300394</td><td>+3.61%</td><td class="font-bold">+1.41%</td><td><span class="tag tag-amber">收窄</span></td><td>涨幅大幅收窄</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">长鑫科技</td><td class="code">688825</td><td>-0.10%</td><td class="font-bold">+0.23%</td><td>微弹</td><td class="font-bold" style="color:var(--error);">天量241亿 &middot; 派发持续</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">工商银行</td><td class="code">601398</td><td>-0.79%</td><td class="font-bold">-0.53%</td><td>跌幅收窄</td><td class="font-bold" style="color:var(--error);">翻红仅1日</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">农业银行</td><td class="code">601288</td><td>-0.77%</td><td class="font-bold">-0.61%</td><td>续跌</td><td>翻红仅1日</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">中国移动</td><td class="code">600941</td><td>-1.17%</td><td class="font-bold">-0.95%</td><td>续跌</td><td>跷跷板回落</td></tr>
+      <tr style="background:#FEF3C7;"><td class="name">传智教育</td><td class="code">003032</td><td>+4.11%</td><td class="font-bold">+5.21%</td><td style="color:var(--success);">午后走高</td><td class="font-bold" style="color:var(--warning);">超跌反弹 &middot; 不追</td></tr>
+      <tr style="background:#FEF3C7;"><td class="name">一鸣食品</td><td class="code">605179</td><td>+6.14%</td><td class="font-bold">+5.26%</td><td><span class="tag tag-amber">微降</span></td><td class="font-bold" style="color:var(--warning);">超跌反弹 &middot; 不追</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">圣邦股份 &starf;</td><td class="code">300661</td><td>+4.50%</td><td class="font-bold">+4.81%</td><td style="color:var(--success);">午后加速</td><td class="font-bold" style="color:var(--success);">模拟芯片强势</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-danger">
+    <span class="danger-title">&cross; 午后最重要变化：光通信跳水 · 封测接棒</span>
+    <div style="margin-top:6px;">
+      <div>&bull; <span class="font-bold">中际旭创企稳判断当日被证伪</span>：午间+2.34%到午后-3.78%，跌破950。上午半日报"企稳完全确认"过早。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--success);">封测午后接棒</span>：通富+5.99%/华天+3.30%/长电+1.89%全线午后加速。上午"趋势后半段"判断至少今日推翻。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--success);">寒武纪午后翻红</span>：从-0.88%到+0.59%，带动科创50逆势拉升+1.59%。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 5 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">5</div><div class="section-title">尾盘策略提示</div></div>
+  <table>
+    <thead><tr><th>#</th><th>最后30分钟重点观察</th><th>看什么</th><th>怎么做</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="font-bold">1</td><td class="name">中际旭创</td><td class="font-bold">收盘能否守住920</td><td class="font-bold" style="color:var(--error);">守住920=二次探底 &middot; 跌破900=加速下跌</td></tr>
+      <tr style="background:#F0FDF4;"><td class="font-bold">2</td><td class="name">封测三兄弟</td><td class="font-bold">通富能否守住+5%</td><td class="font-bold" style="color:var(--success);">守住=连续4日趋势确认</td></tr>
+      <tr style="background:#F0FDF4;"><td class="font-bold">3</td><td class="name">景旺电子</td><td class="font-bold">涨停能否封到收盘</td><td class="font-bold" style="color:var(--primary);">封住=连续2日涨停确认</td></tr>
+      <tr><td class="font-bold">4</td><td class="name">创业板指</td><td class="font-bold">能否收复3550-3560</td><td>守住3550=光通信跳水未造成指数级破坏</td></tr>
+      <tr><td class="font-bold">5</td><td class="name">新易盛</td><td class="font-bold">收盘翻绿还是翻红</td><td class="font-bold" style="color:var(--error);">翻绿=光通信全面退潮确认</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-box">
+    <span class="font-bold" style="font-size:1.1em;">尾盘操作建议</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold" style="color:var(--success);">试仓</span>：海光信息/圣邦可极轻仓（3%）尾盘试入。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">光通信</span>：中际旭创/新易盛今日坚决不碰。午后跳水证明方向不明。</div>
+      <div>&bull; <span class="font-bold">封测</span>：等下周一回踩。今日午后加速但不追高。</div>
+      <div>&bull; <span class="font-bold">PCB</span>：胜宏/景旺/沪电/鹏鼎均不追。连续3日暴涨后等回踩。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">回避</span>：传智/一鸣/长鑫/光通信。</div>
+      <div>&bull; <span class="font-bold">现金35-40%</span>不变。下周一周报将全面复盘。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 6 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">6</div><div class="section-title">下周一盯盘清单</div></div>
+  <div class="alert-info" style="margin-bottom:12px;">
+    <span class="font-bold">注意：</span>今日为周五，下周一（8/10）为本周报追踪的下一交易日。以下为下周一重点观察清单。
+  </div>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻</span></div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr><td class="name">中际旭创 &cross;</td><td class="code">300308</td><td class="font-bold" style="color:var(--error);">午后跳水跌破950 &middot; 企稳证伪</td><td class="font-bold" style="color:var(--error);">下周一是否继续下杀 &middot; 900能否守住</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">通富微电 &starf;</td><td class="code">002156</td><td>连续4日 &middot; 午后加速+5.99%</td><td class="font-bold">等回踩60 &middot; 不破58=趋势维持</td></tr>
+      <tr><td class="name">长电科技</td><td class="code">600584</td><td>连续4日 &middot; 龙头</td><td class="font-bold">等回踩72-74 &middot; 不破70=趋势维持</td></tr>
+      <tr><td class="name">华天科技</td><td class="code">002185</td><td>连续4日 &middot; 价格最低弹性大</td><td>等回踩17.00</td></tr>
+      <tr><td class="name">胜宏科技</td><td class="code">300476</td><td>连续3日暴涨 &middot; 创新高280</td><td class="font-bold">等回踩250-260 &middot; 不破240=突破有效</td></tr>
+      <tr><td class="name">景旺电子</td><td class="code">603228</td><td>连续2日涨停 &middot; 反包逆袭</td><td class="font-bold">下周能否站稳90 &middot; 守住=反包有效</td></tr>
+      <tr><td class="name">寒武纪</td><td class="code">688256</td><td>今日翻红+0.59%</td><td>回踩1100-1130是机会</td></tr>
+      <tr><td class="name">海光信息 &starf;</td><td class="code">688041</td><td>连续3日温和上涨</td><td class="font-bold">站稳290 &middot; 涨幅最温和的AI芯片</td></tr>
+      <tr><td class="name">圣邦股份 &starf;</td><td class="code">300661</td><td>连续5日小阳加速</td><td class="font-bold">站稳108 &middot; 模拟芯片方向</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">新易盛 &cross;</td><td class="code">300502</td><td>午后翻绿-0.36%</td><td class="font-bold" style="color:var(--error);">是否延续下跌 &middot; 光通信弱势</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">长鑫科技 &cross;</td><td class="code">688825</td><td class="font-bold" style="color:var(--error);">天量241亿 &middot; 派发持续</td><td class="font-bold" style="color:var(--error);">是否加速下跌 &middot; 坚决回避</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill pill-defense">防守</span></div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr><td class="name">工商银行</td><td class="code">601398</td><td>昨日翻红今日续跌</td><td class="font-bold">下周一能否止跌 &middot; 7.50关键位</td></tr>
+      <tr><td class="name">农业银行</td><td class="code">601288</td><td>续跌</td><td>下周一能否止跌 &middot; 6.45关键位</td></tr>
+      <tr><td class="name">中国神华</td><td class="code">601088</td><td>基本平盘</td><td>能否反弹 &middot; 煤炭方向</td></tr>
+      <tr><td class="name">中国移动</td><td class="code">600941</td><td>-0.95%续跌</td><td class="font-bold">下周一能否企稳 &middot; 95关键位</td></tr>
+      <tr><td class="name">贵州茅台</td><td class="code">600519</td><td>+0.18%微弹</td><td>能否收复1330</td></tr>
+      <tr><td class="name">长江电力</td><td class="code">600900</td><td>基本平盘</td><td>能否翻红</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill" style="background:#F5F3FF;color:#7C3AED;border-color:#DDD6FE;">情绪退潮</span></div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF3C7;"><td class="name">传智教育</td><td class="code">003032</td><td>今日反弹+5.21%</td><td class="font-bold" style="color:var(--error);">超跌反弹后是否续跌 &middot; 不碰</td></tr>
+      <tr style="background:#FEF3C7;"><td class="name">一鸣食品</td><td class="code">605179</td><td>今日反弹+5.26%</td><td class="font-bold" style="color:var(--error);">超跌反弹后是否续跌 &middot; 不碰</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+</body>
+</html>
