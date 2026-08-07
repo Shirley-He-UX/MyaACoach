@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-W32 A股周报 · 沪指周涨2.81%科创50 V型反转 · PCB封测AI芯片三主线共振</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#E11D48;--secondary:#2563EB;--tertiary:#FACC15;--surface:#FFFFFF;--surface-glass:rgba(255,255,255,0.85);--bg:#F8F9FB;--text:#1F2937;--text2:#6B7280;--border:#E5E7EB;--success:#16A34A;--error:#DC2626;--warning:#D97706;--shadow-glass:8px 8px 32px rgba(0,0,0,0.08);--radius-md:8px;--radius-lg:16px;--radius-pill:9999px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;}
+.top-nav{position:sticky;top:0;z-index:100;background:var(--surface-glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-home{font-size:14px;font-weight:600;color:var(--primary);text-decoration:none;}
+.nav-group{display:flex;gap:20px;font-size:13px;}
+.nav-group a{color:var(--text2);text-decoration:none;}
+.nav-group a:hover{color:var(--primary);}
+.nav-disabled{color:var(--text2);opacity:0.4;}
+.hero-band{background:var(--primary);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden;}
+.hero-band::before{content:'';position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero-band::after{content:'';position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-content{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-week{font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:0.75;margin-bottom:8px;}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.6vw,34px);font-weight:800;line-height:1.25;margin-bottom:12px;}
+.hero-sub{font-size:15px;opacity:0.85;max-width:820px;}
+.container{max-width:1120px;margin:0 auto;padding:32px;}
+.section{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-glass);padding:32px;margin-bottom:28px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-num{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff;background:var(--primary);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0;}
+.data-card{background:var(--bg);border-radius:var(--radius-md);padding:16px;border-left:4px solid var(--primary);}
+.data-card .label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.data-card .value{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;}
+.data-card .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.data-card-up{border-left-color:var(--success);}
+.data-card-up .value{color:var(--success);}
+.data-card-down{border-left-color:var(--error);}
+.data-card-down .value{color:var(--error);}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:var(--bg);padding:10px 12px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);border-bottom:2px solid var(--border);}
+td{padding:10px 12px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;}
+td.code{font-family:'Fira Code',monospace;font-size:12px;color:var(--text2);}
+td.muted{color:var(--text2);}
+td a{color:var(--secondary);text-decoration:none;}
+td a:hover{text-decoration:underline;}
+.tag{display:inline-block;padding:2px 8px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.tag-up{background:#DCFCE7;color:#16A34A;}
+.tag-down{background:#FEF2F2;color:#DC2626;}
+.tag-amber{background:#FEF3C7;color:#D97706;}
+.tag-blue{background:#DBEAFE;color:#2563EB;}
+.sub-head{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--primary);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.alert-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-danger{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.alert-success{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radius-md);padding:12px 16px;margin:12px 0;}
+.font-bold{font-weight:700;}
+.conf{font-size:10px;color:var(--text2);margin-left:4px;}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;margin:2px;}
+.pill-offense{background:#FEE2E2;color:#DC2626;}
+.pill-defense{background:#DBEAFE;color:#2563EB;}
+.success-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--success);margin-bottom:6px;}
+.danger-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--error);margin-bottom:6px;}
+.warn-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--warning);margin-bottom:6px;}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="index.html" class="nav-home">&larr; 首页</a>
+  <div class="nav-group">
+    <a href="2026-W31_0727-0731.html">&larr; 上一篇：W31周报</a>
+    <span class="nav-disabled">下一篇：待发布 &rarr;</span>
+  </div>
+</nav>
+<header class="hero-band">
+  <div class="hero-content">
+    <div class="hero-week">2026-W32 &middot; 08.03-08.07 &middot; 周报</div>
+    <h1 class="hero-title">沪指周涨+2.81%收3940 · 科创50 V型反转周涨+6.60% · PCB封测AI芯片三主线共振 · 胜宏周涨+34%景旺2连板 · 光通信高潮转退潮中际旭创破位 · 连板炒作瓦解风格切向产业趋势</h1>
+    <div class="hero-sub">本周（周一至周五）沪指3809.66&rarr;3940.04周涨约+2.81% &middot; 深成周涨约+5.39% &middot; 创业板周涨约+6.55% &middot; 科创50周一暴跌-5.08%后V型反转周涨约+6.60%领涨 &middot; 三大进攻主线确立：PCB（胜宏+34%/景旺2连板）、封测（长电+23%/通富+24%）、AI芯片（寒武纪连续走强收复1200） &middot; 光通信高潮&rarr;退潮（中际旭创8/4 +13.24%高潮后8/7破位950） &middot; 连板炒作瓦解（传智9板&rarr;炸板）风格切向产业趋势 &middot; 防守跷跷板反复</div>
+  </div>
+</header>
+<div class="container">
+
+
+<!-- ===== 1 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">1</div><div class="section-title">大盘总览</div></div>
+  <div class="data-grid">
+    <div class="data-card data-card-up"><div class="label">上证指数</div><div class="value">3940.04</div><div class="sub font-bold" style="color:var(--success);">周涨 +2.81%</div><div class="sub font-bold" style="color:var(--success);">5日中4涨1跌 &middot; 周五收全周最高</div></div>
+    <div class="data-card data-card-up"><div class="label">深证成指</div><div class="value">14311.01</div><div class="sub font-bold" style="color:var(--success);">周涨 +5.39%</div><div class="sub font-bold" style="color:var(--success);">反包上周跌幅</div></div>
+    <div class="data-card data-card-up"><div class="label">创业板指</div><div class="value">3563.12</div><div class="sub font-bold" style="color:var(--success);">周涨 +6.55%</div><div class="sub font-bold" style="color:var(--success);">周一最弱后连续反弹</div></div>
+    <div class="data-card data-card-up"><div class="label">科创50</div><div class="value">1744.02</div><div class="sub font-bold" style="color:var(--success);">周涨 +6.60%</div><div class="sub font-bold" style="color:var(--success);">V型反转 &middot; 周一暴跌后领涨</div></div>
+  </div>
+  <table>
+    <thead><tr><th>日期</th><th>上证</th><th>涨跌</th><th>深成指</th><th>涨跌</th><th>创业板</th><th>涨跌</th><th>科创50</th><th>涨跌</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="font-bold">8/3 周一</td><td>3809.66</td><td class="font-bold" style="color:var(--error);">-0.59%</td><td>13448.29</td><td class="font-bold" style="color:var(--error);">-0.96%</td><td>3302.55</td><td class="font-bold" style="color:var(--error);">-1.24%</td><td>1552.89</td><td class="font-bold" style="color:var(--error);">-5.08%</td></tr>
+      <tr style="background:#F0FDF4;"><td class="font-bold">8/4 周二</td><td>3822.28</td><td class="font-bold" style="color:var(--success);">+0.33%</td><td>13885.71</td><td class="font-bold" style="color:var(--success);">+3.25%</td><td>3488.97</td><td class="font-bold" style="color:var(--success);">+5.64%</td><td>1616.36</td><td class="font-bold" style="color:var(--success);">+4.09%</td></tr>
+      <tr style="background:#F0FDF4;"><td class="font-bold">8/5 周三</td><td>3878.43</td><td class="font-bold" style="color:var(--success);">+1.47%</td><td>14144.20</td><td class="font-bold" style="color:var(--success);">+1.86%</td><td>3535.14</td><td class="font-bold" style="color:var(--success);">+1.32%</td><td>1693.67</td><td class="font-bold" style="color:var(--success);">+4.78%</td></tr>
+      <tr style="background:#FEF9EC;"><td class="font-bold">8/6 周四</td><td>3900.35</td><td class="font-bold" style="color:var(--success);">+0.57%</td><td>14110.12</td><td class="font-bold" style="color:var(--error);">-0.24%</td><td>3515.56</td><td class="font-bold" style="color:var(--error);">-0.55%</td><td>1701.29</td><td class="font-bold" style="color:var(--success);">+0.45%</td></tr>
+      <tr style="background:#F0FDF4;"><td class="font-bold">8/7 周五</td><td>3940.04</td><td class="font-bold" style="color:var(--success);">+1.02%</td><td>14311.01</td><td class="font-bold" style="color:var(--success);">+1.42%</td><td>3563.12</td><td class="font-bold" style="color:var(--success);">+1.35%</td><td>1744.02</td><td class="font-bold" style="color:var(--success);">+2.51%</td></tr>
+      <tr style="background:#EFF6FF;"><td class="font-bold">周涨跌</td><td></td><td class="font-bold" style="color:var(--success);">+2.81%</td><td></td><td class="font-bold" style="color:var(--success);">+5.39%</td><td></td><td class="font-bold" style="color:var(--success);">+6.55%</td><td></td><td class="font-bold" style="color:var(--success);">+6.60%</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-success">
+    <span class="success-title">&check; 本周大盘核心叙事</span>
+    <div style="margin-top:6px;">
+      <div>1. <span class="font-bold">V型反转</span>：周一科创50暴跌-5.08%，周二即反弹+4.09%，此后连续4日上涨，周涨+6.60%领涨。本周最重要的指数叙事。</div>
+      <div>2. <span class="font-bold">5日中4涨1跌</span>：仅周一全线下跌，此后4日连涨。周五收全周最高，多头完胜。</div>
+      <div>3. <span class="font-bold">成交额持续放量</span>：从周一缩量到周五约2.6万亿，资金加速涌入进攻板块。</div>
+      <div>4. <span class="font-bold">板块分化剧烈</span>：进攻主线PCB/封测/AI芯片周涨超20%，光通信从主线退潮（中际旭创8/4高潮后破位）。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 2 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">2</div><div class="section-title">本周异动上涨板块</div></div>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻-PCB</span> 本周最强主线 &middot; 从独涨到普涨</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>周五收盘</th><th>周内表现</th><th>连板</th><th>链接</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">胜宏科技 &starf;&starf;</td><td class="code">300476</td><td>280.20</td><td class="font-bold" style="color:var(--success);">周涨约+34% &middot; 创历史新高</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/300476/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">景旺电子 &starf;</td><td class="code">603228</td><td>94.95</td><td class="font-bold" style="color:var(--success);">周涨约+28% &middot; 假突破逆袭</td><td class="font-bold" style="color:var(--primary);">2连板</td><td><a href="https://basic.10jqka.com.cn/603228/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">沪电股份</td><td class="code">002463</td><td>125.87</td><td class="font-bold" style="color:var(--success);">周涨约+20%</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/002463/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">鹏鼎控股</td><td class="code">002938</td><td>101.41</td><td class="font-bold" style="color:var(--success);">周涨约+18%</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/002938/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">东山精密</td><td class="code">002384</td><td>195.27</td><td class="font-bold" style="color:var(--success);">周涨约+14%</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/002384/" target="_blank">同花顺</a></td></tr>
+    </tbody>
+  </table>
+  <div class="alert-info" style="margin-bottom:16px;">
+    <span class="font-bold">上涨逻辑：</span>AI服务器/交换机对高层数HDI板需求爆发。胜宏作为Nvidia供应链核心，从周一独涨到周五全板块普涨。<span class="font-bold" style="color:var(--primary);">PCB是本周确立的第一进攻主线。</span>
+  </div>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻-封测</span> 连续4日反弹 &middot; 接力PCB</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>周五收盘</th><th>周内表现</th><th>连板</th><th>链接</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">长电科技 &starf;</td><td class="code">600584</td><td>77.75</td><td class="font-bold" style="color:var(--success);">周涨约+23% &middot; 龙头</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/600584/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">通富微电 &starf;</td><td class="code">002156</td><td>64.72</td><td class="font-bold" style="color:var(--success);">周涨约+24% &middot; 周五爆发</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/002156/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">华天科技</td><td class="code">002185</td><td>17.98</td><td class="font-bold" style="color:var(--success);">周涨约+14%</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/002185/" target="_blank">同花顺</a></td></tr>
+    </tbody>
+  </table>
+  <div class="alert-info" style="margin-bottom:16px;">
+    <span class="font-bold">上涨逻辑：</span>AI芯片产能扩张带动先进封装需求。周一大跌后连续4日反弹，累计涨幅巨大。<span class="font-bold">但4日累计涨幅过大，下周冲高回落风险上升。</span>
+  </div>
+
+  <div class="sub-head"><span class="pill pill-offense">进攻-AI芯片</span> 稳健第三主线</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>周五收盘</th><th>周内表现</th><th>连板</th><th>链接</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">寒武纪 &starf;</td><td class="code">688256</td><td>1199.92</td><td class="font-bold" style="color:var(--success);">周涨约+16% &middot; 收复1200</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/688256/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">海光信息</td><td class="code">688041</td><td>295.75</td><td class="font-bold" style="color:var(--success);">周涨约+8% &middot; 最温和</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/688041/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">圣邦股份 &starf;</td><td class="code">300661</td><td>111.68</td><td class="font-bold" style="color:var(--success);">周涨约+12% &middot; 连续6日小阳</td><td>&mdash;</td><td><a href="https://basic.10jqka.com.cn/300661/" target="_blank">同花顺</a></td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill" style="background:#FEE2E2;color:#DC2626;border-color:#FECACA;">&cross; 光通信-退潮分化</span> 从主线到分化</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>周五收盘</th><th>周内表现</th><th>状态</th><th>链接</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name">中际旭创 &cross;</td><td class="code">300308</td><td>919.87</td><td class="font-bold" style="color:var(--error);">8/4 +13.24%高潮后破位950</td><td class="font-bold" style="color:var(--error);">派发确认</td><td><a href="https://basic.10jqka.com.cn/300308/" target="_blank">同花顺</a></td></tr>
+      <tr><td class="name">天孚通信</td><td class="code">300394</td><td>230.68</td><td class="font-bold" style="color:var(--success);">连续3日上涨</td><td class="font-bold">分化赢家</td><td><a href="https://basic.10jqka.com.cn/300394/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">新易盛</td><td class="code">300502</td><td>420.95</td><td class="font-bold" style="color:var(--error);">连续2日下跌</td><td class="font-bold" style="color:var(--error);">弱势方</td><td><a href="https://basic.10jqka.com.cn/300502/" target="_blank">同花顺</a></td></tr>
+    </tbody>
+  </table>
+  <div class="alert-danger" style="margin-bottom:16px;">
+    <span class="danger-title">&cross; 光通信本周从主线退潮</span>
+    <div style="margin-top:6px;">中际旭创8/4冲高+13.24%后，8/5暴跌-7.27%、8/7午后跳水破位950（派发确认）。板块内部天孚（连涨）与新易盛（连跌）严重分化。<span class="font-bold" style="color:var(--primary);">CPO方向已从本周初的强主线降级为分化/退出。</span></div>
+  </div>
+
+  <div class="sub-head"><span class="pill pill-defense">防守</span> 跷跷板反复 &middot; 全周弱势</div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>周五收盘</th><th>周内表现</th><th>链接</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name">工商银行</td><td class="code">601398</td><td>7.53</td><td class="font-bold" style="color:var(--error);">周内四连跌后翻红1日再跌</td><td><a href="https://basic.10jqka.com.cn/601398/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">农业银行</td><td class="code">601288</td><td>6.47</td><td class="font-bold" style="color:var(--error);">同银行板块 &middot; 全周下跌</td><td><a href="https://basic.10jqka.com.cn/601288/" target="_blank">同花顺</a></td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">中国移动</td><td class="code">600941</td><td>95.49</td><td class="font-bold" style="color:var(--error);">周五-0.99% &middot; 跷跷板反转</td><td><a href="https://basic.10jqka.com.cn/600941/" target="_blank">同花顺</a></td></tr>
+      <tr><td class="name">中国神华</td><td class="code">601088</td><td>43.94</td><td>周中反弹后周五平盘</td><td><a href="https://basic.10jqka.com.cn/601088/" target="_blank">同花顺</a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 3 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">3</div><div class="section-title">连板股排列（周五收盘）</div></div>
+  <table>
+    <thead><tr><th>排名</th><th>个股</th><th>代码</th><th>连板数</th><th>板块</th><th>状态</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="font-bold">1</td><td class="name">景旺电子 &starf;</td><td class="code">603228</td><td class="font-bold">2板</td><td>PCB</td><td class="font-bold" style="color:var(--primary);">周五唯一连板标 &middot; 假突破逆袭</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-info">
+    <span class="font-bold">连板梯队现状：</span>本周初高位连板（传智9板/一鸣5板）在8/6全线瓦解。周五仅景旺2连板。<span class="font-bold">连板梯队极度稀薄，赚钱效应彻底从情绪炒作转向产业趋势股（PCB/封测/AI芯片）。这是本周最重要的风格变化。</span>
+  </div>
+</div>
+
+<!-- ===== 4 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">4</div><div class="section-title">下跌板块概览</div></div>
+  <table>
+    <thead><tr><th>板块/个股</th><th>代码</th><th>周内跌幅</th><th>关键事件</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name">中际旭创 &cross;</td><td class="code">300308</td><td class="font-bold" style="color:var(--error);">8/4高潮后累计回落</td><td>8/4 +13.24%高潮&rarr;8/5 -7.27%&rarr;8/7破位950 &middot; 派发确认</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">长鑫科技 &cross;</td><td class="code">688825</td><td class="font-bold" style="color:var(--error);">连续天量派发</td><td>连续7日天量 &middot; 主力持续派发 &middot; 坚决回避</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">传智教育 &cross;</td><td class="code">003032</td><td class="font-bold" style="color:var(--error);">9板后炸板</td><td>8/6炸板-6.77% &middot; 高位情绪股崩盘</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">一鸣食品 &cross;</td><td class="code">605179</td><td class="font-bold" style="color:var(--error);">5板后暴跌</td><td>8/6 -7.20% &middot; 预警兑现</td></tr>
+      <tr><td class="name">银行</td><td class="code">&mdash;</td><td class="font-bold" style="color:var(--error);">全周弱势</td><td>四连跌后翻红1日再跌 &middot; 跷跷板反复</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-warn">
+    <span class="warn-title">&excl; 下跌核心逻辑</span>
+    <div style="margin-top:6px;">
+      <div>1. <span class="font-bold">光通信派发</span>：中际旭创连续天量后破位，主力高位派发确认。</div>
+      <div>2. <span class="font-bold">高位情绪股瓦解</span>：传智9板/一鸣5板8/6集体崩盘，连板炒作模式结束。</div>
+      <div>3. <span class="font-bold">防守失血</span>：资金全力涌向进攻，银行/移动等防守全周弱势。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 5 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">5</div><div class="section-title">涨停数据汇总</div></div>
+  <table>
+    <thead><tr><th>日期</th><th>涨停数</th><th>炸板数</th><th>封板率</th><th>连板晋级</th><th>情绪</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="font-bold">8/3 周一</td><td>约35</td><td>约25</td><td>约58%</td><td>传智7板</td><td class="font-bold" style="color:var(--error);">全线下跌 &middot; 情绪低迷</td></tr>
+      <tr style="background:#F0FDF4;"><td class="font-bold">8/4 周二</td><td>约62</td><td>约20</td><td>约76%</td><td>传智8板/一鸣崩</td><td class="font-bold" style="color:var(--success);">V型反转 &middot; 情绪回暖</td></tr>
+      <tr style="background:#F0FDF4;"><td class="font-bold">8/5 周三</td><td>约58</td><td>约16</td><td>约78%</td><td>传智9板</td><td class="font-bold" style="color:var(--success);">主线扩散</td></tr>
+      <tr style="background:#FEF9EC;"><td class="font-bold">8/6 周四</td><td>约48</td><td>约18</td><td>约73%</td><td class="font-bold" style="color:var(--error);">高位全瓦解</td><td class="font-bold" style="color:var(--warning);">连板炸板 &middot; 风格切换</td></tr>
+      <tr style="background:#F0FDF4;"><td class="font-bold">8/7 周五</td><td>约56</td><td>约14</td><td>约80%</td><td>景旺2板</td><td class="font-bold" style="color:var(--success);">趋势股接力 &middot; 封板率回升</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-info">
+    <span class="font-bold">数据说明：</span>涨停/炸板数为盘面估算。核心趋势：封板率从周一58%回升到周五80%，赚钱效应改善；但连板梯队从传智9板瓦解到景旺2板，<span class="font-bold">涨停主体从情绪股切换为PCB/封测/芯片趋势股首板</span>。
+  </div>
+</div>
+
+<!-- ===== 6 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">6</div><div class="section-title">龙虎榜重点</div></div>
+  <div class="alert-info" style="margin-bottom:12px;">
+    <span class="font-bold">说明：</span>以下为本周重要席位动向汇总，基于盘面成交额和大单异动推断。
+  </div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>本周动向</th><th>席位推断</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">胜宏科技</td><td class="code">300476</td><td class="font-bold">连续3日天量 &middot; 周五198亿</td><td class="font-bold">机构+游资共振 &middot; PCB龙头资金抱团</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">长电科技</td><td class="code">600584</td><td>连续4日放量 &middot; 周五175亿</td><td>封测龙头 &middot; 主力持续流入</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">东山精密</td><td class="code">002384</td><td>周五201亿天量</td><td>PCB方向资金涌入</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">中际旭创</td><td class="code">300308</td><td class="font-bold" style="color:var(--error);">周五547亿天量下跌</td><td class="font-bold" style="color:var(--error);">主力派发 &middot; 午后大单出逃</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">长鑫科技</td><td class="code">688825</td><td class="font-bold" style="color:var(--error);">连续7日天量</td><td class="font-bold" style="color:var(--error);">持续派发 &middot; 资金出逃</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 7 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">7</div><div class="section-title">平台突破股筛选</div></div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>收盘</th><th>涨幅</th><th>突破类型</th><th>量能</th><th>确认</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">胜宏科技 &starf;&starf;</td><td class="code">300476</td><td>280.20</td><td class="font-bold" style="color:var(--success);">+12.02%</td><td class="font-bold">创历史新高 &middot; 突破所有平台</td><td>198亿</td><td class="font-bold" style="color:var(--success);">连续3日确认</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">景旺电子 &starf;</td><td class="code">603228</td><td>94.95</td><td class="font-bold" style="color:var(--success);">+10.01%</td><td>连续2日涨停反包</td><td>32亿</td><td class="font-bold" style="color:var(--primary);">需下周一确认</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">鹏鼎控股</td><td class="code">002938</td><td>101.41</td><td class="font-bold" style="color:var(--success);">+8.06%</td><td>放量突破半年线</td><td>40亿</td><td>首日 &middot; 需确认</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">沪电股份</td><td class="code">002463</td><td>125.87</td><td class="font-bold" style="color:var(--success);">+7.40%</td><td>突破短期平台</td><td>99亿</td><td>放量 &middot; 跟涨</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">圣邦股份 &starf;</td><td class="code">300661</td><td>111.68</td><td class="font-bold" style="color:var(--success);">+5.13%</td><td>连续6日小阳加速突破</td><td>15亿</td><td class="font-bold" style="color:var(--success);">温和加速</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">海光信息</td><td class="code">688041</td><td>295.75</td><td class="font-bold" style="color:var(--success);">+1.62%</td><td>站稳290平台</td><td>57亿</td><td>连续4日</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 8 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">8</div><div class="section-title">300亿以上高壁垒个股深度分析</div></div>
+
+  <div class="sub-head">胜宏科技 300476 &middot; 市值约4000亿 &middot; PCB绝对龙头 &starf;&starf;</div>
+  <table>
+    <tbody>
+      <tr><td class="name" style="width:120px;font-weight:bold;">主营业务</td><td>高端PCB（HDI/高多层）&middot; AI服务器/交换机PCB核心供应商</td></tr>
+      <tr><td class="name" style="font-weight:bold;">核心客户</td><td class="font-bold">Nvidia / AMD / 苹果 / 华为 &middot; 海外CSP AI服务器供应链</td></tr>
+      <tr><td class="name" style="font-weight:bold;">护城河</td><td class="font-bold">高层数HDI技术壁垒 &middot; 海外大客户认证周期长 &middot; 产能规模全球前列</td></tr>
+      <tr><td class="name" style="font-weight:bold;">财报趋势</td><td>2025年AI服务器PCB订单爆发 &middot; 产能持续扩张 &middot; 毛利率提升</td></tr>
+      <tr><td class="name" style="font-weight:bold;">本周表现</td><td class="font-bold" style="color:var(--success);">280.20 &middot; 周涨约+34% &middot; 周五198亿 &middot; 创历史新高286</td></tr>
+      <tr><td class="name" style="font-weight:bold;">上涨逻辑</td><td>AI服务器高层数板需求爆发 &middot; Nvidia供应链核心受益</td></tr>
+      <tr><td class="name" style="font-weight:bold;">下跌风险</td><td class="font-bold" style="color:var(--error);">周涨+34%估值快速拉伸 &middot; 追高风险极大 &middot; 下周回调风险</td></tr>
+      <tr><td class="name" style="font-weight:bold;">适合买入条件</td><td class="font-bold" style="color:var(--success);">回踩250-260（5日均线附近）&middot; 缩量企稳 &middot; 不追280+高位</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">寒武纪 688256 &middot; 市值约5000亿 &middot; AI芯片龙头 &starf;</div>
+  <table>
+    <tbody>
+      <tr><td class="name" style="width:120px;font-weight:bold;">主营业务</td><td>云端AI训练/推理芯片 &middot; 国产GPU替代核心标的</td></tr>
+      <tr><td class="name" style="font-weight:bold;">核心客户</td><td>运营商/互联网大厂/智算中心 &middot; 华为生态协同</td></tr>
+      <tr><td class="name" style="font-weight:bold;">护城河</td><td class="font-bold">自研架构 &middot; 国产替代唯一性 &middot; 软件生态 NeuWare</td></tr>
+      <tr><td class="name" style="font-weight:bold;">财报趋势</td><td>2025年营收爆发期 &middot; 国产替代加速 &middot; 高研发投入期</td></tr>
+      <tr><td class="name" style="font-weight:bold;">本周表现</td><td class="font-bold" style="color:var(--success);">1199.92 &middot; 周涨约+16% &middot; 收复1200</td></tr>
+      <tr><td class="name" style="font-weight:bold;">上涨逻辑</td><td>国产AI芯片需求爆发 &middot; 算力基建政策驱动</td></tr>
+      <tr><td class="name" style="font-weight:bold;">下跌风险</td><td class="font-bold" style="color:var(--error);">估值极高 &middot; 尚未盈利 &middot; 波动巨大</td></tr>
+      <tr><td class="name" style="font-weight:bold;">适合买入条件</td><td class="font-bold" style="color:var(--success);">回踩1100-1130 &middot; 轻仓（3%以内）&middot; 不追1200+</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">中际旭创 300308 &middot; 市值约5500亿 &middot; 光模块龙头 &cross;</div>
+  <table>
+    <tbody>
+      <tr><td class="name" style="width:120px;font-weight:bold;">主营业务</td><td>高速光模块（400G/800G/1.6T）&middot; 全球第一大光模块厂商</td></tr>
+      <tr><td class="name" style="font-weight:bold;">核心客户</td><td class="font-bold">谷歌 / Meta / 亚马逊 / Microsoft &middot; 海外CSP核心供应</td></tr>
+      <tr><td class="name" style="font-weight:bold;">护城河</td><td>硅光技术 &middot; 海外CSP大客户绑定 &middot; 1.6T先发优势</td></tr>
+      <tr><td class="name" style="font-weight:bold;">财报趋势</td><td>2025年高增长 &middot; 800G/1.6T放量 &middot; 毛利率提升</td></tr>
+      <tr><td class="name" style="font-weight:bold;">本周表现</td><td class="font-bold" style="color:var(--error);">919.87 &middot; 8/4高潮+13.24%后破位950 &middot; 周五547亿天量派发</td></tr>
+      <tr><td class="name" style="font-weight:bold;">上涨逻辑</td><td>海外AI基建持续 &middot; 800G/1.6T需求</td></tr>
+      <tr><td class="name" style="font-weight:bold;">下跌风险</td><td class="font-bold" style="color:var(--error);">连续天量后破位 &middot; 派发确认 &middot; 可能加速下跌</td></tr>
+      <tr><td class="name" style="font-weight:bold;">适合买入条件</td><td class="font-bold" style="color:var(--error);">暂不介入 &middot; 需连续2日不创新低+缩量+守900</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head">长电科技 600584 &middot; 市值约2200亿 &middot; 封测龙头 &starf;</div>
+  <table>
+    <tbody>
+      <tr><td class="name" style="width:120px;font-weight:bold;">主营业务</td><td>半导体封装测试 &middot; 全球第三大OSAT &middot; 先进封装</td></tr>
+      <tr><td class="name" style="font-weight:bold;">核心客户</td><td class="font-bold">全球头部Fabless客户 &middot; 海外大厂 &middot; Huawei/海思</td></tr>
+      <tr><td class="name" style="font-weight:bold;">护城河</td><td class="font-bold">全球第三大封测厂 &middot; Chiplet/2.5D先进封装 &middot; 产能规模</td></tr>
+      <tr><td class="name" style="font-weight:bold;">财报趋势</td><td>2025年先进封装放量 &middot; AI芯片需求驱动 &middot; 毛利率改善</td></tr>
+      <tr><td class="name" style="font-weight:bold;">本周表现</td><td class="font-bold" style="color:var(--success);">77.75 &middot; 周涨约+23% &middot; 连续4日上涨</td></tr>
+      <tr><td class="name" style="font-weight:bold;">上涨逻辑</td><td>AI芯片产能扩张&rarr;先进封装需求 &middot; 连续4日资金流入</td></tr>
+      <tr><td class="name" style="font-weight:bold;">下跌风险</td><td class="font-bold" style="color:var(--error);">4日累计+23%涨幅过大 &middot; 下周冲高回落风险</td></tr>
+      <tr><td class="name" style="font-weight:bold;">适合买入条件</td><td class="font-bold" style="color:var(--success);">回踩72-74（5日均线）&middot; 不破70</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 9 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">9</div><div class="section-title">异常成交量个股</div></div>
+  <div class="alert-info" style="margin-bottom:12px;">
+    <span class="font-bold">筛选标准：</span>周内单日成交量显著异常（&gt; 近半年常态量 &times; 2）。
+  </div>
+  <table>
+    <thead><tr><th>个股</th><th>代码</th><th>周五成交</th><th>性质</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr style="background:#FEF2F2;"><td class="name">中际旭创 &cross;</td><td class="code">300308</td><td class="font-bold" style="color:var(--error);">547亿</td><td class="font-bold" style="color:var(--error);">天量下跌</td><td class="font-bold" style="color:var(--error);">派发确认 &middot; 本周最大单日成交</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">长鑫科技 &cross;</td><td class="code">688825</td><td class="font-bold" style="color:var(--error);">267亿</td><td>天量震荡</td><td class="font-bold" style="color:var(--error);">连续7日天量 &middot; 派发持续</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">新易盛</td><td class="code">300502</td><td class="font-bold" style="color:var(--error);">258亿</td><td>放量翻绿</td><td class="font-bold" style="color:var(--error);">光通信弱势</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">东山精密</td><td class="code">002384</td><td class="font-bold" style="color:var(--success);">201亿</td><td>天量暴涨</td><td>PCB全面爆发</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">胜宏科技</td><td class="code">300476</td><td class="font-bold" style="color:var(--success);">198亿</td><td>天量创新高</td><td class="font-bold">PCB龙头 &middot; 连续3日天量</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">寒武纪</td><td class="code">688256</td><td class="font-bold" style="color:var(--success);">188亿</td><td>放量上涨</td><td>AI芯片 &middot; 收复1200</td></tr>
+      <tr style="background:#F0FDF4;"><td class="name">长电科技</td><td class="code">600584</td><td class="font-bold" style="color:var(--success);">175亿</td><td>连续放量</td><td>封测龙头</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 10 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">10</div><div class="section-title">下周展望</div></div>
+  <div class="sub-head">关键变量</div>
+  <table>
+    <thead><tr><th>#</th><th>变量</th><th>当前状态</th><th>影响</th></tr></thead>
+    <tbody>
+      <tr><td class="font-bold">1</td><td class="name">PCB主线持续性</td><td>胜宏周涨+34% &middot; 连续3日暴涨</td><td class="font-bold" style="color:var(--warning);">主线确立但涨幅巨大 &middot; 下周回调风险高</td></tr>
+      <tr><td class="font-bold">2</td><td class="name">封测能否连5日</td><td>连续4日 &middot; 长电周涨+23%</td><td class="font-bold" style="color:var(--warning);">冲高回落风险上升</td></tr>
+      <tr><td class="font-bold">3</td><td class="name">中际旭创破位后</td><td>跌破950 &middot; 派发确认</td><td class="font-bold" style="color:var(--error);">可能加速下跌 &middot; 拖累光通信</td></tr>
+      <tr><td class="font-bold">4</td><td class="name">寒武纪1200关口</td><td>收复1200 &middot; 连续4日</td><td class="font-bold">站稳1200=AI芯片强势延续</td></tr>
+      <tr><td class="font-bold">5</td><td class="name">防守能否止跌</td><td>银行/移动翻红1日后再跌</td><td class="font-bold" style="color:var(--warning);">跷跷板未结束</td></tr>
+      <tr><td class="font-bold">6</td><td class="name">指数能否续创新高</td><td>周五收3940全周最高</td><td class="font-bold" style="color:var(--success);">趋势向上 &middot; 但需量能配合</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-box">
+    <span class="font-bold" style="font-size:1.1em;">下周策略建议</span>
+    <div style="margin-top:8px;">
+      <div>&bull; <span class="font-bold" style="color:var(--warning);">PCB/封测：主线明确但已连续大涨，坚决等回踩不追高。</span>胜宏回踩250-260、长电回踩72-74、通富回踩60是入场机会。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--success);">海光/圣邦：涨幅温和的进攻标的，可轻仓（3-5%）持有。</span>海光止损288，圣邦止损106。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--success);">寒武纪：回踩1100-1130轻仓，不追1200+。</span></div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">中际旭创/新易盛：破位后暂不介入。</span>需连续2日不创新低+缩量+守900才考虑。</div>
+      <div>&bull; <span class="font-bold" style="color:var(--error);">坚决回避</span>：长鑫科技（连续7日天量派发）/ 传智/一鸣（情绪退潮，超跌反弹是卖点）。</div>
+      <div>&bull; <span class="font-bold">现金35-40%</span>：进攻板块普涨且涨幅巨大，警惕下周高位回调。保持现金等回踩。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 11 ===== -->
+<div class="section">
+  <div class="section-head"><div class="section-num">11</div><div class="section-title">下周重点盯盘清单</div></div>
+  <div class="sub-head"><span class="pill pill-offense">进攻</span></div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr style="background:#F0FDF4;"><td class="name">胜宏科技 &starf;</td><td class="code">300476</td><td>周涨+34% &middot; PCB龙头创新高</td><td class="font-bold">回踩250-260 &middot; 不破240=突破有效</td></tr>
+      <tr><td class="name">长电科技 &starf;</td><td class="code">600584</td><td>连续4日+23% &middot; 封测龙头</td><td class="font-bold">回踩72-74 &middot; 不破70=趋势维持</td></tr>
+      <tr><td class="name">通富微电</td><td class="code">002156</td><td>连续4日+24% &middot; 周五爆发</td><td class="font-bold">回踩60 &middot; 不破58=趋势维持</td></tr>
+      <tr><td class="name">景旺电子</td><td class="code">603228</td><td>连续2日涨停</td><td class="font-bold">能否3连板 &middot; 站稳90=反包有效</td></tr>
+      <tr><td class="name">寒武纪</td><td class="code">688256</td><td>连续4日 &middot; 收复1200</td><td class="font-bold">站稳1200 &middot; 回踩1100-1130是机会</td></tr>
+      <tr><td class="name">海光信息 &starf;</td><td class="code">688041</td><td>连续4日温和上涨</td><td class="font-bold">站稳290 &middot; 涨幅最温和的AI芯片</td></tr>
+      <tr><td class="name">圣邦股份 &starf;</td><td class="code">300661</td><td>连续6日小阳加速</td><td class="font-bold">站稳108 &middot; 模拟芯片方向</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">中际旭创 &cross;</td><td class="code">300308</td><td class="font-bold" style="color:var(--error);">破位950 &middot; 派发确认</td><td class="font-bold" style="color:var(--error);">900能否守住 &middot; 是否加速下跌</td></tr>
+      <tr style="background:#FEF2F2;"><td class="name">长鑫科技 &cross;</td><td class="code">688825</td><td class="font-bold" style="color:var(--error);">连续7日天量派发</td><td class="font-bold" style="color:var(--error);">是否加速下跌 &middot; 坚决回避</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill pill-defense">防守</span></div>
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr><td class="name">工商银行</td><td class="code">601398</td><td>翻红1日后再跌</td><td class="font-bold">7.50关键位能否守住</td></tr>
+      <tr><td class="name">农业银行</td><td class="code">601288</td><td>全周弱势</td><td>6.45关键位</td></tr>
+      <tr><td class="name">中国神华</td><td class="code">601088</td><td>周中反弹后平盘</td><td>能否反弹 &middot; 煤炭方向</td></tr>
+      <tr><td class="name">中国移动</td><td class="code">600941</td><td>周五-0.99%续跌</td><td class="font-bold">95关键位能否企稳</td></tr>
+      <tr><td class="name">贵州茅台</td><td class="code">600519</td><td>平盘守1300</td><td>能否收复1330</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-head"><span class="pill" style="background:#F5F3FF;color:#7C3AED;border-color:#DDD6FE;">风格切换</span></div>
+  <table>
+    <thead><tr><th>标的/信号</th><th>跟踪逻辑</th><th>观察信号</th></tr></thead>
+    <tbody>
+      <tr><td class="name">连板梯队</td><td>高位标瓦解 &middot; 仅景旺2板</td><td class="font-bold">是否有新高标出现 &middot; 情绪能否恢复</td></tr>
+      <tr><td class="name">跷跷板效应</td><td>进攻涨防守跌 &middot; 反复切换</td><td class="font-bold">能否出现进攻/防守同步的普涨行情</td></tr>
+      <tr style="background:#FEF3C7;"><td class="name">传智/一鸣</td><td>超跌反弹</td><td class="font-bold" style="color:var(--error);">反弹后是否续跌 &middot; 不碰</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <span class="font-bold" style="font-size:1.05em;">核心观察逻辑</span>
+    <div style="margin-top:8px;">
+      <div>本周市场完成两大切换：<span class="font-bold">①赚钱效应从情绪炒作（连板）切向产业趋势（PCB/封测/AI芯片）；②光通信从强主线退潮，PCB上位成第一主线。</span></div>
+      <div style="margin-top:6px;">下周核心矛盾是：<span class="font-bold">进攻主线连续大涨后能否消化获利盘。</span>若回踩缩量企稳，是低吸机会；若放量下跌，则需警惕主线退潮。中际旭创破位是重要风险信号——它曾是前期最强主线，其崩塌提示高位天量股的派发风险。<span class="font-bold" style="color:var(--primary);">操作纪律：不追高、等回踩、控仓位、盯量能。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="text-align:center;color:#94A3B8;font-size:0.85em;padding:24px;">
+  <div>数据来源：新浪财经API（hq.sinajs.cn）+ 本周每日日报/半日/盘中报告</div>
+  <div style="margin-top:4px;">本报告仅为盘面复盘与研究记录，不构成投资建议。</div>
+</div>
+
+</div>
+</body>
+</html>
